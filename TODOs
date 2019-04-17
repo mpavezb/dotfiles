@@ -1,0 +1,37 @@
+To Do List for Arch Installation
+====================================
+
+REMEMBER
+-----------
+
+# Check num lock on tty is working
+yay -S systemd-numlockontty
+systemctl enable numLockOnTty
+
+
+TO DO
+-------------
+
+# Usabilty
+- Folders
+
+# Performance
+- NVIDIA
+- speed up boot time. See Hardware auto-recognition on General Recommendations
+
+# Appereance
+- Grub theme / images
+- nice login 
+- Themes
+- Clean Grub entries
+
+
+# sublime packages
+- INI
+- 
+
+
+torrent client
+pdf viewer
+system monitor
+Input Method: EN, ES, DE, NB, JA

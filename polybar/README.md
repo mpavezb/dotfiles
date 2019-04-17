@@ -1,0 +1,26 @@
+# Desired Indicators
+
+- important apps
+	- spotify
+	- firefox
+	- skype
+	- MEGA
+	- Dropbox
+- workspace
+- network manager
+	- ip
+	- ISSD vs ethernet
+	- VPN
+	- download speed
+- battery
+	- %
+	- remaining time
+- keyboard map
+- datetime
+	- calendar
+- audio
+	- output interface
+	- output volume
+- memory usage
+- cpu usage
+- disk usage
