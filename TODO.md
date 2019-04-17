@@ -1,33 +1,42 @@
-To Do List for Arch Installation
-====================================
+# To Do List
 
-TO DO
--------------
 
-# Usabilty
-- Folders
+## Urgent
+- xfce4
+- polybar
+- Input Method Selector: EN, ES, DE, NB, JA
+
+## Usabilty
 - Open files with
 - workspace grid
-- crop tool
-- wallpaper
-- home on desktop
 - numlock enabled at start
+- editorconfig
 
-# Performance
+## Tools
+- task manager
+- crop tool
+- MEGA
+- Guitar Pro
+- TeXstudio not working
+- Torrent Client
+- PDF Viewer
+
+## Performance
+
+- Battery life
 - NVIDIA
 - speed up boot time. See Hardware auto-recognition on General Recommendations
 
-# Appereance
+## Appereance
+
+- wallpaper
 - Grub theme / images
 - nice login 
 - Themes
 - Clean Grub entries
-
-- editorconfig
-- gravatar image on terminal!
+- script to display gravatar image on terminal
 
 
-# Check num lock on tty is working
-yay -S systemd-numlockontty
-systemctl enable numLockOnTty
 
+Task Manager — GTK2 process management application for Xfce.
+http://goodies.xfce.org/projects/applications/xfce4-taskmanager || xfce4-taskmanager

@@ -1,0 +1,13 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+# /dev/sda3
+UUID=110fd8b7-fab1-4d02-9a1a-4404ca11ba2c	/         	ext4      	rw,relatime	0 1
+
+# /dev/sda2
+UUID=ff4368c7-4402-4103-bc55-116f774acd94	none      	swap     	defaults  	0 0
+
+# /dev/sda9
+UUID=dcd98b64-f181-4353-bb3e-ce0f3c5d7425	/home/storage	ext4    	noauto,x-systemd.automount 0 2
+

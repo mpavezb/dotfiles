@@ -1,12 +1,14 @@
 # Software Description
 
-## User Information
+## Overview 
+
+User Information
 
 | User       | mpavezb  |
 | Hostname   | zenbook  |
 
 
-## Installation Overview
+Installation Overview
 
 | Component           | Choice              |
 | ------------------- | ------------------- |
@@ -23,7 +25,9 @@
 | Packages            | 771 (pacman)        |
 
 
-## Intensive Usage Applications
+## List of Applications and Tools
+
+### Intensive Usage Applications
 
 - Firefox
 - Skype
@@ -33,17 +37,16 @@
 - Guitar Pro
 - TeXstudio
 
-## Other Applications
+### Other Applications
+
 - Crop Tool
 - VLC
 - Torrent Client
 - PDF Viewer
-- system monitor
+- System monitor
 - Input Method Selector: EN, ES, DE, NB, JA
 
-
-
-## Sublime text
+## Sublime Text
 
 - Bracket Highlighter
 - ColorPicker
