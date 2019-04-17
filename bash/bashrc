@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# ===============================================
+# Shell Options
+# ===============================================
+shopt -s autocd         # change to named directory
+shopt -s checkwinsize   # rearrange lines on window resize
+shopt -s histappend     # do not overwrite history.
+shopt -s cmdhist        # save multi-line commands as single line.
+shopt -s cdspell        # autocorrects cd misspellings
+shopt -s dirspell       # corrects dirs during word completion.
+shopt -s expand_aliases # expand aliases.
+shopt -s dotglob        # include '.*' filenames in expansions. 
+
+# ignore duplicates and commands starting with spaces
+export HISTCONTROL=ignoredups:ignorespace
+
+# Set the default editor to vim.
+export EDITOR=vim
+
+# prompt
+export PS1="\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"
+
+
+# ===============================================
+# External configurations
+# ===============================================
+
+# Enable programmable completion features.
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
+fi
+
+# Add bash aliases.
+if [ -f ~/.bash_aliases ]; then
+    source ~/.bash_aliases
+fi

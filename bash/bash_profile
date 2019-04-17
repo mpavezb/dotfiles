@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Load .profile, containing login, non-bash related initializations.
+[[ -f ~/.profile ]] && source ~/.profile
+
+# Load .bashrc, containing non-login related bash initializations.
+[[ -f ~/.bashrc ]] && source ~/.bashrc
+
+# start X server
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+	exec startx
+fi

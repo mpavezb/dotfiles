@@ -1,19 +1,24 @@
 # mpavezb dotfiles
 
+## Overview
+
+- 
+- [Software description and applications](SOFTWARE.md)
+
+
+
+
 
 installation scripts
 browser markers
-
 .gitconfig
 .bash_profile
 .bash_aliases
 .bashrc
 .Xresources
 .xinitrc
-
 .urxvt/ext/font-size
 .config/fontconfig/fonts.conf
-
 
 .config/
 polybar
@@ -24,6 +29,7 @@ i3
 xfce4
 
 # try not to fill home with conf files. Move them to .config/<app-name>
+
 
 
 # Conffiles

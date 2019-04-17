@@ -6,6 +6,7 @@
 	- skype
 	- MEGA
 	- Dropbox
+- Removable Drive Menu
 - workspace
 - network manager
 	- ip
@@ -24,3 +25,4 @@
 - memory usage
 - cpu usage
 - disk usage
+- gravatar

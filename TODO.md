@@ -1,19 +1,17 @@
 To Do List for Arch Installation
 ====================================
 
-REMEMBER
------------
-
-# Check num lock on tty is working
-yay -S systemd-numlockontty
-systemctl enable numLockOnTty
-
-
 TO DO
 -------------
 
 # Usabilty
 - Folders
+- Open files with
+- workspace grid
+- crop tool
+- wallpaper
+- home on desktop
+- numlock enabled at start
 
 # Performance
 - NVIDIA
@@ -25,13 +23,11 @@ TO DO
 - Themes
 - Clean Grub entries
 
-
-# sublime packages
-- INI
-- 
+- editorconfig
+- gravatar image on terminal!
 
 
-torrent client
-pdf viewer
-system monitor
-Input Method: EN, ES, DE, NB, JA
+# Check num lock on tty is working
+yay -S systemd-numlockontty
+systemctl enable numLockOnTty
+
