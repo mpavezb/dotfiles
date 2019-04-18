@@ -28,5 +28,7 @@ cp $DIR/modules/i3.ini               $DEST/
 cp $DIR/modules/mpd.ini              $DEST/
 cp $DIR/modules/xbacklight.ini       $DEST/
 cp $DIR/modules/xwindow.ini          $DEST/
+cp $DIR/modules/nordvpn.ini          $DEST/
+cp $DIR/modules/nordvpn.sh           $DEST/
 
 

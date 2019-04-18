@@ -41,6 +41,7 @@ Installation Overview
 
 ### Other Applications
 
+- nordvpn
 - Crop Tool
 - VLC
 - Torrent Client
@@ -52,6 +53,6 @@ Installation Overview
 ## Sublime Text
 
 - Bracket Highlighter
-- ColorPicker
 - ColorSublime
 - INI
+- Text Pastry
