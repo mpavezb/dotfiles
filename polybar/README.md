@@ -15,6 +15,14 @@
 ```
 See: https://github.com/jaagr/polybar
 
+## Unicode Icons
+
+- Look for icons here  : https://material.io/tools/icons/?icon=cached&style=baseline
+- Get icon code here   : https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
+- Copy it from terminal: `echo -ne "\uf026" | xclip -selection clipboard`
+- Paste into polybar INI module.
+
+
 ## TODO
 
 ### Important
