@@ -163,12 +163,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        # status_command i3status
-        # i3bar_command $HOME/.config/polybar/launch.sh
-}
+# No i3 bar!. We use the polybar instead.
+#bar { }
 
 # In i3, '--no-startup-id disables startup notifications for
 # this window. They are used to properly launch windows on the
@@ -181,5 +177,5 @@ bar {
 # exec --no-startup-id xfce4-power-manager &
 # exec --no-startup-id nm-applet &
 # exec --no-startup-id blueman-applet &
-
 exec_always --no-startup-id $HOME/.config/polybar/launch.bash
+

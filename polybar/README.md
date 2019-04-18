@@ -18,10 +18,8 @@ See: https://github.com/jaagr/polybar
 ## TODO
 
 ### Urgent
-- fix backlight
-- VPN
 - keyboard map
-
+- fix backlight
 
 ### Important
 - fix mpd

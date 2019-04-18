@@ -2,9 +2,9 @@
 
 
 ## Urgent
-- xfce4
-- polybar
+- TeXstudio not working
 - Input Method Selector: EN, ES, DE, NB, JA
+- xfce4
 
 ## Usabilty
 - Open files with
@@ -13,11 +13,11 @@
 - editorconfig
 
 ## Tools
+- polybar
 - task manager
 - crop tool
 - MEGA
 - Guitar Pro
-- TeXstudio not working
 - Torrent Client
 - PDF Viewer
 
