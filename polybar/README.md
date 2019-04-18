@@ -18,7 +18,6 @@ See: https://github.com/jaagr/polybar
 ## TODO
 
 ### Urgent
-- keyboard map
 - fix backlight
 
 ### Important

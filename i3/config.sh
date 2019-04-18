@@ -163,6 +163,7 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+
 # No i3 bar!. We use the polybar instead.
 #bar { }
 
@@ -172,10 +173,10 @@ bindsym $mod+r mode "resize"
 # mouse pointer while startup is in progress. In this case you’d
 # end up with an hourglass mouse pointer for 60 seconds.
 
-# exec --no-startup-id xfsettingsd --sm-client-disable & 
-# exec --no-startup-id xfce4-volumed &
-# exec --no-startup-id xfce4-power-manager &
-# exec --no-startup-id nm-applet &
-# exec --no-startup-id blueman-applet &
-exec_always --no-startup-id $HOME/.config/polybar/launch.bash
 
+# keyboard layout
+# bindsym $mod+space+3 exec setxkbmap de
+exec_always --no-startup-id "setxkbmap -option 'grp:win_space_toggle' -layout us,es"
+
+# polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.bash

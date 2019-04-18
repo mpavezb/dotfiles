@@ -3,7 +3,6 @@
 
 ## Urgent
 - TeXstudio not working
-- Input Method Selector: EN, ES, DE, NB, JA
 - xfce4
 
 ## Usabilty
@@ -11,6 +10,8 @@
 - workspace grid
 - numlock enabled at start
 - editorconfig
+- Input Method Selector binding for DE
+
 
 ## Tools
 - polybar
