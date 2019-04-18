@@ -17,9 +17,6 @@ See: https://github.com/jaagr/polybar
 
 ## TODO
 
-### Urgent
-- fix backlight
-
 ### Important
 - fix mpd
 - wired network: Invalid network interface. Enable Autoconnect!

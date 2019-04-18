@@ -38,6 +38,8 @@
 - script to display gravatar image on terminal
 
 
+pacman -S light
+
 
 Task Manager — GTK2 process management application for Xfce.
 http://goodies.xfce.org/projects/applications/xfce4-taskmanager || xfce4-taskmanager

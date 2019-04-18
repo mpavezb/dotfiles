@@ -26,7 +26,9 @@ cp $DIR/modules/filesystem.ini       $DEST/
 cp $DIR/modules/pulseaudio.ini       $DEST/
 cp $DIR/modules/i3.ini               $DEST/
 cp $DIR/modules/mpd.ini              $DEST/
-cp $DIR/modules/xbacklight.ini       $DEST/
+# cp $DIR/modules/backlight.ini        $DEST/
+cp $DIR/modules/backlight.sh         $DEST/
+cp $DIR/modules/backlight-scroll.ini $DEST/backlight.ini
 cp $DIR/modules/xwindow.ini          $DEST/
 cp $DIR/modules/nordvpn.ini          $DEST/
 cp $DIR/modules/nordvpn.sh           $DEST/
