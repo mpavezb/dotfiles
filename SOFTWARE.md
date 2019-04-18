@@ -4,6 +4,8 @@
 
 User Information
 
+| Concept    | Value    |
+| ---------- | -------- |
 | User       | mpavezb  |
 | Hostname   | zenbook  |
 

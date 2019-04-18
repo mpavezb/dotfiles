@@ -1,5 +1,31 @@
-# Desired Indicators
+# Polybar
 
+```
+==========================================================
+
+   mpavezb
+   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+
+==========================================================
+```
+See: https://github.com/jaagr/polybar
+
+## TODO
+
+- fix backlight
+- fix mpd
+- wired network: Invalid network interface. Enable Autoconnect!
+- fix power menu
+- VPN
+- battery alt - remaining time
+- wifi alt - IP
+- wired alt - IP
+- keyboard map
 - important apps
 	- spotify
 	- firefox
@@ -7,22 +33,8 @@
 	- MEGA
 	- Dropbox
 - Removable Drive Menu
-- workspace
-- network manager
-	- ip
-	- ISSD vs ethernet
-	- VPN
-	- download speed
-- battery
-	- %
-	- remaining time
-- keyboard map
-- datetime
-	- calendar
+- calendar
 - audio
 	- output interface
 	- output volume
-- memory usage
-- cpu usage
-- disk usage
-- gravatar
+
