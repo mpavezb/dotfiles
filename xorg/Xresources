@@ -21,4 +21,5 @@ URxvt.font-size.step:  1
 !URxvt.shading: 50
 
 
-#include "/home/mpavezb/dotfiles/xthemes/nord"
+#include "/home/mpavezb/dotfiles/xorg/themes/nord"
+

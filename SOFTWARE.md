@@ -47,6 +47,7 @@ Installation Overview
 - PDF Viewer
 - System monitor
 - Input Method Selector: EN, ES, DE, NB, JA
+- teamviewer: yay -S teamviewer
 
 ## Sublime Text
 
