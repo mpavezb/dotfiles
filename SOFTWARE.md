@@ -1,5 +1,12 @@
 # Software Description
 
+
+## REMEMBER TO ORGANIZE
+```bash
+pacman -S transmission-cli
+pacman -S fbida
+```
+
 ## Overview 
 
 User Information

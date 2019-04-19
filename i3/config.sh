@@ -176,7 +176,7 @@ bindsym $mod+r mode "resize"
 
 # keyboard layout
 # bindsym $mod+space+3 exec setxkbmap de
-exec_always --no-startup-id "setxkbmap -option 'grp:win_space_toggle' -layout us,es"
+exec_always "setxkbmap -option 'grp:win_space_toggle' -layout us,es"
 
 # polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.bash
