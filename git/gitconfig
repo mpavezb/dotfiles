@@ -9,6 +9,9 @@
 	name = matias pavez
 	email = matias.pavez.b@gmail.com
 
+[credential]
+	helper = cache --timeout=86400
+
 [core]
 	# - - - - - - - - - - - - - - - - - - - - - - - - 
 	#  Do NOT modify the EOL checking it's important 
@@ -22,6 +25,8 @@
 	; editor for commits 
 	editor = vim
 
+[push]
+	default = simple
 
 # - - - - - - Git Aliases - - - - - - - -
 [alias]
