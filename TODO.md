@@ -6,6 +6,7 @@
 - xfce4
 
 ## Usabilty
+- mousepad click
 - Open files with
 - workspace grid
 - numlock enabled at start
