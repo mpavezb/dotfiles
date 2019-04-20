@@ -33,6 +33,7 @@
 - e1af |  | data_usage
 - e000 |  | error
 - e001 |  | error_outline
+- e8ac |  | power_settings_new
 - xxxx |  | signal_wifi_0_bar
 - xxxx |  | signal_wifi_1_bar
 - xxxx |  | signal_wifi_2_bar
