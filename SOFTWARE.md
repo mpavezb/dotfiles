@@ -63,3 +63,4 @@ Installation Overview
 - ColorSublime
 - INI
 - Text Pastry
+- ColorHints

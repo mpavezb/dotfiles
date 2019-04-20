@@ -11,6 +11,7 @@ cp $DIR/launch.bash $DEST
 
 # configuration script
 cp $DIR/config.ini $DEST/config
+cp $DIR/colors.ini $DEST/
 
 # hardware
 cp $DIR/modules/cpu.ini              $DEST/

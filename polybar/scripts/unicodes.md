@@ -40,6 +40,7 @@
 - e1d8 |  | signal_wifi_4_bar
 - e1da |  | signal_wifi_off
 - e1db |  | storage
+- e627 |  | sync
 - e002 |  | warning
 
 # Font Awesome

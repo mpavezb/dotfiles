@@ -15,12 +15,12 @@ while true; do
         IP=$(nordvpn status | grep IP | tr -d ' ' | cut -d ':' -f2)
         SERVER=$(nordvpn status | grep server | tr -d ' ' | cut -d ':' -f2 | cut -d '.' -f1)
         if [ $t -eq 0 ]; then
-            echo " $SERVER"
+            echo "   $SERVER"
         else
-            echo " $SERVER $IP"
+            echo "   $SERVER %{F#666666}$IP%{F-}"
         fi
     else
-        echo -e "\ue000 VPN DISCONNECTED"
+        echo -e "%{F#f53c3c}\ue000   VPN DISCONNECTED%{F-}"
     fi
     sleep 1 &
     wait

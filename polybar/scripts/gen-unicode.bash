@@ -1,10 +1,11 @@
 #!/bin/bash
+# This script fills the unicodes.md file in this dir with matching unicode
+# icons in the system. They are copy-pasteable to other .ini files.
+# 
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 FILE=$DIR/unicodes.md
 TMPFILE=$(mktemp /tmp/dotfiles.unicode.XXXXXX)
-
-cp "${FILE}" "${FILE}.bkp"
 
 while IFS= read -r line
 do
