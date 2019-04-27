@@ -64,3 +64,5 @@ Installation Overview
 - INI
 - Text Pastry
 - ColorHints
+- EditorConfig
+
