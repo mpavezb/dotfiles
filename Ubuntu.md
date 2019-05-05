@@ -1,5 +1,10 @@
 # Ubuntu Configuration
 
+## HOME folder
+
+- do not hide, because this affects the 'ls' command. Only keep important files and folders.
+
+
 ## Gnome Shell
 
 ```bash
