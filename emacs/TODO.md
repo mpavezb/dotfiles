@@ -25,6 +25,13 @@ sudo apt install cmake libclang-dev
 ```
 
 ### Emacs packages
+
+```emacs
+M-x package-install RET markdown-mode
+M-x package-install RET markdown-preview-mode
+sudo apt-get install markdown
+```
+
 ```emacs
 M-x package-install RET company
 M-x package-install RET flycheck
