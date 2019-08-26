@@ -2,13 +2,15 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-echo " - Installing emacs configuration into '$HOME/.emacs'."
-cp $DIR/emacs     $HOME/.emacs
+echo "== Emacs settings installer === "
 
-echo " - Creating '$HOME/.emacs.d/lisp/ directory."
-mkdir -p $HOME/.emacs.d/lisp
+echo " - Creating '$HOME/.emacs.d/' dir."
+mkdir -p ${HOME}/.emacs.d/
 
-echo " - Copying lisp scripts into .emacs.d/"
-cp $DIR/lisp  -r  $HOME/.emacs.d/
+echo " - Linking settings scripts: '$HOME/.emacs.d/settings/' --> ${DIR}/settings/."
+ln -sf ${DIR}/settings/ ${HOME}/.emacs.d/
 
-echo "OK"
+echo " - Copying emacs entry point: '$HOME/.emacs.d/init.el' file."
+cp $DIR/init.el $HOME/.emacs.d/
+
+echo " - OK - "
