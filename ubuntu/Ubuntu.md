@@ -20,6 +20,7 @@ sudo apt-get install gnome-tweaks
 - Removable Drives Menu: https://extensions.gnome.org/extension/7/removable-drive-menu/
 - Alternate Tab: https://extensions.gnome.org/extension/15/alternatetab/
 - Workspace Grid (Unmantained!): https://extensions.gnome.org/extension/484/workspace-grid/
+- Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
 
 ### Testing period
 
