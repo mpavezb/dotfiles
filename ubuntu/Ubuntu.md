@@ -14,13 +14,19 @@ sudo apt-get install gnome-tweaks
 
 ### Extensions
 
+#### Important 
+- Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
+   - Alt Tab Cycles through apps on current workspace only.
+- Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
+   - Working Workspace grid.
+
+   
+
 - Extensions: https://extensions.gnome.org/extension/1036/extensions/
 - Sound Output Device Chooser: https://extensions.gnome.org/extension/906/sound-output-device-chooser/
-- No Annoyance: https://extensions.gnome.org/extension/1236/noannoyance/
 - Removable Drives Menu: https://extensions.gnome.org/extension/7/removable-drive-menu/
-- Alternate Tab: https://extensions.gnome.org/extension/15/alternatetab/
-- Workspace Grid (Unmantained!): https://extensions.gnome.org/extension/484/workspace-grid/
-- Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
+- No Annoyance: https://extensions.gnome.org/extension/1236/noannoyance/
+   - Removes window is ready notification
 
 ### Testing period
 
