@@ -1,34 +1,37 @@
 #!/bin/bash
+# prompt for bash: shows username, machine git
 #
-# author: matias.pavez.b@gmail.com
+# you can enable/disable:
+# - username
+# - machine name
+# - location
+# - prompt symbol
+# - git features
+#   - branch name
+#   - branch status
 #
-##################################################################################
-## PROMT para GIT
-# 
-# prompt adaptado para uso en repositorios git
-# al estar en un repo, muestra la rama actual en rojo o verde:
-#
-# - si no se está en un repositorio (o si se está en .git/), muestra:
-#   > user@pc-name:~/path/to/foo $
-#
-# - si se está en un repo limpio, en la rama "zork". El branch se ve en verde
-#   > user@pc-name:~/path/to/foo/repo (zork) $
-#
-# - si se está en un repo sucio, en la rama "zork". El branch se ve en rojo
-#   > user@pc-name:~/path/to/foo/repo {zork} $
-# 
-# Adaptado de:
-# http://mediadoneright.com/content/ultimate-git-ps1-bash-prompt
-#
-export PS1='\[\e]0;\u@\h: \w\a\]${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(git status &>/dev/null;\
-if [ $? -eq 0 ]; then \
-  echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
-  if [ "$?" -eq "0" ]; then \
-    echo "\[\033[0;32m\]"$(__git_ps1 " (%s)"); \
-  else \
-    echo "\[\033[0;91m\]"$(__git_ps1 " {%s}"); \
-  fi) \[\033[0m\]\$ "; \
-else \
-  echo "\[\033[0m\]\$ "; \
-fi)'
 
+function __prompt_bold  { echo "\[$(tput bold)\]";    }
+function __prompt_reset { echo "\[$(tput sgr0)\]"; }
+
+function __prompt_username {
+    echo "$(__prompt_bold)\u"
+}
+
+__prompt_command() {
+    PS1="$(__prompt_username) $ $(__prompt_reset)"
+}
+PROMPT_COMMAND=__prompt_command
+
+
+# export PS1='\[$(tput bold)\]\[$(tput setaf 1)\][\[$(tput setaf 3)\]\u\[$(tput setaf 2)\]@\[$(tput setaf 4)\]\h \[$(tput setaf 5)\]\W\[$(tput setaf 1)\]]\[$(tput setaf 7)\]$(git status &>/dev/null;\
+# if [ $? -eq 0 ]; then \
+#   echo "$(echo `git status` | grep "nothing to commit" > /dev/null 2>&1; \
+#   if [ "$?" -eq "0" ]; then \
+#     echo "\[\033[0;32m\]"$(__git_ps1 " (%s)"); \
+#   else \
+#     echo "\[\033[0;91m\]"$(__git_ps1 " {%s}"); \
+#   fi) \[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"; \
+# else \
+#   echo "\[$(tput setaf 7)\]\\$ \[$(tput sgr0)\]"; \
+# fi)'
