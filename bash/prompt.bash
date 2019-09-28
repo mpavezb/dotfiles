@@ -70,6 +70,17 @@ function __prompt_retcode  {
     fi
 }
 
+# TODO:
+# - # staged files    : git diff --numstat --cached  | wc -l
+# - # modified files  : git diff --numstat  | wc -l
+# - # untracked files : git ls-files --other --exclude-standard  | wc -l
+# - # stash entries   : git stash list | wc -l
+# - # merge conflicts
+# - # commits ahead of remote : 
+# - # commits behind remote   : 
+# - # braches diverged        :
+
+
 function __prompt_git {
     local MSG
     if git status &>/dev/null; then
@@ -103,3 +114,4 @@ __prompt_command() {
     PS1+=" $(__prompt_symbol) "
 }
 PROMPT_COMMAND=__prompt_command
+
