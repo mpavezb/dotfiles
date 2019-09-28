@@ -23,23 +23,23 @@
 function __format_reset { echo "\[\e[0m\]"; }
 function __format_bold  { echo "\[\e[1m\]$1\[\e[0m\]"; }
 
-# color table
-function __color_black    { echo "\[\e[30m\]$1\[\e[0m\]"; }
-function __color_red      { echo "\[\e[31m\]$1\[\e[0m\]"; }
-function __color_green    { echo "\[\e[32m\]$1\[\e[0m\]"; }
-function __color_yellow   { echo "\[\e[33m\]$1\[\e[0m\]"; }
-function __color_blue     { echo "\[\e[34m\]$1\[\e[0m\]"; }
-function __color_magenta  { echo "\[\e[35m\]$1\[\e[0m\]"; }
-function __color_cyan     { echo "\[\e[36m\]$1\[\e[0m\]"; }
-function __color_lgray    { echo "\[\e[37m\]$1\[\e[0m\]"; }
-function __color_dgray    { echo "\[\e[90m\]$1\[\e[0m\]"; }
-function __color_lred     { echo "\[\e[91m\]$1\[\e[0m\]"; }
-function __color_lgreen   { echo "\[\e[92m\]$1\[\e[0m\]"; }
-function __color_lyellow  { echo "\[\e[93m\]$1\[\e[0m\]"; }
-function __color_lblue    { echo "\[\e[94m\]$1\[\e[0m\]"; }
-function __color_lmagenta { echo "\[\e[95m\]$1\[\e[0m\]"; }
-function __color_lcyan    { echo "\[\e[96m\]$1\[\e[0m\]"; }
-function __color_white    { echo "\[\e[97m\]$1\[\e[0m\]"; }
+# color table (only apply color to non empty strings)
+function __color_black    { [ -z $1 ] && echo "" || echo "\[\e[30m\]$1\[\e[0m\]"; }
+function __color_red      { [ -z $1 ] && echo "" || echo "\[\e[31m\]$1\[\e[0m\]"; }
+function __color_green    { [ -z $1 ] && echo "" || echo "\[\e[32m\]$1\[\e[0m\]"; }
+function __color_yellow   { [ -z $1 ] && echo "" || echo "\[\e[33m\]$1\[\e[0m\]"; }
+function __color_blue     { [ -z $1 ] && echo "" || echo "\[\e[34m\]$1\[\e[0m\]"; }
+function __color_magenta  { [ -z $1 ] && echo "" || echo "\[\e[35m\]$1\[\e[0m\]"; }
+function __color_cyan     { [ -z $1 ] && echo "" || echo "\[\e[36m\]$1\[\e[0m\]"; }
+function __color_lgray    { [ -z $1 ] && echo "" || echo "\[\e[37m\]$1\[\e[0m\]"; }
+function __color_dgray    { [ -z $1 ] && echo "" || echo "\[\e[90m\]$1\[\e[0m\]"; }
+function __color_lred     { [ -z $1 ] && echo "" || echo "\[\e[91m\]$1\[\e[0m\]"; }
+function __color_lgreen   { [ -z $1 ] && echo "" || echo "\[\e[92m\]$1\[\e[0m\]"; }
+function __color_lyellow  { [ -z $1 ] && echo "" || echo "\[\e[93m\]$1\[\e[0m\]"; }
+function __color_lblue    { [ -z $1 ] && echo "" || echo "\[\e[94m\]$1\[\e[0m\]"; }
+function __color_lmagenta { [ -z $1 ] && echo "" || echo "\[\e[95m\]$1\[\e[0m\]"; }
+function __color_lcyan    { [ -z $1 ] && echo "" || echo "\[\e[96m\]$1\[\e[0m\]"; }
+function __color_white    { [ -z $1 ] && echo "" || echo "\[\e[97m\]$1\[\e[0m\]"; }
 
 # components
 function __prompt_username { __format_bold "$(__color_lblue    "\u")"; }
@@ -74,13 +74,10 @@ function __prompt_git_upstream {
     local RET
     local N_AHEAD="$(git status -sb | head -1 | grep -o "ahead [0-9]*"  | cut -d' ' -f2)"
     local N_BEHIND="$(git status -sb | head -1 | grep -o "behind [0-9]*" | cut -d' ' -f2)"
-
-    [ -z "${N_AHEAD}"  ] && N_AHEAD="0"
-    [ -z "${N_BEHIND}" ] && N_BEHIND=""
     
-    RET=
-    RET+="$(__color_blue  "${N_BEHIND}" )"
-    RET+="$(__color_green "${N_AHEAD}"  )"
+    RET=""
+    RET+="$(__color_blue  "${N_BEHIND}")"
+    RET+="$(__color_green "${N_AHEAD}")"
     echo "${RET}"
 }
 
@@ -88,7 +85,7 @@ function __prompt_git_stats {
     local RET
     local N_STAGED="$(git diff --numstat --cached  | wc -l)"
     local N_MODIFIED="$(git diff --numstat  | wc -l)"
-    local N_UNTRACKED="$(git status --porcelain 2>/dev/null | grep "^??" | wc -l)"
+    local N_UNTRACKED="$(git status --porcelain 2>/dev/null | grep -c "^??")"
     local STASH_SIZE="$(git stash list | wc -l)"
 
     N_STAGED=$(    [ "${N_STAGED}"    -eq 0 ] && echo "" || echo "+${N_STAGED}"    )
@@ -96,7 +93,7 @@ function __prompt_git_stats {
     N_UNTRACKED=$( [ "${N_UNTRACKED}" -eq 0 ] && echo "" || echo "?${N_UNTRACKED}" )
     STASH_SIZE=$(  [ "${STASH_SIZE}"  -eq 0 ] && echo "" || echo "!${STASH_SIZE}"  )
     
-    RET=
+    RET=""
     RET+="$(__color_blue   "${N_STAGED}"    )"
     RET+="$(__color_yellow "${N_MODIFIED}"  )"
     RET+="$(__color_red    "${N_UNTRACKED}" )"
@@ -123,11 +120,13 @@ function __prompt_git {
     local RET
     if git status &>/dev/null; then
 	RET="$(__prompt_git_branch)"
-	RET+="<"
-	RET+="$(__prompt_git_upstream)"
-	RET+="|"
-	RET+="$(__prompt_git_stats)"
-	RET+=">"
+
+	local UPSTREAM="$(__prompt_git_upstream)"
+	local STATS="$(__prompt_git_stats)"
+	if [ -n "${UPSTREAM}" ] || [ -n "${STATS}" ]; then
+	    RET+="<${UPSTREAM}|${STATS}>"
+	fi
+	
 	echo "${RET}"
     fi
 }
