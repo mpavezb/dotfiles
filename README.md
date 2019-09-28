@@ -2,7 +2,6 @@
 
 ## Overview
 
-- 
 - [Software description and applications](SOFTWARE.md)
 - [TODO List](TODO.md)
 
