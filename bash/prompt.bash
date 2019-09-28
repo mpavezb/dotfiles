@@ -3,7 +3,7 @@
 # (by mpavezb)
 #
 # TO DO:
-# - git merge/rebase
+# - git merge/rebase cases
 # - coloring for default terminal and my terminal
 # - show username@hostname and path in tab name
 
@@ -70,33 +70,65 @@ function __prompt_retcode  {
     fi
 }
 
-# TODO:
-# - # staged files    : git diff --numstat --cached  | wc -l
-# - # modified files  : git diff --numstat  | wc -l
-# - # untracked files : git ls-files --other --exclude-standard  | wc -l
-# - # stash entries   : git stash list | wc -l
-# - # merge conflicts
-# - # commits ahead of remote : git status -sb | head -1 | grep -o "ahead [0-9]*" | awk {'print $2'} 
-# - # commits behind remote   : 
-# - # braches diverged        :
+function __prompt_git_upstream {
+    local RET
+    local N_AHEAD="$(git status -sb | head -1 | grep -o "ahead [0-9]*"  | cut -d' ' -f2)"
+    local N_BEHIND="$(git status -sb | head -1 | grep -o "behind [0-9]*" | cut -d' ' -f2)"
 
+    [ -z "${N_AHEAD}"  ] && N_AHEAD="0"
+    [ -z "${N_BEHIND}" ] && N_BEHIND=""
+    
+    RET=
+    RET+="$(__color_blue  "${N_BEHIND}" )"
+    RET+="$(__color_green "${N_AHEAD}"  )"
+    echo "${RET}"
+}
+
+function __prompt_git_stats {
+    local RET
+    local N_STAGED="$(git diff --numstat --cached  | wc -l)"
+    local N_MODIFIED="$(git diff --numstat  | wc -l)"
+    local N_UNTRACKED="$(git status --porcelain 2>/dev/null | grep "^??" | wc -l)"
+    local STASH_SIZE="$(git stash list | wc -l)"
+
+    N_STAGED=$(    [ "${N_STAGED}"    -eq 0 ] && echo "" || echo "+${N_STAGED}"    )
+    N_MODIFIED=$(  [ "${N_MODIFIED}"  -eq 0 ] && echo "" || echo "+${N_MODIFIED}"  )
+    N_UNTRACKED=$( [ "${N_UNTRACKED}" -eq 0 ] && echo "" || echo "?${N_UNTRACKED}" )
+    STASH_SIZE=$(  [ "${STASH_SIZE}"  -eq 0 ] && echo "" || echo "!${STASH_SIZE}"  )
+    
+    RET=
+    RET+="$(__color_blue   "${N_STAGED}"    )"
+    RET+="$(__color_yellow "${N_MODIFIED}"  )"
+    RET+="$(__color_red    "${N_UNTRACKED}" )"
+    RET+="$(__color_dgray  "${STASH_SIZE}"  )"
+    echo "${RET}"
+}
+
+function __prompt_git_branch {
+    local MSG=$(git status)
+    if echo "${MSG}" | grep "nothing to commit" > /dev/null 2>&1; then
+	__color_lgreen "$(__git_ps1 " (%s)")";
+    elif echo "${MSG}" | grep "Changes not staged for commit" > /dev/null 2>&1; then
+	__color_lyellow "$(__git_ps1 " {%s}")";
+    elif echo "${MSG}" | grep "Untracked files" > /dev/null 2>&1; then
+	__color_lred "$(__git_ps1 " {%s}")";
+    elif echo "${MSG}" | grep "Changes to be committed" > /dev/null 2>&1; then
+	__color_lblue "$(__git_ps1 " {%s}")";
+    else
+	__color_lcyan "$(__git_ps1 " {%s}")";
+    fi
+}
 
 function __prompt_git {
-    local MSG
+    local RET
     if git status &>/dev/null; then
-	MSG=$(git status)
-	
-        if echo "${MSG}" | grep "nothing to commit" > /dev/null 2>&1; then
-	    __color_lgreen "$(__git_ps1 " (%s)")";
-	elif echo "${MSG}" | grep "Changes not staged for commit" > /dev/null 2>&1; then
-	    __color_lyellow "$(__git_ps1 " {%s}")";
-	elif echo "${MSG}" | grep "Untracked files" > /dev/null 2>&1; then
-	    __color_lred "$(__git_ps1 " {%s}")";
-	elif echo "${MSG}" | grep "Changes to be committed" > /dev/null 2>&1; then
-	    __color_lblue "$(__git_ps1 " {%s}")";
-	else
-	    __color_lcyan "$(__git_ps1 " {%s}")";
-	fi
+	RET="$(__prompt_git_branch)"
+	RET+="<"
+	RET+="$(__prompt_git_upstream)"
+	RET+="|"
+	RET+="$(__prompt_git_stats)"
+	RET+=">"
+	echo "${RET}"
     fi
 }
 
