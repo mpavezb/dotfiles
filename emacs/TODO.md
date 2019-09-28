@@ -5,7 +5,7 @@
 - Open last closed file
 - move line/selection up down
 - vertical cursors
-
+- Delete selected text when writting/copying
 
 ## Less important
 
