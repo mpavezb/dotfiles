@@ -76,7 +76,7 @@ function __prompt_retcode  {
 # - # untracked files : git ls-files --other --exclude-standard  | wc -l
 # - # stash entries   : git stash list | wc -l
 # - # merge conflicts
-# - # commits ahead of remote : 
+# - # commits ahead of remote : git status -sb | head -1 | grep -o "ahead [0-9]*" | awk {'print $2'} 
 # - # commits behind remote   : 
 # - # braches diverged        :
 
