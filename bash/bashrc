@@ -32,8 +32,8 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
 fi
 
 # Prompt for bash and git  
-if [ -f ~/.dotfiles/bash/prompt ]; then
-    source ~/.dotfiles/bash/prompt
+if [ -f ~/.dotfiles/bash/prompt.bash ]; then
+    source ~/.dotfiles/bash/prompt.bash
 fi
 
 # Add bash aliases.

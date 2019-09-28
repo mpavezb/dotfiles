@@ -4,7 +4,7 @@
 # TO DO:
 # - git features
 # - coloring for default terminal and my terminal
-# - leave username@hostname
+# - show username@hostname and path in tab name
 
 # font style
 function __prompt_reset { echo "\[$(tput sgr0)\]"; }
@@ -19,7 +19,6 @@ function __color_blue    { echo "\[$(tput setaf 4)\]$1"; }
 function __color_purple  { echo "\[$(tput setaf 5)\]$1"; }
 function __color_cyan    { echo "\[$(tput setaf 6)\]$1"; }
 
-
 # components
 function __prompt_username { __prompt_bold "$(__color_blue   "\u")"; }
 function __prompt_hostname { __prompt_bold "$(__color_blue   "\h")"; }
@@ -31,8 +30,8 @@ function __prompt_path     {
 
     # keep first character for each dir.
     # also keep first letter for hidden directories
-    PPATH="$(sed "s:\([^/\.]\)[^/]*/:\1/:g" <<<$PPATH)" 
-    __prompt_bold "$(__color_yellow   "$PPATH")";
+    PPATH="$(sed "s:\([^/\.]\)[^/]*/:\1/:g" <<<"${PPATH}")" 
+    __prompt_bold "$(__color_yellow   "${PPATH}")";
 }
 function __prompt_time     { __prompt_bold "$(__color_purple "\t")"; }
 function __prompt_symbol   { __prompt_bold "\$"; }
@@ -50,9 +49,9 @@ function __prompt_git {
 
     if git status &>/dev/null; then
         if git status | grep "nothing to commit" > /dev/null 2>&1; then
-	    echo "\[\033[0;32m\]"$(__git_ps1 " (%s)");
+	    echo "\[\033[0;32m\]$(__git_ps1 " (%s)")";
 	else
-	    echo "\[\033[0;91m\]"$(__git_ps1 " {%s}");
+	    echo "\[\033[0;91m\]$(__git_ps1 " {%s}")";
 	fi
     fi
 }
@@ -72,4 +71,3 @@ __prompt_command() {
     PS1+=" $(__prompt_reset)"
 }
 PROMPT_COMMAND=__prompt_command
-
