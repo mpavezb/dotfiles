@@ -24,22 +24,22 @@ function __format_reset { echo "\[\e[0m\]"; }
 function __format_bold  { echo "\[\e[1m\]$1\[\e[0m\]"; }
 
 # color table (only apply color to non empty strings)
-function __color_black    { [ -z $1 ] && echo "" || echo "\[\e[30m\]$1\[\e[0m\]"; }
-function __color_red      { [ -z $1 ] && echo "" || echo "\[\e[31m\]$1\[\e[0m\]"; }
-function __color_green    { [ -z $1 ] && echo "" || echo "\[\e[32m\]$1\[\e[0m\]"; }
-function __color_yellow   { [ -z $1 ] && echo "" || echo "\[\e[33m\]$1\[\e[0m\]"; }
-function __color_blue     { [ -z $1 ] && echo "" || echo "\[\e[34m\]$1\[\e[0m\]"; }
-function __color_magenta  { [ -z $1 ] && echo "" || echo "\[\e[35m\]$1\[\e[0m\]"; }
-function __color_cyan     { [ -z $1 ] && echo "" || echo "\[\e[36m\]$1\[\e[0m\]"; }
-function __color_lgray    { [ -z $1 ] && echo "" || echo "\[\e[37m\]$1\[\e[0m\]"; }
-function __color_dgray    { [ -z $1 ] && echo "" || echo "\[\e[90m\]$1\[\e[0m\]"; }
-function __color_lred     { [ -z $1 ] && echo "" || echo "\[\e[91m\]$1\[\e[0m\]"; }
-function __color_lgreen   { [ -z $1 ] && echo "" || echo "\[\e[92m\]$1\[\e[0m\]"; }
-function __color_lyellow  { [ -z $1 ] && echo "" || echo "\[\e[93m\]$1\[\e[0m\]"; }
-function __color_lblue    { [ -z $1 ] && echo "" || echo "\[\e[94m\]$1\[\e[0m\]"; }
-function __color_lmagenta { [ -z $1 ] && echo "" || echo "\[\e[95m\]$1\[\e[0m\]"; }
-function __color_lcyan    { [ -z $1 ] && echo "" || echo "\[\e[96m\]$1\[\e[0m\]"; }
-function __color_white    { [ -z $1 ] && echo "" || echo "\[\e[97m\]$1\[\e[0m\]"; }
+function __color_black    { [ -z "$1" ] && echo "" || echo "\[\e[30m\]$1\[\e[0m\]"; }
+function __color_red      { [ -z "$1" ] && echo "" || echo "\[\e[31m\]$1\[\e[0m\]"; }
+function __color_green    { [ -z "$1" ] && echo "" || echo "\[\e[32m\]$1\[\e[0m\]"; }
+function __color_yellow   { [ -z "$1" ] && echo "" || echo "\[\e[33m\]$1\[\e[0m\]"; }
+function __color_blue     { [ -z "$1" ] && echo "" || echo "\[\e[34m\]$1\[\e[0m\]"; }
+function __color_magenta  { [ -z "$1" ] && echo "" || echo "\[\e[35m\]$1\[\e[0m\]"; }
+function __color_cyan     { [ -z "$1" ] && echo "" || echo "\[\e[36m\]$1\[\e[0m\]"; }
+function __color_lgray    { [ -z "$1" ] && echo "" || echo "\[\e[37m\]$1\[\e[0m\]"; }
+function __color_dgray    { [ -z "$1" ] && echo "" || echo "\[\e[90m\]$1\[\e[0m\]"; }
+function __color_lred     { [ -z "$1" ] && echo "" || echo "\[\e[91m\]$1\[\e[0m\]"; }
+function __color_lgreen   { [ -z "$1" ] && echo "" || echo "\[\e[92m\]$1\[\e[0m\]"; }
+function __color_lyellow  { [ -z "$1" ] && echo "" || echo "\[\e[93m\]$1\[\e[0m\]"; }
+function __color_lblue    { [ -z "$1" ] && echo "" || echo "\[\e[94m\]$1\[\e[0m\]"; }
+function __color_lmagenta { [ -z "$1" ] && echo "" || echo "\[\e[95m\]$1\[\e[0m\]"; }
+function __color_lcyan    { [ -z "$1" ] && echo "" || echo "\[\e[96m\]$1\[\e[0m\]"; }
+function __color_white    { [ -z "$1" ] && echo "" || echo "\[\e[97m\]$1\[\e[0m\]"; }
 
 # components
 function __prompt_username { __format_bold "$(__color_lblue    "\u")"; }
@@ -60,7 +60,8 @@ function __prompt_path     {
 }
 
 function __prompt_retcode  {
-    local EXIT_CODE="$1"    
+    local EXIT_CODE
+    EXIT_CODE="$1"    
     if [ "${EXIT_CODE}" = 0 ]; then
 	#__format_bold "$(__color_lgreen "[^-^]]/°")";
 	echo ""
@@ -72,8 +73,10 @@ function __prompt_retcode  {
 
 function __prompt_git_upstream {
     local RET
-    local N_AHEAD="$(git status -sb | head -1 | grep -o "ahead [0-9]*"  | cut -d' ' -f2)"
-    local N_BEHIND="$(git status -sb | head -1 | grep -o "behind [0-9]*" | cut -d' ' -f2)"
+    local N_AHEAD
+    local N_BEHIND
+    N_AHEAD="$(git status -sb | head -1 | grep -o "ahead [0-9]*"  | cut -d' ' -f2)"
+    N_BEHIND="$(git status -sb | head -1 | grep -o "behind [0-9]*" | cut -d' ' -f2)"
     
     RET=""
     RET+="$(__color_blue  "${N_BEHIND}")"
@@ -83,10 +86,14 @@ function __prompt_git_upstream {
 
 function __prompt_git_stats {
     local RET
-    local N_STAGED="$(git diff --numstat --cached  | wc -l)"
-    local N_MODIFIED="$(git diff --numstat  | wc -l)"
-    local N_UNTRACKED="$(git status --porcelain 2>/dev/null | grep -c "^??")"
-    local STASH_SIZE="$(git stash list | wc -l)"
+    local N_STAGED
+    local N_MODIFIED
+    local N_UNTRACKED
+    local STASH_SIZE
+    N_STAGED="$(git diff --numstat --cached  | wc -l)"
+    N_MODIFIED="$(git diff --numstat  | wc -l)"
+    N_UNTRACKED="$(git status --porcelain 2>/dev/null | grep -c "^??")"
+    STASH_SIZE="$(git stash list | wc -l)"
 
     N_STAGED=$(    [ "${N_STAGED}"    -eq 0 ] && echo "" || echo "+${N_STAGED}"    )
     N_MODIFIED=$(  [ "${N_MODIFIED}"  -eq 0 ] && echo "" || echo "+${N_MODIFIED}"  )
@@ -102,7 +109,8 @@ function __prompt_git_stats {
 }
 
 function __prompt_git_branch {
-    local MSG=$(git status)
+    local MSG
+    MSG=$(git status)
     if echo "${MSG}" | grep "nothing to commit" > /dev/null 2>&1; then
 	__color_lgreen "$(__git_ps1 " (%s)")";
     elif echo "${MSG}" | grep "Changes not staged for commit" > /dev/null 2>&1; then
@@ -118,15 +126,15 @@ function __prompt_git_branch {
 
 function __prompt_git {
     local RET
+    local UPSTREAM
+    local STATS
     if git status &>/dev/null; then
 	RET="$(__prompt_git_branch)"
-
-	local UPSTREAM="$(__prompt_git_upstream)"
-	local STATS="$(__prompt_git_stats)"
+        UPSTREAM="$(__prompt_git_upstream)"
+	STATS="$(__prompt_git_stats)"
 	if [ -n "${UPSTREAM}" ] || [ -n "${STATS}" ]; then
 	    RET+="<${UPSTREAM}|${STATS}>"
 	fi
-	
 	echo "${RET}"
     fi
 }
