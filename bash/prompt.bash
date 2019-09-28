@@ -51,15 +51,15 @@ function __prompt_git {
 	MSG=$(git status)
 	
         if echo "${MSG}" | grep "nothing to commit" > /dev/null 2>&1; then
-	    echo "\[\033[0;32m\]$(__git_ps1 " (%s)")";
+	    echo "\[\033[0;92m\]$(__git_ps1 " (%s)")";
 	elif echo "${MSG}" | grep "Changes not staged for commit" > /dev/null 2>&1; then
 	    echo "\[\033[0;93m\]$(__git_ps1 " {%s}")";
-
 	elif echo "${MSG}" | grep "Untracked files" > /dev/null 2>&1; then
 	    echo "\[\033[0;91m\]$(__git_ps1 " {%s}")";
+	elif echo "${MSG}" | grep "Changes to be committed" > /dev/null 2>&1; then
+	    echo "\[\033[0;94m\]$(__git_ps1 " {%s}")";
 	else
-	    
-	    echo "\[\033[0;92m\]$(__git_ps1 " {%s}")";
+	    echo "\[\033[0;96m\]$(__git_ps1 " {%s}")";
 	fi
     fi
 }
