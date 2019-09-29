@@ -28,9 +28,6 @@
 ;; GUI
 (load (mpb-get-fullpath "settings/gui.el"))
 
-;; IDO mode
-(load (mpb-get-fullpath "settings/ido.el"))
-
 ;; Uniquify
 ;; meaningful names for buffers with the same name
 (load (mpb-get-fullpath "settings/uniquify.el"))
@@ -38,10 +35,21 @@
 ;; Editor
 (load (mpb-get-fullpath "settings/editor.el"))
 
-;; Projectile + Neotree
-(load (mpb-get-fullpath "settings/projectile.el"))
+;; Neotree
 (load (mpb-get-fullpath "settings/neotree.el"))
+
+;; IDO mode
+;;(load (mpb-get-fullpath "settings/ido.el"))
+
+;; Helm
+(load (mpb-get-fullpath "settings/helm.el"))
+
+;; Projectile
+(load (mpb-get-fullpath "settings/projectile.el"))
+
+;; Integrations
 (load (mpb-get-fullpath "settings/neotree-projectile.el"))
+(load (mpb-get-fullpath "settings/helm-projectile.el"))
 
 ;; ORG mode
 (load (mpb-get-fullpath "settings/org.el"))
@@ -51,7 +59,6 @@
 
 ;; XML Mode
 (load (mpb-get-fullpath "settings/xml.el"))
-
 
 ;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
 (modern-c++-font-lock-global-mode t)
