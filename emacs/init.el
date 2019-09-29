@@ -38,8 +38,10 @@
 ;; Editor
 (load (mpb-get-fullpath "settings/editor.el"))
 
-;; Projectile
+;; Projectile + Neotree
 (load (mpb-get-fullpath "settings/projectile.el"))
+(load (mpb-get-fullpath "settings/neotree.el"))
+(load (mpb-get-fullpath "settings/neotree-projectile.el"))
 
 ;; ORG mode
 (load (mpb-get-fullpath "settings/org.el"))
