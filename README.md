@@ -11,5 +11,3 @@
 - Scripts must check before sourcing stuff.
 - Application scripts are self-contained into each folder. 
 - Keep everything under .config/<app-name>.
-
-test
