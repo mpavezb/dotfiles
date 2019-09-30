@@ -49,6 +49,10 @@
 ;; auto reload files from disk
 (global-auto-revert-mode t)
 
+;; history size
+(setq history-length 1000)
+(setq savehist-mode t)
+
 ;; force newline at EOF
 ;;(setq require-final-newline t)
 
