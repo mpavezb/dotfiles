@@ -54,5 +54,9 @@
 
 ;; Efficient version control.
 (use-package magit
-  :config (global-set-key (kbd "C-x g") 'magit-status)
-)
+  :config (global-set-key (kbd "C-x g") 'magit-status))
+
+(use-package git-timemachine
+  :config (global-set-key (kbd "C-x C-g") 'git-timemachine))
+
+;; vc annotate: C-x v g
