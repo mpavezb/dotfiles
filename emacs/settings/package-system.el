@@ -25,3 +25,22 @@
 
 ; prevents stale elisp bytecode from shadowing more up-to-date source files.
 (setq load-prefer-newer t)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; use-package
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Auto install 
+;; Unless it's already installed, update the packages archives,
+;; then install the most recent version of “use-package”.
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+
+;; Now we can require packages like this to auto install them.
+;; (use-package XYZ :ensure t)
+
+;; Auto install used packages.
+(setq use-package-always-ensure t)

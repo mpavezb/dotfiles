@@ -1,7 +1,7 @@
 ;; Neotree
 ;; Project Navigation Sidebar
 ;; https://www.emacswiki.org/emacs/NeoTree
-(require 'neotree)
+(use-package neotree)
 (add-to-list 'package-pinned-packages '(neotree . "melpa-stable") t)
 
 ;; Use F8 to toggle neotree
@@ -18,5 +18,4 @@
 ;; M-x all-the-icons-install-fonts
 ;; (require 'all-the-icons)
 (setq neo-theme (if (display-graphic-p) 'ascii))
-
 

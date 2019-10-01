@@ -6,28 +6,28 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Emacs desktop-save-mode uses a lock file which is not removed
-;; when a crash ocurrs. This function removes this lock file before
-;; the next emacs instance tries to acquire it. 
-(require 'desktop)
-(defun my-remove-stale-lock-file (dir)
-  (let ((pid (desktop-owner dir)))
-    (when pid
-      (let ((infile nil)
-            (destination nil)
-            (display nil))
-        (unless (= (call-process "ps" infile destination display "-p"
-                                 (number-to-string pid)) 0)
-          (let ((lock-fn (desktop-full-lock-name dir)))
-            (delete-file lock-fn)))))))
+;; ;; Emacs desktop-save-mode uses a lock file which is not removed
+;; ;; when a crash ocurrs. This function removes this lock file before
+;; ;; the next emacs instance tries to acquire it. 
+;; (require 'desktop)
+;; (defun my-remove-stale-lock-file (dir)
+;;   (let ((pid (desktop-owner dir)))
+;;     (when pid
+;;       (let ((infile nil)
+;;             (destination nil)
+;;             (display nil))
+;;         (unless (= (call-process "ps" infile destination display "-p"
+;;                                  (number-to-string pid)) 0)
+;;           (let ((lock-fn (desktop-full-lock-name dir)))
+;;             (delete-file lock-fn)))))))
 
-;; ;; remember buffers between sessions
-(desktop-save-mode 1)
-;; (let ((dir user-emacs-directory))
-;;   (my-remove-stale-lock-file dir)
-;;   (setq desktop-path (list dir))
-;;   (desktop-save-mode 1))
-;; (desktop-read)
+;; ;; ;; remember buffers between sessions
+;; (desktop-save-mode 1)
+;; ;; (let ((dir user-emacs-directory))
+;; ;;   (my-remove-stale-lock-file dir)
+;; ;;   (setq desktop-path (list dir))
+;; ;;   (desktop-save-mode 1))
+;; ;; (desktop-read)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; misc
@@ -40,14 +40,9 @@
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
 
-;; highlight parenthesis
-(show-paren-mode 1)
-
 ;; show row,column numbers
-(setq column-number-mode t)
-
-;; auto reload files from disk
-(global-auto-revert-mode t)
+(column-number-mode t)
+(line-number-mode t)
 
 ;; history size
 (setq history-length 1000)
@@ -59,7 +54,35 @@
 ;; prefer spaces over tabs
 ;;(setq-default indent-tabs-mode nil)
 
+;; Make it very easy to see the line with the cursor.
+(global-hl-line-mode t)
 
+;; selected region is deleted when typing.
+(delete-selection-mode 1)
+
+
+;; Highlight expression within matching parens when near one of them.
+(setq show-paren-delay 0)
+(setq blink-matching-paren nil)
+(setq show-paren-style 'expression)
+(show-paren-mode 1)
+
+;; Colour parens, and other delimiters, depending on their depth.
+;; Very useful for parens heavy languages like Lisp.
+(use-package rainbow-delimiters)
+(add-hook 'org-mode-hook
+  '(lambda () (rainbow-delimiters-mode 1)))
+(add-hook 'prog-mode-hook
+	  '(lambda () (rainbow-delimiters-mode 1)))
+(electric-pair-mode 1)
+(setq electric-pair-pairs
+      '(
+        (?~ . ?~)
+        (?* . ?*)
+        (?/ . ?/)
+       ))
+
+;; sample: (blue (purple (forest (green (yellow (blue))))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Kill-Yank for Clipboard and Mouse
@@ -88,6 +111,12 @@
 	      (size 9 -1 :right) " "
               (mode 16 16 :left :elide) " " filename-and-process)
         (mark " " (name 16 -1) " " filename)))
+
+;; auto reload files from disk
+(global-auto-revert-mode t)
+
+;; Reload buffer shortcut
+(global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Reopen killed buffers
@@ -150,3 +179,23 @@ Emacs session."
 ;; Allows expansion for autocompletion (given an interesting source)
 ;; https://www.emacswiki.org/emacs/HippieExpand
 (global-set-key (kbd "M-/") 'hippie-expand)
+
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; other
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; ;; Enable ‘possibly confusing commands’
+;; (put 'downcase-region 'disabled nil)
+;; (put 'upcase-region 'disabled nil)
+;; (put 'narrow-to-region 'disabled nil)
+;; (put 'narrow-to-page 'disabled nil)
+
+
+;; ;; M-k kills to the left (Dual to C-k)
+;; (global-set-key "\M-k" '(lambda () (interactive) (kill-line 0)) )
+
+;; Kill current buffer; prompt only if there are unsaved changes.
+(global-set-key (kbd "C-x k")
+  '(lambda () (interactive) (kill-buffer (current-buffer))))

@@ -39,17 +39,17 @@
 (load (mpb-get-fullpath "settings/neotree.el"))
 
 ;; IDO mode
-;;(load (mpb-get-fullpath "settings/ido.el"))
+(load (mpb-get-fullpath "settings/ido.el"))
 
 ;; Helm
-(load (mpb-get-fullpath "settings/helm.el"))
+;;(load (mpb-get-fullpath "settings/helm.el"))
 
 ;; Projectile
 (load (mpb-get-fullpath "settings/projectile.el"))
 
 ;; Integrations
 (load (mpb-get-fullpath "settings/neotree-projectile.el"))
-(load (mpb-get-fullpath "settings/helm-projectile.el"))
+;; (load (mpb-get-fullpath "settings/helm-projectile.el"))
 
 ;; ORG mode
 (load (mpb-get-fullpath "settings/org.el"))
