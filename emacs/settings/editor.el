@@ -6,32 +6,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; ;; Emacs desktop-save-mode uses a lock file which is not removed
-;; ;; when a crash ocurrs. This function removes this lock file before
-;; ;; the next emacs instance tries to acquire it. 
-;; (require 'desktop)
-;; (defun my-remove-stale-lock-file (dir)
-;;   (let ((pid (desktop-owner dir)))
-;;     (when pid
-;;       (let ((infile nil)
-;;             (destination nil)
-;;             (display nil))
-;;         (unless (= (call-process "ps" infile destination display "-p"
-;;                                  (number-to-string pid)) 0)
-;;           (let ((lock-fn (desktop-full-lock-name dir)))
-;;             (delete-file lock-fn)))))))
-
-;; ;; ;; remember buffers between sessions
-;; (desktop-save-mode 1)
-;; ;; (let ((dir user-emacs-directory))
-;; ;;   (my-remove-stale-lock-file dir)
-;; ;;   (setq desktop-path (list dir))
-;; ;;   (desktop-save-mode 1))
-;; ;; (desktop-read)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; misc
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; store backups inside user-emacs-directory.
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 
@@ -39,6 +13,13 @@
 (require 'saveplace)
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
+
+;; remember opened buffers
+(desktop-save-mode 1)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; misc
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; show row,column numbers
 (column-number-mode t)
