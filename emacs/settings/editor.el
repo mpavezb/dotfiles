@@ -191,4 +191,9 @@ Emacs session."
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
 
+;; Expand Region
+;; https://github.com/magnars/expand-region.el
+(use-package expand-region)
+(global-set-key (kbd "M-+") 'er/expand-region)
+(global-set-key (kbd "M--") 'er/contract-region)
 
