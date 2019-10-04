@@ -129,7 +129,7 @@ function __prompt_git {
     local UPSTREAM
     local STATS
     if git status &>/dev/null; then
-	RET="$(__prompt_git_branch)"
+	RET+="$(__prompt_git_branch)"
         UPSTREAM="$(__prompt_git_upstream)"
 	STATS="$(__prompt_git_stats)"
 	if [ -n "${UPSTREAM}" ] || [ -n "${STATS}" ]; then
