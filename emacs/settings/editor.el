@@ -27,7 +27,7 @@
 
 ;; history size
 (setq history-length 1000)
-(setq savehist-mode t)
+(savehist-mode 1)
 
 ;; force newline at EOF
 ;;(setq require-final-newline t)
@@ -136,7 +136,6 @@ Emacs session."
           (setq killed-file-list (cl-delete file killed-file-list :test #'equal))
           (find-file file)))
     (error "No recently-killed files to reopen")))
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
