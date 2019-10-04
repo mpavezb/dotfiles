@@ -180,3 +180,15 @@ Emacs session."
 ;; Kill current buffer; prompt only if there are unsaved changes.
 (global-set-key (kbd "C-x k")
   '(lambda () (interactive) (kill-buffer (current-buffer))))
+
+
+;; Multiple Cursors
+;; https://github.com/magnars/multiple-cursors.el
+(use-package multiple-cursors)
+(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
+
+
