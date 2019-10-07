@@ -196,3 +196,18 @@ Emacs session."
 (global-set-key (kbd "M-+") 'er/expand-region)
 (global-set-key (kbd "M--") 'er/contract-region)
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Utils
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Put filename in clipboard
+(defun mp/put-buffername-on-clipboard ()
+  "Put the current buffer name on the clipboard"
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (abbreviate-file-name buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message filename))))
