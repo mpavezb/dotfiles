@@ -151,6 +151,9 @@ __prompt_command() {
     PS1+="$(__format_bold "]")"
     PS1+="$(__prompt_git)"
     PS1+=" $(__prompt_symbol) "
+
+    # change terminal title to show current directory
+    PS1+="\[\e]2; \"${PWD/${HOME}/\~}\"\a \]"
 }
 PROMPT_COMMAND=__prompt_command
 
