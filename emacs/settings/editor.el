@@ -211,3 +211,7 @@ Emacs session."
     (when filename
       (kill-new filename)
       (message filename))))
+
+;; Move line or selected region up and down (M-Up/Down)
+(use-package move-text)
+(move-text-default-bindings)
