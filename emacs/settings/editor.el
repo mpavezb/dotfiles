@@ -10,7 +10,7 @@
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 
 ;; remember point position when reopening/revisiting each buffer
-(require 'saveplace)
+(use-package saveplace)
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
 

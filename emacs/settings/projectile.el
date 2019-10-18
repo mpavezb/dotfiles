@@ -1,4 +1,4 @@
-(require 'projectile)
+(require projectile)
 (add-to-list 'package-pinned-packages '(projectile . "melpa-stable") t)
 
 (progn

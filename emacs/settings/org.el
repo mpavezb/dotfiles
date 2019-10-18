@@ -1,5 +1,5 @@
 ;; org mode
-(require 'org)
+(use-package org)
 
 ;; automatic org-mode for org files.
 (add-to-list 'auto-mode-alist '("\\.org$ . org-mode"))
