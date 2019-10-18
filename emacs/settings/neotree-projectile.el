@@ -1,7 +1,7 @@
 ;; Neotree - Projectile integration
 
 ;; Reset F8 keybiding, to open neotree at project root. 
-(defun neotree-project-dir ()
+(defun mp/neotree-project-dir ()
     "Open NeoTree using the git root."
     (interactive)
     (let ((project-dir (projectile-project-root))
@@ -13,7 +13,7 @@
                 (neotree-dir project-dir)
                 (neotree-find file-name)))
         (message "Could not find git project root."))))
-(global-set-key [f8] 'neotree-project-dir)
+(global-set-key [f8] 'mp/neotree-project-dir)
 
 ;; Reload neotree when projectile changes project
 (setq projectile-switch-project-action 'neotree-projectile-action)

@@ -12,7 +12,7 @@
 (message "Matias Pavez's Emacs Settings")
 (message "=============================")
 
-(defun mpb-get-fullpath (@file-relative-path)
+(defun mp/get-fullpath (@file-relative-path)
   "Returns the full path, relative to caller's file location"
   (concat (file-name-directory (or load-file-name buffer-file-name)) @file-relative-path)
 )
@@ -23,45 +23,45 @@
 ;; ===============================================================
 
 ;; Package system
-(load (mpb-get-fullpath "settings/package-system.el"))
+(load (mp/get-fullpath "settings/package-system.el"))
 
 ;; GUI
-(load (mpb-get-fullpath "settings/gui.el"))
+(load (mp/get-fullpath "settings/gui.el"))
 
 ;; Uniquify
 ;; meaningful names for buffers with the same name
-(load (mpb-get-fullpath "settings/uniquify.el"))
+(load (mp/get-fullpath "settings/uniquify.el"))
 
 ;; Editor
-(load (mpb-get-fullpath "settings/editor.el"))
+(load (mp/get-fullpath "settings/editor.el"))
 
 ;; Neotree
-(load (mpb-get-fullpath "settings/neotree.el"))
+(load (mp/get-fullpath "settings/neotree.el"))
 
 ;; IDO mode
-(load (mpb-get-fullpath "settings/ido.el"))
+(load (mp/get-fullpath "settings/ido.el"))
 
 ;; Helm
-;;(load (mpb-get-fullpath "settings/helm.el"))
+;;(load (mp/get-fullpath "settings/helm.el"))
 
 ;; Projectile
-(load (mpb-get-fullpath "settings/projectile.el"))
+(load (mp/get-fullpath "settings/projectile.el"))
 
 ;; Integrations
-(load (mpb-get-fullpath "settings/neotree-projectile.el"))
-;; (load (mpb-get-fullpath "settings/helm-projectile.el"))
+(load (mp/get-fullpath "settings/neotree-projectile.el"))
+;; (load (mp/get-fullpath "settings/helm-projectile.el"))
 
 ;; ORG mode
-(load (mpb-get-fullpath "settings/org.el"))
+(load (mp/get-fullpath "settings/org.el"))
 
 ;; Bazel Mode
-(load (mpb-get-fullpath "settings/bazel.el"))
+(load (mp/get-fullpath "settings/bazel.el"))
 
 ;; XML Mode
-(load (mpb-get-fullpath "settings/xml.el"))
+(load (mp/get-fullpath "settings/xml.el"))
 
 ;; Themes
-(load (mpb-get-fullpath "settings/themes.el"))
+(load (mp/get-fullpath "settings/themes.el"))
 
 ;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
 (modern-c++-font-lock-global-mode t)
