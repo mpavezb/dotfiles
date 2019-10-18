@@ -16,4 +16,4 @@
 (global-set-key [f8] 'mp/neotree-project-dir)
 
 ;; Reload neotree when projectile changes project
-(setq projectile-switch-project-action 'neotree-projectile-action)
+;; (setq projectile-switch-project-action 'neotree-projectile-action)
