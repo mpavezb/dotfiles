@@ -60,6 +60,9 @@
 ;; XML Mode
 (load (mpb-get-fullpath "settings/xml.el"))
 
+;; Themes
+(load (mpb-get-fullpath "settings/themes.el"))
+
 ;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
 (modern-c++-font-lock-global-mode t)
 
@@ -75,7 +78,7 @@
  '(custom-enabled-themes (quote (deeper-blue)))
  '(package-selected-packages
    (quote
-    (helm projectile helm-projectile neotree modern-cpp-font-lock yaml-mode bazel-mode markdown-mode))))
+    (doom-themes solarized-theme git-timemachine magit diminish which-key restart-emacs use-package rainbow-delimiters helm projectile helm-projectile neotree modern-cpp-font-lock yaml-mode bazel-mode markdown-mode))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
