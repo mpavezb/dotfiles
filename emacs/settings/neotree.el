@@ -16,6 +16,6 @@
 ;; icons theme requires all-the-icons package
 ;; https://github.com/domtronn/all-the-icons.el
 ;; M-x all-the-icons-install-fonts
-;; (require 'all-the-icons)
+;; (use-package all-the-icons)
 (setq neo-theme (if (display-graphic-p) 'ascii))
 

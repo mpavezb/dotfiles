@@ -5,7 +5,7 @@
 
 ;; Company (Code Completion)
 ;; ---------------------------------------------------------------
-;; (require 'company)
+;; (use-package company)
 ;; (progn
 ;;   (add-hook 'after-init-hook 'global-company-mode)
 ;;   (global-set-key (kbd "M-/") 'company-complete-common-or-cycle)
@@ -14,14 +14,14 @@
 
 ;; Flycheck
 ;; ---------------------------------------------------------------
-;; (require 'flycheck)
+;; (use-package flycheck)
 ;; (progn
 ;;   (global-flycheck-mode)
 ;; )
 
 ;; Irony
 ;; ---------------------------------------------------------------
-;; (require 'irony)
+;; (use-package irony)
 ;; (progn
 ;;   ; If irony server was never installed, install it.
 ;;   (unless (irony--find-server-executable) (call-interactively #'irony-install-server))
@@ -30,12 +30,12 @@
 ;;   (add-hook 'c++-mode-hook 'irony-mode)
 ;;   (add-hook 'c-mode-hook 'irony-mode)
 
-;;   (defun my-irony-mode-hook ()
+;;   (defun mp/my-irony-mode-hook ()
 ;;     (define-key irony-mode-map [remap completion-at-point]
 ;;       'irony-completion-at-point-async)
 ;;     (define-key irony-mode-map [remap complete-symbol]
 ;;       'irony-completion-at-point-async))
-;;   (add-hook 'irony-mode-hook 'my-irony-mode-hook)
+;;   (add-hook 'irony-mode-hook 'mp/my-irony-mode-hook)
 
 ;;   ;; Use compilation database first, clang_complete as fallback.
 ;;   (setq-default irony-cdb-compilation-databases '(irony-cdb-libclang
@@ -47,8 +47,8 @@
 
 ;; (company-irony integration): Code completion.
 ;; including C++ headers integration.
-;; (require 'company-irony)
-;; (require 'company-irony-c-headers)
+;; (use-package company-irony)
+;; (use-package company-irony-c-headers)
 ;; (progn
 ;;   (eval-after-load 'company
 ;;     '(add-to-list
@@ -56,21 +56,21 @@
 ;; )
 
 ;; ;; (flycheck-irony integration): Syntax Checking
-;; (require 'flycheck-irony)
+;; (use-package flycheck-irony)
 ;; (progn
 ;;   (eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 ;; )
 
 ;; (eldoc-irony integration): Display fn args in echo area.
 ;; obs: Located in melpa repository (not in melpa-stable).
-;(require 'irony-eldoc)
+;(use-package irony-eldoc)
 ;(progn
 ;  (add-hook 'irony-mode-hook #'irony-eldoc)
 ;)
 
 ;; RTags
 ;; ---------------------------------------------------------------
-;; (require 'rtags)
+;; (use-package rtags)
 ;; (progn
 ;;   (unless (rtags-executable-find "rc") (error "Binary rc is not installed!"))
 ;;   (unless (rtags-executable-find "rdm") (error "Binary rdm is not installed!"))
@@ -86,13 +86,13 @@
 
 ;; ;; (helm-rtags integration):
 ;; ;; TODO: Has no coloring! How can I get coloring?
-;; (require 'helm-rtags)
+;; (use-package helm-rtags)
 ;; (progn
 ;;   (setq rtags-display-result-backend 'helm)
 ;; )
 
 ;; ;; (company-rtags integration): Auto-completion.
-;; ;(require 'company-rtags)
+;; ;(use-package company-rtags)
 ;; ;(progn
 ;; ;  (setq rtags-autostart-diagnostics t)
 ;; ;  (rtags-diagnostics)
@@ -102,18 +102,18 @@
 ;; ;)
 
 ;; ;; Live code checking.
-;; (require 'flycheck-rtags)
+;; (use-package flycheck-rtags)
 ;; (progn
 ;;   ;; ensure that we use only rtags checking
 ;;   ;; https://github.com/Andersbakken/rtags#optional-1
-;;   (defun setup-flycheck-rtags ()
+;;   (defun mp/setup-flycheck-rtags ()
 ;;     (flycheck-select-checker 'rtags)
 ;;     (setq-local flycheck-highlighting-mode nil) ;; RTags creates more accurate overlays.
 ;;     (setq-local flycheck-check-syntax-automatically nil)
 ;;     (rtags-set-periodic-reparse-timeout 2.0)  ;; Run flycheck 2 seconds after being idle.
 ;;   )
-;;   (add-hook 'c-mode-hook #'setup-flycheck-rtags)
-;;   (add-hook 'c++-mode-hook #'setup-flycheck-rtags)
+;;   (add-hook 'c-mode-hook #'mp/setup-flycheck-rtags)
+;;   (add-hook 'c++-mode-hook #'mp/setup-flycheck-rtags)
 ;; )
 
 
@@ -121,7 +121,7 @@
 
 
 
-;; ;(require 'levenshtein)1
+;; ;(use-package levenshtein)1
 ;; ;(cmake-ide-setup)
 
 
