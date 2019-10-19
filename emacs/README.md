@@ -27,8 +27,9 @@ M-- : er/contract-region
 F8: mp/neotree-project-dir
 
 # Git
-C-x g: magit-status
-C-x C-g: git-timemachine
+C-x g   : magit-status
+C-x C-g : git-timemachine
+C-x v g : vc-annotate
 
 # GUI
 C-x t: mp/toggle-theme

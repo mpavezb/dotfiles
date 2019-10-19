@@ -28,6 +28,9 @@
 ;; GUI
 (load (mp/get-fullpath "settings/gui.el"))
 
+;; Git
+(load (mp/get-fullpath "settings/git.el"))
+
 ;; Uniquify
 ;; meaningful names for buffers with the same name
 (load (mp/get-fullpath "settings/uniquify.el"))

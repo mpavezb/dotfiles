@@ -51,12 +51,3 @@
 ;;(use-package dash)    ;; “A modern list library for Emacs”
 ;;(use-package s   )    ;; “The long lost Emacs string manipulation library”.
 
-
-;; Efficient version control.
-(use-package magit
-  :config (global-set-key (kbd "C-x g") 'magit-status))
-
-(use-package git-timemachine
-  :config (global-set-key (kbd "C-x C-g") 'git-timemachine))
-
-;; vc annotate: C-x v g
