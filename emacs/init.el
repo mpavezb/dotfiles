@@ -1,21 +1,22 @@
+;;
 ;; init.el
-;;
 ;; This file is the starting point for emacs configuration.
-;;
-;;
 ;; Matias Pavez
 
 ;; Keep it comented, otherwise will appear again.
 ;; (package-initialize)
 
-(message "=============================")
-(message "Matias Pavez's Emacs Settings")
-(message "=============================")
-
+;; ===============================================================
+;; Load Helpers
+;; ===============================================================
 (defun mp/get-fullpath (@file-relative-path) 
   "Returns the full path, relative to caller's file location"
   (concat (file-name-directory (or load-file-name 
 				   buffer-file-name)) @file-relative-path))
+
+(defun mp/load (@settings-file) 
+  "Loads the given file from settings folder"
+  (load (mp/get-fullpath (concat "settings/" @settings-file))))
 
 
 ;; ===============================================================
@@ -24,30 +25,29 @@
 
 ;; Basics
 ;; ---------------------------------------------------------
-(load (mp/get-fullpath "settings/package-system.el"))
-(load (mp/get-fullpath "settings/themes.el"))
-(load (mp/get-fullpath "settings/gui.el"))
-(load (mp/get-fullpath "settings/git.el"))
-(load (mp/get-fullpath "settings/uniquify.el"))
-(load (mp/get-fullpath "settings/editor.el"))
-(load (mp/get-fullpath "settings/neotree.el"))
-(load (mp/get-fullpath "settings/ido.el"))
-;;(load (mp/get-fullpath "settings/helm.el"))
-(load (mp/get-fullpath "settings/projectile.el"))
+(mp/load "package-system.el")
+(mp/load "themes.el")
+(mp/load "gui.el")
+(mp/load "git.el")
+(mp/load "uniquify.el")
+(mp/load "editor.el")
+(mp/load "neotree.el")
+(mp/load "ido.el")
+;; (mp/load "helm.el")
+(mp/load "projectile.el")
 
 ;; Integrations
 ;; ---------------------------------------------------------
-(load (mp/get-fullpath "settings/neotree-projectile.el"))
+(mp/load "neotree-projectile.el")
 ;; (load (mp/get-fullpath "settings/helm-projectile.el"))
 
 ;; Language Specific
 ;; ---------------------------------------------------------
-(load (mp/get-fullpath "settings/lisp.el"))
-(load (mp/get-fullpath "settings/org.el"))
-(load (mp/get-fullpath "settings/bazel.el"))
-(load (mp/get-fullpath "settings/xml.el"))
-;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
-(modern-c++-font-lock-global-mode t)
+(mp/load "lisp.el")
+(mp/load "org.el")
+(mp/load "bazel.el")
+(mp/load "xml.el")
+(mp/load "cpp.el")
 
 
 ;; ===============================================================
