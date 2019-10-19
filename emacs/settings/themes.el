@@ -32,4 +32,4 @@
 (global-set-key (kbd "C-x t") 'mp/toggle-theme)
 
 ;; Initially begin with the light theme.
-(load-theme 'doom-vibrant t)
+(mp/load-dark-theme)
