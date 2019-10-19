@@ -22,53 +22,30 @@
 ;; Load required settings.
 ;; ===============================================================
 
-;; Package system
+;; Basics
+;; ---------------------------------------------------------
 (load (mp/get-fullpath "settings/package-system.el"))
-
-;; GUI
+(load (mp/get-fullpath "settings/themes.el"))
 (load (mp/get-fullpath "settings/gui.el"))
-
-;; Git
 (load (mp/get-fullpath "settings/git.el"))
-
-;; Uniquify
-;; meaningful names for buffers with the same name
 (load (mp/get-fullpath "settings/uniquify.el"))
-
-;; Editor
 (load (mp/get-fullpath "settings/editor.el"))
-
-;; Neotree
 (load (mp/get-fullpath "settings/neotree.el"))
-
-;; IDO mode
 (load (mp/get-fullpath "settings/ido.el"))
-
-;; Helm
 ;;(load (mp/get-fullpath "settings/helm.el"))
-
-;; Projectile
 (load (mp/get-fullpath "settings/projectile.el"))
 
 ;; Integrations
+;; ---------------------------------------------------------
 (load (mp/get-fullpath "settings/neotree-projectile.el"))
 ;; (load (mp/get-fullpath "settings/helm-projectile.el"))
 
-;; ORG mode
-(load (mp/get-fullpath "settings/org.el"))
-
-;; Lisp
+;; Language Specific
+;; ---------------------------------------------------------
 (load (mp/get-fullpath "settings/lisp.el"))
-
-;; Bazel Mode
+(load (mp/get-fullpath "settings/org.el"))
 (load (mp/get-fullpath "settings/bazel.el"))
-
-;; XML Mode
 (load (mp/get-fullpath "settings/xml.el"))
-
-;; Themes
-(load (mp/get-fullpath "settings/themes.el"))
-
 ;;(add-hook 'c++-mode-hook #'modern-c++-font-lock-mode)
 (modern-c++-font-lock-global-mode t)
 
