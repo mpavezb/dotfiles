@@ -10,7 +10,7 @@
 
   ;; Use C-c h instead of default C-x c, it makes more sense.
   (global-set-key (kbd "C-c h") 'helm-command-prefix) 
-  (global-unset-key (kbd "C-x c"))
+  (global-unset-key (kbd "C-x c")) 
   (setq
    ;; move to end or beginning of source when reaching top or bottom of source.
    helm-move-to-line-cycle-in-source t
@@ -39,10 +39,10 @@
   (setq helm-semantic-fuzzy-match t helm-imenu-fuzzy-match t)
 
   ;; Lists all occurences of a pattern in buffer.
-  (global-set-key (kbd "C-c h o") 'helm-occur)
+  (global-set-key (kbd "C-c h o") 'helm-occur) 
   (global-set-key (kbd "C-h SPC") 'helm-all-mark-rings)
 
   ;; open helm buffer inside current window, not occupy whole other window
   (setq helm-split-window-inside-p t helm-autoresize-max-height 50 helm-autoresize-min-height 30) 
-  (helm-autoresize-mode 1)
+  (helm-autoresize-mode 1) 
   (helm-mode 1))

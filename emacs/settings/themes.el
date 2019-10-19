@@ -6,7 +6,7 @@
   solarized-theme 
   :demand t)
 (use-package 
-  doom-themes  
+  doom-themes 
   :demand t)
 
 (defun mp/disable-all-themes () 
