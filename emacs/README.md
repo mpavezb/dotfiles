@@ -1,13 +1,6 @@
 # Emacs
 
-## Useful Information
-
-- cmake-ide: https://github.com/atilaneves/cmake-ide
-- org mode: https://orgmode.org/
-- better-defaults: https://github.com/technomancy/better-defaults
-
-
-## Key Bindings
+## Custom Key Bindings
 ```
 # Buffers
 C-x M-k : mp/reopen-killed-file
@@ -37,7 +30,6 @@ C-+: text-scale-increase
 C--: text-scale-decrease 
 ```
 
-
 ## Important Commands
 
 ```
@@ -45,7 +37,7 @@ C--: text-scale-decrease
 mp/put-buffername-on-clipboard
 
 # Dired
-find-na
+find-name-dired
 
 # Projectile
 # https://projectile.readthedocs.io/en/latest/usage/
@@ -80,6 +72,7 @@ tabify
 untabify
 ```
 
+```
 # Rectangles
 C-x r t : string-rectangle  (works on rectangular selection)
 C-s     : isearch-forward   (puts mark at the beginning of the match)
@@ -115,16 +108,6 @@ M-% query-replace
 ```
 
 
-## C++ IDE
-
-
-- Navigation (jump from reference to definition and vice versa).
-- File outline (list of symbols in file for quick navigation).
-- Code completion.
-- Real-time syntax checking.
-
-
-
 ## Must Have Tools
 
 - Jump to definition
@@ -137,7 +120,9 @@ M-% query-replace
 - Grafical Debugger
 - Text Pastry 1 to X
 
+### C++ IDE
+- Navigation (jump from reference to definition and vice versa).
+- File outline (list of symbols in file for quick navigation).
+- Code completion.
+- Real-time syntax checking.
 
-## Interesting Tools
-
-- Color Hints

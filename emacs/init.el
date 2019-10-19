@@ -7,35 +7,36 @@
 ;; (package-initialize)
 
 (defun mp/load (@settings-file) 
-  "Loads the given file from settings folder"
-  (load (concat user-emacs-directory "settings/" @settings-file)))
+  "Loads the given file from the mp/ folder"
+  (load (concat user-emacs-directory "mp/" @settings-file)))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Basics
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(mp/load "package-system.el")
-(mp/load "file-system.el")
-(mp/load "themes.el")
-(mp/load "gui.el")
-(mp/load "git.el")
-(mp/load "uniquify.el")
-(mp/load "editor.el")
-(mp/load "neotree.el")
-(mp/load "ido.el")
-;; (mp/load "helm.el")
-(mp/load "projectile.el")
+;; = System =
+(mp/load "system/packages.el")
+(mp/load "system/files.el")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Integrations
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(mp/load "neotree-projectile.el")
-;; (mp/load "helm-projectile.el")
+;; = GUI =
+(mp/load "gui/gui.el")
+(mp/load "gui/uniquify.el")
+(mp/load "gui/themes.el")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Language Specific
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(mp/load "lisp.el")
-(mp/load "org.el")
-(mp/load "bazel.el")
-(mp/load "xml.el")
-(mp/load "cpp.el")
+;; = Project =
+(mp/load "project/git.el")
+(mp/load "project/projectile.el")
+(mp/load "project/neotree.el")
+
+;; = Editor =
+(mp/load "editor/editor.el")
+(mp/load "editor/buffer.el")
+(mp/load "editor/ido.el")
+;; (mp/load "editor/helm.el")
+
+;; = Languages =
+(mp/load "lang/org.el")
+(mp/load "lang/bazel.el")
+(mp/load "lang/xml.el")
+(mp/load "lang/cpp.el")
+(mp/load "lang/lisp.el")
+
+;; = Integrations =
+(mp/load "integrations/neotree-projectile.el")
+;; (mp/load "integrations/helm-projectile.el")

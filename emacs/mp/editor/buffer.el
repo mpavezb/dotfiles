@@ -47,4 +47,4 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Reopen killed buffers
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(mp/load "reopen-killed-file.el")
+(mp/load "lisp/reopen-killed-file.el")
