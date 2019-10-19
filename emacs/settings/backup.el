@@ -63,10 +63,10 @@
 
 ;; (eldoc-irony integration): Display fn args in echo area.
 ;; obs: Located in melpa repository (not in melpa-stable).
-;(use-package irony-eldoc)
-;(progn
-;  (add-hook 'irony-mode-hook #'irony-eldoc)
-;)
+;;(use-package irony-eldoc)
+;;(progn
+;;  (add-hook 'irony-mode-hook #'irony-eldoc)
+;;)
 
 ;; RTags
 ;; ---------------------------------------------------------------
@@ -74,7 +74,7 @@
 ;; (progn
 ;;   (unless (rtags-executable-find "rc") (error "Binary rc is not installed!"))
 ;;   (unless (rtags-executable-find "rdm") (error "Binary rdm is not installed!"))
-  
+
 ;;   (define-key c-mode-base-map (kbd "M-.") 'rtags-find-symbol-at-point)
 ;;   (define-key c-mode-base-map (kbd "M-,") 'rtags-find-references-at-point)
 ;;   (define-key c-mode-base-map (kbd "M-?") 'rtags-display-summary)
@@ -123,6 +123,3 @@
 
 ;; ;(use-package levenshtein)1
 ;; ;(cmake-ide-setup)
-
-
-

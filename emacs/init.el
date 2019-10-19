@@ -1,9 +1,9 @@
 ;; init.el
-;
-; This file is the starting point for emacs configuration.
-; 
-;
-; Matias Pavez
+;;
+;; This file is the starting point for emacs configuration.
+;;
+;;
+;; Matias Pavez
 
 ;; Keep it comented, otherwise will appear again.
 ;; (package-initialize)
@@ -12,10 +12,10 @@
 (message "Matias Pavez's Emacs Settings")
 (message "=============================")
 
-(defun mp/get-fullpath (@file-relative-path)
+(defun mp/get-fullpath (@file-relative-path) 
   "Returns the full path, relative to caller's file location"
-  (concat (file-name-directory (or load-file-name buffer-file-name)) @file-relative-path)
-)
+  (concat (file-name-directory (or load-file-name 
+				   buffer-file-name)) @file-relative-path))
 
 
 ;; ===============================================================
@@ -57,6 +57,9 @@
 ;; ORG mode
 (load (mp/get-fullpath "settings/org.el"))
 
+;; Lisp
+(load (mp/get-fullpath "settings/lisp.el"))
+
 ;; Bazel Mode
 (load (mp/get-fullpath "settings/bazel.el"))
 
@@ -78,10 +81,12 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (deeper-blue)))
- '(package-selected-packages
-   (quote
-    (doom-themes solarized-theme git-timemachine magit diminish which-key restart-emacs use-package rainbow-delimiters helm projectile helm-projectile neotree modern-cpp-font-lock yaml-mode bazel-mode markdown-mode))))
+ '(custom-enabled-themes (quote (deeper-blue))) 
+ '(package-selected-packages (quote (doom-themes solarized-theme git-timemachine magit diminish
+						 which-key restart-emacs use-package
+						 rainbow-delimiters helm projectile helm-projectile
+						 neotree modern-cpp-font-lock yaml-mode bazel-mode
+						 markdown-mode))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

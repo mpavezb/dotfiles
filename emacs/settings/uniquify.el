@@ -8,16 +8,16 @@
 ;; post-forward-angle-brackets   name<bar/mumble>   name<quux/mumble>
 ;; nil                           name               name<2>
 
-(use-package uniquify)
+(use-package 
+  uniquify)
 
 (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 
-; directory separator
+;; directory separator
 (setq uniquify-separator "/")
 
-; rename after killing uniquified
+;; rename after killing uniquified
 (setq uniquify-after-kill-buffer-p t)
 
-; don't muck with special buffers
+;; don't muck with special buffers
 (setq uniquify-ignore-buffers-re "^\\*")
-

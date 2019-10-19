@@ -10,7 +10,8 @@
 (setq backup-directory-alist `(("." . ,(concat user-emacs-directory "backups"))))
 
 ;; remember point position when reopening/revisiting each buffer
-(use-package saveplace)
+(use-package 
+  saveplace)
 (setq-default save-place t)
 (setq save-place-file (concat user-emacs-directory "places"))
 
@@ -50,18 +51,16 @@
 
 ;; Colour parens, and other delimiters, depending on their depth.
 ;; Very useful for parens heavy languages like Lisp.
-(use-package rainbow-delimiters)
-(add-hook 'org-mode-hook
-  '(lambda () (rainbow-delimiters-mode 1)))
-(add-hook 'prog-mode-hook
-	  '(lambda () (rainbow-delimiters-mode 1)))
+(use-package 
+  rainbow-delimiters)
+(add-hook 'org-mode-hook '(lambda () 
+			    (rainbow-delimiters-mode 1)))
+(add-hook 'prog-mode-hook '(lambda () 
+			     (rainbow-delimiters-mode 1)))
 (electric-pair-mode 1)
-(setq electric-pair-pairs
-      '(
-        (?~ . ?~)
-        (?* . ?*)
-        (?/ . ?/)
-       ))
+(setq electric-pair-pairs '((?~ . ?~) 
+			    (?* . ?*) 
+			    (?/ . ?/)))
 
 ;; sample: (blue (purple (forest (green (yellow (blue))))))
 
@@ -69,13 +68,13 @@
 ;; Kill-Yank for Clipboard and Mouse
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-; Killing and yanking uses the X clipboard rather than just the primary selection.
+;; Killing and yanking uses the X clipboard rather than just the primary selection.
 (setq save-interprogram-paste-before-kill t)
 
-; after copy Ctrl+c in Linux X11, you can paste by yanking in emacs.
+;; after copy Ctrl+c in Linux X11, you can paste by yanking in emacs.
 (setq select-enable-clipboard t)
 
-; Mouse yanking inserts at the point instead of the location of the click.
+;; Mouse yanking inserts at the point instead of the location of the click.
 (setq mouse-yank-at-point t)
 
 
@@ -86,18 +85,24 @@
 (autoload 'ibuffer "ibuffer" "List buffers." t)
 
 ;; nearly all of this is the default layout
-(setq ibuffer-formats 
-      '((mark modified read-only " "
-              (name 50 50 :left :elide) " "
-	      (size 9 -1 :right) " "
-              (mode 16 16 :left :elide) " " filename-and-process)
-        (mark " " (name 16 -1) " " filename)))
+(setq ibuffer-formats '((mark modified read-only " " (name 50 50
+							   :left 
+							   :elide) " " (size 9 -1 
+									     :right) " " (mode 16 16
+											       :left 
+											       :elide)
+									     " "
+									     filename-and-process) 
+			(mark " " (name 16 -1) " " filename)))
 
 ;; auto reload files from disk
 (global-auto-revert-mode t)
 
 ;; Reload buffer shortcut
-(global-set-key [f5] '(lambda () (interactive) (revert-buffer nil t nil)))
+(global-set-key [f5] 
+		'(lambda () 
+		   (interactive) 
+		   (revert-buffer nil t nil)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Reopen killed buffers
@@ -105,36 +110,35 @@
 ;; keep a stack of killed buffers (only for files)
 ;; use the stack to reopen buffers.
 
-(defvar mp/killed-file-list nil
+(defvar mp/killed-file-list nil 
   "List of recently killed files.")
 
-(defun mp/add-file-to-killed-file-list ()
+(defun mp/add-file-to-killed-file-list () 
   "If buffer is associated with a file name, add that file to the
 `killed-file-list' when killing the buffer."
-  (when buffer-file-name
-    (push buffer-file-name mp/killed-file-list)))
+  (when buffer-file-name (push buffer-file-name mp/killed-file-list)))
 (add-hook 'kill-buffer-hook #'mp/add-file-to-killed-file-list)
 
 ;; reopen last killed files
-(defun mp/reopen-killed-file ()
-  "Reopen the most recently killed file, if one exists."
-  (interactive)
-  (when mp/killed-file-list
-    (find-file (pop mp/killed-file-list))))
+(defun mp/reopen-killed-file () 
+  "Reopen the most recently killed file, if one exists." 
+  (interactive) 
+  (when mp/killed-file-list (find-file (pop mp/killed-file-list))))
 (global-set-key (kbd "C-x M-k") 'mp/reopen-killed-file)
 
 ;; reopen killed file from minibuffer list with autocompletion
-(defun mp/reopen-killed-file-fancy ()
+(defun mp/reopen-killed-file-fancy () 
   "Pick a file to revisit from a list of files killed during this
-Emacs session."
-  (interactive)
-  (if mp/killed-file-list
-      (let ((file (completing-read "Reopen killed file: " mp/killed-file-list
-                                   nil nil nil nil (car mp/killed-file-list))))
-        (when file
-          (setq mp/killed-file-list (cl-delete file mp/killed-file-list :test #'equal))
-          (find-file file)))
-    (error "No recently-killed files to reopen")))
+Emacs session." 
+  (interactive) 
+  (if mp/killed-file-list (let ((file (completing-read "Reopen killed file: " mp/killed-file-list
+						       nil nil nil nil (car mp/killed-file-list)))) 
+			    (when file 
+			      (setq mp/killed-file-list (cl-delete file mp/killed-file-list 
+								   :test #'equal)) 
+			      (find-file file))) 
+    (error 
+     "No recently-killed files to reopen")))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -176,13 +180,16 @@ Emacs session."
 ;; (global-set-key "\M-k" '(lambda () (interactive) (kill-line 0)) )
 
 ;; Kill current buffer; prompt only if there are unsaved changes.
-(global-set-key (kbd "C-x k")
-  '(lambda () (interactive) (kill-buffer (current-buffer))))
+(global-set-key (kbd "C-x k") 
+		'(lambda () 
+		   (interactive) 
+		   (kill-buffer (current-buffer))))
 
 
 ;; Multiple Cursors
 ;; https://github.com/magnars/multiple-cursors.el
-(use-package multiple-cursors)
+(use-package 
+  multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
@@ -191,7 +198,8 @@ Emacs session."
 
 ;; Expand Region
 ;; https://github.com/magnars/expand-region.el
-(use-package expand-region)
+(use-package 
+  expand-region)
 (global-set-key (kbd "M-+") 'er/expand-region)
 (global-set-key (kbd "M--") 'er/contract-region)
 
@@ -201,16 +209,15 @@ Emacs session."
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Put filename in clipboard
-(defun mp/put-buffername-on-clipboard ()
-  "Put the current buffer name on the clipboard"
-  (interactive)
-  (let ((filename (if (equal major-mode 'dired-mode)
-                      default-directory
-                    (abbreviate-file-name buffer-file-name))))
-    (when filename
-      (kill-new filename)
-      (message filename))))
+(defun mp/put-buffername-on-clipboard () 
+  "Put the current buffer name on the clipboard" 
+  (interactive) 
+  (let ((filename (if (equal major-mode 'dired-mode) default-directory (abbreviate-file-name
+									buffer-file-name)))) 
+    (when filename (kill-new filename) 
+	  (message filename))))
 
 ;; Move line or selected region up and down (M-Up/Down)
-(use-package move-text)
+(use-package 
+  move-text)
 (move-text-default-bindings)
