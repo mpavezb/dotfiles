@@ -26,6 +26,7 @@
 ;; Basics
 ;; ---------------------------------------------------------
 (mp/load "package-system.el")
+(mp/load "file-system.el")
 (mp/load "themes.el")
 (mp/load "gui.el")
 (mp/load "git.el")

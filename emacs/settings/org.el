@@ -9,7 +9,6 @@
 (setq org-log-done t)
 
 ;; keymaps
-
-(setq org-agenda-files (list "~/documents/org/"))
+;; (setq org-agenda-files (list "~/documents/org/"))
+;; (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)

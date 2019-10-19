@@ -44,12 +44,3 @@
 
 ;; Auto install used packages.
 (setq use-package-always-ensure t)
-
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; customize
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; disable customize
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-;; (load custom-file)
