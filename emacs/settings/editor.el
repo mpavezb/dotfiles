@@ -3,16 +3,6 @@
 ;; Basic editor configurations.
 ;; Non-language related.
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; remember point position when reopening/revisiting each buffer
-(require 'saveplace)
-(setq-default save-place t)
-
-;; remember opened buffers
-(desktop-save-mode 1)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; misc
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -72,68 +62,6 @@
 ;; Mouse yanking inserts at the point instead of the location of the click.
 (setq mouse-yank-at-point t)
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ibuffer
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(autoload 'ibuffer "ibuffer" "List buffers." t)
-
-;; nearly all of this is the default layout
-(setq ibuffer-formats '((mark modified read-only " " (name 50 50
-							   :left 
-							   :elide) " " (size 9 -1 
-									     :right) " " (mode 16 16
-											       :left 
-											       :elide)
-									     " "
-									     filename-and-process) 
-			(mark " " (name 16 -1) " " filename)))
-
-;; auto reload files from disk
-(global-auto-revert-mode t)
-
-;; Reload buffer shortcut
-(global-set-key [f5] 
-		'(lambda () 
-		   (interactive) 
-		   (revert-buffer nil t nil)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Reopen killed buffers
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; keep a stack of killed buffers (only for files)
-;; use the stack to reopen buffers.
-
-(defvar mp/killed-file-list nil 
-  "List of recently killed files.")
-
-(defun mp/add-file-to-killed-file-list () 
-  "If buffer is associated with a file name, add that file to the
-`killed-file-list' when killing the buffer."
-  (when buffer-file-name (push buffer-file-name mp/killed-file-list)))
-(add-hook 'kill-buffer-hook #'mp/add-file-to-killed-file-list)
-
-;; reopen last killed files
-(defun mp/reopen-killed-file () 
-  "Reopen the most recently killed file, if one exists." 
-  (interactive) 
-  (when mp/killed-file-list (find-file (pop mp/killed-file-list))))
-(global-set-key (kbd "C-x M-k") 'mp/reopen-killed-file)
-
-;; reopen killed file from minibuffer list with autocompletion
-(defun mp/reopen-killed-file-fancy () 
-  "Pick a file to revisit from a list of files killed during this
-Emacs session." 
-  (interactive) 
-  (if mp/killed-file-list (let ((file (completing-read "Reopen killed file: " mp/killed-file-list
-						       nil nil nil nil (car mp/killed-file-list)))) 
-			    (when file 
-			      (setq mp/killed-file-list (cl-delete file mp/killed-file-list 
-								   :test #'equal)) 
-			      (find-file file))) 
-    (error 
-     "No recently-killed files to reopen")))
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -203,14 +131,6 @@ Emacs session."
 ;; Utils
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Put filename in clipboard
-(defun mp/put-buffername-on-clipboard () 
-  "Put the current buffer name on the clipboard" 
-  (interactive) 
-  (let ((filename (if (equal major-mode 'dired-mode) default-directory (abbreviate-file-name
-									buffer-file-name)))) 
-    (when filename (kill-new filename) 
-	  (message filename))))
 
 ;; Move line or selected region up and down (M-Up/Down)
 (use-package 
