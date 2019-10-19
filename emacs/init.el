@@ -48,26 +48,3 @@
 (mp/load "bazel.el")
 (mp/load "xml.el")
 (mp/load "cpp.el")
-
-
-;; ===============================================================
-;; Emacs built-in customization tool.
-;; ===============================================================111
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (deeper-blue))) 
- '(package-selected-packages (quote (doom-themes solarized-theme git-timemachine magit diminish
-						 which-key restart-emacs use-package
-						 rainbow-delimiters helm projectile helm-projectile
-						 neotree modern-cpp-font-lock yaml-mode bazel-mode
-						 markdown-mode))))
-
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

@@ -2,9 +2,9 @@
 ;; Package system
 ;; ===============================================================
 
-(message "")
-(message " Loading package system ...   ")
-(message " ---------------------------- ")
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; package
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'package)
 (let* ((no-ssl (and (memq system-type '(windows-nt ms-dos)) 
@@ -20,7 +20,6 @@
   ;; load from GNU ELPA for older versions of emacs.
   (when (< emacs-major-version 24) 
     (add-to-list 'package-archives (cons "gnu" (concat proto "://elpa.gnu.org/packages/")))))
-
 
 (package-initialize)
 
@@ -45,3 +44,12 @@
 
 ;; Auto install used packages.
 (setq use-package-always-ensure t)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; customize
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; disable customize
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+;; (load custom-file)
