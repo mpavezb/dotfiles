@@ -7,10 +7,11 @@ echo "== Emacs settings installer === "
 echo " - Creating '$HOME/.emacs.d/' dir."
 mkdir -p ${HOME}/.emacs.d/
 
-echo " - Linking mp scripts: '$HOME/.emacs.d/mp/' --> ${DIR}/mp/."
-ln -sf ${DIR}/mp/ ${HOME}/.emacs.d/
+echo " - Linking emacs system: ${DIR} -- '$HOME/.emacs.d/mp'."
+rm "${HOME}/.emacs.d/mp"
+ln -sf ${DIR} "${HOME}/.emacs.d/mp"
 
 echo " - Copying emacs entry point: '$HOME/.emacs.d/init.el' file."
-cp $DIR/init.el $HOME/.emacs.d/
+cp ${DIR}/init.el $HOME/.emacs.d/
 
 echo " - OK - "
