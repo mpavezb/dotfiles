@@ -1,13 +1,76 @@
 # Emacs
 
-## Useful Information
+## Custom Key Bindings
+```
+# Buffers
+C-x M-k : mp/reopen-killed-file
 
-- cmake-ide: https://github.com/atilaneves/cmake-ide
-- org mode: https://orgmode.org/
-- better-defaults: https://github.com/technomancy/better-defaults
+# multiple-cursors
+C-c C-<       : mc/mark-all-like-this
+C->           : mc/mark-next-like-this
+C-<           : mc/mark-previous-like-this
+C-S-c C-S-c   : mc/edit-lines
+C-S-<mouse-1> : mc/add-cursor-on-click
 
+# Selection
+M-+ : er/expand-region
+M-- : er/contract-region
 
-## Commands to remember
+# Project
+F8: mp/neotree-project-dir
+
+# Git
+C-x g   : magit-status
+C-x C-g : git-timemachine
+C-x v g : vc-annotate
+
+# GUI
+C-x t: mp/toggle-theme
+C-+: text-scale-increase
+C--: text-scale-decrease 
+```
+
+## Important Commands
+
+```
+# mp/
+mp/put-buffername-on-clipboard
+
+# Dired
+find-name-dired
+
+# Projectile
+# https://projectile.readthedocs.io/en/latest/usage/
+C-c p  f   : projectile-find-file
+C-c p  F   : projectile-find-file-in-known-projects
+C-c p  a   : switch to file with different extension
+C-c p  s g : projectile-grep
+C-c p  4 f : projectile-find-file-other-window
+C-c p  5 f : projectile-find-file-other-frame
+C-c p  4 a : switch to file with different extension in other window
+C-c p  5 a : switch to file with different extension in other frame
+C-c p  p   : projectile-switch-project
+
+# Neotree
+# https://github.com/jaypei/emacs-neotree
+SPC, RET, TAB :  Open current item if it is a file. Fold/Unfold current item if it is a directory.
+n       : next line, p previous line.
+U       : Go up a directory.
+g       : Refresh.
+A       : Maximize/Minimize the NeoTree Window.
+H       : Toggle display hidden files.
+O       : Recursively open a directory.
+C-c C-n : Create a file or create a directory if filename ends with a ‘/’.
+C-c C-d : Delete a file or a directory.
+C-c C-r : Rename a file or a directory.
+C-c C-c : Change the root directory.
+C-c C-p : Copy a file or a directory.
+
+# editor
+whitespace-mode
+tabify
+untabify
+```
 
 ```
 # Rectangles
@@ -45,16 +108,6 @@ M-% query-replace
 ```
 
 
-## C++ IDE
-
-
-- Navigation (jump from reference to definition and vice versa).
-- File outline (list of symbols in file for quick navigation).
-- Code completion.
-- Real-time syntax checking.
-
-
-
 ## Must Have Tools
 
 - Jump to definition
@@ -65,12 +118,11 @@ M-% query-replace
 	- Open File
 - Compilation
 - Grafical Debugger
-
-- Editor Config
 - Text Pastry 1 to X
 
-- 
+### C++ IDE
+- Navigation (jump from reference to definition and vice versa).
+- File outline (list of symbols in file for quick navigation).
+- Code completion.
+- Real-time syntax checking.
 
-## Interesting Tools
-
-- Color Hints
