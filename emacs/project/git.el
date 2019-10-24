@@ -11,3 +11,11 @@
 (use-package 
   git-timemachine 
   :config (global-set-key (kbd "C-x C-g") 'git-timemachine))
+
+
+;; browse-at-remote
+;; https://github.com/rmuslimov/browse-at-remote
+(use-package 
+  browse-at-remote 
+  :config (global-set-key (kbd "C-c g g") 'browse-at-remote))
+

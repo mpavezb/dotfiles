@@ -23,6 +23,7 @@ F8: mp/neotree-project-dir
 C-x g   : magit-status
 C-x C-g : git-timemachine
 C-x v g : vc-annotate
+C-c g g : browse-at-remote
 
 # GUI
 C-x t: mp/toggle-theme
