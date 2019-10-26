@@ -1,13 +1,16 @@
 #!/bin/bash
-# prompt for bash
-# v1.0
-# (by mpavezb)
+# Version: v1.1
+# Author: mpavezb
+# Description: Prompt for bash
+#  Shows the following information:
+#  - Return code
+#  - Time in hh:mm:ss format.
+#  - Username (disabled)
+#  - Hostname (disabled)
+#  - Path with compressed HOME and parent directories. e.g.:  ~/w/rust
+#  - Git status: staged, modified, untracked, stash, diff to/from upstream.
 #
-# TO DO:
-# - git merge/rebase cases
-# - coloring for default terminal and my terminal
-# - show username@hostname and path in tab name
-
+#
 # Formatting:
 # - Sequences must be escaped to avoid weird prompt problems.
 #   - Surround sequences with \[  \].
@@ -76,8 +79,8 @@ function __prompt_git_upstream {
     local RET
     local N_AHEAD
     local N_BEHIND
-    N_AHEAD="$(git status -sb | head -1 | grep -o "ahead [0-9]*"  | cut -d' ' -f2)"
-    N_BEHIND="$(git status -sb | head -1 | grep -o "behind [0-9]*" | cut -d' ' -f2)"
+    N_AHEAD="$(git status --ignore-submodules -sb | head -1 | grep -o "ahead [0-9]*"  | cut -d' ' -f2)"
+    N_BEHIND="$(git status --ignore-submodules -sb | head -1 | grep -o "behind [0-9]*" | cut -d' ' -f2)"
     
     RET=""
     RET+="$(__color_blue  "${N_BEHIND}")"
@@ -93,7 +96,7 @@ function __prompt_git_stats {
     local STASH_SIZE
     N_STAGED="$(git diff --numstat --cached  | wc -l)"
     N_MODIFIED="$(git diff --numstat  | wc -l)"
-    N_UNTRACKED="$(git status --porcelain 2>/dev/null | grep -c "^??")"
+    N_UNTRACKED="$(git status --ignore-submodules --porcelain 2>/dev/null | grep -c "^??")"
     STASH_SIZE="$(git stash list | wc -l)"
 
     N_STAGED=$(    [ "${N_STAGED}"    -eq 0 ] && echo "" || echo "+${N_STAGED}"    )
@@ -111,7 +114,7 @@ function __prompt_git_stats {
 
 function __prompt_git_branch {
     local MSG
-    MSG=$(git status)
+    MSG=$(git status --ignore-submodules)
     if echo "${MSG}" | grep "nothing to commit" > /dev/null 2>&1; then
 	__color_lgreen "$(__git_ps1 " (%s)")";
     elif echo "${MSG}" | grep "Changes not staged for commit" > /dev/null 2>&1; then
@@ -129,7 +132,7 @@ function __prompt_git {
     local RET
     local UPSTREAM
     local STATS
-    if git status &>/dev/null; then
+    if git status --ignore-submodules &>/dev/null; then
 	RET+="$(__prompt_git_branch)"
         UPSTREAM="$(__prompt_git_upstream)"
 	STATS="$(__prompt_git_stats)"
@@ -153,4 +156,10 @@ __prompt_command() {
     PS1+="$(__prompt_git)"
     PS1+=" $(__prompt_symbol) "
 }
+
+__timed_prompt_command() {
+    time __prompt_command
+}
+
+#PROMPT_COMMAND=__timed_prompt_command
 PROMPT_COMMAND=__prompt_command
