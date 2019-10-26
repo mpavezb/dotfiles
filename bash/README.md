@@ -18,5 +18,5 @@ The time is measured using the `time` BASH command.
 | ------- | -------- | ---------------------------------------------- |
 | 0.0     | 0m0,012s | No git prompt.                                 | 
 | 1.0     | 0m2,259s | First implementation (bash).                   |
-| 1.1     | 0m0,681s | Add `--ignore-submodules` to git status calls. |
-
+| 1.1     | 0m0,800s | Add `--ignore-submodules` to git status calls. |
+| 1.2     | 0m0,440s | Add `--ignore-submodules` to git diff calls.   |

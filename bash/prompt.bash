@@ -1,5 +1,5 @@
 #!/bin/bash
-# Version: v1.1
+# Version: v1.2
 # Author: mpavezb
 # Description: Prompt for bash
 #  Shows the following information:
@@ -9,7 +9,6 @@
 #  - Hostname (disabled)
 #  - Path with compressed HOME and parent directories. e.g.:  ~/w/rust
 #  - Git status: staged, modified, untracked, stash, diff to/from upstream.
-#
 #
 # Formatting:
 # - Sequences must be escaped to avoid weird prompt problems.
@@ -94,8 +93,8 @@ function __prompt_git_stats {
     local N_MODIFIED
     local N_UNTRACKED
     local STASH_SIZE
-    N_STAGED="$(git diff --numstat --cached  | wc -l)"
-    N_MODIFIED="$(git diff --numstat  | wc -l)"
+    N_STAGED="$(git diff --numstat --cached --ignore-submodules  | wc -l)"
+    N_MODIFIED="$(git diff --numstat --ignore-submodules | wc -l)"
     N_UNTRACKED="$(git status --ignore-submodules --porcelain 2>/dev/null | grep -c "^??")"
     STASH_SIZE="$(git stash list | wc -l)"
 
