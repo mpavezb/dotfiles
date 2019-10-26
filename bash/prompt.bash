@@ -1,5 +1,6 @@
 #!/bin/bash
 # prompt for bash
+# v1.0
 # (by mpavezb)
 #
 # TO DO:
