@@ -13,6 +13,7 @@ Add to bashrc:
 ```
 # fzf: Command-Line fuzzy finder
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.dotfiles/bash/fzf/fzf.bash ] && source ~/.dotfiles/bash/fzf/fzf.bash
 ```
 
 ## Usage
