@@ -1,16 +1,9 @@
-# BASH README
+# BASH
 
 ## Command line fuzzy finder
 
-https://github.com/junegunn/fzf
+See the [README](fzf.md) file.
 
-### Installation
-
-```bash
-mkdir -p ~/.opt/
-git clone --depth 1 https://github.com/junegunn/fzf.git ~/.opt/.fzf
-~/.opt/.fzf/install
-```
 
 ## Bash prompt
 
