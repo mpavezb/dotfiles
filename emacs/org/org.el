@@ -25,18 +25,17 @@
 ;; Avoid accidentally editing folded regions, say by adding text after an Org “⋯”.
 (setq org-catch-invisible-edits 'show)
 
-;; I use indentation-sensitive programming languages.
-;; Tangling should preserve my indentation.
-(setq org-src-preserve-indentation t)
-
-;; Tab should do indent in code blocks
-(setq org-src-tab-acts-natively t)
-
 ;; Give quote and verse blocks a nice look.
 (setq org-fontify-quote-and-verse-blocks t)
 
 ;; Pressing ENTER on a link should follow it.
 (setq org-return-follows-link t)
+
+
+;; -----------------------------------------------------------------------------
+;; Code Blocks
+;; -----------------------------------------------------------------------------
+;; TO DO
 
 
 ;; -----------------------------------------------------------------------------
@@ -83,7 +82,6 @@
 ;;   (local-set-key (kbd "<return>") 'org-return-indent))
 ;;   (local-set-key (kbd "C-M-<return>") 'electric-indent-just-newline))
 
-
 ;; ;; IS THIS REALLY WORKING?
 ;; (use-package org-sticky-header
 ;;   :config
@@ -93,6 +91,13 @@
 ;;    org-sticky-header-outline-path-separator " / ")
 ;;   :init (org-sticky-header-mode)
 ;; )
+
+;; CODE BLOCKS
+;; ;; Tangling should preserve indentation.
+;; (setq org-src-preserve-indentation t)
+
+;; ;; Tab should do indent in code blocks
+;; (setq org-src-tab-acts-natively t)
 
 ;; ;; ===========================================================
 ;; ;; Making Block Delimiters Less Intrusive
