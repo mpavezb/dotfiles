@@ -43,9 +43,9 @@
 (add-hook 'prog-mode-hook '(lambda () 
 			     (rainbow-delimiters-mode 1)))
 (electric-pair-mode 1)
-(setq electric-pair-pairs '((?~ . ?~) 
-			    (?* . ?*) 
-			    (?/ . ?/)))
+;; (setq electric-pair-pairs '((?~ . ?~)
+;; 			    (?* . ?*)
+;; 			    (?/ . ?/)))
 
 ;; sample: (blue (purple (forest (green (yellow (blue))))))
 
