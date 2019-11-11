@@ -26,3 +26,12 @@ Fzf also provides support for:
 - kill <TAB>
 - ssh **<TAB>
 - export **<TAB>
+
+
+## mp::git
+
+- CTRL-G CTRL-F : Files listed in git status
+- CTRL-G CTRL-B : Branches
+- CTRL-G CTRL-T : Tags
+- CTRL-G CTRL-H : Commit hashes
+- CTRL-G CTRL-R : Remotes
