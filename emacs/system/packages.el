@@ -25,7 +25,7 @@
 
 ;; prevents stale elisp bytecode from shadowing more up-to-date source files.
 (setq load-prefer-newer t)
-
+(setq package-check-signature nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; use-package
