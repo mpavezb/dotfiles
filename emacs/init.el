@@ -30,8 +30,10 @@
 (mp/load "editor/ido.el")
 ;; (mp/load "editor/helm.el")
 
+;; = Org =
+(mp/load "lang/org/org.el")
+
 ;; = Languages =
-(mp/load "lang/org.el")
 (mp/load "lang/bazel.el")
 (mp/load "lang/xml.el")
 (mp/load "lang/cpp.el")
