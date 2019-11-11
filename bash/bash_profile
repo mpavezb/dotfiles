@@ -6,7 +6,7 @@
 # Load .bashrc, containing non-login related bash initializations.
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 
-# start X server
+# Start X server if needed
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-	exec startx
+    exec startx
 fi

@@ -1,32 +1,27 @@
 #!/bin/sh
+#
+# Executed by the command interpreter for login shells.
+# This file is not read by bash, if ~/.bash_profile or ~/.bash_login exists.
 
-# Add some more custom software to PATH.
-if [ -f ~/usr/bin ]; then
-    PATH=$PATH:~/usr/bin
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
     export PATH
 fi
 
-# Make sure pkg-config can find self-compiled software
-# and libraries (installed to ~/usr)
-if [ -f ~/usr/lib/pkgconfig ]; then
-    PKG_CONFIG_PATH=$PKG_CONFIG_PATH:~/usr/lib/pkgconfig
-    export PKG_CONFIG_PATH
-fi
-
-# Libraries
-if [ -f ~/usr/lib ]; then
+# set PATH so it includes user's private lib if it exists
+if [ -d "$HOME/.local/bin" ]; then
     # Add custom compiled libraries to library search path.
-    LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/usr/lib
+    LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
     export LD_LIBRARY_PATH
 
     # Add custom compiled libraries to library run path.
-    LD_RUN_PATH=$LD_RUN_PATH:~/usr/lib
+    LD_RUN_PATH="$HOME/.local/lib:$LD_RUN_PATH"
     export LD_RUN_PATH
 fi
 
-# # Add custom Python modules to the Python path.
-# if [ -f ~/usr/lib/python2.5/site-packages ]; then
-#     PYTHONPATH=$PYTHONPATH:~/usr/lib/python2.5/site-packages
-#     export PYTHONPATH
-# fi
-
+# make sure pkg-config can find self-compiled software and libraries
+if [ -d ~/.local/lib/pkgconfig ]; then
+    PKG_CONFIG_PATH="$HOME/.local/lib/pkgconfig:$PKG_CONFIG_PATH"
+    export PKG_CONFIG_PATH
+fi
