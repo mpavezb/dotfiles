@@ -23,10 +23,11 @@ export HISTFILESIZE=20000
 # Set the default editor to vim.
 export EDITOR=emacsclient
 
+# ===============================================
+# Custom Includes
+# ===============================================
+export DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null 2>&1 && pwd )"
 
-# ===============================================
-# External configurations
-# ===============================================
 
 # Enable programmable completion features.
 if [ -f /usr/share/bash-completion/bash_completion ]; then
@@ -34,17 +35,13 @@ if [ -f /usr/share/bash-completion/bash_completion ]; then
 fi
 
 # Prompt for bash and git  
-if [ -f ~/.dotfiles/bash/prompt.bash ]; then
-    source ~/.dotfiles/bash/prompt.bash
-fi
+source $DOTFILES/bash/prompt.bash
 
 # Add bash aliases.
-if [ -f ~/.dotfiles/bash/rc/bash_aliases.bash ]; then
-    source ~/.dotfiles/bash/rc/bash_aliases.bash
-fi
+source $DOTFILES/bash/bash_aliases.bash
 
 # Fuzzy Matcher
 if [ -f ~/.fzf.bash ]; then
     source ~/.fzf.bash
-    [ -f ~/.dotfiles/bash/fzf/fzf.bash ] && source ~/.dotfiles/bash/fzf/fzf.bash
+    source $DOTFILES/bash/fzf/fzf.bash
 fi
