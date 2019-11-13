@@ -23,7 +23,7 @@ _fzf_complete_git() {
 # _fzf_complete_git_post() {
 #     awk '{print $1}'
 # }
-#complete -F _fzf_complete_git -o default -o bashdefault git
+complete -F _fzf_complete_git -o default -o bashdefault git
 
 
 doge() {

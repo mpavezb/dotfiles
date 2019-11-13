@@ -52,5 +52,4 @@ bind '"\C-g\C-r": "$(mp::git_remotes)\e\C-e\er"'
 # ==============================================================================
 # Autocompletion
 # ==============================================================================
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-source $DIR/complete.bash
+# source $DOTFILES/bash/fzf/complete.bash

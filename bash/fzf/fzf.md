@@ -9,13 +9,6 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.opt/fzf
 ~/.opt/.fzf/install
 ```
 
-Add to bashrc:
-```
-# fzf: Command-Line fuzzy finder
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-[ -f ~/.dotfiles/bash/fzf/fzf.bash ] && source ~/.dotfiles/bash/fzf/fzf.bash
-```
-
 ## Usage
 
 - CTRL-T : Search for files and directories.
