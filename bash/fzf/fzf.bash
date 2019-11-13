@@ -49,40 +49,8 @@ bind '"\C-g\C-h": "$(mp::git_commits)\e\C-e\er"'
 bind '"\C-g\C-r": "$(mp::git_remotes)\e\C-e\er"'
 
 
-# # ==============================================================================
-# # Autocompletion
-# # ==============================================================================
-# # See: https://github.com/junegunn/fzf/wiki/examples
-# # See: https://github.com/junegunn/fzf/wiki/Examples-(completion)
-# _fzf_complete_git() {
-#     ARGS="$@"
-#     local branches
-#     branches=$(git branch -vv --all)
-#     if [[ $ARGS == 'git co'* ]]; then
-#         _fzf_complete "--reverse --multi" "$@" < <(
-#             echo $branches
-#         )
-#     else
-#         eval "zle ${fzf_default_completion:-expand-or-complete}"
-#     fi
-# }
-
-# _fzf_complete_git_post() {
-#     awk '{print $1}'
-# }
-# # Not Working
-# # complete -F _fzf_complete_git -o default -o bashdefault git
-
-
-# # Custom fuzzy completion for "doge" command
-# #   e.g. doge **<TAB>
-# _fzf_complete_doge() {
-#   _fzf_complete "--multi --reverse" "$@" < <(
-#     echo very
-#     echo wow
-#     echo such
-#     echo doge
-#   )
-# }
-# # Not Working
-# # complete -F _fzf_complete_doge -o default -o bashdefault doge
+# ==============================================================================
+# Autocompletion
+# ==============================================================================
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source $DIR/complete.bash
