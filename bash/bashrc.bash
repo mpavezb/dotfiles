@@ -17,9 +17,11 @@ shopt -s dotglob        # include '.*' filenames in expansions.
 
 # ignore duplicates and commands starting with spaces
 export HISTCONTROL=ignoredups:ignorespace
+export HISTSIZE=10000
+export HISTFILESIZE=20000
 
 # Set the default editor to vim.
-export EDITOR=vim
+export EDITOR=emacsclient
 
 
 # ===============================================
@@ -37,10 +39,12 @@ if [ -f ~/.dotfiles/bash/prompt.bash ]; then
 fi
 
 # Add bash aliases.
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+if [ -f ~/.dotfiles/bash/rc/bash_aliases.bash ]; then
+    source ~/.dotfiles/bash/rc/bash_aliases.bash
 fi
 
-# fuzzy matcher 
-# https://github.com/junegunn/fzf
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Fuzzy Matcher
+if [ -f ~/.fzf.bash ]; then
+    source ~/.fzf.bash
+    [ -f ~/.dotfiles/bash/fzf/fzf.bash ] && source ~/.dotfiles/bash/fzf/fzf.bash
+fi
