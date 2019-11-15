@@ -31,7 +31,7 @@
 ;; (mp/load "editor/helm.el")
 
 ;; = Org =
-(mp/load "lang/org/org.el")
+(mp/load "org/org.el")
 
 ;; = Languages =
 (mp/load "lang/bazel.el")
