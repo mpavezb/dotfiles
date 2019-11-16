@@ -1,9 +1,29 @@
 # BASH
 
+## Setup
+
+Put the following in the `.bashrc` file.
+
+```bash
+source "$HOME/.dotfiles/bash/bashrc.bash"
+```
+
+This enables th following:
+- Shell options: history, globs, autocompletion.
+- EDITOR: emacsclient.
+- Prompt
+- Aliases
+- FZF
+
+
+Run the following script to copy profile and logout rc files.
+```bash
+bash setup.bash
+```
+
 ## Command line fuzzy finder
 
 See the [README](fzf.md) file.
-
 
 ## Bash prompt
 
