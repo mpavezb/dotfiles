@@ -1,3 +1,12 @@
+;; https://github.com/johanvts/emacs-fireplace
+;; M-x fireplace
+;; M-x fireplace-off
+;; C-+ Move fire up
+;; C-- Move fire down
+;; C-* Toggle smoke
+;; q   Turn off fire
+(use-package fireplace)
+
 
 ;; ===============================================================
 ;; cmake-ide
