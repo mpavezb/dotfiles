@@ -35,3 +35,12 @@ git stash store -m "..." <hash-printed-by-drop>
    git format-patch <my_branch> --stdout > fix_something.patch
 4. Apply patches
    git apply --stat fix_something.patch
+
+
+# ==========================================================
+# Apply Clang format
+# ==========================================================
+sudo apt install clang-format
+find . -iname *.h -o -iname *.cpp -o -iname *.hpp | xargs clang-format -i
+
+
