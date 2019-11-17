@@ -138,7 +138,8 @@
 ;; highlight-indent-guides
 ;; https://github.com/DarthFennec/highlight-indent-guides
 ;; -----------------------------------------------------------------------------
-(use-package highlight-indent-guides)
+(use-package highlight-indent-guides 
+  :diminish 'highlight-indent-guides-mode)
 (setq highlight-indent-guides-method 'character)
 (setq highlight-indent-guides-responsive 'stack)
 (add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
