@@ -20,6 +20,7 @@ M-- : er/contract-region
 F8: mp/neotree-project-dir
 
 # Git
+C-c M-g : magit-file-dispatch
 C-x g   : magit-status
 C-x C-g : git-timemachine
 C-x v g : vc-annotate
