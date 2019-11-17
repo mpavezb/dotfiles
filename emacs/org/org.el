@@ -1,36 +1,63 @@
-;; see: https://alhassy.github.io/init/
-
 ;; -----------------------------------------------------------------------------
+;; org
 ;; ORG Mode
+;; https://orgmode.org/
 ;; -----------------------------------------------------------------------------
-(use-package org)
+(use-package org 
+  :init (add-to-list 'package-pinned-packages '(projectile . "melpa-stable") t) 
+  :bind (("C-c b" . org-agenda) 
+	 ("C-c l" . org-store-link)) 
+  :config
+  ;; -------------------------------------
+  ;; setup
+  ;; -------------------------------------
+  ;; automatic org-mode for org files.
+  (add-to-list 'auto-mode-alist '("\\.org$ . org-mode"))
 
-;; automatic org-mode for org files.
-(add-to-list 'auto-mode-alist '("\\.org$ . org-mode"))
+  ;; agenda files
+  (setq org-agenda-files (list "~/documents/org/"))
 
-;; agenda files
-(setq org-agenda-files (list "~/documents/org/"))
+  ;; -------------------------------------
+  ;; Edition
+  ;; -------------------------------------
+  ;; Fold all source blocks on startup.
+  (setq org-hide-block-startup t)
 
-;; http://notesyoujustmightwanttosave.blogspot.com/2011/12/org-speed-keys.html
-;;(setq org-use-speed-commands t)
+  ;; Avoid accidentally editing folded regions, say by adding text after an Org “⋯”.
+  (setq org-catch-invisible-edits 'show)
 
+  ;; Give quote and verse blocks a nice look.
+  (setq org-fontify-quote-and-verse-blocks t)
 
-;; -----------------------------------------------------------------------------
-;; Edition
-;; -----------------------------------------------------------------------------
+  ;; Pressing ENTER on a link should follow it.
+  (setq org-return-follows-link t)
 
-;; Fold all source blocks on startup.
-(setq org-hide-block-startup t)
+  ;; -------------------------------------
+  ;; TODO and Priority Keywords
+  ;; -------------------------------------
+  ;; @: pop-up to note why the state changed
+  ;; !: generate timestamp
+  (setq org-todo-keywords ;;
+	(quote ((sequence "TODO(t)" "STARTED(s@/!)" "|" "DONE(d/!)")
+		(sequence "WAITING(w@/!)" "ON_HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
+  (setq org-todo-keyword-faces ;;
+	(quote (("TODO" :foreground "red" :weight bold)
+		("STARTED" :foreground "blue" :weight bold)
+		("DONE" :foreground "forest green" :weight bold)
+		("WAITING" :foreground "orange" :weight bold)
+		("ON_HOLD" :foreground "magenta" :weight bold)
+		("CANCELLED" :foreground "forest green" :weight bold))))
 
-;; Avoid accidentally editing folded regions, say by adding text after an Org “⋯”.
-(setq org-catch-invisible-edits 'show)
+  ;; set priority range from A to C with default A
+  (setq org-highest-priority ?A)
+  (setq org-lowest-priority ?C)
+  (setq org-default-priority ?A)
 
-;; Give quote and verse blocks a nice look.
-(setq org-fontify-quote-and-verse-blocks t)
-
-;; Pressing ENTER on a link should follow it.
-(setq org-return-follows-link t)
-
+  ;;set colours for priorities
+  (setq org-priority-faces ;;
+	(quote ((?A . (:foreground "#F0DFAF" :weight bold))
+		(?B . (:foreground "LightSteelBlue"))
+		(?C . (:foreground "OliveDrab"))))))
 
 ;; -----------------------------------------------------------------------------
 ;; TOC
@@ -48,44 +75,6 @@
 ;; Code Blocks
 ;; -----------------------------------------------------------------------------
 ;; TO DO
-
-
-;; -----------------------------------------------------------------------------
-;; TODO and Priority Keywords
-;; -----------------------------------------------------------------------------
-
-;; @: pop-up to note why the state changed
-;; !: generate timestamp
-(setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "STARTED(s@/!)" "|" "DONE(d/!)") 
-	      (sequence "WAITING(w@/!)" "ON_HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
-
-(setq org-todo-keyword-faces
-      (quote (("TODO" :foreground "red" :weight bold) 
-	      ("STARTED" :foreground "blue" :weight bold) 
-	      ("DONE" :foreground "forest green" :weight bold) 
-	      ("WAITING" :foreground "orange" :weight bold) 
-	      ("ON_HOLD" :foreground "magenta" :weight bold) 
-	      ("CANCELLED" :foreground "forest green" :weight bold))))
-
-;; set priority range from A to C with default A
-(setq org-highest-priority ?A)
-(setq org-lowest-priority ?C)
-(setq org-default-priority ?A)
-
-;;set colours for priorities
-(setq org-priority-faces
-      (quote ((?A . (:foreground "#F0DFAF" :weight bold)) 
-	      (?B . (:foreground "LightSteelBlue")) 
-	      (?C . (:foreground "OliveDrab")))))
-
-
-;; -----------------------------------------------------------------------------
-;; Keymaps
-;; -----------------------------------------------------------------------------
-(define-key global-map "\C-ca" 'org-agenda)
-(define-key global-map "\C-cl" 'org-store-link)
-
 
 ;; -----------------------------------------------------------------------------
 ;; CHECK LATER
