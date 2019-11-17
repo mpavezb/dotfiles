@@ -132,3 +132,13 @@
 ;; Move line or selected region up and down (M-Up/Down)
 (use-package move-text)
 (move-text-default-bindings)
+
+
+;; -----------------------------------------------------------------------------
+;; highlight-indent-guides
+;; https://github.com/DarthFennec/highlight-indent-guides
+;; -----------------------------------------------------------------------------
+(use-package highlight-indent-guides)
+(setq highlight-indent-guides-method 'character)
+(setq highlight-indent-guides-responsive 'stack)
+(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
