@@ -3,11 +3,9 @@
 ;; Basic editor configurations.
 ;; Non-language related.
 
-;; -----------------------------------------------------------------------------
 ;; Line numbering
+;; Display line number sidebar on programming languages
 ;; https://www.emacswiki.org/emacs/LineNumbers
-;; -----------------------------------------------------------------------------
-;; display line number sidebar on programming languages
 (add-hook 'prog-mode-hook 'linum-mode)
 
 ;; highlight current line-number
@@ -32,24 +30,21 @@
 (setq show-paren-style 'expression)
 (show-paren-mode 1)
 
-;; Colour parens, and other delimiters, depending on their depth.
-;; Very useful for parens heavy languages like Lisp.
-(use-package rainbow-delimiters)
-(add-hook 'org-mode-hook '(lambda () 
-			    (rainbow-delimiters-mode 1)))
-(add-hook 'prog-mode-hook '(lambda () 
-			     (rainbow-delimiters-mode 1)))
+;; rainbow-delimiters
+;; Colour parentheses depending on their depth.
+;; https://github.com/Fanael/rainbow-delimiters
+(use-package rainbow-delimiters 
+  :hook ((prog-mode . rainbow-delimiters-mode) 
+	 (org-mode . rainbow-delimiters-mode)))
 
-;; -----------------------------------------------------------------------------
 ;; highlight-indent-guides
 ;; https://github.com/DarthFennec/highlight-indent-guides
-;; -----------------------------------------------------------------------------
 (use-package highlight-indent-guides 
-  :diminish highlight-indent-guides-mode)
-(setq highlight-indent-guides-method 'character)
-(setq highlight-indent-guides-responsive 'stack)
-(add-hook 'prog-mode-hook 'highlight-indent-guides-mode)
-
+  :diminish highlight-indent-guides-mode 
+  :hook (prog-mode . highlight-indent-guides-mode) 
+  :config ;;
+  (setq highlight-indent-guides-method 'character) 
+  (setq highlight-indent-guides-responsive 'stack))
 
 ;; -----------------------------------------------------------------------------
 ;; misc
@@ -66,8 +61,8 @@
 (delete-selection-mode 1)
 
 ;; Move line or selected region up and down (M-Up/Down)
-(use-package move-text)
-(move-text-default-bindings)
+(use-package move-text 
+  :config (move-text-default-bindings))
 
 ;; electric pairs
 (electric-pair-mode 1)
@@ -90,12 +85,12 @@
 (setq mouse-yank-at-point t)
 
 (use-package browse-kill-ring 
+  :bind ("M-y" . browse-kill-ring) 
   :config () 
   (setq browse-kill-ring-highlight-current-entry t) 
   (setq browse-kill-ring-highlight-inserted-item t) 
   (setq browse-kill-ring-show-preview t) 
   (setq browse-kill-ring-separator "~~"))
-(global-set-key (kbd "M-y") 'browse-kill-ring)
 
 (use-package popup-kill-ring 
   :config () 
@@ -147,18 +142,17 @@
 ;; Multiple Cursors
 ;; https://github.com/magnars/multiple-cursors.el
 ;; -----------------------------------------------------------------------------
-(use-package multiple-cursors)
-(global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-S-<mouse-1>") 'mc/add-cursor-on-click)
-
+(use-package multiple-cursors 
+  :bind (("C-S-c C-S-c" . mc/edit-lines) 
+	 ("C->" . mc/mark-next-like-this) 
+	 ("C-<" . mc/mark-previous-like-this) 
+	 ("C-c C-<" . mc/mark-all-like-this) 
+	 ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
 
 ;; -----------------------------------------------------------------------------
 ;; Expand Region
 ;; https://github.com/magnars/expand-region.el
 ;; -----------------------------------------------------------------------------
-(use-package expand-region)
-(global-set-key (kbd "M-+") 'er/expand-region)
-(global-set-key (kbd "M--") 'er/contract-region)
+(use-package expand-region 
+  :bind (("M-+" . er/expand-region) 
+	 ("M--" . er/contract-region)))

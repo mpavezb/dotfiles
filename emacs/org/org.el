@@ -64,12 +64,7 @@
 ;; https://github.com/snosov1/toc-org
 ;; -----------------------------------------------------------------------------
 (use-package toc-org 
-  :config (add-hook 'org-mode-hook 'toc-org-mode)
-
-  ;; markdown: can be used, but identifies bash
-  ;; comments in code blocks as headings.
-  ;;(add-hook 'markdown-mode-hook 'toc-org-mode)
-  )
+  :hook (org-mode . toc-org-mode))
 
 ;; -----------------------------------------------------------------------------
 ;; Code Blocks
