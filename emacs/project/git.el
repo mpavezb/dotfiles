@@ -4,6 +4,14 @@
 (use-package magit 
   :config (global-set-key (kbd "C-x g") 'magit-status))
 
+;; magit-todos
+(use-package magit-todos 
+  :config () 
+  (magit-todos-mode t)
+
+  ;; select diff against HEAD^ (last commit), master (all commits)
+  (setq magit-todos-branch-list-commit-ref "master"))
+
 ;; Git Timemachine
 ;; Step through historic versions of git controlled file
 ;; https://gitlab.com/pidu/git-timemachine
