@@ -48,7 +48,12 @@ M-RET  : srefactor-refactor-at-point
 mp/put-buffername-on-clipboard
 
 # Dired
+/ h : hide dotfiles
+/ d : only directories
+/ f : only files
+/ <wait> : see all filters
 find-name-dired
+dired-git-info-mode
 
 # Projectile
 # https://projectile.readthedocs.io/en/latest/usage/
