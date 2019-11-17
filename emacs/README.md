@@ -2,6 +2,10 @@
 
 ## Custom Key Bindings
 ```
+# kill-ring
+M-y   : browse-kill-ring
+C-M-y : popup-kill-ring
+
 # Buffers
 C-x M-k : mp/reopen-killed-file
 

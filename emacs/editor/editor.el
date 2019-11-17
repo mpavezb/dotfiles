@@ -89,6 +89,18 @@
 ;; Mouse yanking inserts at the point instead of the location of the click.
 (setq mouse-yank-at-point t)
 
+(use-package browse-kill-ring 
+  :ensure t 
+  :config () 
+  (setq browse-kill-ring-highlight-current-entry t) 
+  (setq browse-kill-ring-highlight-inserted-item t) 
+  (setq browse-kill-ring-show-preview t) 
+  (setq browse-kill-ring-separator "~~"))
+(global-set-key (kbd "M-y") 'browse-kill-ring)
+
+(use-package popup-kill-ring 
+  :config () 
+  :bind ("C-M-y" . popup-kill-ring))
 
 ;; -----------------------------------------------------------------------------
 ;; search
