@@ -49,6 +49,9 @@ C--   : text-scale-decrease
 M-RET  : srefactor-refactor-at-point
 M-RET  : srefactor-refactor-at-point
 
+# Google
+C-c / C-h  : Google this keybindings
+C-c t      : Google translate
 ```
 
 ## Important Commands

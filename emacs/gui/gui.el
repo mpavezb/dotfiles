@@ -59,6 +59,41 @@
   :commands (wttrin) 
   :init (setq wttrin-default-cities '("Unterschleissheim")))
 
+;; google-this
+;; Google search under point
+;; https://github.com/Malabarba/emacs-google-this
+;; See: C-c / C-h
+(use-package google-this 
+  :config (google-this-mode t))
+
+;; google-translate
+;; Translate using google services
+;; https://github.com/atykhonov/google-translate
+(use-package google-translate 
+  :init (require 'google-translate-smooth-ui) 
+  :bind ("C-c t" . google-translate-smooth-translate) 
+  :config ;;
+
+  ;; desired translations
+  (setq google-translate-translation-directions-alist '(("de" . "en") 
+							("en" . "ru")))
+
+  ;; where to display the results
+  ;; nil (other buffer), 'popup, 'kill-ring, 'echo-area, 'current-buffer
+  (setq google-translate-output-destination 'popup)
+
+  ;; show phonetics
+  (setq google-translate-show-phonetic t)
+
+  ;; focus on translation buffer when used
+  (setq google-translate-pop-up-buffer-set-focus t)
+
+  ;; automatic input methods
+  (setq google-translate-preferable-input-methods-alist '((nil . ("en")) 
+							  (ukrainian-programmer-dvorak . ("ru")) 
+							  (german-prefix . ("de")))) 
+  (setq google-translate-input-method-auto-toggling t))
+
 ;; -----------------------------------------------------------------------------
 ;; misc
 ;; Waiting for emacs26
