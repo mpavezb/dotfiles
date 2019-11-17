@@ -25,10 +25,19 @@ C-x C-g : git-timemachine
 C-x v g : vc-annotate
 C-c g g : browse-at-remote
 
+# ORG
+C-c a   : org-agenda
+C-c l   : org-store-link
+
 # GUI
-C-x t: mp/toggle-theme
-C-+: text-scale-increase
-C--: text-scale-decrease 
+C-x t : mp/toggle-theme
+C-+   : text-scale-increase
+C--   : text-scale-decrease
+
+# C/C++
+M-RET  : srefactor-refactor-at-point
+M-RET  : srefactor-refactor-at-point
+
 ```
 
 ## Important Commands
@@ -51,6 +60,12 @@ C-c p  5 f : projectile-find-file-other-frame
 C-c p  4 a : switch to file with different extension in other window
 C-c p  5 a : switch to file with different extension in other frame
 C-c p  p   : projectile-switch-project
+
+# Semantic
+C-c , j : semantic-complete-jump-local (jump to function in buffer)
+C-c , J : semantic-complete-jump (jump to function anywhere)
+C-c , l : semantic-analyze-possible-completions
+C-c , <SPC> : semantic-complete-analyze-inline (possible completions)
 
 # Neotree
 # https://github.com/jaypei/emacs-neotree
