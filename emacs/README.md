@@ -1,5 +1,11 @@
 # Emacs
 
+## Prerequisites
+
+```bash
+sudo apt install clang-format
+```
+
 ## Custom Key Bindings
 ```
 # kill-ring

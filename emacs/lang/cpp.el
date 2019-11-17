@@ -1,10 +1,11 @@
 ;; -----------------------------------------------------------------------------
 ;; clang-format
+;; Format C/C++ code
 ;; http://clang.llvm.org/docs/ClangFormat.html
 ;; https://github.com/SavchenkoValeriy/emacs-clang-format-plus
 ;; -----------------------------------------------------------------------------
-;; (sudo apt install clang-format)
 (use-package clang-format+ 
+  :init (add-to-list 'package-pinned-packages '(magit . "melpa-stable") t) 
   :diminish clang-format+-mode
 
   ;; format buffer on save
@@ -12,19 +13,22 @@
   :config (setq clang-format+-context 'buffer))
 
 ;; -----------------------------------------------------------------------------
-;; Syntax Highlighting
-;; -----------------------------------------------------------------------------
-
-;; syntax highlighting for modern cpp until C++20
+;; modern-cpp-font-lock
+;; Syntax highlighting for modern cpp until C++20
 ;; https://github.com/ludwigpacifici/modern-cpp-font-lock
+;; -----------------------------------------------------------------------------
 (use-package modern-cpp-font-lock 
   :diminish modern-c++-font-lock-mode 
   :config (modern-c++-font-lock-global-mode t))
 
 ;; -----------------------------------------------------------------------------
-;; Refactoring
+;; srefactor
+;; Semantic refactoring for C/C++
+;; https://github.com/tuhdo/semantic-refactor
 ;; -----------------------------------------------------------------------------
 (use-package srefactor 
-  :config (semantic-mode 1))
-(define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
-(define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+  :bind (:map c-mode-map 
+	      ("M-RET" . 'srefactor-refactor-at-point) 
+	      :map c++-mode-map
+	      ("M-RET" . 'srefactor-refactor-at-point)) 
+  :config (semantic-mode t))

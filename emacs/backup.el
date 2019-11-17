@@ -1,12 +1,3 @@
-;; https://github.com/johanvts/emacs-fireplace
-;; M-x fireplace
-;; M-x fireplace-off
-;; C-+ Move fire up
-;; C-- Move fire down
-;; C-* Toggle smoke
-;; q   Turn off fire
-(use-package fireplace)
-
 
 ;; ===============================================================
 ;; cmake-ide
@@ -94,7 +85,7 @@
 ;; )
 
 ;; ;; (helm-rtags integration):
-;; ;; TODO: Has no coloring! How can I get coloring?
+;; ;; Has no coloring! How can I get coloring?
 ;; (use-package helm-rtags)
 ;; (progn
 ;;   (setq rtags-display-result-backend 'helm)
@@ -124,11 +115,6 @@
 ;;   (add-hook 'c-mode-hook #'mp/setup-flycheck-rtags)
 ;;   (add-hook 'c++-mode-hook #'mp/setup-flycheck-rtags)
 ;; )
-
-
-
-
-
 
 ;; ;(use-package levenshtein)1
 ;; ;(cmake-ide-setup)

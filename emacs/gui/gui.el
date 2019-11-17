@@ -41,9 +41,19 @@
 ;; -----------------------------------------------------------------------------
 ;; misc
 ;; -----------------------------------------------------------------------------
+
+;; fireplace
+;; Displays a virtual fireplace
+;; https://github.com/johanvts/emacs-fireplace
+(use-package fireplace)
+
+;; xkcd
+;; xkcd reader for GNU Emacs.
+;; https://github.com/vibhavp/emacs-xkcd
 (use-package xkcd)
 
-;; weather from wttr.in
+;; wttrin
+;; Weather from wttr.in
 ;; https://github.com/bcbcarl/emacs-wttrin
 (use-package wttrin 
   :commands (wttrin) 
