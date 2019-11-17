@@ -36,3 +36,24 @@
   :init (which-key-mode) 
   :config (which-key-setup-side-window-bottom) 
   (setq which-key-idle-delay 3.0))
+
+
+;; -----------------------------------------------------------------------------
+;; misc
+;; -----------------------------------------------------------------------------
+(use-package xkcd)
+
+;; weather from wttr.in
+;; https://github.com/bcbcarl/emacs-wttrin
+(use-package wttrin 
+  :ensure t 
+  :commands (wttrin) 
+  :init (setq wttrin-default-cities '("Unterschleissheim")))
+
+;; -----------------------------------------------------------------------------
+;; misc
+;; Waiting for emacs26
+;; -----------------------------------------------------------------------------
+;; (use-package dashboard
+;;   :ensure t
+;;   :config (dashboard-setup-startup-hook))

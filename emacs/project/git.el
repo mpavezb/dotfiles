@@ -5,6 +5,8 @@
   :config (global-set-key (kbd "C-x g") 'magit-status))
 
 ;; magit-todos
+;; Show TODOs in magit
+;; https://github.com/alphapapa/magit-todos
 (use-package magit-todos 
   :config () 
   (magit-todos-mode t)
