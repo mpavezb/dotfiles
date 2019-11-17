@@ -19,3 +19,12 @@
 ;; https://github.com/ludwigpacifici/modern-cpp-font-lock
 (use-package modern-cpp-font-lock)
 (modern-c++-font-lock-global-mode t)
+
+;; -----------------------------------------------------------------------------
+;; Refactoring
+;; -----------------------------------------------------------------------------
+(use-package srefactor)
+(semantic-mode 1)
+
+(define-key c-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
+(define-key c++-mode-map (kbd "M-RET") 'srefactor-refactor-at-point)
