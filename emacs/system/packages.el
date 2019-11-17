@@ -39,8 +39,5 @@
   (package-install 'use-package))
 (require 'use-package)
 
-;; Now we can require packages like this to auto install them.
-;; (use-package XYZ :ensure t)
-
 ;; Auto install used packages.
 (setq use-package-always-ensure t)

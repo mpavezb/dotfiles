@@ -90,7 +90,6 @@
 (setq mouse-yank-at-point t)
 
 (use-package browse-kill-ring 
-  :ensure t 
   :config () 
   (setq browse-kill-ring-highlight-current-entry t) 
   (setq browse-kill-ring-highlight-inserted-item t) 

@@ -46,7 +46,6 @@
 ;; weather from wttr.in
 ;; https://github.com/bcbcarl/emacs-wttrin
 (use-package wttrin 
-  :ensure t 
   :commands (wttrin) 
   :init (setq wttrin-default-cities '("Unterschleissheim")))
 
@@ -55,5 +54,4 @@
 ;; Waiting for emacs26
 ;; -----------------------------------------------------------------------------
 ;; (use-package dashboard
-;;   :ensure t
 ;;   :config (dashboard-setup-startup-hook))
