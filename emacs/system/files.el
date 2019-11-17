@@ -6,8 +6,7 @@
 ;; https://github.com/emacscollective/no-littering
 ;; Modifies paths to store files and persistent data
 ;; like: backups, desktop, savehist, saveplace, ...
-(use-package 
-  no-littering)
+(use-package no-littering)
 
 ;; auto-saved files
 (setq auto-save-file-name-transforms `((".*" ,(no-littering-expand-var-file-name "auto-save/") t)))

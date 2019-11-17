@@ -2,11 +2,9 @@
 (setf custom-safe-themes t)
 
 ;; Nice looking themes ^_^
-(use-package 
-  solarized-theme 
+(use-package solarized-theme 
   :demand t)
-(use-package 
-  doom-themes 
+(use-package doom-themes 
   :demand t)
 
 (defun mp/disable-all-themes () 

@@ -1,5 +1,3 @@
-
-
 ;; -----------------------------------------------------------------------------
 ;; clang-format
 ;; http://clang.llvm.org/docs/ClangFormat.html

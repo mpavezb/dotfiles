@@ -36,8 +36,7 @@
 
 ;; Colour parens, and other delimiters, depending on their depth.
 ;; Very useful for parens heavy languages like Lisp.
-(use-package 
-  rainbow-delimiters)
+(use-package rainbow-delimiters)
 (add-hook 'org-mode-hook '(lambda () 
 			    (rainbow-delimiters-mode 1)))
 (add-hook 'prog-mode-hook '(lambda () 
@@ -111,8 +110,7 @@
 
 ;; Multiple Cursors
 ;; https://github.com/magnars/multiple-cursors.el
-(use-package 
-  multiple-cursors)
+(use-package multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
@@ -121,8 +119,7 @@
 
 ;; Expand Region
 ;; https://github.com/magnars/expand-region.el
-(use-package 
-  expand-region)
+(use-package expand-region)
 (global-set-key (kbd "M-+") 'er/expand-region)
 (global-set-key (kbd "M--") 'er/contract-region)
 
@@ -133,6 +130,5 @@
 
 
 ;; Move line or selected region up and down (M-Up/Down)
-(use-package 
-  move-text)
+(use-package move-text)
 (move-text-default-bindings)

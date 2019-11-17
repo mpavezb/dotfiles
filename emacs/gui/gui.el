@@ -26,23 +26,20 @@
 
 
 ;; Provides only the command “restart-emacs”.
-(use-package 
-  restart-emacs 
+(use-package restart-emacs 
   :commands restart-emacs)
 
 
 ;; Making it easier to discover Emacs key presses.
 ;; Emacs shows available key shortcuts while typing some command.
-(use-package 
-  which-key 
+(use-package which-key 
   :diminish which-key-mode 
   :init (which-key-mode) 
   :config (which-key-setup-side-window-bottom) 
   (setq which-key-idle-delay 3.0))
 
 ;; Hide minibuffer markers
-(use-package 
-  diminish)
+(use-package diminish)
 ;; (diminish 'eldoc-mode)
 ;; (diminish 'org-indent-mode)
 

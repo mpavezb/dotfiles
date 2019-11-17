@@ -1,8 +1,7 @@
 ;; Bazel Mode
 ;; https://melpa.org/#/bazel-mode
 
-(use-package 
-  bazel-mode)
+(use-package bazel-mode)
 
 ;; Use this mode for bazel BUILD files
 (autoload 'bazel-mode "bazel" "Associates bazel BUILD files with bazel-mode." t)

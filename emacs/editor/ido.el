@@ -2,8 +2,7 @@
 ;; Interactively Do Things
 ;; https://www.emacswiki.org/emacs/InteractivelyDoThings
 
-(use-package 
-  ido)
+(use-package ido)
 (ido-mode t)
 
 (setq ido-enable-flex-matching t)
