@@ -11,5 +11,8 @@
     (elisp-format-buffer)))
 (add-hook  'before-save-hook 'mp/lisp-mode-before-save-hook)
 
+;; use this to disable the format hook
+;; (remove-hook  'before-save-hook 'mp/lisp-mode-before-save-hook)
+
 ;; do not split use-package with newlines
 (add-to-list 'elisp-format-split-subexp-keyword-except-list '"use-package")

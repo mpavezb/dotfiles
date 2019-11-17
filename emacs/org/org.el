@@ -45,27 +45,27 @@
 ;; @: pop-up to note why the state changed
 ;; !: generate timestamp
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "STARTED(s@/!)" "|" "DONE(d/!)")
-              (sequence "WAITING(w@/!)" "ON_HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
+      (quote ((sequence "TODO(t)" "STARTED(s@/!)" "|" "DONE(d/!)") 
+	      (sequence "WAITING(w@/!)" "ON_HOLD(h@/!)" "|" "CANCELLED(c@/!)"))))
 
 (setq org-todo-keyword-faces
-      (quote (("TODO" :foreground "red" :weight bold)
-              ("STARTED" :foreground "blue" :weight bold)
-              ("DONE" :foreground "forest green" :weight bold)
-              ("WAITING" :foreground "orange" :weight bold)
-              ("ON_HOLD" :foreground "magenta" :weight bold)
-              ("CANCELLED" :foreground "forest green" :weight bold))))
+      (quote (("TODO" :foreground "red" :weight bold) 
+	      ("STARTED" :foreground "blue" :weight bold) 
+	      ("DONE" :foreground "forest green" :weight bold) 
+	      ("WAITING" :foreground "orange" :weight bold) 
+	      ("ON_HOLD" :foreground "magenta" :weight bold) 
+	      ("CANCELLED" :foreground "forest green" :weight bold))))
 
-
-;set priority range from A to C with default A
+;; set priority range from A to C with default A
 (setq org-highest-priority ?A)
 (setq org-lowest-priority ?C)
 (setq org-default-priority ?A)
 
 ;;set colours for priorities
-(setq org-priority-faces '((?A . (:foreground "#F0DFAF" :weight bold))
-                           (?B . (:foreground "LightSteelBlue"))
-                           (?C . (:foreground "OliveDrab"))))
+(setq org-priority-faces
+      (quote ((?A . (:foreground "#F0DFAF" :weight bold)) 
+	      (?B . (:foreground "LightSteelBlue")) 
+	      (?C . (:foreground "OliveDrab")))))
 
 
 ;; -----------------------------------------------------------------------------
