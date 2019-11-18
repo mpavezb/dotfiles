@@ -26,9 +26,9 @@
 ;; Semantic refactoring for C/C++
 ;; https://github.com/tuhdo/semantic-refactor
 ;; -----------------------------------------------------------------------------
-(use-package srefactor 
-  :bind (:map c-mode-map 
-	      ("M-RET" . 'srefactor-refactor-at-point) 
-	      :map c++-mode-map
-	      ("M-RET" . 'srefactor-refactor-at-point)) 
-  :config (semantic-mode t))
+;; (use-package srefactor
+;;   :bind (:map c-mode-map
+;; 	      ("M-RET" . 'srefactor-refactor-at-point)
+;; 	      :map c++-mode-map
+;; 	      ("M-RET" . 'srefactor-refactor-at-point))
+;;   :config (semantic-mode t))
