@@ -5,7 +5,7 @@
 ;; -----------------------------------------------------------------------------
 (use-package org 
   :init (add-to-list 'package-pinned-packages '(projectile . "melpa-stable") t) 
-  :bind (("C-c b" . org-agenda) 
+  :bind (("C-c a" . org-agenda) 
 	 ("C-c l" . org-store-link)) 
   :config
   ;; -------------------------------------

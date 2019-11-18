@@ -32,9 +32,9 @@ F8: mp/neotree-project-dir
 # Git
 C-c M-g : magit-file-dispatch
 C-x g   : magit-status
-C-x C-g : git-timemachine
 C-x v g : vc-annotate
-C-c g g : browse-at-remote
+C-c g g : git-timemachine
+C-c g b : browse-at-remote
 
 # ORG
 C-c a   : org-agenda

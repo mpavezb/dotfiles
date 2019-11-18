@@ -27,7 +27,7 @@
 ;; -----------------------------------------------------------------------------
 (use-package git-timemachine 
   :init (add-to-list 'package-pinned-packages '(git-timemachine . "melpa-stable") t) 
-  :bind ("C-x C-g" . git-timemachine))
+  :bind ("C-c g g" . git-timemachine))
 
 ;; -----------------------------------------------------------------------------
 ;; browse-at-remote
@@ -35,4 +35,4 @@
 ;; https://github.com/rmuslimov/browse-at-remote
 ;; -----------------------------------------------------------------------------
 (use-package browse-at-remote 
-  :bind ("C-c g g" . browse-at-remote))
+  :bind ("C-c g b" . browse-at-remote))

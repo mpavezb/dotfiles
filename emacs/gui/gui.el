@@ -64,6 +64,7 @@
 ;; https://github.com/Malabarba/emacs-google-this
 ;; See: C-c / C-h
 (use-package google-this 
+  :diminish google-this-mode 
   :config (google-this-mode t))
 
 ;; google-translate
