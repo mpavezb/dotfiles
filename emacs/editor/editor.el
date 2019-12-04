@@ -85,7 +85,7 @@
 (setq mouse-yank-at-point t)
 
 (use-package browse-kill-ring 
-  :bind ("M-y" . browse-kill-ring) 
+  :bind ("C-M-y" . browse-kill-ring) 
   :config () 
   (setq browse-kill-ring-highlight-current-entry t) 
   (setq browse-kill-ring-highlight-inserted-item t) 
@@ -94,7 +94,7 @@
 
 (use-package popup-kill-ring 
   :config () 
-  :bind ("C-M-y" . popup-kill-ring))
+  :bind ("M-y" . popup-kill-ring))
 
 ;; -----------------------------------------------------------------------------
 ;; search
@@ -156,3 +156,11 @@
 (use-package expand-region 
   :bind (("M-+" . er/expand-region) 
 	 ("M--" . er/contract-region)))
+
+;; -----------------------------------------------------------------------------
+;; origami
+;; A text folding minor mode for emacs
+;; https://github.com/gregsexton/origami.el
+;; -----------------------------------------------------------------------------
+;; (use-package origami
+;;   :bind (("<backtab>" . origami-forward-toggle-node)))

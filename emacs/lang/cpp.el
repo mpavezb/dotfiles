@@ -1,4 +1,12 @@
 ;; -----------------------------------------------------------------------------
+;; c++-mode
+;; Major mode for C++
+;; https://www.emacswiki.org/emacs/CPlusPlusMode
+;; -----------------------------------------------------------------------------
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+;;(add-hook 'c++-mode-hook 'origami-mode)
+
+;; -----------------------------------------------------------------------------
 ;; clang-format
 ;; Format C/C++ code
 ;; http://clang.llvm.org/docs/ClangFormat.html
