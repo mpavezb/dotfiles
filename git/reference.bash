@@ -22,6 +22,11 @@ git stash save "." # custom message
 git stash drop stash@{0}
 git stash store -m "..." <hash-printed-by-drop>
 
+# stash only selected files
+# Do it with magit!
+# - Stage files/hunks
+# - Stash index only: zi (magit-stash-index)
+
 
 # ==========================================================
 # GIT PATCH
