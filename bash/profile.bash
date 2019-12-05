@@ -10,7 +10,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 # set PATH so it includes user's private lib if it exists
-if [ -d "$HOME/.local/bin" ]; then
+if [ -d "$HOME/.local/lib" ]; then
     # Add custom compiled libraries to library search path.
     LD_LIBRARY_PATH="$HOME/.local/lib:$LD_LIBRARY_PATH"
     export LD_LIBRARY_PATH
