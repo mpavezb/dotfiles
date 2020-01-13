@@ -66,10 +66,6 @@
 
 ;; electric pairs
 (electric-pair-mode 1)
-;; (setq electric-pair-pairs '((?~ . ?~)
-;; 			    (?* . ?*)
-;; 			    (?/ . ?/)))
-
 
 ;; -----------------------------------------------------------------------------
 ;; Kill-Yank for Clipboard and Mouse
@@ -107,15 +103,21 @@
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 (setq isearch-allow-scroll t)
 
-;; delete grep header
+;; -----------------------------------------------------------------------------
+;; Delete emacs grep header
+;; -----------------------------------------------------------------------------
 (defun mp/delete-grep-header () 
-  (save-excursion
-    (with-current-buffer grep-last-buffer
-      (goto-line 5) 
-      (narrow-to-region (point) (point-max)))))
+  (save-excursion (with-current-buffer grep-last-buffer (goto-line 5) 
+				       (narrow-to-region (point) 
+							 (point-max)))))
 
-(defadvice grep (after mp/delete-grep-header activate) (mp/delete-grep-header))
-(defadvice rgrep (after mp/delete-grep-header activate) (mp/delete-grep-header))
+;; this shows:
+;; ad-handle-definition: ‘grep’ got redefined
+;; ad-handle-definition: ‘rgrep’ got redefined
+(defadvice grep (after mp/delete-grep-header activate) 
+  (mp/delete-grep-header))
+(defadvice rgrep (after mp/delete-grep-header activate) 
+  (mp/delete-grep-header))
 
 ;; -----------------------------------------------------------------------------
 ;; completion

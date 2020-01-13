@@ -3,9 +3,6 @@
 ;; Matias Pavez
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Keep it comented, otherwise will appear again.
-;; (package-initialize)
-
 (defun mp/load (@settings-file) 
   "Loads the given file from the mp/ folder"
   (load (concat user-emacs-directory "mp/" @settings-file)))
@@ -43,4 +40,7 @@
 
 ;; = Integrations =
 (mp/load "integrations/neotree-projectile.el")
-;; (mp/load "integrations/helm-projectile.el")
+;;;; (mp/load "integrations/helm-projectile.el")
+
+;; Job Customs
+;; (add-to-list 'browse-at-remote-remote-type-domains '("cc-github.bmwgroup.net" . "github"))
