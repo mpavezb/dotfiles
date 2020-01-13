@@ -59,6 +59,16 @@ C-c t      : Google translate
 ```
 # mp/
 mp/put-buffername-on-clipboard
+mp/s-split-words 
+mp/s-lower-camel-case 
+mp/s-upper-camel-case 
+mp/s-snake-case 
+mp/s-dashed-words 
+mp/s-capitalized-words 
+mp/s-titleized-words 
+mp/s-word-initials 
+mp/s-upcase 
+mp/s-downcase 
 
 # Dired
 find-name-dired
