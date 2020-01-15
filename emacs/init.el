@@ -30,6 +30,7 @@
 
 ;; = Org =
 (mp/load "org/org.el")
+(mp/load "org/journal.el")
 
 ;; = Languages =
 (mp/load "lang/bazel.el")

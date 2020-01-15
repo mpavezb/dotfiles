@@ -119,6 +119,12 @@ untabify
 ```
 
 ```
+# Shell Commands
+shell   : Run shell
+M-!     : Run command in minibuffer.
+C-u M-! : Run command, but paste output in buffer.
+
+
 # Rectangles
 C-x r t : string-rectangle  (works on rectangular selection)
 C-s     : isearch-forward   (puts mark at the beginning of the match)
