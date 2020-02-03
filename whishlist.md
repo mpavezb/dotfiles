@@ -1,0 +1,1 @@
+- Proper Hostnames for machines: Zeus, Kronos
