@@ -8,7 +8,8 @@ Put the following in the `.bashrc` file.
 source "$HOME/.dotfiles/bash/bashrc.bash"
 ```
 
-This enables th following:
+This enables the following:
+- Local paths
 - Shell options: history, globs, autocompletion.
 - EDITOR: emacsclient.
 - Prompt
@@ -22,7 +23,6 @@ bash setup.bash
 ```
 
 ## Initialization Files
-
 
 ### Interactive Shell
 
