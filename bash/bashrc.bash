@@ -28,17 +28,19 @@ export EDITOR=emacsclient
 # ===============================================
 export DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null 2>&1 && pwd )"
 
-
-# Enable programmable completion features.
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-    source /usr/share/bash-completion/bash_completion
-fi
+# environment variables
+source $DOTFILES/bash/environment.sh
 
 # Prompt for bash and git  
 source $DOTFILES/bash/prompt.bash
 
 # Add bash aliases.
 source $DOTFILES/bash/bash_aliases.bash
+
+# Enable programmable completion features.
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+    source /usr/share/bash-completion/bash_completion
+fi
 
 # Fuzzy Matcher
 if [ -f ~/.fzf.bash ]; then

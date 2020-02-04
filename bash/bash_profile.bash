@@ -1,12 +1,9 @@
 #!/bin/bash
+# This file is the entry point for interactive-login shells.
 
-# Load .profile, containing login, non-bash related initializations.
+# Load interactive/login related initializations.
 [[ -f ~/.profile ]] && source ~/.profile
 
-# Load .bashrc, containing non-login related bash initializations.
+#  Load interactive/non-login related initializations.
 [[ -f ~/.bashrc ]] && source ~/.bashrc
 
-# Start X server if needed
-if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-    exec startx
-fi
