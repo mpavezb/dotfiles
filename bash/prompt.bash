@@ -1,5 +1,5 @@
 #!/bin/bash
-# Version: v1.2
+# Version: v1.3
 # Author: mpavezb
 # Description: Prompt for bash
 #  Shows the following information:
@@ -9,6 +9,7 @@
 #  - Hostname (disabled)
 #  - Path with compressed HOME and parent directories. e.g.:  ~/w/rust
 #  - Git status: staged, modified, untracked, stash, diff to/from upstream.
+#  - virtualenv environment if active.
 #
 # Formatting:
 # - Sequences must be escaped to avoid weird prompt problems.
@@ -142,10 +143,19 @@ function __prompt_git {
     fi
 }
 
+__prompt_virtualenv() {
+    # disable the default virtualenv prompt change
+    export VIRTUAL_ENV_DISABLE_PROMPT=1
+
+    # display if needed
+    echo "$(__color_lgreen ${VIRTUAL_ENV:+(venv:${VIRTUAL_ENV##*/})})"
+}
+
 __prompt_command() {
     local EXIT="$?"
     PS1=""
     PS1+="$(__prompt_retcode $EXIT)"
+    PS1+="$(__prompt_virtualenv)"
     PS1+="$(__format_bold "[")"
     PS1+="$(__prompt_time)"
     #PS1+=" $(__prompt_username)"
