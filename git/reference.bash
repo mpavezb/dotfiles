@@ -27,6 +27,11 @@ git stash store -m "..." <hash-printed-by-drop>
 # - Stage files/hunks
 # - Stash index only: zi (magit-stash-index)
 
+# ==========================================================
+# GIT Cherry Pick
+# ==========================================================
+git cherry-pick <hash>
+git cherry-pick --continue | --abort
 
 # ==========================================================
 # GIT PATCH
@@ -41,6 +46,9 @@ git stash store -m "..." <hash-printed-by-drop>
 4. Apply patches
    git apply --stat fix_something.patch
 
+## Create a commit to revert another
+git revert <hash>
+git revert -m 1 <PR merge hash>
 
 # ==========================================================
 # Apply Clang format
