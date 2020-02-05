@@ -30,7 +30,7 @@
 
 ;; = Org =
 (mp/load "org/org.el")
-(mp/load "org/journal.el")
+;; (mp/load "org/journal.el")
 
 ;; = Languages =
 (mp/load "lang/bazel.el")
@@ -42,6 +42,3 @@
 ;; = Integrations =
 (mp/load "integrations/neotree-projectile.el")
 ;;;; (mp/load "integrations/helm-projectile.el")
-
-;; Job Customs
-;; (add-to-list 'browse-at-remote-remote-type-domains '("cc-github.bmwgroup.net" . "github"))
