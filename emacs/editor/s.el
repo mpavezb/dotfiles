@@ -8,8 +8,7 @@
   (let ((str (funcall fun 
 		      (buffer-substring-no-properties 
 		       a
-		       b
-		       end)))) 
+		       b)))) 
     (progn (delete-region a b) 
 	   (insert str))))
 
