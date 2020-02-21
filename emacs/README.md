@@ -57,10 +57,12 @@ C-c t      : Google translate
 ## Important Commands
 
 ```
-C-c p h : fuzzy find projectile-helm
-
 # General
+C-c p h : fuzzy find projectile-helm
 M-AvPag/Repag : Scroll Other
+# https://stackoverflow.com/questions/812524/ido-mode-is-too-smart-can-i-get-it-to-not-complete-a-filename
+C-j  : Make IDO not replace autocompletion NOW.
+
 # mp/
 mp/put-buffername-on-clipboard
 mp/s-split-words 
