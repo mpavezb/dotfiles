@@ -2,8 +2,11 @@
 
 ## Overview
 
-- [Software description and applications](SOFTWARE.md)
-- [TODO List](TODO.md)
+- [Bash](bash/README.md)
+- [Emacs](emacs/README.md)
+- [Git](git/README.md)
+- [Linux](linux/README.md)
+- [rxvt-unicode](urxvt/README.md)
 
 ## Philosofy
 
