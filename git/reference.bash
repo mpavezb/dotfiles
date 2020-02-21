@@ -27,11 +27,28 @@ git stash store -m "..." <hash-printed-by-drop>
 # - Stage files/hunks
 # - Stash index only: zi (magit-stash-index)
 
+
+# ==========================================================
+# GIT Bisect
+# ==========================================================
+# https://git-scm.com/docs/git-bisect
+git bisect start
+git bisect good [hash]
+git bisect bad [hash]
+
+# look for team commits and surrounding
+git log --pretty=oneline | grep boltzmann
+git log --pretty=oneline | grep -B 3 -A 2 boltzman # 3 lines before, 2 after
+git log --pretty=oneline | grep -C 3 boltzman      # 3 lines before and after
+
 # ==========================================================
 # GIT Cherry Pick
 # ==========================================================
 git cherry-pick <hash>
 git cherry-pick --continue | --abort
+
+# multiple commits
+https://stackoverflow.com/questions/1670970/how-to-cherry-pick-multiple-commits
 
 # ==========================================================
 # GIT PATCH
