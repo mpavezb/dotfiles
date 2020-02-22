@@ -30,17 +30,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; use-package
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Auto install
-;; Unless it's already installed, update the packages archives,
-;; then install the most recent version of “use-package”.
-(unless (package-installed-p 'use-package) 
-  (package-refresh-contents) 
-  (package-install 'use-package))
 (require 'use-package)
 
 ;; Auto install used packages.
-(setq use-package-always-ensure t)
+;; (setq use-package-always-ensure t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; benchmark-init
