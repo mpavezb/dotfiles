@@ -8,9 +8,19 @@
 - [Linux](linux/README.md)
 - [rxvt-unicode](urxvt/README.md)
 
-## Philosofy
+## Guidelines
 
-- Use symbolic links when possible.
-- Scripts must check before sourcing stuff.
-- Application scripts are self-contained into each folder. 
-- Keep everything under .config/<app-name>.
+### Applications
+
+- Applications are self-contained into the assigned folder.
+- Commit messages start with the application name. e.g., `[emacs]`
+
+### Scripts
+
+- Must pass `shellcheck` test.
+- Must verify check before sourcing stuff.
+
+### File System
+
+- Use symbolic links whenever possible.
+- Do not clutter HOME directory. Keep configurations under `~/.config/`.
