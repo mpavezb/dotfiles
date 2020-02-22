@@ -38,6 +38,7 @@
 (mp/load "lang/cpp.el")
 (mp/load "lang/lisp.el")
 (mp/load "lang/python.el")
+(mp/load "lang/web.el")
 
 ;; = Integrations =
 (mp/load "integrations/neotree-projectile.el")
