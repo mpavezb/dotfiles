@@ -4,6 +4,7 @@
 ;; https://github.com/bastibe/org-journal
 ;; -----------------------------------------------------------------------------
 (use-package org-journal 
+  :defer t 
   :init (add-to-list 'package-pinned-packages '(org-journal . "melpa-stable") t) 
   :bind (("C-c j" . org-journal-new-entry)) 
   :config ;;

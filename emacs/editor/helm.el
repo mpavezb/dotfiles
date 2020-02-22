@@ -2,9 +2,11 @@
 ;; Incremental completions and narrowing selections
 ;; https://github.com/emacs-helm/heml
 
-(use-package helm)
+(use-package helm 
+  :defer t)
 (progn 
-  (use-package helm-config)
+  (use-package helm-config 
+    :defer t)
 
   ;; Use C-c h instead of default C-x c, it makes more sense.
   (global-set-key (kbd "C-c h") 'helm-command-prefix) 

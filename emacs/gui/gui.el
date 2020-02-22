@@ -6,7 +6,7 @@
 (setq ring-bell-function 'ignore)
 (setq server-mode t)
 
-					; Display buffername in the title bar
+;; Display buffername in the title bar
 (setq frame-title-format 
       '((:eval (if (buffer-file-name) 
 		   (abbreviate-file-name (buffer-file-name)) "%b (•̀ᴗ•́)و"))))
@@ -24,14 +24,15 @@
 ;; change all prompts to y or n
 (fset 'yes-or-no-p 'y-or-n-p)
 
-
 ;; Provides only the command “restart-emacs”.
 (use-package restart-emacs 
+  :defer t 
   :commands restart-emacs)
 
 ;; Making it easier to discover Emacs key presses.
 ;; Emacs shows available key shortcuts while typing some command.
 (use-package which-key 
+  :defer t 
   :diminish which-key-mode 
   :init (which-key-mode) 
   :config (which-key-setup-side-window-bottom) 
@@ -45,17 +46,20 @@
 ;; fireplace
 ;; Displays a virtual fireplace
 ;; https://github.com/johanvts/emacs-fireplace
-(use-package fireplace)
+(use-package fireplace 
+  :defer t)
 
 ;; xkcd
 ;; xkcd reader for GNU Emacs.
 ;; https://github.com/vibhavp/emacs-xkcd
-(use-package xkcd)
+(use-package xkcd 
+  :defer t)
 
 ;; wttrin
 ;; Weather from wttr.in
 ;; https://github.com/bcbcarl/emacs-wttrin
 (use-package wttrin 
+  :defer t 
   :commands (wttrin) 
   :init (setq wttrin-default-cities '("Unterschleissheim")))
 
@@ -64,6 +68,7 @@
 ;; https://github.com/Malabarba/emacs-google-this
 ;; See: C-c / C-h
 (use-package google-this 
+  :defer t 
   :diminish google-this-mode 
   :config (google-this-mode t))
 
@@ -71,7 +76,9 @@
 ;; Translate using google services
 ;; https://github.com/atykhonov/google-translate
 (use-package google-translate 
-  :init (require 'google-translate-smooth-ui) 
+  :defer t 
+  :init (use-package google-translate-smooth-ui 
+	  :defer) 
   :bind ("C-c t" . google-translate-smooth-translate) 
   :config ;;
 
@@ -100,4 +107,5 @@
 ;; Waiting for emacs26
 ;; -----------------------------------------------------------------------------
 ;; (use-package dashboard
+;;   :defer t
 ;;   :config (dashboard-setup-startup-hook))

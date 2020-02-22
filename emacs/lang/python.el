@@ -7,6 +7,7 @@
 ;; https://github.com/pythonic-emacs/anaconda-mode
 ;; -----------------------------------------------------------------------------
 (use-package anaconda-mode 
+  :defer t 
   :hook ((python-mode . anaconda-mode) 
 	 (python-mode . anaconda-eldoc-mode)))
 
@@ -24,4 +25,5 @@
 ;; https://github.com/psf/black
 ;; -----------------------------------------------------------------------------
 (use-package blacken 
+  :defer t 
   :hook (python-mode . blacken-mode))

@@ -4,6 +4,7 @@
 ;; https://orgmode.org/
 ;; -----------------------------------------------------------------------------
 (use-package org 
+  :defer t 
   :init (add-to-list 'package-pinned-packages '(projectile . "melpa-stable") t) 
   :bind (("C-c a" . org-agenda) 
 	 ("C-c l" . org-store-link)) 
@@ -64,6 +65,7 @@
 ;; https://github.com/snosov1/toc-org
 ;; -----------------------------------------------------------------------------
 (use-package toc-org 
+  :defer t 
   :hook (org-mode . toc-org-mode))
 
 ;; -----------------------------------------------------------------------------
@@ -80,6 +82,7 @@
 
 ;; ;; IS THIS REALLY WORKING?
 ;; (use-package org-sticky-header
+;;   :defer t
 ;;   :config
 ;;   (setq-default
 ;;    org-sticky-header-full-path 'full

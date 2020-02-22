@@ -159,6 +159,48 @@ M-% query-replace
 
 ```
 
+### Startup Profiling
+
+- Built-In
+  - `M-x emacs-init-time`
+- ESUP: https://github.com/jschaf/esup
+  - `M-x esup`
+- Benchmark Init: https://github.com/dholm/benchmark-init-el
+  - `M-x benchmark-init/show-durations-tabulated`
+  - `M-x benchmark-init/show-durations-tree`
+
+#### Main Considerations
+
+- Take care of the desktop:
+  - `desktop-save-mode` is responsible for 99% of the startup time.
+  - This is proportional to the number of buffers.
+  - Load buffers lazily.
+  - Clean buffers automatically/manually.
+- Don't do anything network related:
+  - Dont refresh package list.
+  - Disable automatic download and installation.
+- Don't `require` packages on init:
+  - Setup defered initializations for big packages.
+  - Setup autoloads for the entry functions.
+- Compile packages and .el files: `M-x emacs-lisp-byte-compile`.
+
+### Startup options
+
+- `--no-desktop`
+- `--no-init-file`
+
+### Desktop
+
+- Emacs can handle multiple desktops -> each one is handled by own file.
+- `M-x desktop-change-dir` : Load another file.
+- `M-x desktop-clear` : Clear desktop file.
+- `desktop-clear-preserve-buffers-regexp`: which buffers not ot clear.
+- `desktop-restore-eager`: Max buffers to load eagerly on startup. Others are loaded eagerly.
+
+See: http://ergoemacs.org/emacs_manual/emacs/Saving-Emacs-Sessions.html
+
+
+
 
 ## Must Have Tools
 

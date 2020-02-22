@@ -4,6 +4,7 @@
 ;; https://github.com/bbatsov/projectile
 ;; -----------------------------------------------------------------------------
 (use-package projectile 
+  :defer t 
   :init (add-to-list 'package-pinned-packages '(projectile . "melpa-stable") t) 
   :bind (:map projectile-mode-map
 	      ("s-p" . projectile-command-map) 

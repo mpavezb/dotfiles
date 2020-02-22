@@ -1,6 +1,7 @@
 ;; bazel-mode
 ;; https://melpa.org/#/bazel-mode
 (use-package bazel-mode 
+  :defer t 
   :config ;;
   (autoload 'bazel-mode "bazel" "Associates bazel BUILD files with bazel-mode." t)
 

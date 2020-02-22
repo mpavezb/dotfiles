@@ -4,7 +4,8 @@
 ;; -----------------------------------------------------------------------------
 ;; Not in MELPA anymore
 (mp/load "lisp/dired+.el")
-;; (use-package dired+)
+;; (use-package dired+
+;;   :defer t)
 
 ;;
 (diredp-toggle-find-file-reuse-dir 1)
@@ -15,20 +16,25 @@
 ;; -----------------------------------------------------------------------------
 
 ;; Collapse unique nested paths in dired listing
-(use-package dired-collapse)
+(use-package dired-collapse 
+  :defer t)
 (dired-collapse-mode t)
 
 ;; Ibuffer-like filtering for dired
-(use-package dired-filter)
+(use-package dired-filter 
+  :defer t)
 
 ;; Live-narrowing of search results for dired
-(use-package dired-narrow)
+(use-package dired-narrow 
+  :defer t)
 
 ;; Insert subdirectories in a tree-like fashion
-(use-package dired-subtree)
+(use-package dired-subtree 
+  :defer t)
 
 ;; Extended file highlighting according to its type
 (use-package dired-rainbow 
+  :defer t 
   :config (progn (dired-rainbow-define-chmod directory "#6cb2eb" "d.*") 
 		 (dired-rainbow-define html "#eb5286" ("css" "less" "sass" "scss" "htm" "html"
 						       "jhtm" "mht" "eml" "mustache" "xhtml")) 
@@ -78,4 +84,5 @@
 ;; -----------------------------------------------------------------------------
 ;; display git info alongside files
 ;; provides: dired-git-info-mode
-(use-package dired-git-info)
+(use-package dired-git-info 
+  :defer t)
