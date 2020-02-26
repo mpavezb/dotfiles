@@ -3,9 +3,17 @@
 ;; Matias Pavez
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(defun mp/emacs-dir () 
+  "Returns mp emacs directory."
+  (concat user-emacs-directory "mp/"))
+
+(defun mp/emacs-file (@filename) 
+  "Returns path to mp emacs file."
+  (concat (mp/emacs-dir) @filename))
+
 (defun mp/load (@settings-file) 
   "Loads the given file from the mp/ folder"
-  (load (concat user-emacs-directory "mp/" @settings-file)))
+  (load (mp/emacs-file @settings-file)))
 
 ;; = System =
 (mp/load "system/packages.el")

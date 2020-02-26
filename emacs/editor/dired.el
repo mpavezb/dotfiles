@@ -2,13 +2,10 @@
 ;; Dired Plus
 ;; https://www.emacswiki.org/emacs/dired%2b.el
 ;; -----------------------------------------------------------------------------
-;; Not in MELPA anymore
-(mp/load "lisp/dired+.el")
-;; (use-package dired+
-;;   :defer 10)
-
-;;
-(diredp-toggle-find-file-reuse-dir 1)
+(use-package dired+ 
+  :load-path "mp/lisp/" 
+  :config ;;
+  (diredp-toggle-find-file-reuse-dir 1))
 
 ;; -----------------------------------------------------------------------------
 ;; Dired Hacks
