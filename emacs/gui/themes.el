@@ -3,10 +3,8 @@
 
 ;; Nice looking themes ^_^
 (use-package solarized-theme 
-  :defer t 
   :demand t)
 (use-package doom-themes 
-  :defer t 
   :demand t)
 
 (defun mp/disable-all-themes () 

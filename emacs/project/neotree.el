@@ -3,9 +3,7 @@
 ;; Project Navigation Sidebar
 ;; https://www.emacswiki.org/emacs/NeoTree
 ;; -----------------------------------------------------------------------------
-(use-package neotree 
-  :defer t 
-  :init (add-to-list 'package-pinned-packages '(neotree . "melpa-stable") t) 
+(use-package neotree
   :bind ([f8] . neotree-toggle) 
   :config
   ;; Open neotree at current file

@@ -34,14 +34,12 @@
 ;; Colour parentheses depending on their depth.
 ;; https://github.com/Fanael/rainbow-delimiters
 (use-package rainbow-delimiters 
-  :defer t 
   :hook ((prog-mode . rainbow-delimiters-mode) 
 	 (org-mode . rainbow-delimiters-mode)))
 
 ;; highlight-indent-guides
 ;; https://github.com/DarthFennec/highlight-indent-guides
 (use-package highlight-indent-guides 
-  :defer t 
   :diminish highlight-indent-guides-mode 
   :hook (prog-mode . highlight-indent-guides-mode) 
   :config ;;
@@ -87,17 +85,14 @@
 (setq mouse-yank-at-point t)
 
 (use-package browse-kill-ring 
-  :defer t 
   :bind ("C-M-y" . browse-kill-ring) 
-  :config () 
+  :config ;;
   (setq browse-kill-ring-highlight-current-entry t) 
   (setq browse-kill-ring-highlight-inserted-item t) 
   (setq browse-kill-ring-show-preview t) 
   (setq browse-kill-ring-separator "~~"))
 
 (use-package popup-kill-ring 
-  :defer t 
-  :config () 
   :bind ("M-y" . popup-kill-ring))
 
 ;; -----------------------------------------------------------------------------
@@ -153,7 +148,6 @@
 ;; https://github.com/magnars/multiple-cursors.el
 ;; -----------------------------------------------------------------------------
 (use-package multiple-cursors 
-  :defer t 
   :bind (("C-S-c C-S-c" . mc/edit-lines) 
 	 ("C->" . mc/mark-next-like-this) 
 	 ("C-<" . mc/mark-previous-like-this) 
@@ -165,7 +159,6 @@
 ;; https://github.com/magnars/expand-region.el
 ;; -----------------------------------------------------------------------------
 (use-package expand-region 
-  :defer t 
   :bind (("M-+" . er/expand-region) 
 	 ("M--" . er/contract-region)))
 
@@ -181,5 +174,4 @@
 ;; https://github.com/gregsexton/origami.el
 ;; -----------------------------------------------------------------------------
 ;; (use-package origami
-;;   :defer t
 ;;   :bind (("<backtab>" . origami-forward-toggle-node)))

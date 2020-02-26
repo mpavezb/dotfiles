@@ -3,8 +3,7 @@
 ;; Format elisp code
 ;; https://www.emacswiki.org/emacs/ElispFormat
 ;; -----------------------------------------------------------------------------
-(use-package elisp-format 
-  :defer t 
+(use-package elisp-format
   :config ;;
   ;; do not split use-package with newlines
   (add-to-list 'elisp-format-split-subexp-keyword-except-list '"use-package"))

@@ -3,10 +3,8 @@
 ;; https://www.emacswiki.org/emacs/InteractivelyDoThings
 
 (use-package ido 
-  :defer t)
-(ido-mode t)
-
-(setq ido-enable-flex-matching t)
-
-;; Everyrywhere?? TODO
-(setq ido-everywhere t)
+  :defer 5 
+  :config ;;
+  (ido-mode t) 
+  (setq ido-enable-flex-matching t) 
+  (setq ido-everywhere t))

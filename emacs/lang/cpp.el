@@ -13,10 +13,7 @@
 ;; https://github.com/SavchenkoValeriy/emacs-clang-format-plus
 ;; -----------------------------------------------------------------------------
 (use-package clang-format+ 
-  :defer t 
-  :init (add-to-list 'package-pinned-packages '(magit . "melpa-stable") t) 
   :diminish clang-format+-mode
-
   ;; format buffer on save
   :hook (c-mode-common . clang-format+-mode) 
   :config (setq clang-format+-context 'buffer))
@@ -27,7 +24,6 @@
 ;; https://github.com/ludwigpacifici/modern-cpp-font-lock
 ;; -----------------------------------------------------------------------------
 (use-package modern-cpp-font-lock 
-  :defer t 
   :diminish modern-c++-font-lock-mode 
   :config (modern-c++-font-lock-global-mode t))
 

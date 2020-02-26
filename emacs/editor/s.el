@@ -2,8 +2,7 @@
 ;; s
 ;; https://github.com/magnars/s.el
 ;; -----------------------------------------------------------------------------
-(use-package s 
-  :defer t)
+(use-package s)
 
 (defun mp/s-replace (a b fun) 
   (let ((str (funcall fun 

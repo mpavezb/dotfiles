@@ -6,8 +6,7 @@
 ;; saveplace
 ;; -----------------------------------------------------------------------------
 ;; remember point position when reopening/revisiting each buffer
-(use-package saveplace
-  :defer 
+(use-package saveplace 
   :config (setq-default save-place t))
 
 ;; -----------------------------------------------------------------------------
@@ -37,8 +36,8 @@
 ;; https://www.emacswiki.org/emacs/CleanBufferList
 ;; -----------------------------------------------------------------------------
 ;; Calls command M-x clean-buffer-list at midnight.
-(use-package midnight
-  :defer 
+(use-package midnight 
+  :defer 60 
   :config
   ;; set clean time
   (midnight-delay-set 'midnight-delay "4:30am")

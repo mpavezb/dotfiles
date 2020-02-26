@@ -2,9 +2,8 @@
 
 ## use-package
 
-- defers and autoloads
-- init
+- Add autoloads and fix defers.
+- Diminish/Delight
+- load-path
 
-
-### defers and autoloads
 

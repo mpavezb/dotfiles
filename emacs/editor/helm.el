@@ -3,7 +3,8 @@
 ;; https://github.com/emacs-helm/heml
 
 (use-package helm 
-  :defer t)
+  :defer 10)
+
 (progn 
   (use-package helm-config 
     :defer t)

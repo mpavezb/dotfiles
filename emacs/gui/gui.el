@@ -26,13 +26,12 @@
 
 ;; Provides only the command “restart-emacs”.
 (use-package restart-emacs 
-  :defer t 
   :commands restart-emacs)
 
 ;; Making it easier to discover Emacs key presses.
 ;; Emacs shows available key shortcuts while typing some command.
 (use-package which-key 
-  :defer t 
+  :defer 10 
   :diminish which-key-mode 
   :init (which-key-mode) 
   :config (which-key-setup-side-window-bottom) 
@@ -47,20 +46,19 @@
 ;; Displays a virtual fireplace
 ;; https://github.com/johanvts/emacs-fireplace
 (use-package fireplace 
-  :defer t)
+  :commands fireplace)
 
 ;; xkcd
 ;; xkcd reader for GNU Emacs.
 ;; https://github.com/vibhavp/emacs-xkcd
 (use-package xkcd 
-  :defer t)
+  :commands xkcd)
 
 ;; wttrin
 ;; Weather from wttr.in
 ;; https://github.com/bcbcarl/emacs-wttrin
 (use-package wttrin 
-  :defer t 
-  :commands (wttrin) 
+  :commands wttrin 
   :init (setq wttrin-default-cities '("Unterschleissheim")))
 
 ;; google-this
@@ -68,7 +66,7 @@
 ;; https://github.com/Malabarba/emacs-google-this
 ;; See: C-c / C-h
 (use-package google-this 
-  :defer t 
+  :defer 60 
   :diminish google-this-mode 
   :config (google-this-mode t))
 
@@ -76,7 +74,6 @@
 ;; Translate using google services
 ;; https://github.com/atykhonov/google-translate
 (use-package google-translate 
-  :defer t 
   :init (use-package google-translate-smooth-ui 
 	  :defer) 
   :bind ("C-c t" . google-translate-smooth-translate) 
@@ -107,5 +104,4 @@
 ;; Waiting for emacs26
 ;; -----------------------------------------------------------------------------
 ;; (use-package dashboard
-;;   :defer t
 ;;   :config (dashboard-setup-startup-hook))
