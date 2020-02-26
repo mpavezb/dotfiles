@@ -10,8 +10,10 @@
 
 ;; highlight current line-number
 ;; https://github.com/targzeta/linum-highlight-current-line-number
-(mp/load "lisp/linum-highlight-current-line-number")
-(setq linum-format 'linum-highlight-current-line-number)
+(use-package linum-highlight-current-line-number 
+  :load-path "mp/lisp/" 
+  :config ;;
+  (setq linum-format 'linum-highlight-current-line-number))
 
 ;; show row,column numbers on modeline
 (column-number-mode t)
