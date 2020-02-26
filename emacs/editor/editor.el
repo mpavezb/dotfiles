@@ -68,7 +68,6 @@
 
 ;; Move line or selected region up and down (M-Up/Down)
 (use-package move-text 
-  :defer t 
   :config (move-text-default-bindings))
 
 ;; electric pairs
