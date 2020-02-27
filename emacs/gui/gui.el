@@ -11,6 +11,13 @@
       '((:eval (if (buffer-file-name) 
 		   (abbreviate-file-name (buffer-file-name)) "%b (•̀ᴗ•́)و"))))
 
+;; Open Shell (f1) and Term (C-f1)
+(global-set-key (kbd "<f1>") 'shell)
+(setq explicit-shell-file-name "/bin/bash")
+(define-key global-map (kbd "C-<f1>") 
+  (lambda () 
+    (interactive) 
+    (ansi-term explicit-shell-file-name)))
 
 (global-set-key (kbd "C-+") 'text-scale-increase)
 (global-set-key (kbd "C--") 'text-scale-decrease)
