@@ -41,6 +41,10 @@
 (add-hook 'before-save-hook (lambda() 
 			      (delete-trailing-whitespace)))
 
+(use-package rainbow-mode
+  :disabled 
+  :delight)
+
 ;; rainbow-delimiters
 ;; Colour parentheses depending on their depth.
 ;; https://github.com/Fanael/rainbow-delimiters
