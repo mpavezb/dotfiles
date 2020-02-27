@@ -122,6 +122,57 @@
 (setq isearch-allow-scroll t)
 
 ;; -----------------------------------------------------------------------------
+;; rg
+;; Fast alternative to grep
+;; https://rgel.readthedocs.io/
+;; https://github.com/BurntSushi/ripgrep/
+;; -----------------------------------------------------------------------------
+;; TODO: defer loading
+(use-package rg
+  :init (rg-enable-default-bindings)
+  :config			 ;;
+  (setq rg-use-transient-menu t) ;; display transient menu
+  (setq rg-show-header t)	 ;; display search header
+  (setq rg-group-result t)	 ;; group results by filename
+  (setq rg-hide-command t)	 ;; hide executed rg command
+  (setq rg-show-columns nil)	 ;; don't display column number
+
+  ;; Allows toggling grouping by file
+  (defun mp/rg-toggle-group ()
+    "Toggle grouping and rerun."
+    (interactive)
+    (setq rg-group-result (not rg-group-result))
+    (rg-rerun))
+  (define-key rg-mode-map (kbd "G") 'mp/rg-toggle-group)
+
+  ;; TODO:
+  ;; --max-columns=150
+  ;; --max-columns-preview
+  ;;
+  ;; --type-add
+  ;; web:*.{html,css,js}*
+  ;;
+  ;; --glob=!git/*
+  ;;
+  ;; more toggles:
+  ;; --no-config : ignore local config files
+  ;; --context, --after, --before
+  ;; --sort
+  ;; --max-columns
+
+  ;; Toggles
+  ;; https://github.com/scfrazer/.emacs.d/blob/master/lisp/src/my-rg.el#L8
+  ;; (rg-define-toggle "--max-depth 1" "m")   ;; hide all?
+  ;; (rg-define-toggle "--word-regexp" "w")   ;; match words
+  ;; (rg-define-toggle "--hiden" "TODO")      ;; hidden files/dirs
+  ;; (rg-define-toggle "--follow" "TODO")     ;; symlinks
+  ;; (rg-define-toggle "--search-zip" "TODO") ;; zip
+  ;; ()
+
+  ;;
+  )
+
+;; -----------------------------------------------------------------------------
 ;; Delete emacs grep header
 ;; -----------------------------------------------------------------------------
 (defun mp/delete-grep-header () 

@@ -76,10 +76,19 @@
 ;; Uncomment to install missing packages.
 ;; (setq use-package-always-ensure t)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; -----------------------------------------------------------------------------
+;; ENV variables
+;; -----------------------------------------------------------------------------
+;; Add $HOME/.local/bin to exec-path
+(let ((path (concat (file-name-as-directory (getenv "HOME")) ".local/bin")))
+  (when (file-directory-p path)
+    (add-to-list 'exec-path path)))
+
+;; -----------------------------------------------------------------------------
 ;; benchmark-init
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(use-package benchmark-init 
+;; -----------------------------------------------------------------------------
+(use-package benchmark-init
   :config
   ;; To disable collection of benchmark data after init is done.
   (add-hook 'after-init-hook 'benchmark-init/deactivate))
