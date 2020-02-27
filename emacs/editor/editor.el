@@ -30,7 +30,16 @@
 (setq show-paren-delay 0)
 (setq blink-matching-paren nil)
 (setq show-paren-style 'expression)
-(show-paren-mode 1)
+(show-paren-mode t)
+
+;; Tabs, trailing whitespace
+;; (setq-default highlight-tabs t)
+;; (setq-default show-trailing-whitespace t)
+
+;; Remove useless whitespaces before saving a file
+(add-hook 'before-save-hook 'whitespace-cleanup)
+(add-hook 'before-save-hook (lambda() 
+			      (delete-trailing-whitespace)))
 
 ;; rainbow-delimiters
 ;; Colour parentheses depending on their depth.
