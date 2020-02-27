@@ -51,6 +51,14 @@
   ;; buffers not to kill
   (add-to-list 'clean-buffer-list-kill-never-buffer-names "README.md"))
 
+;; -----------------------------------------------------------------------------
+;; buffer-move
+;; -----------------------------------------------------------------------------
+(use-package buffer-move 
+  :bind (("C-S-<up>" . buf-move-up) 
+	 ("C-S-<down>" . buf-move-down) 
+	 ("C-S-<left>" . buf-move-left) 
+	 ("C-S-<right>" . buf-move-right)))
 
 ;; -----------------------------------------------------------------------------
 ;; ibuffer
