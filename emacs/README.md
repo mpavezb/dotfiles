@@ -57,6 +57,8 @@ C-c t      : Google translate
 ## Important Commands
 
 ```
+# General
+M-AvPag/Repag : Scroll Other
 # mp/
 mp/put-buffername-on-clipboard
 mp/s-split-words 

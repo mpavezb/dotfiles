@@ -127,48 +127,62 @@
 ;; https://rgel.readthedocs.io/
 ;; https://github.com/BurntSushi/ripgrep/
 ;; -----------------------------------------------------------------------------
+;; TODO: define own search configs
 ;; TODO: defer loading
+;; TODO: Configurable after/before context.
+;; TODO: Configurable max depth.
 (use-package rg
   :init (rg-enable-default-bindings)
-  :config			 ;;
-  (setq rg-use-transient-menu t) ;; display transient menu
-  (setq rg-show-header t)	 ;; display search header
-  (setq rg-group-result t)	 ;; group results by filename
-  (setq rg-hide-command t)	 ;; hide executed rg command
-  (setq rg-show-columns nil)	 ;; don't display column number
+  :config ;;
+  ;; -----------------------------------
+  ;; Displays
+  ;; -----------------------------------
+  (setq rg-use-transient-menu t) ;; transient menu
+  (setq rg-show-header t)	 ;; search header
+  (setq rg-hide-command t)	 ;; executed rg command
+  (setq rg-show-columns nil)	 ;; column number
+  (setq rg-group-result t)	 ;; group by filename
 
-  ;; Allows toggling grouping by file
+  ;; -----------------------------------
+  ;; Default options
+  ;; -----------------------------------
+  (add-to-list 'rg-command-line-flags "--max-filesize 10M") ;; Ignore large files
+  (add-to-list 'rg-command-line-flags "--max-columns 80") ;; Hide large columns
+  (add-to-list 'rg-command-line-flags "--max-columns-preview") ;; but show matched section
+  (add-to-list 'rg-command-line-flags "--glob !git/*") ;; but show matched section
+
+  ;; -----------------------------------
+  ;; Toggles
+  ;; -----------------------------------
   (defun mp/rg-toggle-group ()
     "Toggle grouping and rerun."
     (interactive)
     (setq rg-group-result (not rg-group-result))
     (rg-rerun))
+  ;; display
   (define-key rg-mode-map (kbd "G") 'mp/rg-toggle-group)
+  (rg-define-toggle "--after-context 3" "A")  ;; After context
+  (rg-define-toggle "--before-context 3" "B") ;; Before context
+  (rg-define-toggle "--context 3" "C")	      ;; Full Context
+  ;; search
+  (rg-define-toggle "--word-regexp" "W") ;; Regex for word boundaries
+  ;; sort
+  (rg-define-toggle "--sort path" "S")	;; Sort by path (asc)
+  (rg-define-toggle "--sortr path" "R")	;; Sort by path (asc)
+  ;; scope
+  (rg-define-toggle "--hidden" "H")	;; Search in hidden files/dirs
+  (rg-define-toggle "--text" "T")	;; Search in binary files
+  (rg-define-toggle "--search-zip" "Z")	;; Search in zip files
+  (rg-define-toggle "--follow" "S")	;; Follow symlinks
+  (rg-define-toggle "--max-depth 1" "D") ;; Descend at most N directories
 
-  ;; TODO:
-  ;; --max-columns=150
-  ;; --max-columns-preview
-  ;;
-  ;; --type-add
-  ;; web:*.{html,css,js}*
-  ;;
-  ;; --glob=!git/*
-  ;;
-  ;; more toggles:
-  ;; --no-config : ignore local config files
-  ;; --context, --after, --before
-  ;; --sort
-  ;; --max-columns
-
-  ;; Toggles
-  ;; https://github.com/scfrazer/.emacs.d/blob/master/lisp/src/my-rg.el#L8
-  ;; (rg-define-toggle "--max-depth 1" "m")   ;; hide all?
-  ;; (rg-define-toggle "--word-regexp" "w")   ;; match words
-  ;; (rg-define-toggle "--hiden" "TODO")      ;; hidden files/dirs
-  ;; (rg-define-toggle "--follow" "TODO")     ;; symlinks
-  ;; (rg-define-toggle "--search-zip" "TODO") ;; zip
-  ;; ()
-
+  ;; -----------------------------------
+  ;; Type Aliases
+  ;; -----------------------------------
+  (setq rg-custom-type-aliases nil)
+  (add-to-list 'rg-custom-type-aliases '("cpp" . "*.{c,cpp,h,hpp,cc,hxx,cxx}"))
+  (add-to-list 'rg-custom-type-aliases '("franca" . "*.{fidl,fdepl,cdepl}"))
+  (add-to-list 'rg-custom-type-aliases '("web" . "*.{html,js,css}"))
   ;;
   )
 
