@@ -9,7 +9,19 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.opt/fzf
 ~/.opt/fzf/install
 ```
 
-## Usage
+## Search Syntaxx
+
+| Sample     | Match   |
+| ---------- | ------- |
+|`   text   `| fuzzy   |
+|`  'text   `| exact   |
+|`  ^text   `| prefix  |
+|`   text$  `| suffix  |
+|`    !t    `| negate  |
+|`  t1 | t2 `| or      |
+|`  t1   t2 `| and     |
+
+## Modes
 
 - CTRL-T : Search for files and directories.
 - CTRL-R : Search in history.
@@ -20,7 +32,6 @@ Fzf also provides support for:
 - kill <TAB>
 - ssh **<TAB>
 - export **<TAB>
-
 
 ## mp::git
 

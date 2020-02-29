@@ -31,12 +31,7 @@ fi
 # ===============================================
 # Fuzzy Matcher
 # ===============================================
-if [ -f ~/.fzf.bash ]; then
-    if [[ ${SHELLOPTS} =~ (vi|emacs) ]]; then
-	source ~/.fzf.bash
-	source "${DOTFILES}"/bash/fzf/fzf.bash
-    fi
-fi
+source "${DOTFILES}"/bash/fzf/fzf.bash
 
 # ===============================================
 # Bash aliases

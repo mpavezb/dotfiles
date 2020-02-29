@@ -61,7 +61,7 @@ Notes:
 
 ## Command line fuzzy finder
 
-See the [README](fzf.md) file.
+See the [README](fzf/README.md) file.
 
 ## Bash prompt
 
