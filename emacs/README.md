@@ -57,6 +57,8 @@ C-c t      : Google translate
 ## Important Commands
 
 ```
+C-c p h : fuzzy find projectile-helm
+
 # General
 M-AvPag/Repag : Scroll Other
 # mp/

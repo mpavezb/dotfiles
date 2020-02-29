@@ -121,6 +121,23 @@
 (global-set-key (kbd "C-M-r") 'isearch-backward)
 (setq isearch-allow-scroll t)
 
+
+;; -----------------------------------------------------------------------------
+;; fzf
+;; Emacs frontend to FZF
+;; https://github.com/bling/fzf.el
+;; https://github.com/junegunn/fzf
+;; -----------------------------------------------------------------------------
+(use-package fzf
+  :bind (("C-c f f" . fzf)
+	 ("C-c f p" . fzf-projectile)
+	 ("C-c f d" . fzf-directory))
+  :config ;;
+  (let ((path (concat (file-name-as-directory (getenv "HOME")) ".opt/fzf/bin")))
+    (when (file-directory-p path)
+      (setenv "PATH" (concat (getenv "PATH") ":" path)))))
+
+
 ;; -----------------------------------------------------------------------------
 ;; rg
 ;; Fast alternative to grep
