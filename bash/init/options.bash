@@ -15,5 +15,23 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 
-# Set the default editor to vim.
-export EDITOR=emacsclient
+# Set the default editor to emacs.
+EDITOR=
+VISUAL=
+if which emacsclient >/dev/null; then
+    # -t: open in terminal mode
+    # -c: run in new frame
+    # -a: start emacs if there is no server
+    export ALTERNATE_EDITOR=""
+    EDITOR="emacsclient -t"
+    VISUAL="emacsclient -c -a emacs"
+elif which subl >/dev/null; then
+    EDITOR="subl"
+elif which vi >/dev/null; then
+    EDITOR="vi"
+fi
+export EDITOR
+export VISUAL
+
+# Set emacs mode in bash
+set -o emacs
