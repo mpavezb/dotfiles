@@ -3,15 +3,11 @@
 # ===============================================
 # System Management
 # ===============================================
-
-# grub
-alias update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
-
-# processes
-alias psgrep="ps aux | grep -v grep | grep -i -e VSZ -e"
+# update-grub
+alias mp::update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # hardware info
-alias hw="hwinfo --short"
+alias mp::hw="hwinfo --short"
 
 # ===============================================
 # Usability
@@ -28,3 +24,5 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias df='df -h'
 
+# shell
+alias mp::clear="tput reset"
