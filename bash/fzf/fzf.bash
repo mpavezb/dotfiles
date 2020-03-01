@@ -5,9 +5,7 @@
 # - Settings for default bindings
 # - Bindings for git, bazel, ...
 #
-# References:
-# - https://github.com/junegunn/fzf#environment-variables
-# - man fzf
+# See: man fzf
 #
 
 # ===============================================

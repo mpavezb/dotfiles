@@ -1,5 +1,13 @@
 # BASH
 
+## Dependencies
+
+Dependencies are optional. They are loaded if found.
+
+- bat: https://github.com/sharkdp/bat
+- fzf: https://github.com/junegunn/fzf
+- virtualenv
+
 ## Setup
 
 Put the following in the `.bashrc` file.
@@ -15,7 +23,7 @@ This enables the following:
 - Prompt
 - Aliases
 - FZF
-
+- BAT
 
 Run the following script to copy profile and logout rc files.
 ```bash
@@ -65,7 +73,7 @@ See the [README](fzf/README.md) file.
 
 ## Bash prompt
 
-This prompt shows git information whenever available. 
+This prompt shows git information whenever available.
 
 ### Profiling
 
@@ -75,7 +83,7 @@ The time is measured using the `time` BASH command.
 
 | Version | Time     | Description                                    |
 | ------- | -------- | ---------------------------------------------- |
-| 0.0     | 0m0,012s | No git prompt.                                 | 
+| 0.0     | 0m0,012s | No git prompt.                                 |
 | 1.0     | 0m2,259s | First implementation (bash).                   |
 | 1.1     | 0m0,800s | Add `--ignore-submodules` to git status calls. |
 | 1.2     | 0m0,440s | Add `--ignore-submodules` to git diff calls.   |
