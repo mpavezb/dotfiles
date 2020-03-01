@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# ===============================================
+# Shell Options
+# ===============================================
+
 # shell options
 shopt -s autocd         # change to named directory
 shopt -s checkwinsize   # rearrange lines on window resize
@@ -15,6 +19,12 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTSIZE=10000
 export HISTFILESIZE=20000
 
+# Set emacs mode in bash
+set -o emacs
+
+# ===============================================
+# EDITOR/VISUAL
+# ===============================================
 # Set the default editor to emacs.
 EDITOR=
 VISUAL=
@@ -33,5 +43,9 @@ fi
 export EDITOR
 export VISUAL
 
-# Set emacs mode in bash
-set -o emacs
+# ===============================================
+# Man Pager
+# ===============================================
+if which bat > /dev/null; then
+    export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
