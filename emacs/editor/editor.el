@@ -32,14 +32,14 @@
 (setq show-paren-style 'expression)
 (show-paren-mode t)
 
-;; Tabs, trailing whitespace
+;; ;; Tabs, trailing whitespace
 ;; (setq-default highlight-tabs t)
 ;; (setq-default show-trailing-whitespace t)
 
-;; Remove useless whitespaces before saving a file
-(add-hook 'before-save-hook 'whitespace-cleanup)
-(add-hook 'before-save-hook (lambda() 
-			      (delete-trailing-whitespace)))
+;; ;; Remove useless whitespaces before saving a file
+;; (add-hook 'before-save-hook 'whitespace-cleanup)
+;; (add-hook 'before-save-hook (lambda()
+;;			      (delete-trailing-whitespace)))
 
 (use-package rainbow-mode
   :disabled 
@@ -232,7 +232,7 @@
 ;; auto-complete
 ;; https://github.com/auto-complete/auto-complete
 (use-package auto-complete
-  :diminish 
+  :diminish auto-complete-mode
   :config ;;
   (ac-config-default)
 
@@ -255,6 +255,7 @@
   (setq ac-ignore-case 'smart)
   ;;
   )
+
 ;; -----------------------------------------------------------------------------
 ;; other
 ;; -----------------------------------------------------------------------------
