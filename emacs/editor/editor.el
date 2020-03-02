@@ -190,7 +190,7 @@
   (rg-define-toggle "--hidden" "H")	;; Search in hidden files/dirs
   (rg-define-toggle "--text" "T")	;; Search in binary files
   (rg-define-toggle "--search-zip" "Z")	;; Search in zip files
-  (rg-define-toggle "--follow" "S")	;; Follow symlinks
+  (rg-define-toggle "--follow" "L")	;; Follow symlinks
   (rg-define-toggle "--max-depth 1" "D") ;; Descend at most N directories
 
   ;; -----------------------------------
