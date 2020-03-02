@@ -5,19 +5,25 @@
 # See: https://github.com/junegunn/fzf/wiki/Examples-(completion)
 
 # ===============================================
-# Default Bazel Completion
-# ===============================================
-if [ -f /usr/local/lib/bazel/bin/bazel-complete.bash ]; then
-    source /usr/local/lib/bazel/bin/bazel-complete.bash
-fi
-
-# ===============================================
 # Exit if bazel is not found
 # ===============================================
 if ! which bazel >/dev/null; then
     return
 fi
-[[ ! $(complete -p | grep _bazel__complete) ]] && return
+
+# ===============================================
+# Default Bazel Completion
+# ===============================================
+# if no completion is found, then load default one.
+if ! complete -p | grep -q 'bazel'; then
+    if [ -f /usr/local/lib/bazel/bin/bazel-complete.bash ]; then
+	source /usr/local/lib/bazel/bin/bazel-complete.bash
+    else
+	# There is no bazel completion at this point.
+	# Nothing to do about it.
+	return
+    fi
+fi
 
 # ===============================================
 # FZF bazel autocompletion
