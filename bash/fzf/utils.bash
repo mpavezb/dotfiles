@@ -7,7 +7,13 @@ function mp::fzf_preview_file
     [[ ! -f $path ]] && return
 
     if which bat >/dev/null; then
-	bat --style=numbers --color=always "${path}" | head -100
+	bat \
+	    --style="numbers,header" \
+	    --map-syntax="h:cpp" \
+	    --theme="TwoDark" \
+	    --color=always \
+	    "${path}" \
+	    | head -100
     else
 	head -100 "${path}"
     fi

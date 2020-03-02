@@ -29,8 +29,16 @@ source "${FZF_DIR}"/utils.bash
 # ===============================================
 # Default Settings
 # ===============================================
+
 FZF_DEFAULT_COMMAND=
-FZF_DEFAULT_OPTS=
+
+# Use JellyX Scheme
+# https://github.com/junegunn/fzf/wiki/Color-schemes
+FZF_DEFAULT_OPTS='
+  --color fg:-1,bg:-1,hl:230,fg+:3,bg+:233,hl+:229
+  --color info:150,prompt:110,spinner:150,pointer:167,marker:174
+  --color preview-bg:234
+'
 export FZF_DEFAULT_COMMAND
 export FZF_DEFAULT_OPTS
 
@@ -39,9 +47,9 @@ export FZF_DEFAULT_OPTS
 # ===============================================
 FZF_PREVIEW_OPTS="--preview='mp::fzf_preview_command {}' --preview-window='right:50%'"
 
-FZF_CTRL_T_OPTS="${FZF_PREVIEW_OPTS}"
-FZF_CTRL_R_OPTS=
-FZF_ALT_C_OPTS="${FZF_PREVIEW_OPTS}"
+FZF_CTRL_T_OPTS="--height 95% --multi ${FZF_PREVIEW_OPTS}"
+FZF_CTRL_R_OPTS="--height 50% --border"
+FZF_ALT_C_OPTS="--height 95% ${FZF_PREVIEW_OPTS}"
 
 export FZF_CTRL_T_OPTS
 export FZF_CTRL_R_OPTS
