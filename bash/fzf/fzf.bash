@@ -49,7 +49,10 @@ export FZF_ALT_C_COMMAND
 # ===============================================
 # Options
 # ===============================================
-FZF_PREVIEW_OPTS="--preview='mp::fzf_preview_command {}' --preview-window='right:50%'"
+FZF_PREVIEW_OPTS=
+FZF_PREVIEW_OPTS="${FZF_PREVIEW_OPTS} --preview='mp::fzf_preview_command {}'"
+FZF_PREVIEW_OPTS="${FZF_PREVIEW_OPTS} --preview-window='right:50%'"
+FZF_PREVIEW_OPTS="${FZF_PREVIEW_OPTS} --bind pgdn:preview-page-down,pgup:preview-page-up"
 
 # Use JellyX Scheme
 # https://github.com/junegunn/fzf/wiki/Color-schemes
@@ -58,6 +61,7 @@ FZF_DEFAULT_OPTS='
   --color info:150,prompt:110,spinner:150,pointer:167,marker:174
   --color preview-bg:234
 '
+
 FZF_CTRL_T_OPTS="--height 95% --multi ${FZF_PREVIEW_OPTS}"
 FZF_CTRL_R_OPTS="--height 50% --border"
 FZF_ALT_C_OPTS="--height 95% ${FZF_PREVIEW_OPTS}"
