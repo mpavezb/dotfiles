@@ -8,6 +8,7 @@
 shopt -s autocd         # change to named directory
 shopt -s checkwinsize   # rearrange lines on window resize
 shopt -s histappend     # do not overwrite history.
+shopt -s histverify     # verify selected history command before running.
 shopt -s cmdhist        # save multi-line commands as single line.
 shopt -s cdspell        # autocorrects cd misspellings
 shopt -s dirspell       # corrects dirs during word completion.
