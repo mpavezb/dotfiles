@@ -128,13 +128,14 @@
 ;; https://github.com/bling/fzf.el
 ;; https://github.com/junegunn/fzf
 ;; -----------------------------------------------------------------------------
-(use-package fzf
-  :bind (("C-c f f" . fzf)
-	 ("C-c f p" . fzf-projectile)
-	 ("C-c f d" . fzf-directory))
+(use-package fzf 
+  :bind (("C-c f f" . fzf) 
+	 ("C-c C-f" . fzf-projectile) 
+	 ("C-c f p" . fzf-projectile) 
+	 ("C-c f d" . fzf-directory)) 
   :config ;;
-  (let ((path (concat (file-name-as-directory (getenv "HOME")) ".opt/fzf/bin")))
-    (when (file-directory-p path)
+  (let ((path (concat (file-name-as-directory (getenv "HOME")) ".opt/fzf/bin"))) 
+    (when (file-directory-p path) 
       (setenv "PATH" (concat (getenv "PATH") ":" path)))))
 
 
@@ -148,8 +149,9 @@
 ;; TODO: defer loading
 ;; TODO: Configurable after/before context.
 ;; TODO: Configurable max depth.
-(use-package rg
-  :init (rg-enable-default-bindings)
+(use-package rg 
+  :bind ("C-c C-s" . rg-dwim-project-dir) 
+  :init (rg-enable-default-bindings) 
   :config ;;
   ;; -----------------------------------
   ;; Displays
@@ -171,13 +173,13 @@
   ;; -----------------------------------
   ;; Toggles
   ;; -----------------------------------
-  (defun mp/rg-toggle-group ()
-    "Toggle grouping and rerun."
-    (interactive)
-    (setq rg-group-result (not rg-group-result))
+  (defun mp/rg-toggle-group () 
+    "Toggle grouping and rerun." 
+    (interactive) 
+    (setq rg-group-result (not rg-group-result)) 
     (rg-rerun))
   ;; display
-  (define-key rg-mode-map (kbd "G") 'mp/rg-toggle-group)
+  (define-key rg-mode-map (kbd "G") 'mp/rg-toggle-group) 
   (rg-define-toggle "--after-context 3" "A")  ;; After context
   (rg-define-toggle "--before-context 3" "B") ;; Before context
   (rg-define-toggle "--context 3" "C")	      ;; Full Context
@@ -196,9 +198,9 @@
   ;; -----------------------------------
   ;; Type Aliases
   ;; -----------------------------------
-  (setq rg-custom-type-aliases nil)
-  (add-to-list 'rg-custom-type-aliases '("cpp" . "*.{c,cpp,h,hpp,cc,hxx,cxx}"))
-  (add-to-list 'rg-custom-type-aliases '("franca" . "*.{fidl,fdepl,cdepl}"))
+  (setq rg-custom-type-aliases nil) 
+  (add-to-list 'rg-custom-type-aliases '("cpp" . "*.{c,cpp,h,hpp,cc,hxx,cxx}")) 
+  (add-to-list 'rg-custom-type-aliases '("franca" . "*.{fidl,fdepl,cdepl}")) 
   (add-to-list 'rg-custom-type-aliases '("web" . "*.{html,js,css}"))
   ;;
   )
@@ -231,8 +233,8 @@
 
 ;; auto-complete
 ;; https://github.com/auto-complete/auto-complete
-(use-package auto-complete
-  :diminish auto-complete-mode
+(use-package auto-complete 
+  :diminish auto-complete-mode 
   :config ;;
   (ac-config-default)
 
