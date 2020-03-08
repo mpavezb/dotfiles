@@ -89,11 +89,21 @@
 ;; -----------------------------------------------------------------------------
 ;; put filename in clipboard
 ;; -----------------------------------------------------------------------------
-(defun mp/put-buffername-on-clipboard () 
-  "Put the current buffer name on the clipboard" 
+(defun mp/get-buffername () 
+  "Returns the buffername"
+  (if (equal major-mode 'dired-mode) default-directory (abbreviate-file-name buffer-file-name)))
+
+(defun mp/clipboard-buffername-full () 
+  "Put the current buffername on the clipboard, including parent directories" 
   (interactive) 
-  (let ((filename (if (equal major-mode 'dired-mode) default-directory (abbreviate-file-name
-									buffer-file-name)))) 
+  (let ((filename (mp/get-buffername))) 
+    (when filename (kill-new filename) 
+	  (message filename))))
+
+(defun mp/clipboard-buffername () 
+  "Put the current buffername on the clipboard, without parent directories." 
+  (interactive) 
+  (let ((filename (file-name-nondirectory  (mp/get-buffername)))) 
     (when filename (kill-new filename) 
 	  (message filename))))
 
