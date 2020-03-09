@@ -11,7 +11,8 @@
 ;; Show TODOs in magit
 ;; https://github.com/alphapapa/magit-todos
 ;; -----------------------------------------------------------------------------
-(use-package magit-todos 
+(use-package magit-todos
+  :disabled 
   :after (magit) 
   :config ;;
   (magit-todos-mode t)
