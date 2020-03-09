@@ -44,9 +44,8 @@
   :config (which-key-setup-side-window-bottom) 
   (setq which-key-idle-delay 3.0))
 
-
-(use-package switch-window 
-  :bind (("C-x o" . switch-window)))
+;; (use-package switch-window
+;;   :bind (("C-x o" . switch-window)))
 
 ;; -----------------------------------------------------------------------------
 ;; misc
