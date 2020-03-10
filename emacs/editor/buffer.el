@@ -42,10 +42,10 @@
   ;; set clean time
   (midnight-delay-set 'midnight-delay "4:30am")
   ;; clean-buffer-list configuration:
-  ;; - expiration date (normal buffers): 1 day
+  ;; - expiration date (normal buffers): 3 days (consider weekends!)
   ;; - expiration date (special buffers): 1 hour
   ;; - see doc on how to add more special buffers to the list.
-  (setq clean-buffer-list-delay-general 1) 
+  (setq clean-buffer-list-delay-general 3) 
   (setq clean-buffer-list-delay-special 3600)
 
   ;; buffers not to kill
