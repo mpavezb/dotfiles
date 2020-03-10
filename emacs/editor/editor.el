@@ -288,6 +288,35 @@
   :bind (("M-+" . er/expand-region) 
 	 ("M--" . er/contract-region)))
 
+
+;; -----------------------------------------------------------------------------
+;; focus
+;; https://github.com/larstvei/Focus
+;; -----------------------------------------------------------------------------
+(use-package focus 
+  :bind (("<f12>" . focus-mode)	    ;;
+	 :map focus-mode-map	    ;;
+	 ("M-p" . focus-prev-thing) ;;
+	 ("M-n" . focus-next-thing )) 
+  :config ;;
+  ;; Modes inheriting prog-mode will focus on functions.
+  (add-to-list 'focus-mode-to-thing '(prog-mode . defun))
+
+  ;; Modes inheriting text-mode will focus on sentences.
+  (add-to-list 'focus-mode-to-thing '(text-mode . sentence))
+
+  ;; Enable toggle of current pin
+  (defvar mp/focus-pin-status nil) 
+  (defun mp/focus-toggle-pin () 
+    "Toggle focus (un)pin" 
+    (interactive) 
+    (if mp/focus-pin-status (focus-unpin) 
+      (focus-pin)) 
+    (setq mp/focus-pin-status (not mp/focus-pin-status))) 
+  (define-key focus-mode-map (kbd "M-<f12>") 'mp/focus-toggle-pin)
+  ;;
+  )
+
 ;; -----------------------------------------------------------------------------
 ;; s
 ;; https://github.com/magnars/s.el
