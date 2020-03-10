@@ -13,7 +13,10 @@
 ;; -----------------------------------------------------------------------------
 
 ;; Collapse unique nested paths in dired listing
-(use-package dired-collapse 
+(use-package dired-collapse
+  ;; Causing problem on init:
+  ;; Error (use-package): dired-collapse/:config: Wrong type argument: stringp, nil
+  :disabled 
   :defer 10 
   :config ;;
   (dired-collapse-mode t))
