@@ -16,8 +16,8 @@
 ;; remember opened buffers
 (desktop-save-mode 1)
 
-;; Restore at most 1 buffer on startup
-(setq desktop-restore-eager 1)
+;; Restore at most 10 buffers on startup
+(setq desktop-restore-eager 10)
 
 ;; buffers not to save
 (setq desktop-buffers-not-to-save (concat "\\(\\.log\\|^tags\\|^TAGS\\)$"))
