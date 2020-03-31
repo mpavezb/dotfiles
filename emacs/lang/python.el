@@ -6,9 +6,7 @@
 ;; Code navigation, documentation lookup and completion for Python.
 ;; https://github.com/pythonic-emacs/anaconda-mode
 ;; -----------------------------------------------------------------------------
-(use-package anaconda-mode
-  ;; disabled as it is messing with BAZEL build files!
-  :disabled 
+(use-package anaconda-mode 
   :hook ((python-mode . anaconda-mode) 
 	 (python-mode . anaconda-eldoc-mode)))
 
