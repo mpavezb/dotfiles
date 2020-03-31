@@ -82,7 +82,9 @@
 ;; google-translate
 ;; Translate using google services
 ;; https://github.com/atykhonov/google-translate
-(use-package google-translate 
+(use-package google-translate
+  ;; not used, installation problems
+  :disabled
   :init (use-package google-translate-smooth-ui 
 	  :defer) 
   :bind ("C-c t" . google-translate-smooth-translate) 

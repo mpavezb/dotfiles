@@ -41,7 +41,7 @@
 ;; (mp/load "org/journal.el")
 
 ;; = Languages =
-(mp/load "lang/bazel.el")
+;; (mp/load "lang/bazel.el")
 (mp/load "lang/xml.el")
 (mp/load "lang/cpp.el")
 (mp/load "lang/lisp.el")
@@ -50,4 +50,4 @@
 
 ;; = Integrations =
 (mp/load "integrations/neotree-projectile.el")
-;;;; (mp/load "integrations/helm-projectile.el")
+;; (mp/load "integrations/helm-projectile.el")
