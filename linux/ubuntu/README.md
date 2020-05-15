@@ -58,6 +58,7 @@ bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
 ```
 
 Following setup procedures are not yet automated:
+- **Disable Terminal Bell**: Terminal > Edit > Preference: Uncheck Terminal Bell.
 - **Input Sources**: Enable English and Spanish keyboards
 - **gnome tweak tool**
   - Desktop -> Home, Mounted Volumes
