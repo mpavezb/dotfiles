@@ -1,13 +1,12 @@
-# Ubuntu Dotfiles
+# Ubuntu
 
 ## Overview
 
-- [Installation](#installation)
-- [Setup](#tetup)
-- [Tools](#tools)
+- [Install](#install)
+- [Setup](#setup)
 - [Applications](#applications)
 
-## Installation
+## Install
 
 ### grub-repair
 
@@ -39,52 +38,48 @@ cat ~/.local/share/xorg/Xorg.0.log | grep EE
 
 ## Setup
 
-- English/Spanish Keyboard
-- xdg-user-dirs-update
-
-### gnome tweak tool
+The following operations allows for automated setup
 
 ```bash
-sudo apt-get install gnome-tweak-tool
-```
-- Desktop -> Home, Mounted Volumes
-- Top Bar -> Enable Clock Date
+# Dependencies
+# Support Tools
+sudo apt install curl apt-transport-https htop
 
-### Add markers to important folders
+# Desktop
+sudo apt install chrome-gnome-shell gnome-tweak-tool
 
-- workspaces
-- downloads
-- documents
-- HDDs
-   
-## Tools
+# Development
+sudo apt install clang-format git emacs shellcheck
+# TODO blacken
+# TODO virtualenv
 
-```bash
-sudo apt get install htop
-
-# TODO
-virtualenv
-
-sudo apt get install git
+# XDG user dirs
+bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
 ```
 
-### Gnome Extensions
-
-```bash
-sudo apt-get install chrome-gnome-shell
-```
-
-- Extensions: https://extensions.gnome.org/extension/1036/extensions/
-- Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
-- Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
-- Sound Output Device Chooser: https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+Following setup procedures are not yet automated:
+- **Input Sources**: Enable English and Spanish keyboards
+- **gnome tweak tool**
+  - Desktop -> Home, Mounted Volumes
+  - Top Bar -> Enable Clock Date
+- **Nautilus Markers**: Add markers to important folders
+  - workspaces
+  - downloads
+  - documents
+  - HDDs
+- **Gnome Extensions**: Enable the following extensions
+  - Extensions: https://extensions.gnome.org/extension/1036/extensions/
+  - Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
+  - Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
+  - Sound Output Device Chooser: https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 
 ## Applications
 
-- Inkdrop
-- Spotify
-- Sublime Text 3
-- Emacs
-  - blacken
-  - clang-format
+These applications must be installed manually:
+- Discord: https://discord.com/download
+- Inkdrop: https://my.inkdrop.app/download
+- Skype: https://www.skype.com/en/get-skype/
+- Spotify: https://www.spotify.com/us/download/linux/
+- Sublime Text 3: https://www.sublimetext.com/3
 
+Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to make ensure no broken deps.
