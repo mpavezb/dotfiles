@@ -6,5 +6,7 @@ cd "${DIR}"
 git config --local user.name "Matias Pavez"
 git config --local user.email "matias.pavez.b@gmail.com"
 git config --local credential.helper "cache --timeout=864000"
-git config --list --local
+
+# Display local config with indentation
+git config --list --local | paste /dev/null -
 

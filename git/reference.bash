@@ -8,6 +8,10 @@ git clean
 # GIT LFS
 # ==========================================================
 
+# un/install lfs hooks
+git-lfs uninstall
+git-lfs install
+
 # Get required file from LFS
 git-lfs pull --include '<big filename>'
 
@@ -22,12 +26,6 @@ git stash save "." # custom message
 git stash drop stash@{0}
 git stash store -m "..." <hash-printed-by-drop>
 
-# stash only selected files
-# Do it with magit!
-# - Stage files/hunks
-# - Stash index only: zi (magit-stash-index)
-
-
 # ==========================================================
 # GIT Bisect
 # ==========================================================
@@ -37,9 +35,9 @@ git bisect good [hash]
 git bisect bad [hash]
 
 # look for team commits and surrounding
-git log --pretty=oneline | grep boltzmann
-git log --pretty=oneline | grep -B 3 -A 2 boltzman # 3 lines before, 2 after
-git log --pretty=oneline | grep -C 3 boltzman      # 3 lines before and after
+git log --pretty=oneline | grep <string>
+git log --pretty=oneline | grep -B 3 -A 2 <string> # 3 lines before, 2 after
+git log --pretty=oneline | grep -C 3 <string>      # 3 lines before and after
 
 # ==========================================================
 # GIT Cherry Pick
@@ -66,11 +64,4 @@ https://stackoverflow.com/questions/1670970/how-to-cherry-pick-multiple-commits
 ## Create a commit to revert another
 git revert <hash>
 git revert -m 1 <PR merge hash>
-
-# ==========================================================
-# Apply Clang format
-# ==========================================================
-sudo apt install clang-format
-find . -iname *.h -o -iname *.cpp -o -iname *.hpp | xargs clang-format -i
-
 

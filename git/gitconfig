@@ -1,68 +1,46 @@
-# This is a user-defined git configuration file
-# '#' or ';' indicates a comment
-#
-#
-# author: matias.pavez.b@gmail.com
+# .gitconfig
+# Matias Pavez, matias.pavez.b@gmail.com
 #
 
 [user]
-	name = matias pavez
+	name = Matias Pavez
 	email = matias.pavez.b@gmail.com
 
 [credential]
 	helper = cache --timeout=86400
 
 [core]
-	# - - - - - - - - - - - - - - - - - - - - - - - - 
-	#  Do NOT modify the EOL checking it's important 
-	# to be safe against hard-to-find bugs
-	# (this should be a repo config!, not an user one)
-	; check for linux line endings
 	autocrlf = input
 	safecrlf = true
-	# - - - - - - - - - - - - - - - - - - - - - - - - 
-
-	; editor for commits 
-	editor = vim
+	editor = emacsclient
 
 [push]
 	default = simple
 
-# - - - - - - Git Aliases - - - - - - - -
 [alias]
-
-	; common commands
 	co = checkout
 	ci = commit
 	st = status
 	br = branch
 
-	; a very nice log
-	hist = log --graph --date=relative --pretty=format:'%Cred%h%Creset - %Cgreen(%cr)%Creset %s%d %C(bold blue)<%an>%Creset'
+# ============================
+# Colors
+# ============================
+# - colors: [ normal  black  red  green  yellow  blue  magenta  cyan  white ]
+# - attrs:  [ bold dim ul blink reverse ]
 
-	; show type of file (hash code)
-	type = cat-file -t
-
-	; show file (hash code) content
-	dump = cat-file -p
-
-
-# - - - - - - Git Commands Coloring - - - - - - -
-; default coloring
 [color]
 	ui = auto
 	diff = auto
 	status = auto
 	branch = auto
 
-; git branch coloring
 [color "branch"]
 	current = yellow reverse
 	local = yellow 
 	remote = green
 	plain = normal
 
-; git status coloring
 [color "status"]
 	header = normal
 	added = green
@@ -72,7 +50,6 @@
 	nobranch = red
 	unmerged = magenta bold
 
-; git diff coloring
 [color "diff"]
 	plain = normal
 	meta = yellow
@@ -81,7 +58,3 @@
 	new = green bold
 	commit = yellow
 	whitespace = normal red
-
-
-# colors: [ normal  black  red  green  yellow  blue  magenta  cyan  white ]
-# attrs:  [ bold (negrita)  dim(?) ul(underline)  blink(no en terminal)  reverse(background) ]
