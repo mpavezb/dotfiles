@@ -38,6 +38,8 @@ cat ~/.local/share/xorg/Xorg.0.log | grep EE
 
 ## Setup
 
+### Automated Setup
+
 The following operations allows for automated setup
 
 ```bash
@@ -57,9 +59,26 @@ sudo apt install clang-format git emacs shellcheck
 bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
 ```
 
-Following setup procedures are not yet automated:
+### Manual Setup
+
+The following tools must be installed manually:
+- ripgrep: https://github.com/BurntSushi/ripgrep
+
+These setting procedures must be performed manually:
+- **Power Settings** 
+  - > Power Saving > Blank Screen > Never
+- **Privacy Settings**
+  - > Screen Lock > Off
+  - > Problem Reporting > Sends reports automatically ON.
+- **Region & Language**
+  - > Language: English (United States)
+  - > Input Sources:
+	- Enable English and Spanish keyboards.
+	- Options: Use the same source for all windows.
+- **Search**: Disable Ubuntu Software.	
+
+These other setup procedures are also not yet automated:
 - **Disable Terminal Bell**: Terminal > Edit > Preference: Uncheck Terminal Bell.
-- **Input Sources**: Enable English and Spanish keyboards
 - **gnome tweak tool**
   - Desktop -> Home, Mounted Volumes
   - Top Bar -> Enable Clock Date
