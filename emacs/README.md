@@ -46,7 +46,9 @@ cp emacs.desktop ~/.local/share/applications/
 
 Dependencies:
 ```bash
-sudo apt install clang-format
+sudo apt install clang-format clangd-9
+sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
+
 pip install --user black
 ```
 
