@@ -20,3 +20,9 @@ bash setup.bash
 ```
 
 Launch emacs and ...
+
+
+## Emacs .dotfiles Reference
+
+- https://github.com/ianpan870102/.personal-emacs.d
+- https://github.com/ianpan870102/yay-evil-emacs
