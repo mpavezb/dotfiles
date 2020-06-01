@@ -1,19 +1,25 @@
-;;; package --- Summary
-;;; Commentary:
-;;; Code:
-
 ;; -----------------------------------------------------------------------------
 ;; company-mode
 ;; Modular in-buffer completion framework for Emacs
 ;; https://github.com/company-mode/company-mode
 ;; -----------------------------------------------------------------------------
-(use-package company-mode 
+(use-package company 
   :hook (after-init . global-company-mode) 
   :config ;;
   (setq company-minimum-prefix-length 1) 
-  (setq company-idle-delay 0.0) ;; default is 0.2
-  ;;   (global-set-key (kbd "M-/") 'company-complete-common-or-cycle)
+  (setq company-idle-delay 0.0) 
+  (global-set-key (kbd "M-/") 'company-complete-common-or-cycle)
+  ;;
   )
+
+;; -----------------------------------------------------------------------------
+;; company-quickhelp
+;; Documentation popup for Company
+;; https://github.com/company-mode/company-quickhelp
+;; -----------------------------------------------------------------------------
+(use-package company-quickhelp 
+  :after company-mode 
+  :init (company-quickhelp-mode))
 
 ;; -----------------------------------------------------------------------------
 ;; flycheck
@@ -74,5 +80,3 @@
   :commands lsp-treemacs-errors-list)
 (use-package dap-mode)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
-
-;;

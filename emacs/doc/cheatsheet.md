@@ -55,6 +55,10 @@ M-AvPag/Repag : Scroll Other
 # https://stackoverflow.com/questions/812524/ido-mode-is-too-smart-can-i-get-it-to-not-complete-a-filename
 C-j  : Make IDO not replace autocompletion NOW.
 
+# company-mode
+C-o: Hide not matching current regex.
+M-x describe-function RET company-mode
+
 # mp/
 mp/put-buffername-on-clipboard
 mp/s-split-words 

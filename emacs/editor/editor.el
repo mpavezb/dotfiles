@@ -221,42 +221,7 @@
 (defadvice rgrep (after mp/delete-grep-header activate) 
   (mp/delete-grep-header))
 
-;; -----------------------------------------------------------------------------
-;; completion
-;; -----------------------------------------------------------------------------
 
-;; hippie-expand
-;; Allows expansion for autocompletion (given an interesting source)
-;; https://www.emacswiki.org/emacs/HippieExpand
-(global-set-key (kbd "M-/") 'hippie-expand)
-
-
-;; auto-complete
-;; https://github.com/auto-complete/auto-complete
-(use-package auto-complete 
-  :diminish auto-complete-mode 
-  :config ;;
-  (ac-config-default)
-
-  ;; Automatic Start and Triggering
-  ;; (setq ac-auto-start nil) ;; disabled auto start
-  (setq ac-auto-start 5) ;; start after typing 4 characters
-  (ac-set-trigger-key "TAB")
-
-  ;; Filter list with C-s / DEL
-  (setq ac-use-menu-map t)
-
-  ;; disable quick help info
-  ;; (setq ac-use-quick-help nil)
-  (setq ac-use-quick-help t)
-
-  ;; Number of rows
-  (setq ac-menu-height 20)
-
-  ;; Case is ignored only if there are not upper chars
-  (setq ac-ignore-case 'smart)
-  ;;
-  )
 
 ;; -----------------------------------------------------------------------------
 ;; other
