@@ -2,32 +2,6 @@
 ;; buffer.el
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; -----------------------------------------------------------------------------
-;; saveplace
-;; -----------------------------------------------------------------------------
-;; remember point position when reopening/revisiting each buffer
-(use-package saveplace 
-  :config (setq-default save-place t))
-
-;; -----------------------------------------------------------------------------
-;; desktop.el
-;; http://wikemacs.org/wiki/Desktop.el
-;; -----------------------------------------------------------------------------
-;; remember opened buffers
-(desktop-save-mode 1)
-
-;; Restore at most 10 buffers on startup
-(setq desktop-restore-eager 10)
-
-;; buffers not to save
-(setq desktop-buffers-not-to-save (concat "\\(\\.log\\|^tags\\|^TAGS\\)$"))
-(add-to-list 'desktop-modes-not-to-save 'dired-mode)
-(add-to-list 'desktop-modes-not-to-save 'Info-mode)
-(add-to-list 'desktop-modes-not-to-save 'info-lookup-mode)
-;; (add-to-list 'desktop-modes-not-to-save 'fundamental-mode)
-
-;; Buffers not to clear (regex)
-(add-to-list 'desktop-clear-preserve-buffers "README.md")
 
 ;; -----------------------------------------------------------------------------
 ;; midnight mode

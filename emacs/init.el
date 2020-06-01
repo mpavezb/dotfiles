@@ -30,6 +30,7 @@
 (mp/load "project/neotree.el")
 
 ;; = Editor =
+(mp/load "editor/history.el")
 (mp/load "editor/dired.el")
 (mp/load "editor/editor.el")
 (mp/load "editor/buffer.el")

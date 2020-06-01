@@ -65,18 +65,6 @@
 ;; misc
 ;; -----------------------------------------------------------------------------
 
-(use-package savehist
-  :init
-  (setq savehist-file "~/.emacs.d/var/savehist.el")
-  :config ;;
-  (setq history-length 1000)
-  (setq savehist-save-minibuffer-history t)
-  (setq savehist-additional-variables '(kill-ring search-ring regexp-search-ring last-kbd-macro
-						kmacro-ring shell-command-history Info-history-list
-						register-alist))
-  (savehist-mode t)
-  )
-
 ;; force newline at EOF
 ;;(setq require-final-newline t)
 
