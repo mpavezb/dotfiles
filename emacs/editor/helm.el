@@ -264,33 +264,6 @@
   (defun helm/ff-candidates-lisp-p (candidate) 
     (cl-loop for cand in (helm-marked-candidates) always (string-match "\\.el$" cand))
     ) 
-  (defun helm-ff-recoll-index-directory (directory) 
-    "Create a recoll index directory from DIRECTORY.
-Add the new created directory to `helm-recoll-directories' using the
-basename of DIRECTORY as name.
-By using `customize-set-variable', a new source is created for this
-new directory." 
-    (cl-assert 
-     (boundp 'helm-recoll-directories)
-     nil
-     "Package helm-recoll not installed or configured"
-     ) 
-    (let* ((bn (helm-basename (expand-file-name directory))) 
-	   (index-dir (format "~/.recoll-%s" bn)) 
-	   (conf-file (expand-file-name "recoll.conf" index-dir))) 
-      (mkdir index-dir) 
-      (with-current-buffer (find-file-noselect conf-file) 
-	(insert (format "topdirs = %s" (expand-file-name directory))) 
-	(save-buffer) 
-	(kill-buffer)) 
-      (customize-set-variable 'helm-recoll-directories (append `((,bn . ,index-dir))
-							       helm-recoll-directories)) 
-      (message "Don't forget to index config directory with 'recollindex -c %s'" index-dir))
-    ) 
-  (defun helm-ff-recoll-index-directories (_candidate) 
-    (let ((dirs (helm-marked-candidates))) 
-      (cl-loop for dir in dirs when (file-directory-p dir) do (helm-ff-recoll-index-directory dir)))
-    )
 
 ;; Add actions to `helm-source-find-files' IF:
   (cl-defmethod helm-setup-user-source ((source helm-source-ffiles))
@@ -366,13 +339,7 @@ new directory."
      (lambda (candidate)
        (and (file-directory-p candidate)
             (string= (helm-basename candidate) ".")))
-     1)
-    (helm-source-add-action-to-source-if
-     "Recoll index directory"
-     'helm-ff-recoll-index-directories
-     source
-     'file-directory-p
-     3)))
+     1)))
 
 (use-package helm-dictionary ; Its autoloads are already loaded.
   :disabled
@@ -423,16 +390,10 @@ new directory."
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-info-bash)
   (helm-define-key-with-subkeys global-map (kbd "C-c n") ?n 'helm-cycle-resume))
 
-(use-package helm-net
-  :config
-  (setq helm-net-prefer-curl           nil
-        helm-surfraw-duckduckgo-url    "https://duckduckgo.com/?q=%s&ke=-1&kf=fw&kl=fr-fr&kr=b&k1=-1&k4=-1"
-        helm-google-suggest-search-url helm-surfraw-duckduckgo-url))
-
 (use-package helm-external
   :config
-  (setq helm-raise-command                 "wmctrl -xa %s"
-        helm-default-external-file-browser "thunar"))
+  (setq helm-raise-command                 "wmctrl -xa %s")
+  (setq helm-default-external-file-browser "nautilus"))
 
 (use-package helm-grep
   :config
@@ -492,6 +453,8 @@ First call indent, second complete symbol, third complete fname."
   :config
   (customize-set-variable 'helm-imenu-lynx-style-map t))
 
+(use-package helm-rg)
+
 ;;; Ctl-x-5 map
 ;;
 (define-key ctl-x-5-map (kbd "C-x c t") 'helm-top-in-frame)
@@ -508,8 +471,6 @@ First call indent, second complete symbol, third complete fname."
 ;;
 (define-key helm-command-map (kbd "g") 'helm-apt)
 (define-key helm-command-map (kbd "z") 'helm-complex-command-history)
-(define-key helm-command-map (kbd "w") 'helm-w3m-bookmarks)
-(define-key helm-command-map (kbd "x") 'helm-firefox-bookmarks)
 (define-key helm-command-map (kbd "I") 'helm-imenu-in-all-buffers)
 (define-key helm-command-map (kbd "@") 'helm-list-elisp-packages-no-fetch)
 
@@ -541,13 +502,9 @@ First call indent, second complete symbol, third complete fname."
 (define-key global-map [remap jump-to-register]      'helm-register)
 (define-key global-map [remap list-buffers]          'helm-mini)
 (define-key global-map [remap dabbrev-expand]        'helm-dabbrev)
-(define-key global-map [remap find-tag]              'helm-etags-select)
-(define-key global-map [remap xref-find-definitions] 'helm-etags-select)
 (define-key global-map (kbd "M-g a")                 'helm-do-grep-ag)
 (define-key global-map (kbd "M-g g")                 'helm-grep-do-git-grep)
-(define-key global-map (kbd "M-g i")                 'helm-gid)
 (define-key global-map (kbd "C-x r p")               'helm-projects-history)
-(define-key global-map (kbd "C-x r c")               'helm-addressbook-bookmarks)
 (define-key global-map (kbd "C-c t r")               'helm-dictionary)
 
 ;; Indent or complete with completion-at-point

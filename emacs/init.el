@@ -51,4 +51,3 @@
 
 ;; = Integrations =
 (mp/load "integrations/neotree-projectile.el")
-;; (mp/load "integrations/helm-projectile.el")

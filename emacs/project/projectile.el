@@ -12,3 +12,9 @@
   ;; cleaner modeline
   (setq projectile-mode-line-function '(lambda () 
 					 (format " [%s]" (projectile-project-name)))))
+
+(use-package helm-projectile 
+  :after (helm projectile) 
+  :config ;;
+  (setq projectile-completion-system 'helm) 
+  (helm-projectile-on))
