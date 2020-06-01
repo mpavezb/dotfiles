@@ -32,7 +32,10 @@
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)) 
   (setq flycheck-emacs-lisp-load-path 'inherit)
   ;;
-  )
+  ;; C++
+  (add-hook 'c++-mode-hook (lambda () 
+			     (setq flycheck-gcc-language-standard "c++11"))))
+
 
 ;; -----------------------------------------------------------------------------
 ;; lsp-mode
