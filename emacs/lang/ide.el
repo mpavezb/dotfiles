@@ -29,7 +29,8 @@
 (use-package flycheck 
   :hook (prog-mode . global-flycheck-mode) 
   :config ;;
-
+  (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)) 
+  (setq flycheck-emacs-lisp-load-path 'inherit)
   ;;
   )
 
