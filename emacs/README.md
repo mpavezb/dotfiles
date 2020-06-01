@@ -64,3 +64,4 @@ Launch emacs and install missing packages on the go.
 
 - https://github.com/ianpan870102/.personal-emacs.d
 - https://github.com/ianpan870102/yay-evil-emacs
+- Helm Maintainer: https://github.com/thierryvolpiatto/emacs-tv-config

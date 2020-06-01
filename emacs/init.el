@@ -33,8 +33,7 @@
 (mp/load "editor/dired.el")
 (mp/load "editor/editor.el")
 (mp/load "editor/buffer.el")
-(mp/load "editor/ido.el")
-;; (mp/load "editor/helm.el")
+(mp/load "editor/helm.el")
 
 ;; = Org =
 (mp/load "org/org.el")
