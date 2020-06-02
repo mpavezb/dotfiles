@@ -12,13 +12,16 @@
   ;;
   )
 
+(use-package company-capf
+  :after company)
+
 ;; -----------------------------------------------------------------------------
 ;; company-quickhelp
 ;; Documentation popup for Company
 ;; https://github.com/company-mode/company-quickhelp
 ;; -----------------------------------------------------------------------------
 (use-package company-quickhelp 
-  :after company-mode 
+  :after company 
   :init (company-quickhelp-mode))
 
 ;; -----------------------------------------------------------------------------
@@ -55,6 +58,12 @@
   ;; Formatting
   ;; TAB SIZE: c-basic-offset (for cc-mode derived), tab-width
   ;; indent-tabs-mode: tabs vs. spaces
+
+  ;; Performance
+  (setq gc-cons-threshold 100000000)
+  (setq read-process-output-max (* 1024 1024)) ;; 1mb
+  (setq lsp-prefer-capf t)
+  (setq lsp-idle-delay 0.500)
   )
 
 (use-package lsp-ui 
