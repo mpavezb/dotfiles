@@ -44,37 +44,18 @@
 ;; -----------------------------------------------------------------------------
 (use-package lsp-mode 
   :hook (
-	 ;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-	 ;;(XXX-mode . lsp-deferred)
-	 ;; if you want which-key integration
-	 (c++-mode . lsp-deferred) 
-	 (lsp-mode . lsp-enable-which-key-integration)) 
+	 (c++-mode . lsp-deferred)
+	 (python-mode . lsp-deferred) 
+	 (lsp-mode . lsp-enable-which-key-integration))
+  :init
+  ;; if you want to change prefix for lsp-mode keybindings.
+  (setq lsp-keymap-prefix "C-c l")
   :commands (lsp lsp-deferred) 
   :config ;;
-
-  ;; if you want to change prefix for lsp-mode keybindings.
-  ''(setq lsp-keymap-prefix "s-l")
-
-  ;; prog-mode-hook, c++, java, ...
-  ;;(add-hook 'XXX-mode-hook #'lsp)
-  ;;(add-hook 'XXX-mode-hook #'lsp-deferred)
-  ;;
-
   ;; Formatting
   ;; TAB SIZE: c-basic-offset (for cc-mode derived), tab-width
   ;; indent-tabs-mode: tabs vs. spaces
   )
-
-;; use this to disable the format hook
-;; (remove-hook  'before-save-hook 'mp/lisp-mode-before-save-hook)
-
-
-;; TODO
-;; lsp-ui
-;; lsp-treemacs
-;; helm-lsp
-;; dap-mode
-;; optionally
 
 (use-package lsp-ui 
   :commands lsp-ui-mode)

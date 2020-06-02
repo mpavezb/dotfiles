@@ -42,7 +42,7 @@
   :diminish which-key-mode 
   :init (which-key-mode) 
   :config (which-key-setup-side-window-bottom) 
-  (setq which-key-idle-delay 3.0))
+  (setq which-key-idle-delay 1.0))
 
 ;; (use-package switch-window
 ;;   :bind (("C-x o" . switch-window)))
