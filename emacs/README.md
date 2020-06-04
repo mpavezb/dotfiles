@@ -40,7 +40,7 @@ make distclean
 
 Finally, create the application icon:
 ```bash
-cp emacs.desktop ~/.local/share/applications/
+cp ~/.dotfiles/emacs/emacs.desktop ~/.local/share/applications/
 ```
 
 ### Setting up emacs configurations
@@ -60,7 +60,7 @@ pip install --user black
 
 Set up emacs dotfiles:
 ```bash
-bash setup.bash
+bash ~/.dotfiles/emacs/setup.bash
 ```
 
 Launch emacs and install missing packages on the go.
