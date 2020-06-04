@@ -136,9 +136,10 @@
   ;; Default options
   ;; -----------------------------------
   (add-to-list 'rg-command-line-flags "--max-filesize 10M") ;; Ignore large files
-  (add-to-list 'rg-command-line-flags "--max-columns 80") ;; Hide large columns
+  (add-to-list 'rg-command-line-flags "--max-columns 150") ;; Hide large columns
   (add-to-list 'rg-command-line-flags "--max-columns-preview") ;; but show matched section
   (add-to-list 'rg-command-line-flags "--glob !git/*") ;; but show matched section
+  ;; (setq rg-command-line-flags (delete "--max-columns 150" rg-command-line-flags))
 
   ;; -----------------------------------
   ;; Toggles
