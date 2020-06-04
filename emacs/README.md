@@ -10,18 +10,19 @@ Documentation:
 
 ## Preparations
 
-### Emacs26 installation 
+### Emacs27 installation 
 
-Emacs 26 is required, but this is not available in Ubuntu 18.04, so it must be downloaded and installed manually.
-- Download emacs 26.3 release tar.gz package from the [github mirror](https://github.com/emacs-mirror/emacs/releases).
+Emacs 27 is required, but this is not available in Ubuntu 18.04, so it must be downloaded and installed manually.
+- Download emacs 27.0.91 tar.gz package from the [github mirror](https://github.com/emacs-mirror/emacs/releases).
 - Uncompress the package into the destination folder (`~/.opt/`).
 - Read installation instructions on the `INSTALL` file located on the package root.
 
+During configuration, make sure emacs is built with json support.
 ```bash
 # Install build tools and all dependencies of a previous emacs version:
 sudo apt-get install build-essential
 sudo apt-get build-dep emacs
-sudo apt-get install libacl1-dev libncurses5-dev libxpm-dev libgnutls28-dev textinfo gsfonts-x11
+sudo apt-get install libacl1-dev libncurses5-dev libxpm-dev libgnutls28-dev texinfo gsfonts-x11
 
 # Configure
 ./autogen
