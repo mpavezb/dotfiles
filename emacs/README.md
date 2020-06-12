@@ -55,7 +55,7 @@ sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-9 100
 
 # Python
 pip3 install 'python-language-server[all]'
-pip install --user black
+pip3 install --user black
 ```
 
 Set up emacs dotfiles:
