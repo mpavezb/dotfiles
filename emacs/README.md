@@ -22,7 +22,7 @@ During configuration, make sure emacs is built with json support.
 # Install build tools and all dependencies of a previous emacs version:
 sudo apt-get install build-essential
 sudo apt-get build-dep emacs
-sudo apt-get install libacl1-dev libncurses5-dev libxpm-dev libgnutls28-dev texinfo gsfonts-x11
+sudo apt-get install libacl1-dev libncurses5-dev libxpm-dev libgnutls28-dev texinfo gsfonts-x11 libjansson-dev
 
 # Configure
 ./autogen
