@@ -5,7 +5,12 @@
 (use-package solarized-theme 
   :demand t)
 (use-package doom-themes 
-  :demand t)
+  :demand t
+  :config;;
+  (setq doom-themes-enable-bold t    ; if nil, bold is universally disabled
+        doom-themes-enable-italic t) ; if nil, italics is universally disabled
+  ;; Corrects (and improves) org-mode's native fontification.
+  (doom-themes-org-config))
 
 (defun mp/disable-all-themes () 
   (dolist (th custom-enabled-themes) 
