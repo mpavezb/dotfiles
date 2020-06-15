@@ -12,9 +12,6 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
-
-(package-initialize)
-
 ;; prevents stale elisp bytecode from shadowing more up-to-date source files.
 (setq load-prefer-newer t)
 
