@@ -39,6 +39,22 @@
   (add-hook 'c++-mode-hook (lambda () 
 			     (setq flycheck-gcc-language-standard "c++11"))))
 
+;; -----------------------------------------------------------------------------
+;; yasnippet
+;; A template system for Emacs
+;; https://github.com/joaotavora/yasnippet
+;; -----------------------------------------------------------------------------
+(use-package yasnippet 
+  :hook (prog-mode . yas-minor-mode) 
+  :config (yas-reload-all))
+
+;; -----------------------------------------------------------------------------
+;; yasnippet-snippets
+;; A collection of yasnippet snippets for many languages
+;; https://github.com/AndreaCrotti/yasnippet-snippets
+;; -----------------------------------------------------------------------------
+(use-package yasnippet-snippets 
+  :after yasnippet)
 
 ;; -----------------------------------------------------------------------------
 ;; lsp-mode
