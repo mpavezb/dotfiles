@@ -91,13 +91,14 @@
   )
 
 (use-package lsp-ui 
+  :after lsp-mode 
   :commands lsp-ui-mode)
 (use-package helm-lsp 
-  :commands helm-lsp-workspace-symbol
-  :init
-  (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol)
-  )
+  :after lsp-mode 
+  :commands helm-lsp-workspace-symbol 
+  :init (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
 (use-package lsp-treemacs 
+  :after lsp-mode 
   :commands lsp-treemacs-errors-list)
 (use-package dap-mode)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language
