@@ -151,9 +151,12 @@
     (rg-rerun))
   ;; display
   (define-key rg-mode-map (kbd "G") 'mp/rg-toggle-group) 
-  (rg-define-toggle "--after-context 3" "A")  ;; After context
-  (rg-define-toggle "--before-context 3" "B") ;; Before context
-  (rg-define-toggle "--context 3" "C")	      ;; Full Context
+  (rg-define-toggle "--after-context 15" "A")  ;; After context medium
+  (rg-define-toggle "--before-context 15" "B") ;; Before context medium
+  ;; this does not work, as  macro will redefine the toggle function named rg-custom-toggle-flag-*.
+  ;; (rg-define-toggle "--after-context 30" "a") ;; After context large
+  ;; (rg-define-toggle "--before-context 30" "b") ;; Before context large
+  (rg-define-toggle "--context 5" "C")	 ;; Full Context small
   ;; search
   (rg-define-toggle "--word-regexp" "W") ;; Regex for word boundaries
   ;; sort
