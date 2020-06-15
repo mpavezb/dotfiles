@@ -8,12 +8,20 @@
   :config ;;
   (setq company-minimum-prefix-length 1) 
   (setq company-idle-delay 0.0) 
-  (global-set-key (kbd "M-/") 'company-complete-common-or-cycle)
+  (global-set-key (kbd "C-<tab>") 'company-complete-common-or-cycle)
   ;;
   )
 
 (use-package company-capf
   :after company)
+
+;; -----------------------------------------------------------------------------
+;; hippie-expand
+;; Allows expansion for autocompletion (given an interesting source)
+;; https://www.emacswiki.org/emacs/HippieExpand
+;; -----------------------------------------------------------------------------
+;; Use hippie-expand as fallback
+(global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; -----------------------------------------------------------------------------
 ;; company-quickhelp
