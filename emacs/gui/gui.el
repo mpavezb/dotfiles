@@ -42,8 +42,11 @@
   :diminish which-key-mode 
   :init (which-key-mode) 
   :config ;;
-  (which-key-setup-side-window-bottom) 
-  (setq which-key-idle-delay 0.1)
+  (which-key-setup-side-window-bottom)
+
+  ;; Do not set this to something like 0.1, because it will
+  ;; interfere with every command you type!.
+  (setq which-key-idle-delay 1) 
   (setq which-key-idle-secondary-delay 0.05))
 
 ;; (use-package switch-window
