@@ -121,7 +121,7 @@
 ;; TODO: Configurable max depth.
 (use-package rg 
   :bind ("C-c C-s" . rg-dwim-project-dir) 
-  :init (rg-enable-default-bindings) 
+  :init (rg-enable-menu) 
   :config ;;
   ;; -----------------------------------
   ;; Displays
