@@ -174,7 +174,7 @@
   ;; -----------------------------------
   (setq rg-custom-type-aliases nil) 
   (add-to-list 'rg-custom-type-aliases '("cpp" . "*.{c,cpp,h,hpp,cc,hxx,cxx}")) 
-  (add-to-list 'rg-custom-type-aliases '("franca" . "*.{fidl,fdepl,cdepl}")) 
+  (add-to-list 'rg-custom-type-aliases '("franca" . "*.{fidl,fdepl,cdepl,fcdl}")) 
   (add-to-list 'rg-custom-type-aliases '("web" . "*.{html,js,css}"))
   ;;
   )
