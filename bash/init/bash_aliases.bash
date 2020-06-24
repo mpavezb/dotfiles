@@ -4,10 +4,10 @@
 # System Management
 # ===============================================
 # update-grub
-alias mp::update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
+alias mp-update-grub="sudo grub-mkconfig -o /boot/grub/grub.cfg"
 
 # hardware info
-alias mp::hw="hwinfo --short"
+alias mp-hw_info="hwinfo --short"
 
 # ===============================================
 # Usability
@@ -25,4 +25,4 @@ alias fgrep='fgrep --color=auto'
 alias df='df -h'
 
 # shell
-alias mp::clear="tput reset"
+alias mp-clear="tput reset"

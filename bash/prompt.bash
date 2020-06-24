@@ -12,7 +12,7 @@
 #  - virtualenv environment if active.
 #
 # Provides:
-#  - mp_prompt_command_toggle_git : toggle git information on/off for the current shell.
+#  - mp-prompt_command_toggle_git : toggle git information on/off for the current shell.
 #
 # Formatting:
 # - Sequences must be escaped to avoid weird prompt problems.
@@ -177,7 +177,7 @@ __timed_prompt_command() {
     time __prompt_command
 }
 
-mp_prompt_command_toggle_git() {
+mp-prompt_command_toggle_git() {
     if [ "${__mp_prompt_command_git_enabled}" = true ]; then
 	__mp_prompt_command_git_enabled=false
     else

@@ -39,6 +39,11 @@ Prefer **Python scripts** over Bash scripts. And:
 Bash scripts considerations:
 - No mater the exit state, the current working directory should not be modified.
 - Run [shellcheck](https://github.com/koalaman/shellcheck) to check for common mistakes.
+- Naming for global definitions:
+  - Variables: `MP_VAR_NAME`
+  - Functions: `mp-function-name`
+  - Hidden Variables: `_mp_hidden_variable`
+  - Hidden Functions: `_mp-hidden_function`
 
 A **well-behaved Unix-style command-line tool** looks like this:
 - it does nothing if no sources are passed to it;

@@ -50,7 +50,7 @@ export FZF_ALT_C_COMMAND
 # Options
 # ===============================================
 FZF_PREVIEW_OPTS=
-FZF_PREVIEW_OPTS="${FZF_PREVIEW_OPTS} --preview='mp::fzf_preview_command {}'"
+FZF_PREVIEW_OPTS="${FZF_PREVIEW_OPTS} --preview='_mp-fzf_preview_command {}'"
 FZF_PREVIEW_OPTS="${FZF_PREVIEW_OPTS} --preview-window='right:50%'"
 FZF_PREVIEW_OPTS="${FZF_PREVIEW_OPTS} --bind pgdn:preview-page-down,pgup:preview-page-up"
 

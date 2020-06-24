@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function mp::fzf_preview_file
+function _mp-fzf_preview_file
 {
     local path=$1
     if which bat >/dev/null; then
@@ -16,7 +16,7 @@ function mp::fzf_preview_file
     fi
 }
 
-function mp::fzf_preview_directory
+function _mp-fzf_preview_directory
 {
     local path=$1
     echo -e "\e[1mDirectory:\e[0m"
@@ -26,17 +26,17 @@ function mp::fzf_preview_directory
     find "${path}" | head -100
 }
 
-function mp::fzf_preview_command
+function _mp-fzf_preview_command
 {
     local path=$1
     if [[ -d $path ]]; then
-	mp::fzf_preview_directory "${path}"
+	_mp-fzf_preview_directory "${path}"
     elif [[ -f $path ]]; then
-	mp::fzf_preview_file "${path}"
+	_mp-fzf_preview_file "${path}"
     else
 	echo "Path ${path} os not a file or directory!"
     fi
 }
-export -f mp::fzf_preview_file
-export -f mp::fzf_preview_directory
-export -f mp::fzf_preview_command
+export -f _mp-fzf_preview_file
+export -f _mp-fzf_preview_directory
+export -f _mp-fzf_preview_command

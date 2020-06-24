@@ -33,7 +33,7 @@ Fzf also provides support for:
 - ssh **<TAB>
 - export **<TAB>
 
-## mp::git
+## mp-git
 
 - CTRL-G CTRL-F : Files listed in git status
 - CTRL-G CTRL-B : Branches
