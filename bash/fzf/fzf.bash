@@ -82,4 +82,9 @@ source "${FZF_DIR}"/git.bash
 # ===============================================
 source "${FZF_DIR}"/bazel.bash
 
+# ===============================================
+# Extra Tools
+# ===============================================
+source "${FZF_DIR}"/tools.bash
+
 unset FZF_DIR
