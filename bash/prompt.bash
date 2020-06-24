@@ -128,10 +128,14 @@ function __prompt_git_branch {
     fi
 }
 
+__mp_prompt_command_git_enabled=true
 function __prompt_git {
     local RET
     local UPSTREAM
     local STATS
+    if [ ! "${__mp_prompt_command_git_enabled}" = true ]; then
+	return
+    fi
     if git status --ignore-submodules &>/dev/null; then
 	RET+="$(__prompt_git_branch)"
         UPSTREAM="$(__prompt_git_upstream)"
@@ -168,6 +172,14 @@ __prompt_command() {
 
 __timed_prompt_command() {
     time __prompt_command
+}
+
+mp_prompt_command_toggle_git() {
+    if [ "${__mp_prompt_command_git_enabled}" = true ]; then
+	__mp_prompt_command_git_enabled=false
+    else
+	__mp_prompt_command_git_enabled=true
+    fi
 }
 
 #PROMPT_COMMAND=__timed_prompt_command
