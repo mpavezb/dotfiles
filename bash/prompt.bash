@@ -1,5 +1,5 @@
 #!/bin/bash
-# Version: v1.3
+# Version: v1.4
 # Author: mpavezb
 # Description: Prompt for bash
 #  Shows the following information:
@@ -10,6 +10,9 @@
 #  - Path with compressed HOME and parent directories. e.g.:  ~/w/rust
 #  - Git status: staged, modified, untracked, stash, diff to/from upstream.
 #  - virtualenv environment if active.
+#
+# Provides:
+#  - mp_prompt_command_toggle_git : toggle git information on/off for the current shell.
 #
 # Formatting:
 # - Sequences must be escaped to avoid weird prompt problems.
@@ -152,7 +155,7 @@ __prompt_virtualenv() {
     export VIRTUAL_ENV_DISABLE_PROMPT=1
 
     # display if needed
-    echo "$(__color_lgreen ${VIRTUAL_ENV:+(venv:${VIRTUAL_ENV##*/})})"
+    __color_lgreen ${VIRTUAL_ENV:+(venv:${VIRTUAL_ENV##*/})}
 }
 
 __prompt_command() {
