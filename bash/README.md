@@ -6,6 +6,7 @@ Dependencies are optional. They are loaded if found.
 
 - bat: https://github.com/sharkdp/bat
 - fzf: https://github.com/junegunn/fzf
+- fd: https://github.com/sharkdp/fd
 - virtualenv
 
 ## Setup

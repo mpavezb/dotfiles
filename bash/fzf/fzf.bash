@@ -29,9 +29,9 @@ source "${FZF_DIR}"/utils.bash
 # ===============================================
 # Commands
 # ===============================================
-# Use fd as search engine (faster than find)
+# Use fd as search engine instead of find
 # https://github.com/sharkdp/fd
-#
+
 FZF_DEFAULT_COMMAND=
 FZF_CTRL_T_COMMAND=
 FZF_CTRL_R_COMMAND=

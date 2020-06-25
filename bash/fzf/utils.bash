@@ -20,7 +20,7 @@ function _mp-fzf_preview_directory
 {
     local path=$1
     echo -e "\e[1mDirectory:\e[0m"
-    echo "$(readlink -f ${path})"
+    readlink -f "${path}"
     echo ""
     echo -e "\e[1mContents:\e[0m"
     find "${path}" | head -100
@@ -34,7 +34,7 @@ function _mp-fzf_preview_command
     elif [[ -f $path ]]; then
 	_mp-fzf_preview_file "${path}"
     else
-	echo "Path ${path} os not a file or directory!"
+	echo "Path ${path} is not a file or directory!"
     fi
 }
 export -f _mp-fzf_preview_file
