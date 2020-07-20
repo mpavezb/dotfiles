@@ -4,7 +4,7 @@
 
 ## NOT EMACS
 
-```
+```bash
 # GDB
 C-x a  : toggle TUI
 C-l /g : refresh screen
@@ -15,7 +15,7 @@ tui reg <TAB>: filter regs
 ```
 
 ## Custom Key Bindings
-```
+```bash
 # RG (@C-c s) [transient]
 # search
 @ r: regex
@@ -48,6 +48,46 @@ l: list
 m: menu
 C-c </> : next search
 m b/f : next search
+
+# ibuffer
+## operations
+m   : mark
+u   : unmark
+t   : toggle all (un)marks
+%f  : mark by filename
+%m  : mark by mode
+%n  : mark by name
+D   : kill marked
+g   : refresh list
+sa  : sort by lex
+sf  : sort by filename
+sv  : sort by last view
+ss  : sort by size
+sm  : sort by mode
+si  : reverse sort
+,   : rotate sort mode
+## filters
+//  : Remove filter
+/p  : Remove top filter
+/.  : OR on top two filters
+/!  : Negate top filter
+/m  : filter by mode
+/n  : filter by buffername
+/f  : filter by filename
+/c  : filter by context
+/>  : filter by size
+/<  : filter by size
+/s  : save filter w/name
+/r  : switch to saved filter
+/a  : add saved filter to current
+/g  : create group
+/P  : remove top group
+/\  : remove groups
+/S  : save groups w/name
+/R  : restore saved group
+/X  : Delete saved group
+TAB : move to next group
+M-p : move to previous group
 
 # Compilation
 M-p/n: move
@@ -104,7 +144,7 @@ C-c t      : Google translate
 
 ## Important Commands
 
-```
+```bash
 # General
 C-c p h : fuzzy find projectile-helm
 M-AvPag/Repag : Scroll Other
@@ -196,19 +236,26 @@ tabify
 untabify
 ```
 
-```
+```bash
 # Search
 C-s/r   : search forward/reverse
 C-M-s/r : search forward/reverse regex
 M-p/n   : move up/down in search history
 
 # Replace
+M-%: interactive replace
 
+M-p/n   : move up/down in history
 
 # Shell Commands
+F1      : ? Seems broken
+C-F1    : ?
 shell   : Run shell
-M-!     : Run command in minibuffer.
+M-!     : Run command
+M-&     : Run command async
+M-|     : Run command on region
 C-u M-! : Run command, but paste output in buffer.
+
 
 # Multiple Windows
 [5]: Effect on frames
@@ -226,12 +273,29 @@ C-x [4/5] r  : find file [in other] (read-only)
 C-x [4/5] d  : run dired [in other]
 
 # Rectangles
+C-x r r : Copy to register
+C-x r k : kill
+C-x r y : yank
+C-x r o : open shifting right
+C-x r c : blank out
 C-x r t : string-rectangle  (works on rectangular selection)
-C-s     : isearch-forward   (puts mark at the beginning of the match)
+
+
+# Registers
+C-x r s: save region to register
+C-x r i: insert register into buffer
+C-x r SPC: save value of point in register
+C-x r j: jump to saved point in register
 
 # Macros
 F3 : Start Macro
 F4 : Save/Use Macro
+C-x ( : Start Macro
+C-x ) : End Macro
+C-x e : Execute last macro
+C-u C-x : Append to last macro
+M-x name-last-kbd-macro
+M-x insert-kbd-macro
 
 # Transpose
 C-x C-t : transpose-lines
