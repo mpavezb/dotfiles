@@ -27,6 +27,31 @@ git stash drop stash@{0}
 git stash store -m "..." <hash-printed-by-drop>
 
 # ==========================================================
+# GIT SUBMODULE
+# ==========================================================
+
+# Do on all submodues
+git submodule foreach git ...
+
+# commits which are in branch_a but not in branch_b
+git submodule foreach git log branch_a --not branch_b --pretty=oneline --abbrev-commit
+
+# ==========================================================
+# GIT LOG
+# ==========================================================
+# commits which are in branch_a but not in branch_b
+git log branch_a --not branch_b --pretty=oneline --abbrev-commit
+
+# ==========================================================
+# GIT REV-LIST
+# ==========================================================
+# count unmerged commits from remote to local
+git rev-list branch_name..origin/branch_name --count
+
+# count unpushed commits from local to remote
+git rev-list origin/branch_name..branch_name --count
+
+# ==========================================================
 # GIT Bisect
 # ==========================================================
 # https://git-scm.com/docs/git-bisect
