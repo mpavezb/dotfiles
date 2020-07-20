@@ -1,5 +1,58 @@
+## Overview
+
+- How to mark a command as not important, as there is a better way to do it (like prefering C-x g instead of C-c p v)
+
+## NOT EMACS
+
+```
+# GDB
+C-x a  : toggle TUI
+C-l /g : refresh screen
+C-x 1  : one window
+C-x 2  : mult window, cycle modes
+C-p/n  :move in history
+tui reg <TAB>: filter regs
+```
+
 ## Custom Key Bindings
 ```
+# RG (@C-c s) [transient]
+# search
+@ r: regex
+@ t: literal
+@ p: project
+@ c: cur dir
+@ f: cur file
+# refine
+r: regex
+t: literal
+d: directory
+f: file
+# navigation
+n/p : move and display
+M-n/p : next
+C-n/p : next file
+RET   : go to
+# toggles
+g: recompile
+c: case
+i: ignored
+A/B/C: context
+W: words
+S/R: sort
+L: symlinks
+# misc
+e: edit mode (wgrep)
+s/S: save
+l: list
+m: menu
+C-c </> : next search
+m b/f : next search
+
+# Compilation
+M-p/n: move
+C-c C-q: toggle visit
+
 # kill-ring
 M-y   : browse-kill-ring
 C-M-y : popup-kill-ring
@@ -22,15 +75,18 @@ M-- : er/contract-region
 F8: mp/neotree-project-dir
 
 # Git
-C-c M-g : magit-file-dispatch
+C-c M-g : magit-file-dispatch (local magit operations!)
 C-x g   : magit-status
 C-x v g : vc-annotate
 C-c g g : git-timemachine
 C-c g b : browse-at-remote
 
 # ORG
+See: https://orgmode.org/manual/index.html
 C-c a   : org-agenda
 C-c l   : org-store-link
+C-c .   : insert timestamp
+C-c C-, : insert template (codeblocks, ...)
 
 # GUI
 C-x t : mp/toggle-theme
@@ -72,14 +128,32 @@ mp/s-word-initials
 mp/s-upcase 
 mp/s-downcase 
 
-# Dired
+# Dired (C-x d)
 find-name-dired
 find-grep-dired
+dired-git-info-mode
+f : visit
+v : view
+o : visit in other
++ : create subdirectory
+= : compare files at point and mark
+m : mark
+u : unmark
+t : toggle mark
+g : reload
+C-x C-q : edit from dired buffer
+C : copy
+R : rename
+D : delete
+S : symlink
+Q : regex query replace
+A : search regex
 / h : hide dotfiles
 / d : only directories
 / f : only files
 / <wait> : see all filters
-dired-git-info-mode
+!/: shell commands on files ????
+*[./] : mark by ext ot directiories ????
 
 # Projectile
 # https://projectile.readthedocs.io/en/latest/usage/
@@ -92,6 +166,8 @@ C-c p  5 f : projectile-find-file-other-frame
 C-c p  4 a : switch to file with different extension in other window
 C-c p  5 a : switch to file with different extension in other frame
 C-c p  p   : projectile-switch-project
+C-c p  D   : open root on dired
+C-c p  v   : open vc-dir on root
 
 # Semantic
 C-c , j : semantic-complete-jump-local (jump to function in buffer)
@@ -121,11 +197,33 @@ untabify
 ```
 
 ```
+# Search
+C-s/r   : search forward/reverse
+C-M-s/r : search forward/reverse regex
+M-p/n   : move up/down in search history
+
+# Replace
+
+
 # Shell Commands
 shell   : Run shell
 M-!     : Run command in minibuffer.
 C-u M-! : Run command, but paste output in buffer.
 
+# Multiple Windows
+[5]: Effect on frames
+[4]: Effect on
+[ ]: Effect on buffer
+C-x  [5]  0  : delete this
+C-x  [5]  1  : delete others
+C-x  [5]  2  : split ----
+C-x       3  : split  |
+C-x  [5]  o  : switch cursor to other
+C-x [4/5] b  : select buffer [in other]
+C-x [4/5] C-o: display buffer [in other]
+C-x [4/5] f  : find file [in other]
+C-x [4/5] r  : find file [in other] (read-only)
+C-x [4/5] d  : run dired [in other]
 
 # Rectangles
 C-x r t : string-rectangle  (works on rectangular selection)
