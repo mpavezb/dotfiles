@@ -20,7 +20,7 @@
     (when (eq major-mode 'emacs-lisp-mode) 
       (elisp-format-buffer))))
 
-(add-hook  'before-save-hook 'mp/lisp-mode-before-save-hook)
+;;(add-hook  'before-save-hook 'mp/lisp-mode-before-save-hook)
 
 ;; use this to disable the format hook
 ;; (remove-hook  'before-save-hook 'mp/lisp-mode-before-save-hook)
