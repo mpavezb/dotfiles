@@ -1,0 +1,2 @@
+'body':
+  'ctrl-w': 'core:select-all'
