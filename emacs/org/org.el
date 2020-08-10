@@ -16,7 +16,7 @@
   (add-to-list 'auto-mode-alist '("\\.org$ . org-mode"))
 
   ;; agenda files
-  (setq org-agenda-files (list "~/documents/org/"))
+  ;; (setq org-agenda-files (list "~/documents/org/"))
 
   ;; -------------------------------------
   ;; Edition
