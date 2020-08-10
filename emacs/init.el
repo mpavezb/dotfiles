@@ -46,6 +46,7 @@
 (mp/load "lang/cpp.el")
 (mp/load "lang/lisp.el")
 (mp/load "lang/python.el")
+(mp/load "lang/markdown.el")
 (mp/load "lang/web.el")
 (mp/load "lang/xml.el")
 (mp/load "lang/yaml.el")

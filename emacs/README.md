@@ -46,7 +46,12 @@ cp ~/.dotfiles/emacs/emacs.desktop ~/.local/share/applications/
 ### Setting up emacs configurations
 
 Dependencies:
+
 ```bash
+# Markdown
+# TODO: `which pandoc` should be used instead of raw /usr/bin/pandoc.
+sudo apt-get install pandoc
+
 # C/C++
 sudo apt install clang-9 clang-format-9 clangd-9
 sudo update-alternatives --install /usr/bin/clangd clangd /usr/bin/clangd-9 100
