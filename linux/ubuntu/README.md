@@ -17,6 +17,7 @@ Boot from a linux live CD, install boot-repair and use it.
 ```bash
 sudo add-apt-repository ppa:yannubuntu/boot-repair
 sudo apt-get update
+sudo apt install  boot-repair
 boot-repair
 ```
 
@@ -24,7 +25,7 @@ boot-repair
 
 ```bash
 sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt-get-update
+sudo apt-get update
 sudo apt install nvidia-driver-440 nvidia-settings
 ```
 
