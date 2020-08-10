@@ -1,0 +1,438 @@
+boot-repair-4ppa125                                              [20200810_2024]
+
+============================= Boot Repair Summary ==============================
+
+
+
+Warning: The driver descriptor says the physical block size is 2048 bytes, but Linux says it is 512 bytes.
+sda may have broken partition table.
+grub-probe: error: cannot find a GRUB drive for /dev/sdb1.  Check your device.map.
+The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+Falling back to read-only mount because the NTFS partition is in an
+unsafe state. Please resume and shutdown Windows fully (no hibernation
+or fast restarting.)
+Windows is hibernated, refused to mount.
+The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+Falling back to read-only mount because the NTFS partition is in an
+unsafe state. Please resume and shutdown Windows fully (no hibernation
+or fast restarting.)
+The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+Falling back to read-only mount because the NTFS partition is in an
+unsafe state. Please resume and shutdown Windows fully (no hibernation
+or fast restarting.)
+grub-probe: error: cannot find a GRUB drive for /dev/sdb1.  Check your device.map.
+/usr/share/boot-sav/bs-cmd_terminal.sh: line 177: warning: command substitution: ignored null byte in input
+
+Recommended repair: ____________________________________________________________
+
+The default repair of the Boot-Repair utility will reinstall the grub-efi-amd64-signed of
+nvme0n1p6,
+using the following options:        nvme0n1p2/boot/efi,
+Additional repair will be performed: unhide-bootmenu-10s win-legacy-basic-fix use-standard-efi-file  restore-efi-backups
+
+
+/boot/efi added in nvme0n1p6/fstab
+rm /mnt/boot-sav/nvme0n1p2/efi/Boot/bootx64.efi
+mv /mnt/boot-sav/nvme0n1p2/efi/Boot/bkpbootx64.efi /mnt/boot-sav/nvme0n1p2/efi/Boot/bootx64.efi
+Quantity of real Windows: 1
+Mount nvme0n1p2 on /mnt/boot-sav/nvme0n1p6/boot/efi
+
+=============== Reinstall the grub-efi-amd64-signed of nvme0n1p6 ===============
+
+grub-install --version
+grub-install (GRUB) 2.02-2ubuntu8.17
+
+efibootmgr -v from chroot before grub install
+BootCurrent: 0005
+Timeout: 1 seconds
+BootOrder: 0005,0000,0002,0004,0001,0003
+Boot0000* Windows Boot Manager	HD(2,GPT,034877ee-4d74-4b95-ba3b-b2390f32426b,0xe1800,0x31800)/File(EFIMICROSOFTBOOTBOOTMGFW.EFI)WINDOWS.........x...B.C.D.O.B.J.E.C.T.=.{.9.d.e.a.8.6.2.c.-.5.c.d.d.-.4.e.7.0.-.a.c.c.1.-.f.3.2.b.3.4.4.d.4.7.9.5.}...a................
+Boot0001  Hard Drive	BBS(HD,,0x0)/VenHw(5ce8128b-2cec-40f0-8372-80640e3dc858,0200)..GO..NO..........S.T.2.0.0.0.D.M.0.0.8.-.2.F.R.1.0.2....................,.@.r.d.=.X..........A.............................................>..Gd-.;.A..MQ..L. . . . . . . . . . . . .F.W.3.L.Q.A.5.H........BO..NO..........S.a.b.r.e.n.t....................,.@.r.d.=.X..........A..........................dy.0P.!^.....>..Gd-.;.A..MQ..L.C.1.D.3.0.7.0.2.1.2.0.9.0.1.0.7.4.0.7.7........BO
+Boot0002* ubuntu	HD(2,GPT,034877ee-4d74-4b95-ba3b-b2390f32426b,0xe1800,0x31800)/File(EFIUBUNTUSHIMX64.EFI)
+Boot0003  USB KEY	BBS(HD,,0x0)/VenHw(5ce8128b-2cec-40f0-8372-80640e3dc858,0b00)..GO..NO..........K.i.n.g.s.t.o.n.D.a.t.a.T.r.a.v.e.l.e.r. .2...0.P.M.A.P....................,.@.r.d.=.X..........A.........................................F..Gd-.;.A..MQ..L.C.8.6.0.0.0.8.8.6.3.D.B.E.E.2.0.4.A.0.B.0.1.1.D........BO
+Boot0004* UEFI: KingstonDataTraveler 2.0PMAP	PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)/Pci(0x8,0x0)/Pci(0x0,0x3)/USB(3,0)/CDROM(1,0x3a74ac,0x4d00)..BO
+Boot0005* UEFI: KingstonDataTraveler 2.0PMAP, Partition 2	PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)/Pci(0x8,0x0)/Pci(0x0,0x3)/USB(3,0)/HD(2,MBR,0x40993ab6,0x3a74ac,0x1340)..BO
+
+uname -r
+4.18.0-15-generic
+
+grub-install --efi-directory=/boot/efi --target=x86_64-efi --uefi-secure-boot
+Installing for x86_64-efi platform.
+Installation finished. No error reported.
+df /dev/nvme0n1p2
+mv /mnt/boot-sav/nvme0n1p6/boot/efi/EFI/Boot/bootx64.efi /mnt/boot-sav/nvme0n1p6/boot/efi/EFI/Boot/bkpbootx64.efi
+cp /mnt/boot-sav/nvme0n1p6/boot/efi/EFI/ubuntu/shimx64.efi /mnt/boot-sav/nvme0n1p6/boot/efi/EFI/Boot/bootx64.efi
+
+grub-install --efi-directory=/boot/efi --target=x86_64-efi --uefi-secure-boot
+Installing for x86_64-efi platform.
+Installation finished. No error reported.
+
+efibootmgr -v from chroot after grub install
+BootCurrent: 0005
+Timeout: 1 seconds
+BootOrder: 0002,0005,0000,0004,0001,0003
+Boot0000* Windows Boot Manager	HD(2,GPT,034877ee-4d74-4b95-ba3b-b2390f32426b,0xe1800,0x31800)/File(EFIMICROSOFTBOOTBOOTMGFW.EFI)WINDOWS.........x...B.C.D.O.B.J.E.C.T.=.{.9.d.e.a.8.6.2.c.-.5.c.d.d.-.4.e.7.0.-.a.c.c.1.-.f.3.2.b.3.4.4.d.4.7.9.5.}...a................
+Boot0001  Hard Drive	BBS(HD,,0x0)/VenHw(5ce8128b-2cec-40f0-8372-80640e3dc858,0200)..GO..NO..........S.T.2.0.0.0.D.M.0.0.8.-.2.F.R.1.0.2....................,.@.r.d.=.X..........A.............................................>..Gd-.;.A..MQ..L. . . . . . . . . . . . .F.W.3.L.Q.A.5.H........BO..NO..........S.a.b.r.e.n.t....................,.@.r.d.=.X..........A..........................dy.0P.!^.....>..Gd-.;.A..MQ..L.C.1.D.3.0.7.0.2.1.2.0.9.0.1.0.7.4.0.7.7........BO
+Boot0002* ubuntu	HD(2,GPT,034877ee-4d74-4b95-ba3b-b2390f32426b,0xe1800,0x31800)/File(EFIubuntushimx64.efi)
+Boot0003  USB KEY	BBS(HD,,0x0)/VenHw(5ce8128b-2cec-40f0-8372-80640e3dc858,0b00)..GO..NO..........K.i.n.g.s.t.o.n.D.a.t.a.T.r.a.v.e.l.e.r. .2...0.P.M.A.P....................,.@.r.d.=.X..........A.........................................F..Gd-.;.A..MQ..L.C.8.6.0.0.0.8.8.6.3.D.B.E.E.2.0.4.A.0.B.0.1.1.D........BO
+Boot0004* UEFI: KingstonDataTraveler 2.0PMAP	PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)/Pci(0x8,0x0)/Pci(0x0,0x3)/USB(3,0)/CDROM(1,0x3a74ac,0x4d00)..BO
+Boot0005* UEFI: KingstonDataTraveler 2.0PMAP, Partition 2	PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)/Pci(0x8,0x0)/Pci(0x0,0x3)/USB(3,0)/HD(2,MBR,0x40993ab6,0x3a74ac,0x1340)..BO
+
+chroot /mnt/boot-sav/nvme0n1p6 update-grub
+Sourcing file `/etc/default/grub'
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.4.0-42-generic
+Found initrd image: /boot/initrd.img-5.4.0-42-generic
+Found linux image: /boot/vmlinuz-5.3.0-62-generic
+Found initrd image: /boot/initrd.img-5.3.0-62-generic
+Found linux image: /boot/vmlinuz-4.15.0-112-generic
+Found initrd image: /boot/initrd.img-4.15.0-112-generic
+grub-probe: error: cannot find a GRUB drive for /dev/sdb1.  Check your device.map.
+Found Windows Boot Manager on /dev/nvme0n1p2@/EFI/Microsoft/Boot/bootmgfw.efi
+Adding boot menu entry for EFI firmware configuration
+Windows is hibernated, refused to mount.
+The disk contains an unclean file system (0, 0).
+Metadata kept in Windows cache, refused to mount.
+Falling back to read-only mount because the NTFS partition is in an
+unsafe state. Please resume and shutdown Windows fully (no hibernation
+or fast restarting.)
+
+Unhide GRUB boot menu in nvme0n1p6/boot/grub/grub.cfg
+
+An error occurred during the repair.
+
+You can now reboot your computer.
+
+Please do not forget to make your UEFI firmware boot on the Ubuntu 18.04.4 LTS entry (nvme0n1p2/EFI/ubuntu/shimx64.efi file) !
+If your computer reboots directly into Windows, try to change the boot order in your UEFI firmware.
+
+If your UEFI firmware does not allow to change the boot order, change the default boot entry of the Windows bootloader.
+For example you can boot into Windows, then type the following command in an admin command prompt:
+bcdedit /set {bootmgr} path \EFI\ubuntu\shimx64.efi
+
+============================ Boot Info After Repair ============================
+
+ => Grub2 (v2.00) is installed in the MBR of /dev/nvme0n1 and looks at sector 
+    1909299376 of the same hard drive for core.img. core.img is at this 
+    location and looks for (,gpt6)/boot/grub. It also embeds following 
+    components:
+    
+    modules
+    ---------------------------------------------------------------------------
+    fshelp ext2 part_gpt biosdisk
+    ---------------------------------------------------------------------------
+
+nvme0n1p1: _____________________________________________________________________
+
+    File system:       ntfs
+    Boot sector type:  Windows 8/2012: NTFS
+    Boot sector info:  No errors found in the Boot Parameter Block.
+    Operating System:  
+    Boot files:        
+
+nvme0n1p2: _____________________________________________________________________
+
+    File system:       vfat
+    Boot sector type:  Windows 8/2012: FAT32
+    Boot sector info:  No errors found in the Boot Parameter Block.
+    Operating System:  
+    Boot files:        /efi/Boot/bkpbootx64.efi /efi/Boot/bootx64.efi 
+                       /efi/Boot/fbx64.efi /efi/Boot/grubx64.efi 
+                       /efi/ubuntu/grubx64.efi /efi/ubuntu/mmx64.efi 
+                       /efi/ubuntu/shimx64.efi /efi/ubuntu/grub.cfg 
+                       /efi/Microsoft/Boot/bootmgfw.efi 
+                       /efi/Microsoft/Boot/bootmgr.efi 
+                       /efi/Microsoft/Boot/memtest.efi
+
+nvme0n1p3: _____________________________________________________________________
+
+    File system:       
+    Boot sector type:  -
+    Boot sector info: 
+
+nvme0n1p4: _____________________________________________________________________
+
+    File system:       ntfs
+    Boot sector type:  Windows 8/2012: NTFS
+    Boot sector info:  No errors found in the Boot Parameter Block.
+    Operating System:  Windows 10
+    Boot files:        /bootmgr /Windows/System32/winload.exe
+
+nvme0n1p5: _____________________________________________________________________
+
+    File system:       ntfs
+    Boot sector type:  Windows 8/2012: NTFS
+    Boot sector info:  No errors found in the Boot Parameter Block.
+    Operating System:  
+    Boot files:        
+
+nvme0n1p6: _____________________________________________________________________
+
+    File system:       ext4
+    Boot sector type:  -
+    Boot sector info: 
+    Operating System:  Ubuntu 18.04.4 LTS
+    Boot files:        /boot/grub/grub.cfg /etc/fstab /etc/default/grub
+
+sda: ___________________________________________________________________________
+
+    File system:       ext4
+    Boot sector type:  -
+    Boot sector info: 
+    Operating System:  
+    Boot files:        
+
+sdb: ___________________________________________________________________________
+
+    File system:       iso9660
+    Boot sector type:  Unknown
+    Boot sector info: 
+    Operating System:  
+    Boot files:        /boot/grub/grub.cfg
+
+
+================================ 2 OS detected =================================
+
+OS#1:   Ubuntu 18.04.4 LTS on nvme0n1p6
+OS#2:   Windows 10 on nvme0n1p4
+
+============================ Architecture/Host Info ============================
+
+CPU architecture: 64-bit
+Live-session OS is Ubuntu 64-bit (Ubuntu 18.04.2 LTS, bionic, x86_64)
+
+
+===================================== UEFI =====================================
+
+BIOS is EFI-compatible, and is setup in EFI-mode for this live-session.
+SecureBoot disabled.
+
+efibootmgr -v
+BootCurrent: 0005
+Timeout: 1 seconds
+BootOrder: 0005,0000,0002,0004,0001,0003
+Boot0000* Windows Boot Manager	HD(2,GPT,034877ee-4d74-4b95-ba3b-b2390f32426b,0xe1800,0x31800)/File(\EFI\MICROSOFT\BOOT\BOOTMGFW.EFI)WINDOWS.........x...B.C.D.O.B.J.E.C.T.=.{.9.d.e.a.8.6.2.c.-.5.c.d.d.-.4.e.7.0.-.a.c.c.1.-.f.3.2.b.3.4.4.d.4.7.9.5.}...a................
+Boot0001  Hard Drive	BBS(HD,,0x0)/VenHw(5ce8128b-2cec-40f0-8372-80640e3dc858,0200)..GO..NO..........S.T.2.0.0.0.D.M.0.0.8.-.2.F.R.1.0.2...................\.,.@.r.d.=.X..........A.............................................>..Gd-.;.A..MQ..L. . . . . . . . . . . . .F.W.3.L.Q.A.5.H........BO..NO..........S.a.b.r.e.n.t...................\.,.@.r.d.=.X..........A..........................dy.0P.!^.....>..Gd-.;.A..MQ..L.C.1.D.3.0.7.0.2.1.2.0.9.0.1.0.7.4.0.7.7........BO
+Boot0002* ubuntu	HD(2,GPT,034877ee-4d74-4b95-ba3b-b2390f32426b,0xe1800,0x31800)/File(\EFI\UBUNTU\SHIMX64.EFI)
+Boot0003  USB KEY	BBS(HD,,0x0)/VenHw(5ce8128b-2cec-40f0-8372-80640e3dc858,0b00)..GO..NO..........K.i.n.g.s.t.o.n.D.a.t.a.T.r.a.v.e.l.e.r. .2...0.P.M.A.P...................\.,.@.r.d.=.X..........A.........................................F..Gd-.;.A..MQ..L.C.8.6.0.0.0.8.8.6.3.D.B.E.E.2.0.4.A.0.B.0.1.1.D........BO
+Boot0004* UEFI: KingstonDataTraveler 2.0PMAP	PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)/Pci(0x8,0x0)/Pci(0x0,0x3)/USB(3,0)/CDROM(1,0x3a74ac,0x4d00)..BO
+Boot0005* UEFI: KingstonDataTraveler 2.0PMAP, Partition 2	PciRoot(0x0)/Pci(0x1,0x2)/Pci(0x0,0x0)/Pci(0x8,0x0)/Pci(0x0,0x3)/USB(3,0)/HD(2,MBR,0x40993ab6,0x3a74ac,0x1340)..BO
+
+f7a57b08bc7c1c85417ae4cea582d1d4   nvme0n1p2/Boot/bkpbootx64.efi
+f7a57b08bc7c1c85417ae4cea582d1d4   nvme0n1p2/Boot/bootx64.efi
+bed45d1c9554cea09924d3814cb7c446   nvme0n1p2/Boot/fbx64.efi
+64a633007e3d5a9a5943e417442548d6   nvme0n1p2/Boot/grubx64.efi
+b6e92eeb44c28043967df78682083d85   nvme0n1p2/ubuntu/grubx64.efi
+4487628005555bfd4a4c0a47211e0700   nvme0n1p2/ubuntu/mmx64.efi
+f7a57b08bc7c1c85417ae4cea582d1d4   nvme0n1p2/ubuntu/shimx64.efi
+cb8e4284804d56f058c0e1cf111eeedd   nvme0n1p2/Microsoft/Boot/bootmgfw.efi
+3df357ffd0654bb80f2a575485e6e0cc   nvme0n1p2/Microsoft/Boot/bootmgr.efi
+
+
+============================= Drive/Partition Info =============================
+
+Disks info: ____________________________________________________________________
+
+nvme0n1	: is-GPT,	no-BIOSboot,	has---ESP, 	not-usb,	not-mmc, has-os,	2048 sectors * 512 bytes
+
+Partitions info (1/3): _________________________________________________________
+
+nvme0n1p1	: no-os,	32, nopakmgr,	no-docgrub,	nogrub,	nogrubinstall,	no-grubenv,	noupdategrub,	not-far
+nvme0n1p2	: no-os,	32, nopakmgr,	no-docgrub,	nogrub,	nogrubinstall,	no-grubenv,	noupdategrub,	not-far
+nvme0n1p4	: is-os,	32, nopakmgr,	no-docgrub,	nogrub,	nogrubinstall,	no-grubenv,	noupdategrub,	farbios
+nvme0n1p5	: no-os,	32, nopakmgr,	no-docgrub,	nogrub,	nogrubinstall,	no-grubenv,	noupdategrub,	farbios
+nvme0n1p6	: is-os,	64, apt-get,	signed grub-efi ,	grub2,	grub-install,	grubenv-ok,	update-grub,	farbios
+
+Partitions info (2/3): _________________________________________________________
+
+nvme0n1p1	: isnotESP,	part-has-no-fstab,	no-nt,	no-winload,	recovery-or-hidden,	no-bmgr,	notwinboot
+nvme0n1p2	: is---ESP,	part-has-no-fstab,	no-nt,	no-winload,	no-recov-nor-hid,	no-bmgr,	notwinboot
+nvme0n1p4	: isnotESP,	part-has-no-fstab,	no-nt,	haswinload,	no-recov-nor-hid,	bootmgr,	notwinboot
+nvme0n1p5	: isnotESP,	part-has-no-fstab,	no-nt,	no-winload,	recovery-or-hidden,	no-bmgr,	notwinboot
+nvme0n1p6	: isnotESP,	fstab-has-goodEFI,	no-nt,	no-winload,	no-recov-nor-hid,	no-bmgr,	notwinboot
+
+Partitions info (3/3): _________________________________________________________
+
+nvme0n1p1	: not-sepboot,	no-boot,	part-has-no-fstab,	not-sep-usr,	no---usr,	part-has-no-fstab,	std-grub.d,	nvme0n1
+nvme0n1p2	: not-sepboot,	no-boot,	part-has-no-fstab,	not-sep-usr,	no---usr,	part-has-no-fstab,	std-grub.d,	nvme0n1
+nvme0n1p4	: not-sepboot,	no-boot,	part-has-no-fstab,	not-sep-usr,	no---usr,	part-has-no-fstab,	std-grub.d,	nvme0n1
+nvme0n1p5	: not-sepboot,	no-boot,	part-has-no-fstab,	not-sep-usr,	no---usr,	part-has-no-fstab,	std-grub.d,	nvme0n1
+nvme0n1p6	: not-sepboot,	with-boot,	fstab-without-boot,	not-sep-usr,	with--usr,	fstab-without-usr,	std-grub.d,	nvme0n1
+
+fdisk -l (filtered): ___________________________________________________________
+
+Disk nvme0n1: 953.9 GiB, 1024209543168 bytes, 2000409264 sectors
+Disk identifier: D4E83608-AF60-4B52-8C44-2ED215A50B2A
+               Start        End    Sectors   Size Type
+nvme0n1p1       2048     923647     921600   450M Windows recovery environment
+nvme0n1p2     923648    1126399     202752    99M EFI System
+nvme0n1p3    1126400    1159167      32768    16M Microsoft reserved
+nvme0n1p4    1159168 1022912081 1021752914 487.2G Microsoft basic data
+nvme0n1p5 1022912512 1023997951    1085440   530M Windows recovery environment
+nvme0n1p6 1023997952 2000408575  976410624 465.6G Linux filesystem
+Disk sda: 1.8 TiB, 2000398934016 bytes, 3907029168 sectors
+Disk sdb: 14.6 GiB, 15610576896 bytes, 30489408 sectors
+Disk identifier: 0x40993ab6
+      Boot   Start     End Sectors  Size Id Type
+sdb1  *          0 3899391 3899392  1.9G  0 Empty
+sdb2       3830956 3835883    4928  2.4M ef EFI (FAT-12/16/32)
+
+parted -lm (filtered): _________________________________________________________
+
+sda:2000GB:scsi:512:4096:loop:ATA ST2000DM008-2FR1:;
+1:0.00B:2000GB:2000GB:ext4::;
+sdb:15.6GB:scsi:512:512:unknown:Kingston DataTraveler 2.0:;
+nvme0n1:1024GB:nvme:512:512:gpt:Sabrent:;
+1:1049kB:473MB:472MB:ntfs:Basic data partition:hidden, diag;
+2:473MB:577MB:104MB:fat32:EFI system partition:boot, esp;
+3:577MB:593MB:16.8MB::Microsoft reserved partition:msftres;
+4:593MB:524GB:523GB:ntfs:Basic data partition:msftdata;
+5:524GB:524GB:556MB:ntfs::hidden, diag;
+6:524GB:1024GB:500GB:ext4::;
+
+blkid (filtered): ______________________________________________________________
+
+NAME        FSTYPE   UUID                                 PARTUUID                             LABEL                    PARTLABEL
+sda         ext4     9079b44f-b949-424d-b987-b5c8bc026295                                      storage                  
+sdb         iso9660  2019-02-10-00-27-34-00                                                    Ubuntu 18.04.2 LTS amd64 
+├─sdb1      iso9660  2019-02-10-00-27-34-00               40993ab6-01                          Ubuntu 18.04.2 LTS amd64 
+└─sdb2      vfat     5655-3E5A                            40993ab6-02                          Ubuntu 18.04.2 LTS amd64 
+nvme0n1                                                                                                                 
+├─nvme0n1p1 ntfs     80E8CA81E8CA74C6                     aeb96e66-61b2-4a04-996b-c0e844f0027a Recuperación             Basic data partition
+├─nvme0n1p2 vfat     54CB-BEE2                            034877ee-4d74-4b95-ba3b-b2390f32426b                          EFI system partition
+├─nvme0n1p3                                               2ac19b28-ae3f-41ce-8407-c446982a8ef9                          Microsoft reserved partition
+├─nvme0n1p4 ntfs     1C2CDC852CDC5AFA                     02c0ae9a-2f68-4a67-b17d-1ac736dce6de                          Basic data partition
+├─nvme0n1p5 ntfs     F2B06A71B06A3C6B                     61a58b59-0ebc-4316-b692-65608f43c623                          
+└─nvme0n1p6 ext4     cff0b6cc-f679-442f-b40c-8cf7c76204eb 88487761-6d8b-4c19-86b6-4dcd35198c2a                          
+
+df (filtered): _________________________________________________________________
+
+           Avail Use% Mounted on
+nvme0n1p1 440.1M   2% /mnt/boot-sav/nvme0n1p1
+nvme0n1p2  61.8M  35% /mnt/boot-sav/nvme0n1p2
+nvme0n1p4 238.9G  51% /mnt/boot-sav/nvme0n1p4
+nvme0n1p5  88.8M  83% /mnt/boot-sav/nvme0n1p5
+nvme0n1p6 292.5G  31% /mnt/boot-sav/nvme0n1p6
+sdb            0 100% /cdrom
+
+Mount options: __________________________________________________________________
+
+nvme0n1p1 ro,relatime,user_id=0,group_id=0,allow_other,blksize=4096
+nvme0n1p2 rw,relatime,fmask=0022,dmask=0022,codepage=437,iocharset=iso8859-1,shortname=mixed,errors=remount-ro
+nvme0n1p4 ro,relatime,user_id=0,group_id=0,allow_other,blksize=4096
+nvme0n1p5 ro,relatime,user_id=0,group_id=0,allow_other,blksize=4096
+nvme0n1p6 rw,relatime
+sdb       ro,noatime,nojoliet,check=s,map=n,blocksize=2048
+
+=================== nvme0n1p2/efi/ubuntu/grub.cfg (filtered) ===================
+
+search.fs_uuid cff0b6cc-f679-442f-b40c-8cf7c76204eb root 
+set prefix=($root)'/boot/grub'
+configfile $prefix/grub.cfg
+
+=================== nvme0n1p6/boot/grub/grub.cfg (filtered) ====================
+
+Ubuntu   cff0b6cc-f679-442f-b40c-8cf7c76204eb
+Ubuntu, with Linux 5.4.0-42-generic   cff0b6cc-f679-442f-b40c-8cf7c76204eb
+Ubuntu, with Linux 5.3.0-62-generic   cff0b6cc-f679-442f-b40c-8cf7c76204eb
+Ubuntu, with Linux 4.15.0-112-generic   cff0b6cc-f679-442f-b40c-8cf7c76204eb
+Windows Boot Manager (on nvme0n1p2)   osprober-efi-54CB-BEE2
+### END /etc/grub.d/30_os-prober ###
+System setup   uefi-firmware
+### END /etc/grub.d/30_uefi-firmware ###
+
+======================== nvme0n1p6/etc/fstab (filtered) ========================
+
+# <file system> <mount point>   <type>  <options>       <dump>  <pass>
+# / was on /dev/nvme0n1p6 during installation
+UUID=cff0b6cc-f679-442f-b40c-8cf7c76204eb /               ext4    errors=remount-ro 0       1
+/swapfile                                 none            swap    sw              0       0
+UUID=54CB-BEE2  /boot/efi       vfat    defaults      0       1
+
+==================== nvme0n1p6/etc/default/grub (filtered) =====================
+
+GRUB_DEFAULT=0
+GRUB_TIMEOUT_STYLE=hidden
+GRUB_TIMEOUT=10
+GRUB_DISTRIBUTOR=`lsb_release -i -s 2> /dev/null || echo Debian`
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+GRUB_CMDLINE_LINUX=""
+
+================= nvme0n1p6: Location of files loaded by Grub ==================
+
+           GiB - GB             File                                 Fragment(s)
+ 488.280281067 = 524.286959616  boot/grub/grub.cfg                             1
+ 697.487293243 = 748.921278464  boot/vmlinuz-4.15.0-112-generic                1
+ 543.991928101 = 584.106885120  boot/vmlinuz-5.3.0-62-generic                  2
+ 697.695251465 = 749.144571904  boot/vmlinuz-5.4.0-42-generic                  1
+ 697.695251465 = 749.144571904  vmlinuz                                        1
+ 697.487293243 = 748.921278464  vmlinuz.old                                    1
+ 698.228248596 = 749.716873216  boot/initrd.img-4.15.0-112-generic             3
+ 698.266201019 = 749.757624320  boot/initrd.img-5.3.0-62-generic               2
+ 550.130741119 = 590.698385408  boot/initrd.img-5.4.0-42-generic               2
+ 550.130741119 = 590.698385408  initrd.img                                     2
+ 698.228248596 = 749.716873216  initrd.img.old                                 3
+
+=================== nvme0n1p6: ls -l /etc/grub.d/ (filtered) ===================
+
+-rwxr-xr-x 1 root root 12693 Mar 11 20:57 10_linux
+-rwxr-xr-x 1 root root 11298 Mar 11 20:57 20_linux_xen
+-rwxr-xr-x 1 root root 12059 Mar 11 20:57 30_os-prober
+-rwxr-xr-x 1 root root  1418 Mar 11 20:57 30_uefi-firmware
+-rwxr-xr-x 1 root root   214 Mar 11 20:57 40_custom
+-rwxr-xr-x 1 root root   216 Mar 11 20:57 41_custom
+
+====================== sdb/boot/grub/grub.cfg (filtered) =======================
+
+Try Ubuntu without installing
+Install Ubuntu
+OEM install (for manufacturers)
+Check disc for defects
+
+==================== sdb: Location of files loaded by Grub =====================
+
+           GiB - GB             File                                 Fragment(s)
+            ?? = ??             boot/grub/grub.cfg                             1
+
+
+======================== Unknown MBRs/Boot Sectors/etc =========================
+
+Unknown BootLoader on sdb
+
+00000000  45 52 08 00 00 00 90 90  00 00 00 00 00 00 00 00  |ER..............|
+00000010  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+00000020  33 ed fa 8e d5 bc 00 7c  fb fc 66 31 db 66 31 c9  |3......|..f1.f1.|
+00000030  66 53 66 51 06 57 8e dd  8e c5 52 be 00 7c bf 00  |fSfQ.W....R..|..|
+00000040  06 b9 00 01 f3 a5 ea 4b  06 00 00 52 b4 41 bb aa  |.......K...R.A..|
+00000050  55 31 c9 30 f6 f9 cd 13  72 16 81 fb 55 aa 75 10  |U1.0....r...U.u.|
+00000060  83 e1 01 74 0b 66 c7 06  f3 06 b4 42 eb 15 eb 02  |...t.f.....B....|
+00000070  31 c9 5a 51 b4 08 cd 13  5b 0f b6 c6 40 50 83 e1  |1.ZQ....[...@P..|
+00000080  3f 51 f7 e1 53 52 50 bb  00 7c b9 04 00 66 a1 b0  |?Q..SRP..|...f..|
+00000090  07 e8 44 00 0f 82 80 00  66 40 80 c7 02 e2 f2 66  |..D.....f@.....f|
+000000a0  81 3e 40 7c fb c0 78 70  75 09 fa bc ec 7b ea 44  |.>@|..xpu....{.D|
+000000b0  7c 00 00 e8 83 00 69 73  6f 6c 69 6e 75 78 2e 62  ||.....isolinux.b|
+000000c0  69 6e 20 6d 69 73 73 69  6e 67 20 6f 72 20 63 6f  |in missing or co|
+000000d0  72 72 75 70 74 2e 0d 0a  66 60 66 31 d2 66 03 06  |rrupt...f`f1.f..|
+000000e0  f8 7b 66 13 16 fc 7b 66  52 66 50 06 53 6a 01 6a  |.{f...{fRfP.Sj.j|
+000000f0  10 89 e6 66 f7 36 e8 7b  c0 e4 06 88 e1 88 c5 92  |...f.6.{........|
+00000100  f6 36 ee 7b 88 c6 08 e1  41 b8 01 02 8a 16 f2 7b  |.6.{....A......{|
+00000110  cd 13 8d 64 10 66 61 c3  e8 1e 00 4f 70 65 72 61  |...d.fa....Opera|
+00000120  74 69 6e 67 20 73 79 73  74 65 6d 20 6c 6f 61 64  |ting system load|
+00000130  20 65 72 72 6f 72 2e 0d  0a 5e ac b4 0e 8a 3e 62  | error...^....>b|
+00000140  04 b3 07 cd 10 3c 0a 75  f1 cd 18 f4 eb fd 00 00  |.....<.u........|
+00000150  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+*
+000001b0  dc 39 3a 00 00 00 00 00  b6 3a 99 40 00 00 80 00  |.9:......:.@....|
+000001c0  01 00 00 76 e0 ff 00 00  00 00 00 80 3b 00 00 fe  |...v........;...|
+000001d0  ff ff ef fe ff ff ac 74  3a 00 40 13 00 00 00 00  |.......t:.@.....|
+000001e0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
+000001f0  00 00 00 00 00 00 00 00  00 00 00 00 00 00 55 aa  |..............U.|
+00000200
+
+
+=============================== StdErr Messages ================================
+
+File descriptor 63 (pipe:[91329]) leaked on lvs invocation. Parent PID 7156: /bin/bash
