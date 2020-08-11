@@ -74,7 +74,7 @@
 
   ;; Repository
   ;; github requires `ghub' package.
-  (setq doom-modeline-vcs-max-length 12) 
+  (setq doom-modeline-vcs-max-length 50) 
   (setq doom-modeline-github nil)  ; TODO: Use this
   (setq doom-modeline-github-interval (* 30 60))
 
