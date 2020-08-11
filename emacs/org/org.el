@@ -22,7 +22,7 @@
   ;; Edition
   ;; -------------------------------------
   ;; Fold all source blocks on startup.
-  (setq org-hide-block-startup t)
+  (setq org-hide-block-startup nil)
 
   ;; Avoid accidentally editing folded regions, say by adding text after an Org “⋯”.
   (setq org-catch-invisible-edits 'show)
@@ -32,6 +32,8 @@
 
   ;; Pressing ENTER on a link should follow it.
   (setq org-return-follows-link t)
+
+  (setq org-indent-mode t)
 
   ;; -------------------------------------
   ;; TODO and Priority Keywords
