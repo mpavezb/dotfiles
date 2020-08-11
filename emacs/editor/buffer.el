@@ -37,18 +37,19 @@
 ;; -----------------------------------------------------------------------------
 ;; ibuffer
 ;; -----------------------------------------------------------------------------
-(global-set-key (kbd "C-x C-b") 'ibuffer)
-(autoload 'ibuffer "ibuffer" "List buffers." t)
+;; (global-set-key (kbd "C-x C-b") 'ibuffer)
+;; (global-set-key (kbd "C-x C-b") 'persp-ibuffer)
+;; (autoload 'ibuffer "ibuffer" "List buffers." t)
 
-;; nearly all of this is the default layout
-(setq ibuffer-formats
-      (quote ((mark modified read-only
-		    " " (name 50 50 :left :elide)
-		    " " (size 9 -1 :right)
-		    " " (mode 16 16 :left :elide)
-		    " " filename-and-process)
-	      (mark " " (name 16 -1)
-		    " " filename))))
+;; ;; nearly all of this is the default layout
+;; (setq ibuffer-formats
+;;       (quote ((mark modified read-only
+;; 		    " " (name 50 50 :left :elide)
+;; 		    " " (size 9 -1 :right)
+;; 		    " " (mode 16 16 :left :elide)
+;; 		    " " filename-and-process)
+;; 	      (mark " " (name 16 -1)
+;; 		    " " filename))))
 
 ;; auto reload files from disk
 (global-auto-revert-mode t)
