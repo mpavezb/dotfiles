@@ -53,3 +53,6 @@
 
 ;; = Integrations =
 (mp/load "integrations/neotree-projectile.el")
+
+;; = Misc =
+(mp/load "goodies.el")

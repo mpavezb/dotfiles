@@ -1,27 +1,43 @@
+
+;; -----------------------------------------------------------------------------
+;; zone
+;; Chooses random modes to obfuscate the current buffer.
+;; https://github.com/seagle0128/doom-modeline
+;; -----------------------------------------------------------------------------
+(use-package zone 
+ :config (zone-when-idle 120))
+
+;; -----------------------------------------------------------------------------
 ;; fireplace
 ;; Displays a virtual fireplace
 ;; https://github.com/johanvts/emacs-fireplace
+;; -----------------------------------------------------------------------------
 (use-package fireplace 
   :commands fireplace)
 
+;; -----------------------------------------------------------------------------
 ;; xkcd
 ;; xkcd reader for GNU Emacs.
 ;; https://github.com/vibhavp/emacs-xkcd
+;; -----------------------------------------------------------------------------
 (use-package xkcd 
   :commands xkcd)
 
+;; -----------------------------------------------------------------------------
 ;; wttrin
 ;; Weather from wttr.in
 ;; https://github.com/bcbcarl/emacs-wttrin
+;; -----------------------------------------------------------------------------
 (use-package wttrin 
   :commands wttrin 
   :init (setq wttrin-default-cities '("Unterschleissheim")))
 
-;; google-this
+;; -----------------------------------------------------------------------------
+;; google-this (C-c /)
 ;; Google search under point
 ;; https://github.com/Malabarba/emacs-google-this
-;; See: C-c / C-h
-(use-package google-this 
+;; -----------------------------------------------------------------------------
+(use-package google-this
   :defer 60 
   :diminish google-this-mode 
   :config (google-this-mode t))

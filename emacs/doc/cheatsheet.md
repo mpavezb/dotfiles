@@ -16,6 +16,11 @@ tui reg <TAB>: filter regs
 
 ## Custom Key Bindings
 ```bash
+# goodies
+M-x zone, zone-when-idle, zone-leave-me-alone
+M-x fortune
+M-x tetris, snake, pong, life, dunnet, blackbox
+
 # Perspective (@C-x x)
 @ s   : persp-switch: Query a perspective to switch to, or create.
 @ k   : persp-remove-buffer: Query a buffer to remove from current perspective.
@@ -152,8 +157,8 @@ M-RET  : srefactor-refactor-at-point
 M-RET  : srefactor-refactor-at-point
 
 # Google
-C-c / C-h  : Google this keybindings
-C-c t      : Google translate
+C-c /  : Google this keybindings
+C-c t  : Google translate
 ```
 
 ## Important Commands
