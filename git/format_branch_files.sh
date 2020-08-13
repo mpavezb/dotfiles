@@ -1,5 +1,5 @@
 #!/bin/bash
-# v1.1
+# v1.2
 #
 # This script runs C/C++, Python and Bazel formatting tools
 # on all the files this branch has modified vs. origin/master.
@@ -14,12 +14,18 @@
 # - C/C++: clang-format
 # - Python: black
 # - Bazel: buildifier tools on all
+#
+# Issues:
+# - Ensure dependencies are available.
+# - Enable selection for branch to check against (master by default).
+# - Refactor/migrate to python.
+#
 git rev-parse --git-dir > /dev/null 2>&1 || { echo "Not in a git repository."; exit; }
 
 FILES="$(git diff --name-only "$(git merge-base HEAD origin/master)")"
 echo "> This branch modifies $(echo "$FILES" | wc -w) file(s)"
 if [ -z "$FILES" ]; then
-    echo "No C/C++, Python or Bazel files have been modified."
+    echo "No files have been modified."
     exit
 fi
 

@@ -1,4 +1,11 @@
 #!/bin/bash
+# Issues:
+# - Update to use it on another repo.
+# - Check not a git repository.
+# - Already set to X, want to change?
+#
+# Usage:
+#   bash $DOTFILES/git/config_local.bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
