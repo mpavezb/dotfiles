@@ -6,15 +6,6 @@
 echo "hello world"; alert
 
 # =============================================================================
-# bash terminal commands
-# https://ss64.com/bash/syntax-keyboard.html
-# http://web.mit.edu/gnu/doc/html/features_7.html
-# ==============================================================================
-# C-x C-e : edit command in VISUAL
-# See: bash terminal readline library
-#
-
-# =============================================================================
 # Redirection
 # ==============================================================================
 

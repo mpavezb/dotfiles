@@ -1,4 +1,6 @@
-# BASH
+# Bash
+
+- [Bash Keybindings](./keybindings.md)
 
 ## Dependencies
 
