@@ -190,7 +190,7 @@
 										  artist-mode)))
   (setq helm-buffers-fuzzy-matching       t)
   (setq helm-buffer-skip-remote-checking  t)
-  (setq helm-buffer-max-length            22)
+  (setq helm-buffer-max-length            60)
   (setq helm-buffers-end-truncated-string "…")
   (setq helm-buffers-maybe-switch-to-tab  t)
   (setq helm-mini-default-sources
