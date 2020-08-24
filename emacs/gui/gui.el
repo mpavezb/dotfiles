@@ -58,3 +58,14 @@
 ;; -----------------------------------------------------------------------------
 (use-package dashboard 
   :config (dashboard-setup-startup-hook))
+
+
+;; -----------------------------------------------------------------------------
+;; minions
+;; A minor-mode menu for the mode line
+;; https://github.com/tarsius/minions
+;; -----------------------------------------------------------------------------
+(use-package minions 
+  :config (minions-mode 1))
+
+

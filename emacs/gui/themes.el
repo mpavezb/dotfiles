@@ -48,7 +48,7 @@
   ;; modes
   (setq doom-modeline-major-mode-icon t) 
   (setq doom-modeline-major-mode-color-icon nil) 
-  (setq doom-modeline-minor-modes nil)
+  (setq doom-modeline-minor-modes t)
 
   ;; buffer state
   (setq doom-modeline-buffer-state-icon t) 
