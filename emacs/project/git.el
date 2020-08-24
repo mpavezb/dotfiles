@@ -34,4 +34,8 @@
 ;; https://github.com/rmuslimov/browse-at-remote
 ;; -----------------------------------------------------------------------------
 (use-package browse-at-remote 
-  :bind ("C-c g b" . browse-at-remote))
+  :bind ("C-c g b" . browse-at-remote) 
+  :config ;;
+  ;; (add-to-list 'browse-at-remote-remote-type-domains '("my.domain.com" . "github"))
+  ;;
+  )
