@@ -40,6 +40,7 @@ make distclean
 
 Finally, create the application icon:
 ```bash
+# File assumes the user is 'mpavezb', modify accordingly.
 cp ~/.dotfiles/emacs/emacs.desktop ~/.local/share/applications/
 ```
 
