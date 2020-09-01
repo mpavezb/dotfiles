@@ -12,6 +12,6 @@ rm -f "${HOME}/.emacs.d/mp"
 ln -sf ${DIR} "${HOME}/.emacs.d/mp"
 
 echo " - Copying emacs entry point: '$HOME/.emacs.d/init.el' file."
-cp ${DIR}/home.el $HOME/.emacs.d/init.el
+cp ${DIR}/init.el $HOME/.emacs.d/init.el
 
 echo " - OK - "
