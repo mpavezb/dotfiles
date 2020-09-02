@@ -2,6 +2,9 @@
 ;; Package system
 ;; ===============================================================
 
+;; Native Compile Files Asyncronously
+(setq comp-deferred-compilation t)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; package
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
