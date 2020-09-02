@@ -120,4 +120,20 @@
 (use-package minions 
   :config (minions-mode 1))
 
+;; -----------------------------------------------------------------------------
+;; sublimity
+;; Smooth-scrolling and minimap like sublime editor
+;; https://github.com/zk-phi/sublimity
+;; -----------------------------------------------------------------------------
+(use-package sublimity
+  :disabled
+  :config ;;
+  (require 'sublimity-map)
+  (setq sublimity-map-size 20)
+  (setq sublimity-map-fraction 0.3)
+  (setq sublimity-map-text-scale -8)
+  (sublimity-map-set-delay 0.1)
 
+  ;; sublimity attractive (disable!)
+  (setq sublimity-attractive-centering-width nil)
+  (sublimity-mode 0))
