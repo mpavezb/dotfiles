@@ -5,7 +5,48 @@
 ;; https://github.com/seagle0128/doom-modeline
 ;; -----------------------------------------------------------------------------
 (use-package zone 
- :config (zone-when-idle 60))
+  :config (zone-when-idle 60))
+
+;; -----------------------------------------------------------------------------
+;; zone-select
+;; Emacs "zone.el" program selection tool
+;; https://github.com/kawabata/zone-select
+;; -----------------------------------------------------------------------------
+(use-package zone-select
+  :config ;;
+  (require 'zone)
+  (zone-select-add-program 'zone-pgm-putz-with-case)
+  (zone-select-add-program 'zone-pgm-paragraph-spaz)
+  (zone-select-add-program 'zone-pgm-random-life)
+  (zone-select-remove-program 'zone-pgm-jitter)
+  (zone-select-remove-program 'zone-pgm-dissolve)
+  (zone-select-remove-program 'zone-pgm-whack-chars)
+  (zone-select-remove-program 'zone-pgm-rotate)
+  (zone-select-remove-program 'zone-pgm-rotate-LR-lockstep)
+  (zone-select-remove-program 'zone-pgm-rotate-RL-lockstep)
+  (zone-select-remove-program 'zone-pgm-rotate-LR-variable)
+  (zone-select-remove-program 'zone-pgm-rotate-RL-variable)
+  (zone-select-remove-program 'zone-pgm-drip)
+  (zone-select-remove-program 'zone-pgm-drip-fretfully)
+  (zone-select-remove-program 'zone-pgm-five-oclock-swan-dive)
+  (zone-select-remove-program 'zone-pgm-martini-swan-dive)
+  (zone-select-remove-program 'zone-pgm-rat-race)
+  (zone-select-remove-program 'zone-pgm-stress)
+  (zone-select-remove-program 'zone-pgm-stress-destress)
+
+  ;; ;;
+  ;; (require 'zone-rainbow)
+  ;; (zone-select-add-program 'zone-pgm-rainbow)
+
+  ;; ;;
+  ;; (add-to-list 'load-path (no-littering-expand-etc-file-name "zone-matrix"))
+  ;; (require 'zone-matrix)
+  ;; (require 'zone-matrix-settings)
+  ;; ;;(require 'zone-settings)
+  ;; (zone-select-add-program 'zone-matrix)
+
+  ;;
+  )
 
 ;; -----------------------------------------------------------------------------
 ;; fireplace
