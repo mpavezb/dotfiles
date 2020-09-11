@@ -5,7 +5,7 @@
 ;; https://github.com/seagle0128/doom-modeline
 ;; -----------------------------------------------------------------------------
 (use-package zone 
-  :config (zone-when-idle 60))
+  :config (zone-when-idle 120))
 
 ;; -----------------------------------------------------------------------------
 ;; zone-select
