@@ -1,4 +1,7 @@
 
+;; Follow files on error
+(add-hook 'compilation-mode-hook (next-error-follow-minor-mode t))
+
 ;; This gives a regular `compile-command' prompt.
 (define-key prog-mode-map [C-f9] #'compile)
 
