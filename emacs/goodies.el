@@ -1,3 +1,11 @@
+;; -----------------------------------------------------------------------------
+;; explain-pause-mode
+;; top, but for Emacs.
+;; https://github.com/lastquestion/explain-pause-mode
+;; -----------------------------------------------------------------------------
+(use-package explain-pause-mode
+  :config
+  (explain-pause-mode))
 
 ;; -----------------------------------------------------------------------------
 ;; zone
