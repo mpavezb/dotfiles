@@ -9,6 +9,11 @@
 ;; package
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; (setq url-proxy-services
+;;       '(("no_proxy" . "^\\(localhost\\|10.*\\)")
+;; 	("http" . "proxy.com:8080")
+;; 	("https" . "proxy.com:8080")))
+
 (require 'package)
 (setq package-archives nil)
 (add-to-list 'package-archives '("GNU ELPA" . "https://elpa.gnu.org/packages/") t)
@@ -70,7 +75,6 @@
 ;; Auto install used packages (slows down emacs init)
 ;; Uncomment to install missing packages.
 ;; (setq use-package-always-ensure t)
-
 
 ;; -----------------------------------------------------------------------------
 ;; ENV variables
