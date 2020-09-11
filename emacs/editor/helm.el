@@ -410,6 +410,10 @@ First call indent, second complete symbol, third complete fname."
   (define-key emacs-lisp-mode-map (kbd "TAB") 'helm-multi-lisp-complete-at-point)
   (define-key lisp-interaction-mode-map (kbd "TAB") 'helm-multi-lisp-complete-at-point))
 
+;; helm-locate
+;; https://github.com/emacs-helm/helm/wiki/Locate
+;; (<helm-prefix> l by default) is Helm’s interface to the locate command,
+;; which finds files on your system that have been indexed with updatedb.
 (use-package helm-locate
   :config
   (setq helm-locate-fuzzy-match t))
@@ -446,7 +450,7 @@ First call indent, second complete symbol, third complete fname."
 (define-key ctl-x-5-map (kbd "M-g a")   'helm-do-grep-ag-in-frame)
 (define-key ctl-x-5-map (kbd "M-g g")   'helm-do-git-grep-in-frame)
 
-;;; Helm-command-map
+;;; Helm-command-map (C-x c)
 ;;
 ;;
 (define-key helm-command-map (kbd "g") 'helm-apt)

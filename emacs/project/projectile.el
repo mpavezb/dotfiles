@@ -13,6 +13,10 @@
   (setq projectile-mode-line-function '(lambda () 
 					 (format " [%s]" (projectile-project-name)))))
 
+;; -----------------------------------------------------------------------------
+;; helm-projectile
+;; https://github.com/bbatsov/helm-projectile
+;; -----------------------------------------------------------------------------
 (use-package helm-projectile 
   :after (helm projectile) 
   :config ;;
