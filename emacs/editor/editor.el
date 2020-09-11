@@ -10,7 +10,8 @@
 
 ;; highlight current line-number
 ;; https://github.com/targzeta/linum-highlight-current-line-number
-(use-package linum-highlight-current-line-number 
+(use-package linum-highlight-current-line-number
+  :disabled
   :load-path "mp/lisp/" 
   :config ;;
   (setq linum-format 'linum-highlight-current-line-number))

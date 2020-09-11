@@ -13,6 +13,7 @@
   )
 
 (use-package company-capf
+  :straight nil
   :after company)
 
 ;; -----------------------------------------------------------------------------
@@ -100,5 +101,6 @@
 (use-package lsp-treemacs 
   :after lsp-mode 
   :commands lsp-treemacs-errors-list)
-(use-package dap-mode)
+(use-package dap-mode
+  :disabled)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language

@@ -1,7 +1,8 @@
 ;; Bazel Mode
 ;; https://melpa.org/#/bazel-mode
 
-(use-package nxml-mode 
+(use-package nxml-mode
+  :straight nil
   :init ;;
   ;; Use this mode for bazel BUILD files
   (autoload 'nxml-mode "nxml" "Associates xml files with nxml-mode." t) 

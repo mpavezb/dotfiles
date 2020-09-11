@@ -8,7 +8,8 @@
 ;; post-forward-angle-brackets   name<bar/mumble>   name<quux/mumble>
 ;; nil                           name               name<2>
 
-(use-package uniquify 
+(use-package uniquify
+  :disabled
   :config ;;
   (setq uniquify-buffer-name-style 'post-forward-angle-brackets)
 

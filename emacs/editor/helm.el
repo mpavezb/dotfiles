@@ -90,6 +90,7 @@
 
 ;; DESCRIPTION
 (use-package helm-mode
+  :straight nil
   :init (add-hook 'helm-mode-hook (lambda ()
 				    (setq completion-styles (cond ((assq 'helm-flex
 									 completion-styles-alist)
@@ -127,6 +128,7 @@
 
 ;; DESCRIPTION
 (use-package helm-adaptive
+  :straight nil
   :config ;;
   (setq helm-adaptive-history-file nil)
   (helm-adaptive-mode 1))
@@ -134,6 +136,7 @@
 
 ;; DESCRIPTION
 (use-package helm-utils
+  :straight nil
   :config
   ;; Popup buffer-name or filename in grep/moccur/imenu-all etc...
   ;; (helm-popup-tip-mode 1)
@@ -142,14 +145,17 @@
   (add-hook 'find-file-hook 'helm-save-current-pos-to-mark-ring))
 
 (use-package helm-sys
+  :straight nil
   :commands (helm-top)
   :config (helm-top-poll-mode 1))
 
 (use-package helm-info
+  :straight nil
   :bind ("C-h r" . helm-info-emacs))
 
 
 (use-package helm-ring
+  :straight nil
   :config (setq helm-kill-ring-threshold 1)
   ;; Action for helm kill-ring
   (defun helm/emamux:copy-from-kill-ring (candidate)
@@ -185,6 +191,7 @@
 							      1)))
 
 (use-package helm-buffers
+  :straight nil
   :config ;;
   (setq helm-buffers-favorite-modes (append helm-buffers-favorite-modes '(picture-mode
 										  artist-mode)))
@@ -220,6 +227,7 @@
 
 
 (use-package helm-files
+  :straight nil
   :config ;;
   (setq helm-ff-auto-update-initial-value        nil) 
   (setq helm-ff-allow-non-existing-file-at-point t) 
@@ -339,6 +347,7 @@
 
 
 (use-package helm-lib
+  :straight nil
   :config
   ;; scroll 4 lines other window using M-<next>/M-<prior>
   (setq helm-scroll-amount 4))
@@ -369,11 +378,13 @@
   (helm-define-key-with-subkeys global-map (kbd "C-c n") ?n 'helm-cycle-resume))
 
 (use-package helm-external
+  :straight nil
   :config
   (setq helm-raise-command                 "wmctrl -xa %s")
   (setq helm-default-external-file-browser "nautilus"))
 
 (use-package helm-grep
+  :straight nil
   :config
   (setq helm-pdfgrep-default-read-command
         "evince --page-label=%p '%f'"
@@ -391,11 +402,13 @@
   (define-key helm-grep-map   (kbd "C-M-a") 'helm/occur-which-func))
 
 (use-package helm-occur
+  :straight nil
   :config
   (add-hook 'helm-occur-mode-hook 'hl-line-mode)
   (define-key helm-occur-map (kbd "C-M-a") 'helm/occur-which-func))
 
 (use-package helm-elisp
+  :straight nil
   :config
   (setq helm-show-completion-display-function #'helm-display-buffer-in-own-frame
         helm-apropos-fuzzy-match              t
@@ -415,6 +428,7 @@ First call indent, second complete symbol, third complete fname."
 ;; (<helm-prefix> l by default) is Helm’s interface to the locate command,
 ;; which finds files on your system that have been indexed with updatedb.
 (use-package helm-locate
+  :straight nil
   :config
   (setq helm-locate-fuzzy-match t))
 
@@ -423,17 +437,21 @@ First call indent, second complete symbol, third complete fname."
   (setq helm-org-headings-fontify t))
 
 (use-package helm-find
+  :straight nil
   :config
   (setq helm-find-noerrors t))
 
-(use-package helm-fd)
+(use-package helm-fd
+  :straight nil)
 
 (use-package helm-elisp-package
+  :straight nil
   :config
   (setq helm-el-package-autoremove-on-start t
         helm-el-package-upgrade-on-start t))
 
 (use-package helm-imenu
+  :straight nil
   :config
   (customize-set-variable 'helm-imenu-lynx-style-map t))
 
