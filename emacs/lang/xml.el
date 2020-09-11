@@ -1,6 +1,7 @@
-;; Bazel Mode
-;; https://melpa.org/#/bazel-mode
-
+;; -----------------------------------------------------------------------------
+;; nxml-mode
+;; https://www.emacswiki.org/emacs/NxmlMode
+;; -----------------------------------------------------------------------------
 (use-package nxml-mode
   :straight nil
   :init ;;

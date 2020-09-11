@@ -3,7 +3,7 @@
 ;; Modular in-buffer completion framework for Emacs
 ;; https://github.com/company-mode/company-mode
 ;; -----------------------------------------------------------------------------
-(use-package company 
+(use-package company
   :hook (after-init . global-company-mode) 
   :config ;;
   (setq company-minimum-prefix-length 1) 
@@ -29,7 +29,7 @@
 ;; Documentation popup for Company
 ;; https://github.com/company-mode/company-quickhelp
 ;; -----------------------------------------------------------------------------
-(use-package company-quickhelp 
+(use-package company-quickhelp
   :after company 
   :init (company-quickhelp-mode))
 
@@ -38,7 +38,7 @@
 ;; On the fly syntax checking for GNU Emacs
 ;; https://github.com/flycheck/flycheck
 ;; -----------------------------------------------------------------------------
-(use-package flycheck 
+(use-package flycheck
   :hook (prog-mode . global-flycheck-mode) 
   :config ;;
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)) 
@@ -53,7 +53,7 @@
 ;; A template system for Emacs
 ;; https://github.com/joaotavora/yasnippet
 ;; -----------------------------------------------------------------------------
-(use-package yasnippet 
+(use-package yasnippet
   :hook (prog-mode . yas-minor-mode) 
   :config (yas-reload-all))
 
@@ -62,7 +62,7 @@
 ;; A collection of yasnippet snippets for many languages
 ;; https://github.com/AndreaCrotti/yasnippet-snippets
 ;; -----------------------------------------------------------------------------
-(use-package yasnippet-snippets 
+(use-package yasnippet-snippets
   :after yasnippet)
 
 ;; -----------------------------------------------------------------------------
@@ -70,7 +70,7 @@
 ;; Emacs client/library for the Language Server Protocol
 ;; https://github.com/emacs-lsp/lsp-mode
 ;; -----------------------------------------------------------------------------
-(use-package lsp-mode 
+(use-package lsp-mode
   :hook (
 	 (c++-mode . lsp-deferred)
 	 (python-mode . lsp-deferred) 
@@ -91,16 +91,41 @@
   (setq lsp-idle-delay 0.500)
   )
 
-(use-package lsp-ui 
+
+;; -----------------------------------------------------------------------------
+;; lsp-ui
+;; UI integrations for lsp-mode
+;; https://github.com/emacs-lsp/lsp-ui
+;; -----------------------------------------------------------------------------
+(use-package lsp-ui
   :after lsp-mode 
   :commands lsp-ui-mode)
-(use-package helm-lsp 
+
+
+;; -----------------------------------------------------------------------------
+;; helm-lsp
+;; Helm / LSP integration
+;; https://github.com/emacs-lsp/helm-lsp
+;; -----------------------------------------------------------------------------
+(use-package helm-lsp
   :after lsp-mode 
   :commands helm-lsp-workspace-symbol 
   :init (define-key lsp-mode-map [remap xref-find-apropos] #'helm-lsp-workspace-symbol))
-(use-package lsp-treemacs 
+
+;; -----------------------------------------------------------------------------
+;; lsp-treemacs
+;; LSP / Treemacs integration
+;; https://github.com/emacs-lsp/lsp-treemacs
+;; -----------------------------------------------------------------------------
+(use-package lsp-treemacs
   :after lsp-mode 
   :commands lsp-treemacs-errors-list)
+
+;; -----------------------------------------------------------------------------
+;; dap-mode
+;; Emacs Debug Adapter Protocol
+;; https://github.com/emacs-lsp/dap-mode
+;; -----------------------------------------------------------------------------
 (use-package dap-mode
   :disabled)
 ;; (use-package dap-LANGUAGE) to load the dap adapter for your language

@@ -2,9 +2,8 @@
 ;; -----------------------------------------------------------------------------
 ;; zone
 ;; Chooses random modes to obfuscate the current buffer.
-;; https://github.com/seagle0128/doom-modeline
 ;; -----------------------------------------------------------------------------
-(use-package zone 
+(use-package zone
   :config (zone-when-idle 120))
 
 ;; -----------------------------------------------------------------------------
@@ -13,8 +12,8 @@
 ;; https://github.com/kawabata/zone-select
 ;; -----------------------------------------------------------------------------
 (use-package zone-select
+  :after zone
   :config ;;
-  (require 'zone)
   (zone-select-add-program 'zone-pgm-putz-with-case)
   (zone-select-add-program 'zone-pgm-paragraph-spaz)
   (zone-select-add-program 'zone-pgm-random-life)
@@ -33,19 +32,6 @@
   (zone-select-remove-program 'zone-pgm-rat-race)
   (zone-select-remove-program 'zone-pgm-stress)
   (zone-select-remove-program 'zone-pgm-stress-destress)
-
-  ;; ;;
-  ;; (require 'zone-rainbow)
-  ;; (zone-select-add-program 'zone-pgm-rainbow)
-
-  ;; ;;
-  ;; (add-to-list 'load-path (no-littering-expand-etc-file-name "zone-matrix"))
-  ;; (require 'zone-matrix)
-  ;; (require 'zone-matrix-settings)
-  ;; ;;(require 'zone-settings)
-  ;; (zone-select-add-program 'zone-matrix)
-
-  ;;
   )
 
 ;; -----------------------------------------------------------------------------
@@ -53,7 +39,7 @@
 ;; Displays a virtual fireplace
 ;; https://github.com/johanvts/emacs-fireplace
 ;; -----------------------------------------------------------------------------
-(use-package fireplace 
+(use-package fireplace
   :commands fireplace)
 
 ;; -----------------------------------------------------------------------------
@@ -61,7 +47,7 @@
 ;; xkcd reader for GNU Emacs.
 ;; https://github.com/vibhavp/emacs-xkcd
 ;; -----------------------------------------------------------------------------
-(use-package xkcd 
+(use-package xkcd
   :commands xkcd)
 
 ;; -----------------------------------------------------------------------------
@@ -69,7 +55,7 @@
 ;; Weather from wttr.in
 ;; https://github.com/bcbcarl/emacs-wttrin
 ;; -----------------------------------------------------------------------------
-(use-package wttrin 
+(use-package wttrin
   :commands wttrin 
   :init (setq wttrin-default-cities '("Unterschleissheim")))
 

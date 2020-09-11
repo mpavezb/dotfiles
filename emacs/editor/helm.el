@@ -88,7 +88,6 @@
   (with-helm-in-frame (call-interactively #'helm-top)))
 ;; -----------------------------------------------------------------------------
 
-;; DESCRIPTION
 (use-package helm-mode
   :straight nil
   :init (add-hook 'helm-mode-hook (lambda ()
@@ -126,15 +125,12 @@
 					      (write-file . helm-read-file-name-handler-1)
 					      (write-region . helm-read-file-name-handler-1))))
 
-;; DESCRIPTION
 (use-package helm-adaptive
   :straight nil
   :config ;;
   (setq helm-adaptive-history-file nil)
   (helm-adaptive-mode 1))
 
-
-;; DESCRIPTION
 (use-package helm-utils
   :straight nil
   :config
@@ -170,6 +166,11 @@
 	      ("C-d" . helm-kill-ring-run-persistent-delete)))
 
 
+;; -----------------------------------------------------------------------------
+;; helm-ls-git
+;; Yet another helm to list git file.
+;; https://github.com/emacs-helm/helm-ls-git
+;; -----------------------------------------------------------------------------
 (use-package helm-ls-git
   :config
   ;; Use `magit-status-setup-buffer' instead of
@@ -327,6 +328,11 @@
             (string= (helm-basename candidate) ".")))
      1)))
 
+;; -----------------------------------------------------------------------------
+;; helm-dictionary
+;; Helm source for looking up dictionaries
+;; https://github.com/emacs-helm/helm-dictionary
+;; -----------------------------------------------------------------------------
 (use-package helm-dictionary ; Its autoloads are already loaded.
   :disabled
   :commands helm-dictionary
@@ -340,11 +346,15 @@
           ("translate.reference.com fr->en" .
            "http://translate.reference.com/translate?query=%s&src=fr&dst=en"))))
 
+;; -----------------------------------------------------------------------------
+;; helm-descbinds
+;; A helm frontend for describe-bindings.
+;; https://github.com/emacs-helm/helm-descbinds
+;; -----------------------------------------------------------------------------
 (use-package helm-descbinds
   :config
   ;; C-h b, C-x C-h etc...
   (helm-descbinds-mode 1))
-
 
 (use-package helm-lib
   :straight nil
@@ -352,6 +362,11 @@
   ;; scroll 4 lines other window using M-<next>/M-<prior>
   (setq helm-scroll-amount 4))
 
+;; -----------------------------------------------------------------------------
+;; helm
+;; Emacs incremental completion and selection narrowing framework
+;; https://github.com/emacs-helm/helm
+;; -----------------------------------------------------------------------------
 (use-package helm
   :config
   (setq helm-input-idle-delay                     0.01
@@ -432,18 +447,6 @@ First call indent, second complete symbol, third complete fname."
   :config
   (setq helm-locate-fuzzy-match t))
 
-(use-package helm-org
-  :config
-  (setq helm-org-headings-fontify t))
-
-(use-package helm-find
-  :straight nil
-  :config
-  (setq helm-find-noerrors t))
-
-(use-package helm-fd
-  :straight nil)
-
 (use-package helm-elisp-package
   :straight nil
   :config
@@ -455,6 +458,29 @@ First call indent, second complete symbol, third complete fname."
   :config
   (customize-set-variable 'helm-imenu-lynx-style-map t))
 
+(use-package helm-find
+  :straight nil
+  :config
+  (setq helm-find-noerrors t))
+
+;; -----------------------------------------------------------------------------
+;; helm-org
+;; https://github.com/emacs-helm/helm-org
+;; -----------------------------------------------------------------------------
+(use-package helm-org
+  :config
+  (setq helm-org-headings-fontify t))
+
+;; -----------------------------------------------------------------------------
+;; helm-fd
+;; https://github.com/lerouxrgd/helm-fd
+;; -----------------------------------------------------------------------------
+(use-package helm-fd)
+
+;; -----------------------------------------------------------------------------
+;; helm-org
+;; https://github.com/cosmicexplorer/helm-rg
+;; -----------------------------------------------------------------------------
 (use-package helm-rg)
 
 ;;; Ctl-x-5 map
