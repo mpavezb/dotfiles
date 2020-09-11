@@ -105,7 +105,7 @@
 	 ("C-c f p" . fzf-projectile) 
 	 ("C-c f d" . fzf-directory)) 
   :config ;;
-  (setq fzf/args "-x --color bw --no-hscroll --margin=0,1,1,0 --print-query")
+  (setq fzf/args "-x --no-hscroll --margin=0,1,1,0 --print-query")
   (setq projectile-enable-caching t)
   (let ((path (concat (file-name-as-directory (getenv "HOME")) ".opt/fzf/bin"))) 
     (when (file-directory-p path) 
