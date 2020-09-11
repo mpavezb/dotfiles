@@ -10,6 +10,11 @@ Documentation:
 
 ## Preparations
 
+### Forks
+
+Forked packages must be downloaded into `.emacs.d/third_party/`:
+* FZF: https://github.com/mpavezb/fzf.el
+
 ### Emacs27 installation 
 
 Emacs 27 is required, but this is not available in Ubuntu 18.04, so it must be downloaded and installed manually.
