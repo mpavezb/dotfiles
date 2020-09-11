@@ -134,11 +134,12 @@ M-- : er/contract-region
 F8: mp/neotree-project-dir
 
 # Git
-C-c M-g : magit-file-dispatch (local magit operations!)
 C-x g   : magit-status
-C-x v g : vc-annotate
+C-x M-g : magit-dispatch      (magit without going to status screen!)
+C-c M-g : magit-file-dispatch (magit on file!)
 C-c g g : git-timemachine
 C-c g b : browse-at-remote
+C-x v g : vc-annotate
 
 # ORG
 See: https://orgmode.org/manual/index.html
