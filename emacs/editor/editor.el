@@ -100,10 +100,11 @@
 ;; -----------------------------------------------------------------------------
 (use-package fzf 
   :bind (("C-c f f" . fzf) 
-	 ("C-c C-f" . fzf-projectile) 
 	 ("C-c f p" . fzf-projectile) 
 	 ("C-c f d" . fzf-directory)) 
   :config ;;
+  (setq fzf/args "-x --color bw --no-hscroll --margin=0,1,1,0 --print-query")
+  (setq projectile-enable-caching t)
   (let ((path (concat (file-name-as-directory (getenv "HOME")) ".opt/fzf/bin"))) 
     (when (file-directory-p path) 
       (setenv "PATH" (concat (getenv "PATH") ":" path)))))
