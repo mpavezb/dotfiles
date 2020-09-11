@@ -422,6 +422,8 @@ First call indent, second complete symbol, third complete fname."
   :config
   (setq helm-find-noerrors t))
 
+(use-package helm-fd)
+
 (use-package helm-elisp-package
   :config
   (setq helm-el-package-autoremove-on-start t
