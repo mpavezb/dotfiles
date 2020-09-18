@@ -4,6 +4,7 @@
 ;; https://github.com/lastquestion/explain-pause-mode
 ;; -----------------------------------------------------------------------------
 (use-package explain-pause-mode
+  :disabled
   :config
   (explain-pause-mode))
 
