@@ -13,7 +13,7 @@
 ;; Chooses random modes to obfuscate the current buffer.
 ;; -----------------------------------------------------------------------------
 (use-package zone
-  :config (zone-when-idle 120))
+  :config (zone-when-idle (* 60 5)))
 
 ;; -----------------------------------------------------------------------------
 ;; zone-select
