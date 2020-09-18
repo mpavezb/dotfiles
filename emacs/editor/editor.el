@@ -3,18 +3,17 @@
 ;; Basic editor configurations.
 ;; Non-language related.
 
-;; Line numbering
-;; Display line number sidebar on programming languages
-;; https://www.emacswiki.org/emacs/LineNumbers
-(add-hook 'prog-mode-hook 'linum-mode)
-
-;; highlight current line-number
-;; https://github.com/targzeta/linum-highlight-current-line-number
-(use-package linum-highlight-current-line-number
-  :disabled
-  :load-path "mp/lisp/" 
+;; -----------------------------------------------------------------------------
+;; nlinum
+;; Show line numbers in the margin
+;; https://elpa.gnu.org/packages/nlinum.html
+;; -----------------------------------------------------------------------------
+(use-package nlinum
+  :hook (prog-mode . nlinum-mode)
   :config ;;
-  (setq linum-format 'linum-highlight-current-line-number))
+  (set-face-foreground 'nlinum-current-line "goldenrod")
+  (set-face-background 'nlinum-current-line "Gray20")
+  (setq nlinum-highlight-current-line t))
 
 ;; show row,column numbers on modeline
 (column-number-mode t)
