@@ -58,3 +58,6 @@
 
 ;; = Misc =
 (mp/load "goodies.el")
+
+;; Reenabled Commands
+(put 'scroll-left 'disabled nil)
