@@ -87,32 +87,63 @@
   (setq doom-modeline-persp-name nil) 
   (setq doom-modeline-display-default-persp-name nil) 
   (setq doom-modeline-persp-icon t)
-
-
   ;;
   )
 
-(defun mp/disable-all-themes () 
-  (dolist (th custom-enabled-themes) 
+;; -----------------------------------------------------------------------------
+;; mp/theme
+;; Doom themes selector
+;; -----------------------------------------------------------------------------
+;; TODO: toggle between light/dark themes.
+;; TODO: define default dark and light themes.
+;; TODO: try themes on the picker before selecting them.
+;; TODO: minor mode/package
+;; TODO: avoid using strings
+(defvar mp/theme-list
+  '(doom-one doom-one-light doom-vibrant doom-acario-dark doom-acario-light doom-city-lights
+	     doom-challenger-deep doom-dark+ doom-dracula doom-ephemeral doom-fairy-floss
+	     doom-flatwhite doom-gruvbox doom-gruvbox-light doom-henna doom-horizon doom-Iosvkem
+	     doom-laserwave doom-material doom-manegarm doom-miramare doom-molokai
+	     doom-monokai-classic doom-monokai-pro doom-moonlight doom-nord doom-nord-light
+	     doom-nova doom-oceanic-next doom-old-hope doom-opera doom-opera-light
+	     doom-outrun-electric doom-palenight doom-plain doom-peacock doom-rouge doom-snazzy
+	     doom-solarized-dark doom-solarized-light doom-sourcerer doom-spacegrey
+	     doom-tomorrow-day doom-tomorrow-night doom-wilmersdorf))
+;; banned themes
+;; doom-zenburn, doom-mono-dark, doom-tron
+
+(defun mp/theme-disable-all ()
+  "Disable all currently enabled themes"
+  (interactive)
+  (dolist (th custom-enabled-themes)
     (disable-theme th)))
 
-(defun mp/load-dark-theme () 
-  (mp/disable-all-themes) 
-  (load-theme 'doom-vibrant))
+(defun mp/theme-select (theme)
+  "Select theme given its string name"
+  (progn (mp/theme-disable-all)
+	 (load-theme (intern theme))))
 
-(defun mp/load-light-theme () 
-  (mp/disable-all-themes) 
-  (load-theme 'doom-one-light))
+(defun mp/theme-picker ()
+  "Allows selecting a theme using completing-read"
+  (interactive)
+  (mp/theme-select (completing-read "" mp/theme-list nil t)))
 
-;; “C-x t” to toggle between light and dark themes.
-(defun mp/toggle-theme () 
+(defun mp/theme-load-dark ()
+  (mp/theme-select "doom-vibrant"))
+
+(defun mp/theme-load-light ()
+  (mp/theme-select "doom-one-light"))
+
+(defun mp/theme-toggle ()
   "Toggle between dark and light themes." 
   (interactive)
   ;; Load dark if light is top-most enabled theme, else load light.
   (if (equal (car custom-enabled-themes) 'doom-vibrant) 
-      (mp/load-light-theme) 
-    (mp/load-dark-theme)))
-(global-set-key (kbd "C-x t") 'mp/toggle-theme)
+      (mp/theme-load-light)
+    (mp/theme-load-light)))
 
-;; Initially begin with the light theme.
-(mp/load-dark-theme)
+(global-set-key (kbd "C-x M-p") 'mp/theme-picker)
+(global-set-key (kbd "C-x M-t") 'mp/theme-toggle)
+
+;; Initially begin with the dark theme.
+(mp/theme-load-dark)
