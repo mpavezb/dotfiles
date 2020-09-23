@@ -51,6 +51,7 @@
 (mp/load "lang/web.el")
 (mp/load "lang/xml.el")
 (mp/load "lang/yaml.el")
+(mp/load "lang/misc.el")
 
 ;; = Integrations =
 (mp/load "integrations/neotree-projectile.el")
