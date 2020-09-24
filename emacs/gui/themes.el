@@ -63,9 +63,9 @@
 
   ;; checks
   (setq doom-modeline-checker-simple-format nil) 
-  (setq doom-modeline-number-limit 99)
+  (setq doom-modeline-number-limit 99) 
   (setq doom-modeline-buffer-encoding t) 
-  (setq doom-modeline-indent-info t) 
+  (setq doom-modeline-indent-info t)
 
   ;; languages
   (setq doom-modeline-lsp t) 
@@ -74,14 +74,14 @@
   ;; Repository
   ;; github requires `ghub' package.
   (setq doom-modeline-vcs-max-length 50) 
-  (setq doom-modeline-github nil)  ; TODO: Use this
+  (setq doom-modeline-github nil) ;; TODO: Use this
   (setq doom-modeline-github-interval (* 30 60))
 
   ;; misc
   (setq doom-modeline-unicode-fallback nil) 
-  (setq doom-modeline-mu4e nil)		; email ; TODO: Try this
-  (setq doom-modeline-gnus nil)		; news  ; TODO: Try this
-  (setq doom-modeline-irc nil)		; irc   ; TODO: Trythis
+  (setq doom-modeline-mu4e nil)	;; email ; TODO: Try this
+  (setq doom-modeline-gnus nil)	;; news  ; TODO: Try this
+  (setq doom-modeline-irc nil)	;; irc   ; TODO: Trythis
 
   ;; perspective ; TODO: Use this
   (setq doom-modeline-persp-name nil) 
@@ -91,15 +91,11 @@
   )
 
 ;; -----------------------------------------------------------------------------
-;; mp/theme
-;; Doom themes selector
+;; Theme picker
 ;; -----------------------------------------------------------------------------
-;; TODO: toggle between light/dark themes.
-;; TODO: define default dark and light themes.
-;; TODO: try themes on the picker before selecting them.
 ;; TODO: minor mode/package
-;; TODO: avoid using strings
-(defvar mp/theme-list
+
+(defvar mp/theme-list 
   '(doom-one doom-one-light doom-vibrant doom-acario-dark doom-acario-light doom-city-lights
 	     doom-challenger-deep doom-dark+ doom-dracula doom-ephemeral doom-fairy-floss
 	     doom-flatwhite doom-gruvbox doom-gruvbox-light doom-henna doom-horizon doom-Iosvkem
@@ -112,34 +108,51 @@
 ;; banned themes
 ;; doom-zenburn, doom-mono-dark, doom-tron
 
-(defun mp/theme-disable-all ()
-  "Disable all currently enabled themes"
-  (interactive)
-  (dolist (th custom-enabled-themes)
-    (disable-theme th)))
+(defun mp/theme-disable-all () 
+  "Disable all currently enabled themes."
+  (mapc 'disable-theme custom-enabled-themes))
 
-(defun mp/theme-select (theme)
-  "Select theme given its string name"
-  (progn (mp/theme-disable-all)
-	 (load-theme (intern theme))))
+(defun mp/theme-select (theme-str) 
+  "Select theme given the string name."
+  (mp/theme-disable-all) 
+  (load-theme (intern theme-str)))
 
-(defun mp/theme-picker ()
-  "Allows selecting a theme using completing-read"
-  (interactive)
+(defvar mp/theme-helm-source 
+  (helm-build-sync-source "Available Themes" 
+    :candidates 'mp/theme-list 
+    :action 'mp/theme-select 
+    :persistent-action 'mp/theme-select) 
+  "Helm source for themes selection.")
+
+(defun mp/theme-picker-completing-read () 
+  "Allows selecting a theme using completing-read." 
+  (interactive) 
   (mp/theme-select (completing-read "" mp/theme-list nil t)))
 
-(defun mp/theme-load-dark ()
+(defun mp/theme-picker-helm () 
+  "Theme picker using Helm interface." 
+  (interactive) 
+  (helm :sources mp/theme-helm-source))
+
+;; -----------------------------------------------------------------------------
+;; Toggle theme between Dark and Light
+;; -----------------------------------------------------------------------------
+;; TODO: toggle between light/dark themes.
+;; TODO: define default dark and light themes.
+;; TODO: avoid using strings
+
+(defun mp/theme-load-dark () 
   (mp/theme-select "doom-vibrant"))
 
-(defun mp/theme-load-light ()
+(defun mp/theme-load-light () 
   (mp/theme-select "doom-one-light"))
 
-(defun mp/theme-toggle ()
+(defun mp/theme-toggle () 
   "Toggle between dark and light themes." 
   (interactive)
   ;; Load dark if light is top-most enabled theme, else load light.
   (if (equal (car custom-enabled-themes) 'doom-vibrant) 
-      (mp/theme-load-light)
+      (mp/theme-load-light) 
     (mp/theme-load-light)))
 
 (global-set-key (kbd "C-x M-p") 'mp/theme-picker)
