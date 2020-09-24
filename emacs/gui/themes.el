@@ -95,6 +95,7 @@
 ;; -----------------------------------------------------------------------------
 ;; TODO: minor mode/package
 
+;; Doom Themes
 (defvar mp/theme-list 
   '(doom-one doom-one-light doom-vibrant doom-acario-dark doom-acario-light doom-city-lights
 	     doom-challenger-deep doom-dark+ doom-dracula doom-ephemeral doom-fairy-floss
@@ -105,11 +106,11 @@
 	     doom-outrun-electric doom-palenight doom-plain doom-peacock doom-rouge doom-snazzy
 	     doom-solarized-dark doom-solarized-light doom-sourcerer doom-spacegrey
 	     doom-tomorrow-day doom-tomorrow-night doom-wilmersdorf))
-;; banned themes
-;; doom-zenburn, doom-mono-dark, doom-tron
+(defvar mp/theme-list-banned '(doom-zenburn doom-mono-dark doom-tron))
 
 (defun mp/theme-disable-all () 
-  "Disable all currently enabled themes."
+  "Disable all currently enabled themes." 
+  (interactive) 
   (mapc 'disable-theme custom-enabled-themes))
 
 (defun mp/theme-select (theme-str) 
@@ -117,22 +118,34 @@
   (mp/theme-disable-all) 
   (load-theme (intern theme-str)))
 
-(defvar mp/theme-helm-source 
-  (helm-build-sync-source "Available Themes" 
-    :candidates 'mp/theme-list 
-    :action 'mp/theme-select 
-    :persistent-action 'mp/theme-select) 
-  "Helm source for themes selection.")
-
 (defun mp/theme-picker-completing-read () 
   "Allows selecting a theme using completing-read." 
   (interactive) 
   (mp/theme-select (completing-read "" mp/theme-list nil t)))
 
-(defun mp/theme-picker-helm () 
-  "Theme picker using Helm interface." 
-  (interactive) 
-  (helm :sources mp/theme-helm-source))
+(defun mp/theme-picker--get-current-theme () 
+  "Returns current theme name as a string, 'default otherwise."
+  (if custom-enabled-themes (symbol-name (car custom-enabled-themes)) "default"))
+
+(defun mp/theme-picker--prompt () 
+  (format "(Initial Theme: %s) Pattern: " (mp/theme-picker--get-current-theme)))
+
+(with-eval-after-load 'helm
+  (defvar mp/theme-picker--helm-source 
+    (helm-build-sync-source "Theme List" 
+      :candidates 'mp/theme-list 
+      :action 'mp/theme-select 
+      :persistent-action 'mp/theme-select 
+      :fuzzy-match t) 
+    "Helm source for themes selection.")
+
+  (defun mp/theme-picker-helm () 
+    "Theme picker using Helm interface." 
+    (interactive) 
+    (helm :prompt (mp/theme-picker--prompt) 
+	  :preselect (format "%s$" (mp/theme-picker--get-current-theme)) 
+	  :sources mp/theme-picker--helm-source 
+	  :buffer "*helm-themes*")))
 
 ;; -----------------------------------------------------------------------------
 ;; Toggle theme between Dark and Light
