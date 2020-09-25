@@ -26,3 +26,11 @@ alias df='df -h'
 
 # shell
 alias mp-clear="tput reset"
+
+# ===============================================
+# Alert
+# ===============================================
+mp-notifyme()
+{
+    "$@" && alert "Command completed."
+}
