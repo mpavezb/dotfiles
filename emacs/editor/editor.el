@@ -9,7 +9,8 @@
 ;; https://elpa.gnu.org/packages/nlinum.html
 ;; -----------------------------------------------------------------------------
 (use-package nlinum
-  :hook (prog-mode . nlinum-mode)
+  :hook ((prog-mode . nlinum-mode)
+	 (text-mode . nlinum-mode))
   :config ;;
   (set-face-foreground 'nlinum-current-line "goldenrod")
   (set-face-background 'nlinum-current-line "Gray20")
