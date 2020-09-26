@@ -3,13 +3,13 @@
 ;; Matias Pavez
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun mp/emacs-dir () 
-  "Returns mp emacs directory."
-  (concat user-emacs-directory "mp/"))
+(defvar mp/emacs-dir
+  (concat user-emacs-directory "mp/")
+  "Returns mp emacs directory.")
 
 (defun mp/emacs-file (@filename) 
   "Returns path to mp emacs file."
-  (concat (mp/emacs-dir) @filename))
+  (concat mp/emacs-dir @filename))
 
 (defun mp/load (@settings-file) 
   "Loads the given file from the mp/ folder"
