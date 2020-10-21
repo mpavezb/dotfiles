@@ -23,6 +23,7 @@
 (mp/load "pkgs/gui.el")
 (mp/load "pkgs/uniquify.el")
 (mp/load "pkgs/themes.el")
+(mp/load "pkgs/dashboard.el")
 
 ;; = Project =
 (mp/load "pkgs/git.el")
