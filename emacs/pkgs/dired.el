@@ -3,7 +3,6 @@
 ;; https://www.emacswiki.org/emacs/dired%2b.el
 ;; -----------------------------------------------------------------------------
 (use-package dired+ 
-  :load-path "mp/lisp/" 
   :config ;;
   (diredp-toggle-find-file-reuse-dir 1))
 

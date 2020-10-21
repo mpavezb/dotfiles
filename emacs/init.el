@@ -16,30 +16,30 @@
   (load (mp/emacs-file @settings-file)))
 
 ;; = System =
-(mp/load "system/packages.el")
-(mp/load "system/files.el")
+(mp/load "pkgs/packages.el")
+(mp/load "pkgs/files.el")
 
 ;; = GUI =
-(mp/load "gui/gui.el")
-(mp/load "gui/uniquify.el")
-(mp/load "gui/themes.el")
+(mp/load "pkgs/gui.el")
+(mp/load "pkgs/uniquify.el")
+(mp/load "pkgs/themes.el")
 
 ;; = Project =
-(mp/load "project/git.el")
-(mp/load "project/projectile.el")
-;; (mp/load "project/neotree.el")
+(mp/load "pkgs/git.el")
+(mp/load "pkgs/projectile.el")
+;; (mp/load "pkgs/neotree.el")
 
 ;; = Editor =
-(mp/load "editor/history.el")
-(mp/load "editor/dired.el")
-(mp/load "editor/editor.el")
-(mp/load "editor/buffer.el")
-(mp/load "editor/helm.el")
-(mp/load "editor/compilation.el")
+(mp/load "pkgs/history.el")
+(mp/load "pkgs/dired.el")
+(mp/load "pkgs/editor.el")
+(mp/load "pkgs/buffer.el")
+(mp/load "pkgs/helm.el")
+(mp/load "pkgs/compilation.el")
 
 ;; = Org =
-;; (mp/load "org/org.el")
-;; (mp/load "org/journal.el")
+;; (mp/load "pkgs/org.el")
+;; (mp/load "pkgs/journal.el")
 
 ;; = Languages =
 (mp/load "lang/ide.el")
@@ -54,7 +54,7 @@
 (mp/load "lang/misc.el")
 
 ;; = Misc =
-(mp/load "goodies.el")
+(mp/load "pkgs/goodies.el")
 
 ;; Reenabled Commands
 (put 'scroll-left 'disabled nil)
@@ -62,9 +62,9 @@
 ;; -----------------------------------------------------------------------------
 ;; Custom Commands
 ;; -----------------------------------------------------------------------------
-(mp/load "editor/s.el")
-(mp/load "lisp/reopen-killed-file.el")
+(mp/load "pkgs/s.el")
+(mp/load "pkgs/reopen-killed-file.el")
 
 ;; must be loaded after all hooks are set.
 ;; othewise hooks wont be triggered for perspective files.
-(mp/load "perspective.el")
+(mp/load "pkgs/perspective.el")
