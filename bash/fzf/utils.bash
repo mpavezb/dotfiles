@@ -3,7 +3,7 @@
 function _mp-fzf_preview_file
 {
     local path=$1
-    if which bat >/dev/null; then
+    if hash bat 2>/dev/null; then
 	bat \
 	    --style="numbers,header" \
 	    --map-syntax="h:cpp" \

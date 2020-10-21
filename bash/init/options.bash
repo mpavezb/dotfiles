@@ -29,16 +29,16 @@ set -o emacs
 # Set the default editor to emacs.
 EDITOR=
 VISUAL=
-if which emacsclient >/dev/null; then
+if hash emacsclient 2>/dev/null; then
     # -t: open in terminal mode
     # -c: run in new frame
     # -a: start emacs if there is no server
     export ALTERNATE_EDITOR=""
     EDITOR="emacsclient -t"
     VISUAL="emacsclient -c -a emacs"
-elif which subl >/dev/null; then
+elif hash subl 2>/dev/null; then
     EDITOR="subl"
-elif which vi >/dev/null; then
+elif hash vi 2>/dev/null; then
     EDITOR="vi"
 fi
 export EDITOR
@@ -47,6 +47,6 @@ export VISUAL
 # ===============================================
 # Man Pager
 # ===============================================
-if which bat > /dev/null; then
+if hash bat 2>/dev/null; then
     export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 fi

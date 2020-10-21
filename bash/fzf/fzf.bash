@@ -36,7 +36,7 @@ FZF_DEFAULT_COMMAND=
 FZF_CTRL_T_COMMAND=
 FZF_CTRL_R_COMMAND=
 FZF_ALT_C_COMMAND=
-if which fd > /dev/null; then
+if hash fd 2>/dev/null; then
     COMMON_OPTS=" --color=never --hidden --follow --exclude .git"
     FZF_DEFAULT_COMMAND="fd --type f ${COMMON_OPTS} ."
     FZF_CTRL_T_COMMAND="fd --type f ${COMMON_OPTS} ."
