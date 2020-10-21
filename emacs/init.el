@@ -64,3 +64,7 @@
 ;; -----------------------------------------------------------------------------
 (mp/load "editor/s.el")
 (mp/load "lisp/reopen-killed-file.el")
+
+;; must be loaded after all hooks are set.
+;; othewise hooks wont be triggered for perspective files.
+(mp/load "perspective.el")
