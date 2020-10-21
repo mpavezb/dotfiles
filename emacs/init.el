@@ -34,6 +34,8 @@
 (mp/load "pkgs/history.el")
 (mp/load "pkgs/dired.el")
 (mp/load "pkgs/editor.el")
+(mp/load "pkgs/fzf.el")
+(mp/load "pkgs/rg.el")
 (mp/load "pkgs/buffer.el")
 (mp/load "pkgs/helm.el")
 (mp/load "pkgs/compilation.el")
