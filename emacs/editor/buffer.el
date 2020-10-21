@@ -76,8 +76,3 @@
   (let ((filename (file-name-nondirectory  (mp/get-buffername)))) 
     (when filename (kill-new filename) 
 	  (message filename))))
-
-;; -----------------------------------------------------------------------------
-;; Reopen killed buffers
-;; -----------------------------------------------------------------------------
-(mp/load "lisp/reopen-killed-file.el")

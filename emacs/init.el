@@ -27,7 +27,7 @@
 ;; = Project =
 (mp/load "project/git.el")
 (mp/load "project/projectile.el")
-(mp/load "project/neotree.el")
+;; (mp/load "project/neotree.el")
 
 ;; = Editor =
 (mp/load "editor/history.el")
@@ -38,7 +38,7 @@
 (mp/load "editor/compilation.el")
 
 ;; = Org =
-(mp/load "org/org.el")
+;; (mp/load "org/org.el")
 ;; (mp/load "org/journal.el")
 
 ;; = Languages =
@@ -53,11 +53,14 @@
 (mp/load "lang/yaml.el")
 (mp/load "lang/misc.el")
 
-;; = Integrations =
-(mp/load "integrations/neotree-projectile.el")
-
 ;; = Misc =
 (mp/load "goodies.el")
 
 ;; Reenabled Commands
 (put 'scroll-left 'disabled nil)
+
+;; -----------------------------------------------------------------------------
+;; Custom Commands
+;; -----------------------------------------------------------------------------
+(mp/load "editor/s.el")
+(mp/load "lisp/reopen-killed-file.el")
