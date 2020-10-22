@@ -24,8 +24,8 @@
 ;; https://github.com/ludwigpacifici/modern-cpp-font-lock
 ;; -----------------------------------------------------------------------------
 (use-package modern-cpp-font-lock 
-  :diminish modern-c++-font-lock-mode 
-  :config (modern-c++-font-lock-global-mode t))
+  :diminish modern-c++-font-lock-mode
+  :hook (c++-mode . modern-c++-font-lock-mode))
 
 ;; -----------------------------------------------------------------------------
 ;; srefactor
