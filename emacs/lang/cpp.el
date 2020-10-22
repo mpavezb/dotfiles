@@ -24,7 +24,7 @@
 ;; https://github.com/ludwigpacifici/modern-cpp-font-lock
 ;; -----------------------------------------------------------------------------
 (use-package modern-cpp-font-lock 
-  :diminish modern-c++-font-lock-mode
+  :diminish modern-c++-font-lock-mode 
   :hook (c++-mode . modern-c++-font-lock-mode))
 
 ;; -----------------------------------------------------------------------------
@@ -39,4 +39,10 @@
 ;; 	      ("M-RET" . 'srefactor-refactor-at-point))
 ;;   :config (semantic-mode t))
 
-(use-package cmake-mode)
+;; -----------------------------------------------------------------------------
+;; cmake-mode
+;; major-mode for editing CMake sources
+;; https://github.com/Kitware/CMake/blob/master/Auxiliary/cmake-mode.el
+;; -----------------------------------------------------------------------------
+(use-package cmake-mode 
+  :mode "CMakeLists.txt")
