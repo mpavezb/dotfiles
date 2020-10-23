@@ -7,19 +7,6 @@
 ;;(add-hook 'c++-mode-hook 'origami-mode)
 
 ;; -----------------------------------------------------------------------------
-;; clang-format
-;; Format C/C++ code
-;; http://clang.llvm.org/docs/ClangFormat.html
-;; https://github.com/SavchenkoValeriy/emacs-clang-format-plus
-;; -----------------------------------------------------------------------------
-;; TODO: Replace by lsp formatter
-(use-package clang-format+ 
-  :diminish clang-format+-mode
-  ;; format buffer on save
-  :hook (c-mode-common . clang-format+-mode) 
-  :config (setq clang-format+-context 'buffer))
-
-;; -----------------------------------------------------------------------------
 ;; modern-cpp-font-lock
 ;; Syntax highlighting for modern cpp until C++20
 ;; https://github.com/ludwigpacifici/modern-cpp-font-lock

@@ -84,6 +84,7 @@
   ;; (setq indent-tabs-mode t) ;; use tabs
   ;; (setq c-basic-offset )    ;; control tab size in cc-mode derived modes.
   ;; (setq tab-width 4)        ;; control tab size in other modes.
+  (add-hook 'before-save-hook 'lsp-format-buffer)
 
   ;; Completion
   (setq lsp-completion-provider 
