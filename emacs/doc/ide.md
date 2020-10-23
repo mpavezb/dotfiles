@@ -24,6 +24,7 @@
 - Syntax Checking: [flycheck](https://github.com/flycheck/flycheck).
 - Syntax Highlighting: [modern-c++-font-lock](https://github.com/ludwigpacifici/modern-cpp-font-lock).
 - Languages:
+  - Bash: [bash-language-server](https://github.com/bash-lsp/bash-language-server).
   - CMake: [cmake-language-server](https://github.com/regen100/cmake-language-server).
   - C/C++: [clangd](https://github.com/clangd/clangd), [Bear](https://github.com/rizsotto/Bear).
   - Python: [pyls](https://github.com/palantir/python-language-server).

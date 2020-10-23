@@ -49,8 +49,13 @@ cp ~/.dotfiles/emacs/emacs.desktop ~/.local/share/applications/
 ## Setting up emacs configurations
 
 Dependencies:
-
 ```bash
+# Bash
+npm i -g bash-language-server
+
+# CMake
+pip3 install cmake-language-server
+
 # C/C++
 sudo apt install bear
 sudo apt install libstdc++-10-dev libstdc++-10-doc
@@ -65,8 +70,6 @@ pip3 install --user black
 pip3 install 'python-language-server[all]'
 pip3 install pyls-black pyls-mypy pyls-isort
 
-# CMake
-pip3 install cmake-language-server
 
 # Markdown
 # TODO: `which pandoc` should be used instead of raw /usr/bin/pandoc.

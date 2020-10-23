@@ -60,9 +60,18 @@
 ;; Emacs client/library for the Language Server Protocol
 ;; https://github.com/emacs-lsp/lsp-mode
 ;; -----------------------------------------------------------------------------
-;; See: https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
+;; Languages:
+;; - https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/
+;; - https://emacs-lsp.github.io/lsp-mode/page/lsp-cmake/
+;; - https://emacs-lsp.github.io/lsp-mode/page/lsp-clangd/
+;; - https://emacs-lsp.github.io/lsp-mode/page/lsp-pyls/
+;; - https://emacs-lsp.github.io/lsp-mode/page/lsp-xml/
+;; - https://emacs-lsp.github.io/lsp-mode/page/lsp-yaml/
+;;
+;; See also: https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
 (use-package lsp-mode 
   :hook (
+	 (sh-mode . lsp-deferred)
 	 (cmake-mode . lsp-deferred)
 	 (c-mode . lsp-deferred) 
 	 (c++-mode . lsp-deferred)
