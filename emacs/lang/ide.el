@@ -73,7 +73,9 @@
 
   ;; C/C++
   ;; Useful: "-log=verbose" "-query-driver=/usr/bin/c++"
-  ;; See: man clangd
+  ;; See:
+  ;; - https://clangd.llvm.org/
+  ;; - man clangd
   (setq lsp-clients-clangd-args '("-j=4" "-background-index"))
   :commands (lsp lsp-deferred) 
   :config ;;
@@ -192,7 +194,9 @@
 ;; -----------------------------------------------------------------------------
 (use-package yasnippet 
   :hook (prog-mode . yas-minor-mode) 
-  :config (yas-reload-all))
+  :config ;;
+  (define-key yas-minor-mode-map (kbd "C-c C-y") #'yas-insert-snippet) 
+  (yas-reload-all))
 
 ;; -----------------------------------------------------------------------------
 ;; yasnippet-snippets
