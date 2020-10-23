@@ -201,8 +201,9 @@
   (setq helm-buffer-max-length            60)
   (setq helm-buffers-end-truncated-string "…")
   (setq helm-buffers-maybe-switch-to-tab  t)
-  (setq helm-mini-default-sources
-		'(helm-source-buffers-list helm-source-buffer-not-found))
+  (setq helm-mini-default-sources '(helm-source-buffers-list
+				    helm-source-recentf
+				    helm-source-buffer-not-found))
   (define-key helm-buffer-map (kbd "C-d") 'helm-buffer-run-kill-persistent)
   (cl-defmethod
     helm-setup-user-source
