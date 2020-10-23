@@ -74,6 +74,11 @@ bash ~/.dotfiles/emacs/setup.bash
 
 Launch emacs and install missing packages on the go.
 
+Finally, manually call setup tools within emacs:
+```
+M-x dap-cpptools-setup
+```
+
 ## Troubleshooting
 
 There might be an error during initialization related to Helm. This got fixed by removing some outdated void variables:

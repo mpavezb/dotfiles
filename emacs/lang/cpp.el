@@ -12,6 +12,7 @@
 ;; http://clang.llvm.org/docs/ClangFormat.html
 ;; https://github.com/SavchenkoValeriy/emacs-clang-format-plus
 ;; -----------------------------------------------------------------------------
+;; TODO: Replace by lsp formatter
 (use-package clang-format+ 
   :diminish clang-format+-mode
   ;; format buffer on save

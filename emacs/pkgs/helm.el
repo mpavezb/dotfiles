@@ -483,6 +483,14 @@ First call indent, second complete symbol, third complete fname."
 ;; -----------------------------------------------------------------------------
 (use-package helm-rg)
 
+;; -----------------------------------------------------------------------------
+;; helm-xref
+;; Helm interface for xref results
+;; https://github.com/brotzeit/helm-xref
+;; -----------------------------------------------------------------------------
+;; Used by lsp/dap mode
+(use-package helm-xref)
+
 ;;; Ctl-x-5 map
 ;;
 (define-key ctl-x-5-map (kbd "C-x c t") 'helm-top-in-frame)
@@ -505,6 +513,8 @@ First call indent, second complete symbol, third complete fname."
 ;;; Global-map
 ;;
 ;;
+;; (define-key global-map [remap execute-extended-command] #'helm-M-x) ;; is this way better?
+;; (define-key global-map [remap find-file] #'helm-find-files)         ;; is this way better?
 (global-set-key (kbd "M-x")                          'undefined)
 (global-set-key (kbd "M-x")                          'helm-M-x)
 (global-set-key (kbd "M-y")                          'helm-show-kill-ring)
@@ -530,6 +540,7 @@ First call indent, second complete symbol, third complete fname."
 (global-set-key (kbd "C-s")                          'helm-occur)
 (define-key global-map [remap jump-to-register]      'helm-register)
 (define-key global-map [remap list-buffers]          'helm-mini)
+(define-key global-map [remap switch-to-buffer]      'helm-mini)
 (define-key global-map [remap dabbrev-expand]        'helm-dabbrev)
 (define-key global-map (kbd "M-g a")                 'helm-do-grep-ag)
 (define-key global-map (kbd "M-g g")                 'helm-grep-do-git-grep)
