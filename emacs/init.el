@@ -22,6 +22,7 @@
 ;; = GUI =
 (mp/load "pkgs/gui.el")
 (mp/load "pkgs/uniquify.el")
+(mp/load "pkgs/doom-modeline.el")
 (mp/load "pkgs/themes.el")
 (mp/load "pkgs/dashboard.el")
 
