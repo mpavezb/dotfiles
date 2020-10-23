@@ -108,3 +108,11 @@
 							  (ukrainian-programmer-dvorak . ("ru")) 
 							  (german-prefix . ("de")))) 
   (setq google-translate-input-method-auto-toggling t))
+
+;; -----------------------------------------------------------------------------
+;; beacon
+;; A light that follows your cursor around so you don't lose it!
+;; https://github.com/Malabarba/beacon
+;; -----------------------------------------------------------------------------
+(use-package beacon
+  :config (beacon-mode 1))
