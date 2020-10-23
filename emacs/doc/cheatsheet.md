@@ -140,6 +140,7 @@ C-c M-g : magit-file-dispatch (magit on file!)
 C-c g g : git-timemachine
 C-c g b : browse-at-remote
 C-x v g : vc-annotate
+$       : magit-process-buffer (within magit)
 
 # ORG
 See: https://orgmode.org/manual/index.html
