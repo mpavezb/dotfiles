@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=GNU Emacs 27
+Name=GccEmacs 28
 GenericName=Text Editor
 Comment=The Extensible Text Editor
 Exec=/home/mpavezb/.local/bin/emacs
