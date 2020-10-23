@@ -65,8 +65,9 @@ sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-10 100
 sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-10 100
 
 # Python
-pip3 install 'python-language-server[all]'
 pip3 install --user black
+pip3 install 'python-language-server[all]'
+pip3 install pyls-black pyls-mypy pyls-isort
 ```
 
 Set up emacs dotfiles:

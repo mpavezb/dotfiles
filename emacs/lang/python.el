@@ -10,10 +10,3 @@
 	  (lambda () 
 	    (define-key python-mode-map (kbd "C-c >") 'indent-tools-hydra/body)))
 
-;; -----------------------------------------------------------------------------
-;; blacken
-;; The Uncompromising Code Formatter
-;; https://github.com/psf/black
-;; -----------------------------------------------------------------------------
-(use-package blacken 
-  :hook (python-mode . blacken-mode))
