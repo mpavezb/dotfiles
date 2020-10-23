@@ -63,7 +63,7 @@
 ;; See: https://emacs-lsp.github.io/lsp-mode/tutorials/how-to-turn-off/
 (use-package lsp-mode 
   :hook (
-	 ;; (python-mode . lsp-deferred)
+	 (cmake-mode . lsp-deferred)
 	 (c-mode . lsp-deferred) 
 	 (c++-mode . lsp-deferred)
 	 (python-mode . lsp-deferred)

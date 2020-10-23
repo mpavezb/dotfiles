@@ -16,14 +16,17 @@
   - Find definitions.
   - Find references.
   - Find errors.
-  - Symbol Highlight.
-  - Refactoring.
+  - Autoformating.
   - Code lens.
-- LSP Server: [clangd](https://github.com/clangd/clangd), [Bear](https://github.com/rizsotto/Bear).
+  - Refactoring.
+  - Symbol Highlight.
 - Autocompletion: [company-mode](https://github.com/company-mode/company-mode).
-- Autoformating: [clang-format+](https://github.com/SavchenkoValeriy/emacs-clang-format-plus).
-- Syntax Highlighting: [modern-c++-font-lock](https://github.com/ludwigpacifici/modern-cpp-font-lock).
 - Syntax Checking: [flycheck](https://github.com/flycheck/flycheck).
+- Syntax Highlighting: [modern-c++-font-lock](https://github.com/ludwigpacifici/modern-cpp-font-lock).
+- Languages:
+  - CMake: [cmake-language-server](https://github.com/regen100/cmake-language-server).
+  - C/C++: [clangd](https://github.com/clangd/clangd), [Bear](https://github.com/rizsotto/Bear).
+  - Python: [pyls](https://github.com/palantir/python-language-server).
 
 **Optional Requirements**:
 - Class/File outline.
@@ -64,11 +67,9 @@ lsp-format-buffer
 
 ```
 
-## Languages
+## C/C++ Settings
 
-### C/C++
-
-#### Compilation Database
+### Compilation Database
 
 Clang requires a JSON compilation database file `compile_commands.json` in the project root.
 - CMake: `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON`, `set(CMAKE_EXPORT_COMPILE_COMMANDS ON)`.
@@ -85,7 +86,7 @@ ln -s ./build/compile_commands.json ./compile_commands.json
 Bazel (TODO):
 - https://github.com/vincent-picaud/Bazel_and_CompileCommands
 
-#### Debugging
+### Debugging
 
 ```bash
 # Flags to compile emacs with debug symbols
@@ -97,12 +98,10 @@ See the [c++ dap tutorial](https://emacs-lsp.github.io/lsp-mode/tutorials/CPP-gu
 
 TODO: Alternative debugger: https://github.com/realgud/realgud
 
+
 ## TODO
 
 - Bash: https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/
 - XML: https://emacs-lsp.github.io/lsp-mode/page/lsp-xml/
 - Yaml: https://emacs-lsp.github.io/lsp-mode/page/lsp-yaml/
-- Cmake: https://emacs-lsp.github.io/lsp-mode/page/lsp-cmake/
 - Dapconfig: https://emacs-lsp.github.io/dap-mode/
-- Python:
-  - https://www.reddit.com/r/emacs/comments/ih3q5x/lsp_for_python_sure_but_which_lsp_server/?utm_medium=android_app&utm_source=share

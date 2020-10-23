@@ -51,10 +51,6 @@ cp ~/.dotfiles/emacs/emacs.desktop ~/.local/share/applications/
 Dependencies:
 
 ```bash
-# Markdown
-# TODO: `which pandoc` should be used instead of raw /usr/bin/pandoc.
-sudo apt-get install pandoc
-
 # C/C++
 sudo apt install bear
 sudo apt install libstdc++-10-dev libstdc++-10-doc
@@ -68,6 +64,13 @@ sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-10 
 pip3 install --user black
 pip3 install 'python-language-server[all]'
 pip3 install pyls-black pyls-mypy pyls-isort
+
+# CMake
+pip3 install cmake-language-server
+
+# Markdown
+# TODO: `which pandoc` should be used instead of raw /usr/bin/pandoc.
+sudo apt-get install pandoc
 ```
 
 Set up emacs dotfiles:
