@@ -155,7 +155,7 @@
 ;; TODO: avoid using strings
 
 (defun mp/theme-load-dark () 
-  (mp/theme-select "doom-vibrant"))
+  (mp/theme-select "doom-dracula"))
 
 (defun mp/theme-load-light () 
   (mp/theme-select "doom-one-light"))
@@ -164,12 +164,13 @@
   "Toggle between dark and light themes." 
   (interactive)
   ;; Load dark if light is top-most enabled theme, else load light.
-  (if (equal (car custom-enabled-themes) 'doom-vibrant) 
+  (if (equal (car custom-enabled-themes) 'doom-dracula)
       (mp/theme-load-light) 
-    (mp/theme-load-light)))
+    (mp/theme-load-dark)))
 
-(global-set-key (kbd "C-x M-p") 'mp/theme-picker)
+;; Keybindings
 (global-set-key (kbd "C-x M-t") 'mp/theme-toggle)
+(global-set-key (kbd "C-x M-p") 'mp/theme-picker-helm)
 
 ;; Initially begin with the dark theme.
 (mp/theme-load-dark)
