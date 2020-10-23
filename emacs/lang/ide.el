@@ -69,7 +69,12 @@
 	 (lsp-mode . lsp-enable-which-key-integration)) 
   :init
   ;; if you want to change prefix for lsp-mode keybindings.
-  (setq lsp-keymap-prefix "C-c l") 
+  (setq lsp-keymap-prefix "C-c l")
+
+  ;; C/C++
+  ;; Useful: "-log=verbose" "-query-driver=/usr/bin/c++"
+  ;; See: man clangd
+  (setq lsp-clients-clangd-args '("-j=4" "-background-index"))
   :commands (lsp lsp-deferred) 
   :config ;;
 
@@ -119,6 +124,8 @@
   (setq lsp-prefer-capf t) 
   (setq lsp-idle-delay 0.1) ;; clangd is fast
   ;; (setq lsp-enable-file-watchers nil) ;; is this needed?
+
+  ;;
   )
 
 
