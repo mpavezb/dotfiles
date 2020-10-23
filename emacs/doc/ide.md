@@ -71,11 +71,16 @@ lsp-format-buffer
 #### Compilation Database
 
 Clang requires a JSON compilation database file `compile_commands.json` in the project root.
-- CMake: `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON`
+- CMake: `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON`, `set(CMAKE_EXPORT_COMPILE_COMMANDS ON)`.
 - Bazel:
 - Other: `bear make` (see [bear](https://github.com/rizsotto/Bear)).
 
 Bear intercepts compilation commands issued by the build process. In order to avoid having to recompile everything whenever a build is cached, bear can append results of later executions: `bear -a make`.
+
+Clangd looks for the `compile_commands.json` file in the project root. It is advisable to create a symlink to the actual file:
+```bash
+ln -s ./build/compile_commands.json ./compile_commands.json
+```
 
 Bazel (TODO):
 - https://github.com/vincent-picaud/Bazel_and_CompileCommands

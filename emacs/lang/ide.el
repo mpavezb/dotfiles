@@ -72,11 +72,11 @@
   (setq lsp-keymap-prefix "C-c l")
 
   ;; C/C++
-  ;; Useful: "-log=verbose" "-query-driver=/usr/bin/c++"
+  ;; Debug: "-log=verbose" "-query-driver=/usr/bin/c++"
   ;; See:
   ;; - https://clangd.llvm.org/
   ;; - man clangd
-  (setq lsp-clients-clangd-args '("-j=4" "-background-index"))
+  (setq lsp-clients-clangd-args '("-j=4" "-background-index" "-log=error"))
   :commands (lsp lsp-deferred) 
   :config ;;
 
