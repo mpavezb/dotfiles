@@ -59,12 +59,15 @@
 (setq straight-use-package-by-default t)
 
 ;; -----------------------------------------------------------------------------
-;; ENV variables
+;; exec-path-from-shell
+;; Make Emacs use the $PATH set up by the user's shell
+;; https://github.com/purcell/exec-path-from-shell
 ;; -----------------------------------------------------------------------------
-;; Add $HOME/.local/bin to exec-path
-(let ((path (concat (file-name-as-directory (getenv "HOME")) ".local/bin")))
-  (when (file-directory-p path)
-    (add-to-list 'exec-path path)))
+(straight-use-package 'exec-path-from-shell)
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+(when (daemonp)
+  (exec-path-from-shell-initialize))
 
 ;; -----------------------------------------------------------------------------
 ;; benchmark-init
