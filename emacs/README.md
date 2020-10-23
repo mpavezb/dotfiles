@@ -4,6 +4,7 @@
 
 Documentation:
 - [Installation](doc/installation.md)
+- [IDE Features](doc/ide.md)
 - [Cheatsheet](doc/cheatsheet.md)
 - [Profiling](doc/profiling.md)
 

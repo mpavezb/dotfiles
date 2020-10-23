@@ -66,18 +66,31 @@ lsp-format-buffer
 
 ## Languages
 
-### C++
+### C/C++
+
+#### Compilation Database
+
+Clang requires a JSON compilation database file `compile_commands.json` in the project root.
+- CMake: `-DCMAKE_EXPORT_COMPILE_COMMANDS=ON`
+- Bazel:
+- Other: `bear make` (see [bear](https://github.com/rizsotto/Bear)).
+
+Bear intercepts compilation commands issued by the build process. In order to avoid having to recompile everything whenever a build is cached, bear can append results of later executions: `bear -a make`.
+
+Bazel (TODO):
+- https://github.com/vincent-picaud/Bazel_and_CompileCommands
+
+#### Debugging
 
 ```bash
 # Flags to compile emacs with debug symbols
 CFLAGS="-ggdb3 -O0" CXXFLAGS="-ggdb3 -O0" LDFLAGS="-ggdb3" ./configure
-
-# compile and generate compile_commands.json
-bear make
 ```
 
 See the [c++ dap tutorial](https://emacs-lsp.github.io/lsp-mode/tutorials/CPP-guide/#debugging) on how to create debug configurations.
 
+
+TODO: Alternative debugger: https://github.com/realgud/realgud
 
 ## TODO
 
@@ -86,3 +99,5 @@ See the [c++ dap tutorial](https://emacs-lsp.github.io/lsp-mode/tutorials/CPP-gu
 - Yaml: https://emacs-lsp.github.io/lsp-mode/page/lsp-yaml/
 - Cmake: https://emacs-lsp.github.io/lsp-mode/page/lsp-cmake/
 - Dapconfig: https://emacs-lsp.github.io/dap-mode/
+- Python:
+  - https://www.reddit.com/r/emacs/comments/ih3q5x/lsp_for_python_sure_but_which_lsp_server/?utm_medium=android_app&utm_source=share
