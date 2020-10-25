@@ -64,6 +64,7 @@
 ;; https://github.com/purcell/exec-path-from-shell
 ;; -----------------------------------------------------------------------------
 (straight-use-package 'exec-path-from-shell)
+(setq exec-path-from-shell-arguments nil)
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 (when (daemonp)
