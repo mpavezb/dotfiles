@@ -76,6 +76,8 @@
 	 (c-mode . lsp-deferred) 
 	 (c++-mode . lsp-deferred)
 	 (python-mode . lsp-deferred)
+	 (yaml-mode . lsp-deferred)
+	 ;; (nxml-mode . lsp-deferred) : could not install server
 	 (lsp-mode . lsp-enable-which-key-integration)) 
   :init
   ;; if you want to change prefix for lsp-mode keybindings.

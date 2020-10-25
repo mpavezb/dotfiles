@@ -70,10 +70,18 @@ pip3 install --user black
 pip3 install 'python-language-server[all]'
 pip3 install pyls-black pyls-mypy pyls-isort
 
-
 # Markdown
 # TODO: `which pandoc` should be used instead of raw /usr/bin/pandoc.
 sudo apt-get install pandoc
+
+## XML
+#cd ~/.opt/
+#git clone https://github.com/eclipse/lemminx
+#cd lemminx
+#./mvnw clean verify
+
+# YAML
+npm i -g yaml-language-server
 ```
 
 Set up emacs dotfiles:
