@@ -13,10 +13,30 @@ Dependencies are optional. They are loaded if found.
 
 ## Setup
 
-Put the following in the `.bashrc` file.
-
+Copy the following snippets into the initialization files:
 ```bash
-source "$HOME/.dotfiles/bash/bashrc.bash"
+## ~/.profile
+## -----------------------------------------------
+## mpavezb dotfiles
+if [ -f ~/.dotfiles/bash/init/profile.sh ]; then
+    . "$HOME/.dotfiles/bash/init/profile.sh"
+fi
+## -----------------------------------------------
+
+## ~/.bash_profile
+## -----------------------------------------------
+## mpavezb dotfiles
+## Let ~/.profile handle the initialization.
+[[ -f ~/.profile ]] && source ~/.profile
+## -----------------------------------------------
+
+## ~/.bashrc
+## -----------------------------------------------
+## mpavezb dotfiles
+if [ -f ~/.dotfiles/bash/bashrc.bash ]; then
+    source "$HOME/.dotfiles/bash/bashrc.bash"
+fi
+## -----------------------------------------------
 ```
 
 This enables the following:
@@ -62,7 +82,9 @@ Depending on the shell type, they read the following files in order:
 - **interactive, non-login shell**: `/etc/bash.bashrc` -> `~/.bashrc`.
 - **non-interactive, non-login shell**: `$BASH_ENV`.
 
-Source: https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
+Sources:
+- https://shreevatsa.wordpress.com/2008/03/30/zshbash-startup-files-loading-order-bashrc-zshrc-etc/
+- https://blog.flowblok.id.au/2013-02/shell-startup-scripts.html
 
 Notes:
 - `~/.bashrc` and `~/.bash_profle` files are `bash` specific.

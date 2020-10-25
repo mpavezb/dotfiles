@@ -3,23 +3,21 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-export DOTFILES
-DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." >/dev/null 2>&1 && pwd )"
-
 # ===============================================
 # Environment variables
 # ===============================================
-source "${DOTFILES}"/bash/init/environment.sh
+THIS_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+source "${THIS_DIR}/init/environment.sh"
 
 # ===============================================
 # Shell Options
 # ===============================================
-source "${DOTFILES}"/bash/init/options.bash
+source "${DOTFILES}/bash/init/options.bash"
 
 # ===============================================
 # Prompt
 # ===============================================
-source "${DOTFILES}"/bash/prompt.bash
+source "${DOTFILES}/bash/prompt.bash"
 
 # ===============================================
 # Bash completion
@@ -31,9 +29,9 @@ fi
 # ===============================================
 # Fuzzy Matcher
 # ===============================================
-source "${DOTFILES}"/bash/fzf/fzf.bash
+source "${DOTFILES}/bash/fzf/fzf.bash"
 
 # ===============================================
 # Bash aliases
 # ===============================================
-source "${DOTFILES}"/bash/init/bash_aliases.bash
+source "${DOTFILES}/bash/init/bash_aliases.bash"

@@ -1,5 +1,9 @@
 #!/bin/sh
 
+DOTFILES="$( cd "$( dirname "${BASH_SOURCE[0]}" )/../.." >/dev/null 2>&1 && pwd )"
+export DOTFILES
+
+# TODO: this may generate duplicate entries
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"

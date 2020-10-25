@@ -102,7 +102,6 @@ TODO: Alternative debugger: https://github.com/realgud/realgud
 
 ## TODO
 
-- Bash: https://emacs-lsp.github.io/lsp-mode/page/lsp-bash/
 - XML: https://emacs-lsp.github.io/lsp-mode/page/lsp-xml/
 - Yaml: https://emacs-lsp.github.io/lsp-mode/page/lsp-yaml/
 - Dapconfig: https://emacs-lsp.github.io/dap-mode/
