@@ -28,20 +28,6 @@
 %f"))
     (message "Switched to %s" (helm-grep-command))))
 
-(defun helm/turn-on-header-line ()
-  (interactive)
-  (setq helm-echo-input-in-header-line t)
-  (setq helm-split-window-in-side-p t)
-  (helm-autoresize-mode -1)
-  (add-hook 'helm-minibuffer-set-up-hook 'helm-hide-minibuffer-maybe))
-
-(defun helm/turn-off-header-line ()
-  (interactive)
-  (setq helm-echo-input-in-header-line nil)
-  ;;(helm-autoresize-mode 1)
-  (setq helm-split-window-in-side-p nil)
-  (remove-hook 'helm-minibuffer-set-up-hook 'helm-hide-minibuffer-maybe))
-
 (defun helm/occur-which-func ()
   (interactive)
   (with-current-buffer (or (helm-aif (with-helm-buffer (window-buffer
@@ -140,10 +126,19 @@
   (setq helm-window-show-buffers-function #'helm-window-mosaic-fn)
   (add-hook 'find-file-hook 'helm-save-current-pos-to-mark-ring))
 
-(use-package helm-sys
-  :straight nil
-  :commands (helm-top)
-  :config (helm-top-poll-mode 1))
+;; -----------------------------------------------------------------------------
+;; TODO: helm-system-packages: fix package installation.
+;; A Helm interface to the package manager of your operating system.
+;; https://github.com/emacs-helm/helm-system-packages
+;; -----------------------------------------------------------------------------
+;; (use-package helm-system-packages
+;;   :commands (helm-system-packages)
+;;   :config ;;
+;;   (require 'em-tramp)
+;;   (setq password-cache t)
+;;   (setq password-cache-expiry 3600)
+;;   ;;
+;;   )
 
 (use-package helm-info
   :straight nil
@@ -503,14 +498,6 @@ First call indent, second complete symbol, third complete fname."
 (define-key ctl-x-5-map (kbd "M-g a")   'helm-do-grep-ag-in-frame)
 (define-key ctl-x-5-map (kbd "M-g g")   'helm-do-git-grep-in-frame)
 
-;;; Helm-command-map (C-x c)
-;;
-;;
-(define-key helm-command-map (kbd "g") 'helm-apt)
-(define-key helm-command-map (kbd "z") 'helm-complex-command-history)
-(define-key helm-command-map (kbd "I") 'helm-imenu-in-all-buffers)
-(define-key helm-command-map (kbd "@") 'helm-list-elisp-packages-no-fetch)
-
 ;;; Global-map
 ;;
 ;;
@@ -529,7 +516,6 @@ First call indent, second complete symbol, third complete fname."
 (global-set-key (kbd "C-h i")                        'helm-info)
 (global-set-key (kbd "C-x C-d")                      'helm-browse-project)
 (global-set-key (kbd "<f1>")                         'helm-resume)
-(global-set-key (kbd "C-h C-f")                      'helm-apropos)
 (global-set-key (kbd "C-h a")                        'helm-apropos)
 (global-set-key (kbd "C-h C-d")                      'helm-debug-open-last-log)
 ;; (global-set-key (kbd "<f5> s")                       'helm-find)
