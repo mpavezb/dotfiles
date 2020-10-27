@@ -40,6 +40,7 @@
 (mp/load "pkgs/buffer.el")
 (mp/load "pkgs/helm.el")
 (mp/load "pkgs/compilation.el")
+(mp/load "pkgs/shell.el")
 
 ;; = Org =
 ;; (mp/load "pkgs/org.el")
