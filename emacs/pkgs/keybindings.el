@@ -1,51 +1,57 @@
 ;; -----------------------------------------------------------------------------
-;; Keybindings
+;; Emacs Keybinding Conventions
 ;; -----------------------------------------------------------------------------
-;; Disable a keybinding:
-;;(global-set-key (kbd "<f11>") nil)
-
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Key-Binding-Conventions.html
+;;
+;; Reserved for Emacs:
+;; - F1-F4
+;; - C-x
+;;
+;; Reserved for Major Mode:
+;; - C-c C-
+;; - C-c [{,},<,>,:,;]
+;; - C-c <digit>
+;;
+;; Reserved for Minor Mode:
+;; - C-c <other-symbol>
+;;
+;; Reserved for Users:
+;; - F5-F9
+;; - C-c <letter>
+;;
+;; Don't Rebind
+;; - C-g
+;; - C-h
+;; - ESC
+;;
 
 ;; -----------------------------------------------------------------------------
 ;; Keybindings: F1 - F12
 ;; -----------------------------------------------------------------------------
-;; ##        Fi                C-Fi                S-Fi                   Fi a
-;; F1   <emacs> help                          <ubuntu> help
-;; F2   <emacs> paging
-;; F3   <emacs> macro
-;; F4   <emacs> macro
-;; F5   reset buffer
-;; F6   bookmark-jump       bookmark-set      
-;; F7
-;; F8   neotree
-;; F9   quick-compile       compile
-;; F10  <emacs> menu
-;; F11  <emacs> fullscreen
-;; F12  focus-mode
-
-;; helm-resume
-
-;; (global-set-key (kbd "<f1>") 'helm-resume)
 
 (defun mp/exec-term () (interactive) (ansi-term explicit-shell-file-name))
 (defun mp/reset-buffer () (interactive) (revert-buffer nil t nil))
 
+;; reset
+(global-set-key [f5]   'helm-resume)
+(global-set-key [C-f5] 'mp/reset-buffer)
 
-(global-set-key (kbd "<f1>") 'shell)
-(global-set-key (kbd "C-<f1>") 'mp/exec-term)
-
-(global-set-key [f5] 'mp/reset-buffer)
-
-(global-set-key [f6] 'bookmark-jump)
+;; bookmark
+(global-set-key [f6]   'bookmark-jump)
 (global-set-key [C-f6] 'bookmark-set)
 
-(global-set-key [f8] 'mp/neotree-project-dir)
+;; shell
+(global-set-key [f7]   'shell)
+(global-set-key [C-f7] 'mp/exec-term)
 
-(define-key prog-mode-map [f9] 'mp/compile-please)
+;; pair programming
+(global-set-key [f8]   'focus-mode)
+(global-set-key [C-f8] 'mp/neotree-project-dir)
+
+;; compilation
+(define-key prog-mode-map [f9]   'mp/compile-please)
 (define-key prog-mode-map [C-f9] 'compile)
 
-(global-set-key [f12] 'focus-mode)
-
-;;(global-set-key (kbd "S-<f2>")                       'helm-execute-kmacro)
 
 ;; -----------------------------------------------------------------------------
 ;; Keybindings: Remap emacs functions
