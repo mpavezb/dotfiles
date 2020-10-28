@@ -29,7 +29,7 @@
 ;; = Project =
 (mp/load "pkgs/git.el")
 (mp/load "pkgs/projectile.el")
-;; (mp/load "pkgs/neotree.el")
+(mp/load "pkgs/neotree.el")
 
 ;; = Editor =
 (mp/load "pkgs/history.el")
