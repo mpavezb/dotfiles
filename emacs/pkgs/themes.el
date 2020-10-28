@@ -97,9 +97,5 @@
       (mp/theme-load-light) 
     (mp/theme-load-dark)))
 
-;; Keybindings
-(global-set-key (kbd "C-x M-t") 'mp/theme-toggle)
-(global-set-key (kbd "C-x M-p") 'mp/theme-picker-helm)
-
 ;; Initially begin with the dark theme.
 (mp/theme-load-dark)

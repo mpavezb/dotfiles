@@ -5,7 +5,7 @@
 ;; https://github.com/jaypei/emacs-neotree
 ;; -----------------------------------------------------------------------------
 (use-package neotree 
-  :bind ([f8] . neotree-toggle) 
+  :commands (neotree-toggle)
   :config
   ;; Open neotree at current file
   (setq neo-smart-open t)
@@ -18,7 +18,7 @@
 ;; -----------------------------------------------------------------------------
 ;; Neotree - Projectile integration
 ;; -----------------------------------------------------------------------------
-;; Reset F8 keybiding, to open neotree at project root.
+;; Open neotree at project root.
 (defun mp/neotree-project-dir () 
   "Open NeoTree using the git root." 
   (interactive) 
@@ -29,7 +29,6 @@
 			(progn (neotree-dir project-dir) 
 			       (neotree-find file-name))) 
       (message "Could not find git project root."))))
-(global-set-key [f8] 'mp/neotree-project-dir)
 
 ;; Reload neotree when projectile changes project
 ;; (setq projectile-switch-project-action 'neotree-projectile-action)

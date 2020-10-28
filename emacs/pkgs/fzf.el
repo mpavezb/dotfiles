@@ -6,10 +6,8 @@
 ;; https://github.com/junegunn/fzf
 ;; -----------------------------------------------------------------------------
 (load-file (expand-file-name (concat user-emacs-directory "third_party/" "fzf.el/fzf.el")))
-(use-package fzf 
-  :bind (("C-c f f" . fzf) 
-	 ("C-c f p" . fzf-projectile) 
-	 ("C-c f d" . fzf-directory)) 
+(use-package fzf
+  :commands (fzf fzf-projectile fzf-directory)
   :config ;;
   (setq fzf/args "-x --no-hscroll --margin=0,1,1,0 --print-query")
   (setq projectile-enable-caching t)

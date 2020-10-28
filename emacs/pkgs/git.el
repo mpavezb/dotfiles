@@ -4,7 +4,7 @@
 ;; https://magit.vc/
 ;; -----------------------------------------------------------------------------
 (use-package magit 
-  :bind ("C-x g" . magit-status))
+  :commands (magit-status))
 
 ;; -----------------------------------------------------------------------------
 ;; magit-todos
@@ -26,7 +26,7 @@
 ;; https://gitlab.com/pidu/git-timemachine
 ;; -----------------------------------------------------------------------------
 (use-package git-timemachine 
-  :bind ("C-c g g" . git-timemachine))
+  :commands (git-timemachine))
 
 ;; -----------------------------------------------------------------------------
 ;; browse-at-remote
@@ -34,7 +34,7 @@
 ;; https://github.com/rmuslimov/browse-at-remote
 ;; -----------------------------------------------------------------------------
 (use-package browse-at-remote 
-  :bind ("C-c g b" . browse-at-remote) 
+  :commands (browse-at-remote)
   :config ;;
   ;; (add-to-list 'browse-at-remote-remote-type-domains '("my.domain.com" . "github"))
   ;;

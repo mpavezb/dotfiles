@@ -94,45 +94,33 @@
 
 
 ;; -----------------------------------------------------------------------------
-;; other
-;; -----------------------------------------------------------------------------
-
-;; Kill current buffer; prompt only if there are unsaved changes.
-(global-set-key (kbd "C-x k") 
-		'(lambda () 
-		   (interactive) 
-		   (kill-buffer (current-buffer))))
-
-
-;; -----------------------------------------------------------------------------
 ;; Multiple Cursors
 ;; https://github.com/magnars/multiple-cursors.el
 ;; -----------------------------------------------------------------------------
-(use-package multiple-cursors 
-  :bind (("C-S-c C-S-c" . mc/edit-lines) 
-	 ("C->" . mc/mark-next-like-this) 
-	 ("C-<" . mc/mark-previous-like-this) 
-	 ("C-c C-<" . mc/mark-all-like-this) 
-	 ("C-S-<mouse-1>" . mc/add-cursor-on-click)))
+(use-package multiple-cursors
+  :commands (mc/edit-lines
+	     mc/mark-next-like-this
+	     mc/mark-previous-like-this
+	     mc/mark-all-like-this
+	     mc/add-cursor-on-click))
 
 ;; -----------------------------------------------------------------------------
 ;; Expand Region
 ;; https://github.com/magnars/expand-region.el
 ;; -----------------------------------------------------------------------------
 (use-package expand-region 
-  :bind (("M-+" . er/expand-region) 
-	 ("M--" . er/contract-region)))
-
+  :commands (er/expand-region
+	     er/contract-region))
 
 ;; -----------------------------------------------------------------------------
 ;; focus
 ;; https://github.com/larstvei/Focus
 ;; -----------------------------------------------------------------------------
-(use-package focus 
-  :bind (("<f12>" . focus-mode)	    ;;
-	 :map focus-mode-map	    ;;
-	 ("M-p" . focus-prev-thing) ;;
-	 ("M-n" . focus-next-thing )) 
+(use-package focus
+  :commands (focus-mode)
+  :bind (:map focus-mode-map
+	      ("M-p" . focus-prev-thing)
+	      ("M-n" . focus-next-thing ))
   :config ;;
   ;; Modes inheriting prog-mode will focus on functions.
   (add-to-list 'focus-mode-to-thing '(prog-mode . defun))

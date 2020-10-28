@@ -5,7 +5,7 @@
 ;; -----------------------------------------------------------------------------
 (use-package org-journal
   :disabled
-  :bind (("C-c j" . org-journal-new-entry)) 
+  :commands (org-journal-new-entry)
   :config ;;
   (setq org-journal-dir "~/documents/journal/") 
   (setq org-journal-file-type 'monthly))

@@ -4,10 +4,7 @@
 ;; https://orgmode.org/
 ;; -----------------------------------------------------------------------------
 (use-package org
-  :bind (("C-c a" . org-agenda) 
-	 ;; ("C-c l" . org-store-link)  ;; clash with lsp mode!
-	 ;;
-	 ) 
+  :commands (org-agenda org-store-link) 
   :config
   ;; -------------------------------------
   ;; setup

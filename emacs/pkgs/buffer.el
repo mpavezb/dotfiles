@@ -24,16 +24,14 @@
 ;; buffer-move
 ;; -----------------------------------------------------------------------------
 (use-package buffer-move 
-  :bind (("C-S-<up>" . buf-move-up) 
-	 ("C-S-<down>" . buf-move-down) 
-	 ("C-S-<left>" . buf-move-left) 
-	 ("C-S-<right>" . buf-move-right)))
+  :commands (buf-move-up
+	     buf-move-down
+	     buf-move-left
+	     buf-move-right))
 
 ;; -----------------------------------------------------------------------------
 ;; ibuffer
 ;; -----------------------------------------------------------------------------
-;; (global-set-key (kbd "C-x C-b") 'ibuffer)
-;; (global-set-key (kbd "C-x C-b") 'persp-ibuffer)
 ;; (autoload 'ibuffer "ibuffer" "List buffers." t)
 
 ;; ;; nearly all of this is the default layout
@@ -48,13 +46,6 @@
 
 ;; auto reload files from disk
 (global-auto-revert-mode t)
-
-;; Reload buffer shortcut
-(global-set-key [f5] 
-		'(lambda () 
-		   (interactive) 
-		   (revert-buffer nil t nil)))
-
 
 ;; -----------------------------------------------------------------------------
 ;; put filename in clipboard

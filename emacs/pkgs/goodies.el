@@ -86,7 +86,7 @@
   :disabled 
   :init (use-package google-translate-smooth-ui 
 	  :defer) 
-  :bind ("C-c t" . google-translate-smooth-translate) 
+  :commands (google-translate-smooth-translate)
   :config ;;
 
   ;; desired translations

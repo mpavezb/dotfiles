@@ -13,7 +13,6 @@
   "Reopen the most recently killed file, if one exists." 
   (interactive) 
   (when mp/killed-file-list (find-file (pop mp/killed-file-list))))
-(global-set-key (kbd "C-x M-k") 'mp/reopen-killed-file)
 
 ;; reopen killed file from minibuffer list with autocompletion
 (defun mp/reopen-killed-file-fancy () 

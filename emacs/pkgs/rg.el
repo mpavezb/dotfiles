@@ -9,7 +9,7 @@
 ;; TODO: Configurable after/before context.
 ;; TODO: Configurable max depth.
 (use-package rg 
-  :bind ("C-c C-s" . rg-dwim-project-dir) 
+  :commands (rg-dwim-project-dir)
   :init (rg-enable-menu) 
   :config ;;
   ;; -----------------------------------

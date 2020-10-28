@@ -61,15 +61,13 @@
 ;; = Misc =
 (mp/load "pkgs/goodies.el")
 
-;; Reenabled Commands
-(put 'scroll-left 'disabled nil)
-
-;; -----------------------------------------------------------------------------
-;; Custom Commands
-;; -----------------------------------------------------------------------------
+;; = Custom Commands =
+(put 'scroll-left 'disabled nil) ;; Reenabled Command
 (mp/load "pkgs/s.el")
 (mp/load "pkgs/reopen-killed-file.el")
 
-;; must be loaded after all hooks are set.
-;; othewise hooks wont be triggered for perspective files.
+;; = Perspective must be loaded after all hooks are set =
 (mp/load "pkgs/perspective.el")
+
+;; = Keybindings =
+(mp/load "pkgs/keybindings.el")

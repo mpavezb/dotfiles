@@ -7,8 +7,7 @@
   :hook (after-init . global-company-mode) 
   :config ;;
   (setq company-minimum-prefix-length 1) 
-  (setq company-idle-delay 0.0) 
-  (global-set-key (kbd "C-<tab>") 'company-complete-common-or-cycle)
+  (setq company-idle-delay 0.0)
   ;;
   )
 
@@ -29,7 +28,6 @@
 							    try-expand-all-abbrevs
 							    try-complete-lisp-symbol-partially
 							    try-complete-lisp-symbol))
-(global-set-key (kbd "M-/") 'hippie-expand)
 
 ;; -----------------------------------------------------------------------------
 ;; company-quickhelp

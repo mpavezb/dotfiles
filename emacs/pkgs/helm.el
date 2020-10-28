@@ -142,7 +142,7 @@
 
 (use-package helm-info
   :straight nil
-  :bind ("C-h r" . helm-info-emacs))
+  :commands (helm-info-emacs))
 
 
 (use-package helm-ring
@@ -475,57 +475,8 @@ First call indent, second complete symbol, third complete fname."
 ;; Used by lsp/dap mode
 (use-package helm-xref)
 
-;;; Ctl-x-5 map
-;;
-(define-key ctl-x-5-map (kbd "C-x c t") 'helm-top-in-frame)
-(define-key ctl-x-5-map (kbd "C-x c i") 'helm-imenu-in-frame)
-(define-key ctl-x-5-map (kbd "C-x C-f") 'helm-find-files-in-frame)
-(define-key ctl-x-5-map (kbd "M-x")     'helm-M-x-in-frame)
-(define-key ctl-x-5-map (kbd "C-s")     'helm-occur-in-frame)
-(define-key ctl-x-5-map (kbd "C-x C-b") 'helm-mini-in-frame)
-(define-key ctl-x-5-map (kbd "M-g a")   'helm-do-grep-ag-in-frame)
-(define-key ctl-x-5-map (kbd "M-g g")   'helm-do-git-grep-in-frame)
-
-;;; Global-map
-;;
-;;
-;; (define-key global-map [remap execute-extended-command] #'helm-M-x) ;; is this way better?
-;; (define-key global-map [remap find-file] #'helm-find-files)         ;; is this way better?
-(global-set-key (kbd "M-x")                          'undefined)
-(global-set-key (kbd "M-x")                          'helm-M-x)
-(global-set-key (kbd "M-y")                          'helm-show-kill-ring)
-(global-set-key (kbd "C-x C-f")                      'helm-find-files)
-(global-set-key (kbd "C-x b")                        'helm-buffers-list)
-(global-set-key (kbd "C-c <SPC>")                    'helm-all-mark-rings)
-(global-set-key [remap bookmark-jump]                'helm-filtered-bookmarks)
-(global-set-key (kbd "C-:")                          'helm-eval-expression-with-eldoc)
-(global-set-key (kbd "C-,")                          'helm-calcul-expression)
-(global-set-key (kbd "C-h d")                        'helm-info-at-point)
-(global-set-key (kbd "C-h i")                        'helm-info)
-(global-set-key (kbd "C-x C-d")                      'helm-browse-project)
-(global-set-key (kbd "<f1>")                         'helm-resume)
-(global-set-key (kbd "C-h a")                        'helm-apropos)
-(global-set-key (kbd "C-h C-d")                      'helm-debug-open-last-log)
-;; (global-set-key (kbd "<f5> s")                       'helm-find)
-(global-set-key (kbd "S-<f2>")                       'helm-execute-kmacro)
-(global-set-key (kbd "C-c i")                        'helm-imenu-in-all-buffers)
-(global-set-key (kbd "C-c C-i")                      'helm-imenu)
-(global-set-key (kbd "<f11>")                        nil)
-(global-set-key (kbd "<f11> o")                      'helm-org-agenda-files-headings)
-(global-set-key (kbd "C-s")                          'helm-occur)
-(define-key global-map [remap jump-to-register]      'helm-register)
-(define-key global-map [remap list-buffers]          'helm-mini)
-(define-key global-map [remap switch-to-buffer]      'helm-mini)
-(define-key global-map [remap dabbrev-expand]        'helm-dabbrev)
-(define-key global-map (kbd "M-g a")                 'helm-do-grep-ag)
-(define-key global-map (kbd "M-g g")                 'helm-grep-do-git-grep)
-(define-key global-map (kbd "C-x r p")               'helm-projects-history)
-(define-key global-map (kbd "C-c t r")               'helm-dictionary)
-
 ;; Indent or complete with completion-at-point
 ;; (setq tab-always-indent 'complete)
-
-;; (define-key global-map (kbd "<backtab>") 'completion-at-point)
 
 ;; Minibuffer history (Rebind to M-s).
 (customize-set-variable 'helm-minibuffer-history-key [remap next-matching-history-element])

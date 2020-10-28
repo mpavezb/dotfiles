@@ -2,12 +2,6 @@
 ;; Follow files on error
 (add-hook 'compilation-mode-hook (next-error-follow-minor-mode t))
 
-;; This gives a regular `compile-command' prompt.
-(define-key prog-mode-map [C-f9] #'compile)
-
-;; This just compiles immediately.
-(define-key prog-mode-map [f9] #'mp/compile-please)
-
 ;; Dont ask about saving buffers
 (setq compilation-ask-about-save nil)
 
