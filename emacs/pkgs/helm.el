@@ -468,18 +468,6 @@ First call indent, second complete symbol, third complete fname."
   (setq helm-org-headings-fontify t))
 
 ;; -----------------------------------------------------------------------------
-;; helm-fd
-;; https://github.com/lerouxrgd/helm-fd
-;; -----------------------------------------------------------------------------
-(use-package helm-fd)
-
-;; -----------------------------------------------------------------------------
-;; helm-org
-;; https://github.com/cosmicexplorer/helm-rg
-;; -----------------------------------------------------------------------------
-(use-package helm-rg)
-
-;; -----------------------------------------------------------------------------
 ;; helm-xref
 ;; Helm interface for xref results
 ;; https://github.com/brotzeit/helm-xref
