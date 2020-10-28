@@ -191,7 +191,6 @@
   :config ;;
   (setq helm-buffers-favorite-modes (append helm-buffers-favorite-modes '(picture-mode
 										  artist-mode)))
-  (setq helm-buffers-fuzzy-matching       t)
   (setq helm-buffer-skip-remote-checking  t)
   (setq helm-buffer-max-length            60)
   (setq helm-buffers-end-truncated-string "…")
@@ -385,6 +384,18 @@
         helm-debug-root-directory                 "/tmp/helm-debug"
         helm-follow-mode-persistent               t
         helm-candidate-number-limit               500)
+
+  ;; Fuzzy Completion
+  (setq helm-recentf-fuzzy-match              t
+	helm-locate-fuzzy-match               nil ;; locate fuzzy is worthless
+	helm-M-x-fuzzy-match                  t
+	helm-buffers-fuzzy-matching           t
+	helm-semantic-fuzzy-match             t
+	helm-apropos-fuzzy-match              t
+	helm-imenu-fuzzy-match                t
+	helm-lisp-fuzzy-completion            t
+	helm-completion-in-region-fuzzy-match t)
+
   (add-to-list 'helm-sources-using-default-as-input 'helm-source-info-bash)
   (helm-define-key-with-subkeys global-map (kbd "C-c n") ?n 'helm-cycle-resume))
 
@@ -421,9 +432,7 @@
 (use-package helm-elisp
   :straight nil
   :config
-  (setq helm-show-completion-display-function #'helm-display-buffer-in-own-frame
-        helm-apropos-fuzzy-match              t
-        helm-lisp-fuzzy-completion            t)
+  (setq helm-show-completion-display-function #'helm-display-buffer-in-own-frame)
   (helm-multi-key-defun helm-multi-lisp-complete-at-point
       "Multi key function for completion in emacs lisp buffers.
 First call indent, second complete symbol, third complete fname."
@@ -439,9 +448,7 @@ First call indent, second complete symbol, third complete fname."
 ;; (<helm-prefix> l by default) is Helm’s interface to the locate command,
 ;; which finds files on your system that have been indexed with updatedb.
 (use-package helm-locate
-  :straight nil
-  :config
-  (setq helm-locate-fuzzy-match t))
+  :straight nil)
 
 (use-package helm-elisp-package
   :straight nil
