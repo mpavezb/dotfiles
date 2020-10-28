@@ -485,3 +485,9 @@ First call indent, second complete symbol, third complete fname."
 (add-to-list 'completion-ignored-extensions ".gvfs/")
 (add-to-list 'completion-ignored-extensions ".dbus/")
 (add-to-list 'completion-ignored-extensions "dconf/")
+
+(use-package helm-bookmark
+  :straight nil
+  :config ;;
+  (define-key helm-command-map (kbd "C-x r l") 'helm-bookmarks))
+(setq bookmark-save-flag 1)
