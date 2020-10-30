@@ -25,7 +25,7 @@
   :config ;;
   (zone-select-add-program 'zone-pgm-putz-with-case)
   (zone-select-add-program 'zone-pgm-paragraph-spaz)
-  (zone-select-add-program 'zone-pgm-random-life)
+  (zone-select-remove-program 'zone-pgm-random-life)
   (zone-select-remove-program 'zone-pgm-jitter)
   (zone-select-remove-program 'zone-pgm-dissolve)
   (zone-select-remove-program 'zone-pgm-whack-chars)
