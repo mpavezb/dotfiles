@@ -364,11 +364,8 @@
 ;; -----------------------------------------------------------------------------
 (use-package helm
   :config
-  (setq helm-input-idle-delay                     0.01
-        helm-reuse-last-window-split-state        t
-        helm-always-two-windows                   t
-        helm-split-window-inside-p                nil
-        helm-commands-using-frame                 '(completion-at-point
+
+  (setq helm-commands-using-frame                 '(completion-at-point
                                                     helm-apropos
                                                     helm-eshell-prompts helm-imenu
                                                     helm-imenu-in-all-buffers)
@@ -377,13 +374,26 @@
         helm-use-frame-when-dedicated-window      t
         helm-frame-background-color               "DarkSlateGray"
         helm-show-action-window-other-window      'left
-        helm-allow-mouse                          t
-        helm-move-to-line-cycle-in-source         t ;; move to end or beginning of source when reaching top or bottom of source.
-        helm-autoresize-max-height                80 ; it is %.
-        helm-autoresize-min-height                20 ; it is %.
         helm-debug-root-directory                 "/tmp/helm-debug"
         helm-follow-mode-persistent               t
         helm-candidate-number-limit               500)
+
+  ;; User Input
+  (setq helm-input-idle-delay                0.01
+        helm-allow-mouse                      nil
+	helm-move-to-line-cycle-in-source       t
+	)
+
+  ;; Search Window
+  ;; open helm buffer inside current window, don't occupy the entire other window
+  (helm-autoresize-mode -1)
+  (setq helm-always-two-windows                   t
+	helm-split-window-inside-p                nil
+	helm-reuse-last-window-split-state        t
+	helm-autoresize-max-height                80  ;; it is %.
+	helm-autoresize-min-height                20  ;; it is %.
+	)
+
 
   ;; Fuzzy Completion
   (setq helm-recentf-fuzzy-match              t
