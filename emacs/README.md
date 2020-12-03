@@ -14,3 +14,6 @@ Other .dotfiles:
 - https://github.com/ianpan870102/yay-evil-emacs
 - Helm Maintainer: https://github.com/thierryvolpiatto/emacs-tv-config
 
+## Emacs Terminology
+
+* Apropos: Look for emacs entities (commands, functions, variables, documentation, ...) matching a pattern.  https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html
