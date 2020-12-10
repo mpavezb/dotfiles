@@ -41,18 +41,18 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 ### Ubuntu Settings
 
 - **Power Settings** 
-  - > Power Saving > Blank Screen > Never
-  - (laptop) > Suspend & Power Button > Automatic Suspend > When on battery power (30 min), Plugged (NO)
+  - Power Saving > Blank Screen > Never
+  - (laptop) Suspend & Power Button > Automatic Suspend > When on battery power (30 min), Plugged (NO)
 - **Privacy Settings**
-  - > Screen Lock > Off
-  - > Problem Reporting > Sends reports automatically ON.
+  - Screen Lock > Off
+  - Problem Reporting > Sends reports automatically ON.
 - **Region & Language**
-  - > Language: English (United States)
-  - > Input Sources:
-	- Enable English and Spanish keyboards.
-	- Options: Use the same source for all windows.
+  - Language: English (United States)
+  - Input Sources:
+    - Enable English and Spanish keyboards.
+    - Options: Use the same source for all windows.
 - **Removable Media**
-  - > Never prompt or start programs on media insertion.
+  - Never prompt or start programs on media insertion.
 - **Search**: Disable: Files, Characters. TODO: calendar? calculator? passwords? terminal?
 
 
@@ -62,9 +62,9 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 sudo apt install chrome-gnome-shell gnome-tweak-tool
 ```
 **Tweaks**
-- > Top Bar > Enable Clock Date / Weekday  
-- (laptop) > Top Bar > Battery Percentage
-- > Workspaces > Static Workspaces / Number of Workspaces=9
+- Top Bar > Enable Clock Date / Weekday  
+- (laptop) Top Bar > Battery Percentage
+- Workspaces > Static Workspaces / Number of Workspaces=9
 
 **Gnome Extensions**: Enable the following extensions
 - Extensions: https://extensions.gnome.org/extension/1036/extensions/
