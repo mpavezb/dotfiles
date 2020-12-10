@@ -16,6 +16,8 @@
 
 ## Setup
 
+Most of the setup must be performed manually. Laptop or desktop specific configurations are indicated when required.
+
 ### Required Packages
 
 ```bash
@@ -25,33 +27,19 @@ sudo apt install etckeeper
 # General Tools
 sudo apt install curl apt-transport-https htop git
 
-# Desktop Settings
-sudo apt install chrome-gnome-shell gnome-tweak-tool
-
 # Development
 sudo apt install clang-format emacs shellcheck
 ```
-
-The following tools must be installed manually:
-- ripgrep: https://github.com/BurntSushi/ripgrep
-- virtualenv
-- blacken
-- bat
-- ...
 
 ### Dotfiles
 
 ```bash
 # Get
 git clone https://github.com/mpavezb/dotfiles .dotfiles
-
-# XDG user dirs
-bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
 ```
 
-### Manual Setup
+### Ubuntu Settings
 
-These setting procedures must be performed manually. Laptop or desktop specific configurations are indicated when required:
 - **Power Settings** 
   - > Power Saving > Blank Screen > Never
   - (laptop) > Suspend & Power Button > Automatic Suspend > When on battery power (30 min), Plugged (NO)
@@ -67,21 +55,44 @@ These setting procedures must be performed manually. Laptop or desktop specific 
   - > Never prompt or start programs on media insertion.
 - **Search**: Disable: Files, Characters. TODO: calendar? calculator? passwords? terminal?
 
+
+### Tweaks and Extensions
+
+```bash
+sudo apt install chrome-gnome-shell gnome-tweak-tool
+```
+**Tweaks**
+- > Top Bar > Enable Clock Date / Weekday  
+- (laptop) > Top Bar > Battery Percentage
+- > Workspaces > Static Workspaces / Number of Workspaces=9
+
+**Gnome Extensions**: Enable the following extensions
+- Extensions: https://extensions.gnome.org/extension/1036/extensions/
+- Desktop Icons (native):
+  - Show Home, Hide other.
+- Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
+- Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
+  - Set workspaces to 9.
+- Sound Output Device Chooser: https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+- Open Weather: https://extensions.gnome.org/extension/750/openweather/
+  - Set City and units.
+- Bluetooth Quick Connect: https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
+
+
+### Misc Settings
+
+```bash
+# XDG user dirs
+bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
+```
+
 These other setup procedures are also not yet automated:
 - **Disable Terminal Bell**: Terminal > Edit > Preference: Uncheck Terminal Bell.
-- **gnome tweak tool**
-  - Desktop -> Home, Mounted Volumes
-  - Top Bar -> Enable Clock Date
 - **Nautilus Markers**: Add markers to important folders
   - workspaces
   - downloads
   - documents
   - HDDs
-- **Gnome Extensions**: Enable the following extensions
-  - Extensions: https://extensions.gnome.org/extension/1036/extensions/
-  - Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
-  - Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
-  - Sound Output Device Chooser: https://extensions.gnome.org/extension/906/sound-output-device-chooser/
 
 ## Applications
 
@@ -92,7 +103,15 @@ These applications must be installed manually:
 - Spotify: https://www.spotify.com/us/download/linux/
 - Sublime Text 3: https://www.sublimetext.com/3
 
-Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to make ensure no broken deps.
+Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to ensure no broken deps.
+
+TODO:
+- fzf
+- ripgrep: https://github.com/BurntSushi/ripgrep
+- virtualenv
+- blacken
+- bat
+- ...
 
 ### TODO: Default applications
 
