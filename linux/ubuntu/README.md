@@ -84,9 +84,15 @@ sudo apt install chrome-gnome-shell gnome-tweak-tool
 
 ### Misc Settings
 
+Hide default folders in home into `.ubuntu/` folder. This requires logging out and then removing the `~/Desktop` folder by hand.
 ```bash
 # XDG user dirs
 bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
+```
+
+Hide remaining folders in home using the `.hidden` file. More info in [this thread](https://askubuntu.com/a/882622):
+```bash
+echo "snap" >> ~/.hidden
 ```
 
 These other setup procedures are also not yet automated:
