@@ -51,9 +51,10 @@ bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
 
 ### Manual Setup
 
-These setting procedures must be performed manually:
+These setting procedures must be performed manually. Laptop or desktop specific configurations are indicated when required:
 - **Power Settings** 
   - > Power Saving > Blank Screen > Never
+  - (laptop) > Suspend & Power Button > Automatic Suspend > When on battery power (30 min), Plugged (NO)
 - **Privacy Settings**
   - > Screen Lock > Off
   - > Problem Reporting > Sends reports automatically ON.
@@ -62,7 +63,9 @@ These setting procedures must be performed manually:
   - > Input Sources:
 	- Enable English and Spanish keyboards.
 	- Options: Use the same source for all windows.
-- **Search**: Disable Ubuntu Software.	
+- **Removable Media**
+  - > Never prompt or start programs on media insertion.
+- **Search**: Disable: Files, Characters. TODO: calendar? calculator? passwords? terminal?
 
 These other setup procedures are also not yet automated:
 - **Disable Terminal Bell**: Terminal > Edit > Preference: Uncheck Terminal Bell.
@@ -90,6 +93,8 @@ These applications must be installed manually:
 - Sublime Text 3: https://www.sublimetext.com/3
 
 Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to make ensure no broken deps.
+
+### TODO: Default applications
 
 ## Troubleshooting
 
