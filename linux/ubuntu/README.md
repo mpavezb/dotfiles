@@ -11,7 +11,7 @@
 
 - Network: Wifi/Eth
 - Audio: Speakers/Headset/Mic
-- Other: Brightness, Battery, Touchpad, Mouse
+- Other: Brightness, Battery, Touchpad, Mouse, Webcam
 - Dual-Boot: Does this affect other checks?
 
 ## Setup
