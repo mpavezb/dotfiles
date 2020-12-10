@@ -13,6 +13,7 @@ bash "${DIR}"/config_local.bash
 echo ""
 
 echo "> Add symlink: ~/.local/bin/format_branch_files.sh"
+mkdir -p "${HOME}"/.local/bin/
 ln -sf "${DIR}"/format_branch_files.sh "${HOME}"/.local/bin/
 echo ""
 
