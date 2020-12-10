@@ -1,4 +1,8 @@
 #!/bin/bash
+# 
+# Usage:
+# $ cd <this-directory> # (IMPORTANT!)
+# $ bash StylishDark.bash
 
 # Check root access
 ROOT_UID=0
