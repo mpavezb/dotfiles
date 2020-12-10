@@ -16,31 +16,40 @@
 
 ## Setup
 
-### Automated Setup
-
-The following operations allow for automated setup
+### Required Packages
 
 ```bash
-# Dependencies
-# Support Tools
-sudo apt install curl apt-transport-https htop
+# Record system changes
+sudo apt install etckeeper
 
-# Desktop
+# General Tools
+sudo apt install curl apt-transport-https htop git
+
+# Desktop Settings
 sudo apt install chrome-gnome-shell gnome-tweak-tool
 
 # Development
-sudo apt install clang-format git emacs shellcheck
-# TODO blacken
-# TODO virtualenv
+sudo apt install clang-format emacs shellcheck
+```
+
+The following tools must be installed manually:
+- ripgrep: https://github.com/BurntSushi/ripgrep
+- virtualenv
+- blacken
+- bat
+- ...
+
+### Dotfiles
+
+```bash
+# Get
+git clone https://github.com/mpavezb/dotfiles .dotfiles
 
 # XDG user dirs
 bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
 ```
 
 ### Manual Setup
-
-The following tools must be installed manually:
-- ripgrep: https://github.com/BurntSushi/ripgrep
 
 These setting procedures must be performed manually:
 - **Power Settings** 
