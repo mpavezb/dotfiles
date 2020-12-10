@@ -99,14 +99,19 @@ These other setup procedures are also not yet automated:
 
 ## Applications
 
-These applications must be installed manually:
+Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to ensure no broken deps.
+
+### User Applications
+
 - Discord: https://discord.com/download
 - Inkdrop: https://my.inkdrop.app/download
 - Skype: https://www.skype.com/en/get-skype/
 - Spotify: https://www.spotify.com/us/download/linux/
 - Sublime Text 3: https://www.sublimetext.com/3
 
-Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to ensure no broken deps.
+### Tools
+
+- Howdy: https://github.com/boltgolt/howdy (face recognition based login).
 
 TODO:
 - fzf
@@ -116,7 +121,6 @@ TODO:
 - bat
 - ...
 
-### TODO: Default applications
 
 ## Troubleshooting
 
