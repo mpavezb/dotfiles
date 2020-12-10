@@ -2,46 +2,23 @@
 
 ## Overview
 
-- [Install](#install)
+- [Health Check](#health-check)
 - [Setup](#setup)
 - [Applications](#applications)
+- [Troubleshooting](#troubleshooting)
 
-## Install
+## Health Check
 
-### grub-repair
-
-First, install both Windows and Linux and modify the BIOS to only allow UEFI boots.
-
-Boot from a linux live CD, install boot-repair and use it.
-
-```bash
-sudo add-apt-repository ppa:yannubuntu/boot-repair
-sudo apt-get update
-sudo apt install  boot-repair
-boot-repair
-```
-
-### NVidia
-
-```bash
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt-get update
-sudo apt install nvidia-driver-440 nvidia-settings
-```
-
-### Xorg
-
-Check for Xorg login errors:
-
-```bash
-cat ~/.local/share/xorg/Xorg.0.log | grep EE
-```
+- Network: Wifi/Eth
+- Audio: Speakers/Headset/Mic
+- Other: Brightness, Battery, Touchpad, Mouse
+- Dual-Boot: Does this affect other checks?
 
 ## Setup
 
 ### Automated Setup
 
-The following operations allows for automated setup
+The following operations allow for automated setup
 
 ```bash
 # Dependencies
@@ -104,3 +81,34 @@ These applications must be installed manually:
 - Sublime Text 3: https://www.sublimetext.com/3
 
 Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to make ensure no broken deps.
+
+## Troubleshooting
+
+### grub-repair
+
+First, install both Windows and Linux and modify the BIOS to only allow UEFI boots.
+
+Boot from a linux live CD, install boot-repair and use it.
+
+```bash
+sudo add-apt-repository ppa:yannubuntu/boot-repair
+sudo apt-get update
+sudo apt install  boot-repair
+boot-repair
+```
+
+### nvidia
+
+```bash
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt install nvidia-driver-440 nvidia-settings
+```
+
+### Xorg
+
+Check for Xorg login errors:
+
+```bash
+cat ~/.local/share/xorg/Xorg.0.log | grep EE
+```
