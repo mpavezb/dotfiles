@@ -13,12 +13,12 @@ cd emacs
 git checkout feature/native-comp
 
 # Usual deps
-sudo apt-get install build-essential
-sudo apt-get build-dep emacs
-sudo apt-get install libacl1-dev libncurses5-dev libxpm-dev libgnutls28-dev texinfo gsfonts-x11 git
+sudo apt install build-essential
+sudo apt build-dep emacs # This requires enabling "source code" on Software & Updates.  
+sudo apt install libacl1-dev libncurses5-dev libxpm-dev libgnutls28-dev texinfo gsfonts-x11 git
 
 # gcc-10
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test && sudo apt-get update
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test && sudo apt-get update # < 20.04
 sudo apt-get install gcc-10 libgccjit0 libgccjit-10-dev
 
 # libjansson-dev
@@ -51,6 +51,7 @@ cp ~/.dotfiles/emacs/emacs.desktop ~/.local/share/applications/
 Dependencies:
 ```bash
 # Bash
+sudo apt install npm
 npm i -g bash-language-server
 
 # CMake
