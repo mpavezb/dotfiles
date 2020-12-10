@@ -77,6 +77,9 @@ sudo apt install chrome-gnome-shell gnome-tweak-tool
 - Open Weather: https://extensions.gnome.org/extension/750/openweather/
   - Set City and units.
 - Bluetooth Quick Connect: https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
+- Dash to Dock: https://extensions.gnome.org/extension/307/dash-to-dock/
+  - Position and Size > Position on screen: bottom.
+  - Launchers > Show Trash Can [NO].
 
 
 ### Misc Settings
