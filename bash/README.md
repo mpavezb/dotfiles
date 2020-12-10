@@ -15,7 +15,7 @@ Dependencies are optional. They are loaded if found.
 
 Copy the following snippets into the initialization files:
 ```bash
-## ~/.profile
+## ~/.profile - Append/Replace
 ## -----------------------------------------------
 ## mpavezb dotfiles
 if [ -f ~/.dotfiles/bash/init/profile.sh ]; then
@@ -23,14 +23,14 @@ if [ -f ~/.dotfiles/bash/init/profile.sh ]; then
 fi
 ## -----------------------------------------------
 
-## ~/.bash_profile
+## ~/.bash_profile - Append/Replace
 ## -----------------------------------------------
 ## mpavezb dotfiles
 ## Let ~/.profile handle the initialization.
 [[ -f ~/.profile ]] && source ~/.profile
 ## -----------------------------------------------
 
-## ~/.bashrc
+## ~/.bashrc - Append to the end,
 ## -----------------------------------------------
 ## mpavezb dotfiles
 if [ -f ~/.dotfiles/bash/bashrc.bash ]; then
@@ -48,9 +48,9 @@ This enables the following:
 - FZF
 - BAT
 
-Run the following script to copy profile and logout rc files.
+Run the following script to copy remaining rc files.
 ```bash
-bash setup.bash
+bash ~/.dotfiles/bash/setup.bash
 ```
 
 ## Initialization Files
