@@ -26,6 +26,7 @@ sudo apt install etckeeper
 
 # General Tools
 sudo apt install curl apt-transport-https htop git
+sudo apt install imagemagick nautilus-image-converter
 
 # Development
 sudo apt install clang-format emacs shellcheck
