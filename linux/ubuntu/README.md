@@ -26,7 +26,22 @@ sudo apt install etckeeper
 
 # General Tools
 sudo apt install curl apt-transport-https htop git
-sudo apt install imagemagick nautilus-image-converter
+
+# media
+sudo apt install vlc ubuntu-restricted-extras imagemagick nautilus-image-converter
+
+# archive
+sudo apt install rar unrar p7zip-full p7zip-rar
+
+# battery life
+# https://linrunner.de/tlp/index.html
+sudo apt install tlp tlp-rdw
+
+# tweaks
+sudo apt install chrome-gnome-shell gnome-tweak-tool
+
+# Other Good to Have
+sudo apt install gparted synaptic
 
 # Development
 sudo apt install clang-format emacs shellcheck
@@ -46,7 +61,7 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
   - (laptop) Suspend & Power Button > Automatic Suspend > When on battery power (30 min), Plugged (NO)
 - **Privacy Settings**
   - Screen Lock > Off
-  - Problem Reporting > Sends reports automatically ON.
+  - Problem Reporting > Sends reports automatically > ON.
 - **Region & Language**
   - Language: English (United States)
   - Input Sources:
@@ -54,14 +69,16 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
     - Options: Use the same source for all windows.
 - **Removable Media**
   - Never prompt or start programs on media insertion.
-- **Search**: Disable: Files, Characters. TODO: calendar? calculator? passwords? terminal?
-
+- **Search**:
+  - Disable All but Calculator and Applications (implicit).
+- **Date & Time**
+  - Automatic Date & Time > ON.
+  - Automatic Time Zone > ON.
+- **Displays**:
+  - Night Light > ON
 
 ### Tweaks and Extensions
 
-```bash
-sudo apt install chrome-gnome-shell gnome-tweak-tool
-```
 **Tweaks**
 - Top Bar > Enable Clock Date / Weekday  
 - (laptop) Top Bar > Battery Percentage
@@ -82,6 +99,12 @@ sudo apt install chrome-gnome-shell gnome-tweak-tool
   - Position and Size > Position on screen: bottom.
   - Launchers > Show Trash Can [NO].
 
+**DNS**: Set up manual google DNS for every connection.
+- Connection > IPV4 > Automatic (false) > 8.8.8.8,8.8.4.4
+
+**Firefox**:
+- Enable GPU usage: about:config > layers.acceleration.force-enabled > TRUE
+- Web Rendering: about:config > gfx.webrender.all
 
 ### Misc Settings
 
