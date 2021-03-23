@@ -3,7 +3,8 @@
 ## Resources
 
 Documentation:
-- [Installation](doc/installation.md)
+- [Installation for Linux](doc/installation.md)
+- [Installation for Windows](doc/installation_windows.md)
 - [IDE Features](doc/ide.md)
 - [Cheatsheet](doc/cheatsheet.md)
 - [Profiling](doc/profiling.md)

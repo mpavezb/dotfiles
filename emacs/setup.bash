@@ -2,7 +2,7 @@
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 
-echo "== Emacs settings installer === "
+echo "== Emacs settings installer =="
 
 echo " - Creating '$HOME/.emacs.d/' dir."
 mkdir -p "${HOME}/.emacs.d/"

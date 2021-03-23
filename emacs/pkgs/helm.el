@@ -5,6 +5,7 @@
 ;; -----------------------------------------------------------------------------
 ;; Based on: https://github.com/thierryvolpiatto/emacs-tv-config/blob/ce165bec3596f494a021076385c9edf3e7894506/init-helm.el
 ;; See also: https://github.com/davidlandry93/helm-ros
+(straight-use-package 'helm)
 (require 'helm-config)
 (require 'helm-mode)
 (require 'helm-adaptive)
