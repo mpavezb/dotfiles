@@ -19,19 +19,8 @@
 (mp/load "pkgs/packages.el")
 (mp/load "pkgs/files.el")
 
-;; = GUI =
-(mp/load "pkgs/gui.el")
-(mp/load "pkgs/uniquify.el")
-(mp/load "pkgs/doom-modeline.el")
-(mp/load "pkgs/themes.el")
-(mp/load "pkgs/dashboard.el")
-
-;; = Project =
-(mp/load "pkgs/git.el")
-(mp/load "pkgs/projectile.el")
-(mp/load "pkgs/neotree.el")
-
 ;; = Editor =
+(mp/load "pkgs/git.el")
 (mp/load "pkgs/history.el")
 (mp/load "pkgs/dired.el")
 (mp/load "pkgs/editor.el")
@@ -41,6 +30,17 @@
 (mp/load "pkgs/helm.el")
 (mp/load "pkgs/compilation.el")
 (mp/load "pkgs/shell.el")
+
+;; = Project =
+(mp/load "pkgs/projectile.el")
+(mp/load "pkgs/neotree.el")
+
+;; = GUI =
+(mp/load "pkgs/gui.el")
+(mp/load "pkgs/uniquify.el")
+(mp/load "pkgs/doom-modeline.el")
+(mp/load "pkgs/themes.el")
+(mp/load "pkgs/dashboard.el")
 
 ;; = Org =
 ;; (mp/load "pkgs/org.el")

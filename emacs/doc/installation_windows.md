@@ -33,18 +33,29 @@ FZF, RG:
 - Put them somewhere in the Path (e.g., `%HOMEPATH%\.opt\bin`).
 - WIP, both are still broken.
 
-Helm:
-- If helm fails to clone (or any other repo) due to timeout, then try increasing the http buffer sizes:
-	- `git config --global http.postBuffer 500M`
-	- `git config --global http.maxRequestBuffer 100M`
-	- `git config --global core.compression 0`
-- Or the https ones:
-	- `git config --global https.postBuffer 500M`
-	- `git config --global https.maxRequestBuffer 100M`
-	- `git config --global core.compression 0`
 
-TODO:
-- Themes requires Helm before it is installed
+## TODO:
+
 - Native Compilation
 - C++ IDE
-- Markdown Mode requires /usr/bin/pandoc
+  - Markdown Mode requires /usr/bin/pandoc
+
+
+## Troubleshooting
+
+Failed to clone repository:
+- Big repositories might have problems to clone due to timeout (e.g., Helm, lsp).
+- Try increasing the http/https buffer sizes:
+
+```bash
+# http
+git config --global http.postBuffer 500M
+git config --global http.maxRequestBuffer 100M
+
+# https
+git config --global https.postBuffer 500M
+git config --global https.maxRequestBuffer 100M
+
+# compression
+git config --global core.compression 0
+```
