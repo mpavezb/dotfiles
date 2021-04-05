@@ -28,7 +28,7 @@ export CC="gcc-10"
 
 # Configure
 ./autogen.sh
-./configure --prefix=$HOME/.local --with-nativecomp --with-mailutils
+./configure --prefix=$HOME/.local --with-native-compilation
 
 # Compile and Test
 make -j<NCORES>
