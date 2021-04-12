@@ -48,7 +48,7 @@
 
 ;; = Languages =
 (mp/load "lang/ide.el")
-;; (mp/load "lang/bazel.el")
+(mp/load "lang/bazel.el")
 (mp/load "lang/cpp.el")
 (mp/load "lang/lisp.el")
 (mp/load "lang/python.el")

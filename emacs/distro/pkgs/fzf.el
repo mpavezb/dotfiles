@@ -6,7 +6,7 @@
 ;; https://github.com/junegunn/fzf (tool)
 ;; -----------------------------------------------------------------------------
 (use-package fzf
-   :disabled ;; Broken on Windows
+   ;; :disabled ;; Broken on Windows
    :straight (fzf :type git :host github :repo "bling/fzf.el"
                       :fork (:host github
 				   :repo "mpavezb/fzf.el"))

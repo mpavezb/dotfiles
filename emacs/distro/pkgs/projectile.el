@@ -17,7 +17,6 @@
 ;; helm-projectile
 ;; https://github.com/bbatsov/helm-projectile
 ;; -----------------------------------------------------------------------------
-;; TODO: Requires installing helm
 (use-package helm-projectile 
   :after (helm projectile) 
   :config ;;

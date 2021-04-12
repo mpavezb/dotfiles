@@ -40,11 +40,10 @@ make clean
 make distclean
 ```
 
-Finally, create the application icon:
-```bash
-# File assumes the user is 'mpavezb', modify accordingly.
-cp ~/.dotfiles/emacs/emacs.desktop ~/.local/share/applications/
-```
+## Bootloader
+
+See the [bootloader](boot/BOOT.md) instructions.
+
 
 ## Setting up emacs configurations
 

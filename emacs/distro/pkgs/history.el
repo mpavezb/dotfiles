@@ -3,7 +3,7 @@
 ;; -----------------------------------------------------------------------------
 (use-package savehist
   :init
-  (setq savehist-file "~/.emacs.d/var/savehist.el")
+  ;;(setq savehist-file (concat no-littering-var-directory "savehist.el"))
   :config ;;
   (setq history-length 1000)
   (setq savehist-save-minibuffer-history t)

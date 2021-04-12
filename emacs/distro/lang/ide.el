@@ -51,7 +51,7 @@
   ;;
   ;; C++
   (add-hook 'c++-mode-hook (lambda () 
-			     (setq flycheck-gcc-language-standard "c++11"))))
+			     (setq flycheck-gcc-language-standard "c++14"))))
 
 ;; -----------------------------------------------------------------------------
 ;; lsp-mode

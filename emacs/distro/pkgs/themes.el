@@ -59,7 +59,6 @@
 (defun mp/theme-picker--prompt () 
   (format "(Initial Theme: %s) Pattern: " (mp/theme-picker--get-current-theme)))
 
-;; TODO: Requires installing helm
 (with-eval-after-load 'helm
   (defvar mp/theme-picker--helm-source 
     (helm-build-sync-source "Theme List" 
