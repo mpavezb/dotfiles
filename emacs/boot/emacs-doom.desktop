@@ -1,8 +1,8 @@
 [Desktop Entry]
-Name=GccEmacs 28
+Name=Emacs Doom
 GenericName=Text Editor
 Comment=The Extensible Text Editor
-Exec=/home/mpavezb/.local/bin/emacs
+Exec=/home/mpavezb/.local/bin/emacs --with-profile doom
 Icon=/home/mpavezb/.local/share/icons/hicolor/128x128/apps/emacs.png
 Type=Application
 Terminal=false

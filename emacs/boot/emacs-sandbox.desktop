@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Emacs Sandbox
+GenericName=Text Editor
+Comment=The Extensible Text Editor
+Exec=/home/mpavezb/.local/bin/emacs --with-profile sandbox
+Icon=/home/mpavezb/.local/share/icons/hicolor/128x128/apps/emacs.png
+Type=Application
+Terminal=false
+Categories=Development;TextEditor;
+StartupWMClass=Emacs
+Keywords=Text;Editor;Lisp;

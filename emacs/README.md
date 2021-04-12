@@ -1,13 +1,25 @@
 # Emacs
 
-## Resources
+## Documentation
 
-Documentation:
-- [Installation for Linux](doc/installation.md)
-- [Installation for Windows](doc/installation_windows.md)
+- [Installation Guide](INSTALL.md)
 - [IDE Features](doc/ide.md)
 - [Cheatsheet](doc/cheatsheet.md)
 - [Profiling](doc/profiling.md)
+- [Troubleshooting](doc/troubleshooting.md)
+
+
+## File Structure
+
+```bash
+boot/      # Bootloader
+distro/    # Same as .emacs.d/
+doc/       # Documentation
+install/   # Installation
+test/      # Test suite
+```
+
+## Resources
 
 Other .dotfiles:
 - https://lupan.pl/dotemacs/
@@ -15,6 +27,3 @@ Other .dotfiles:
 - https://github.com/ianpan870102/yay-evil-emacs
 - Helm Maintainer: https://github.com/thierryvolpiatto/emacs-tv-config
 
-## Emacs Terminology
-
-* Apropos: Look for emacs entities (commands, functions, variables, documentation, ...) matching a pattern.  https://www.gnu.org/software/emacs/manual/html_node/emacs/Apropos.html

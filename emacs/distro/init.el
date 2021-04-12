@@ -4,15 +4,15 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defvar mp/emacs-dir
-  (concat user-emacs-directory "mp/")
+  (concat user-emacs-directory "distro/")
   "Returns mp emacs directory.")
 
 (defun mp/emacs-file (@filename) 
-  "Returns path to mp emacs file."
+  "Returns path to distro emacs file."
   (concat mp/emacs-dir @filename))
 
 (defun mp/load (@settings-file) 
-  "Loads the given file from the mp/ folder"
+  "Loads the given file from the distro/ folder"
   (load (mp/emacs-file @settings-file)))
 
 ;; = System =
