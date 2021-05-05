@@ -13,11 +13,11 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+# font pango:monospace 8
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -185,3 +185,23 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 }
+
+
+# bindsym $mod+Shift+x exec i3lock
+
+# # No i3 bar!. We use the polybar instead.
+# #bar { }
+
+# # In i3, '--no-startup-id disables startup notifications for
+# # this window. They are used to properly launch windows on the
+# # right workspace when starting and to display an hourglass 
+# # mouse pointer while startup is in progress. In this case you’d
+# # end up with an hourglass mouse pointer for 60 seconds.
+
+
+# # keyboard layout
+# # bindsym $mod+space+3 exec setxkbmap de
+# exec_always "setxkbmap -option 'grp:win_space_toggle' -layout us,es"
+
+# # polybar
+# exec_always --no-startup-id $HOME/.config/polybar/launch.bash

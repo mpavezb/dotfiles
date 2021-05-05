@@ -10,8 +10,11 @@ sudo apt-install playerctl
 
 ## Configuration
 
-
 ```bash
+mkdir -p ~/.config/i3/
+cd       ~/.config/i3/
+
+ln -sf ~/.dotfiles/linux/i3/config
 ```
 
 ## TODO
