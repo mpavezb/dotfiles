@@ -1,11 +1,11 @@
 # i3
 
-
 ## Install
 
 ```bash
 sudo apt-install i3
 sudo apt-install i3lock
+sudo apt-install playerctl
 ```
 
 ## Configuration
@@ -16,6 +16,7 @@ sudo apt-install i3lock
 
 ## TODO
 
+Important:
 - Assign icons to WS
 - Assign apps to ws:
 	- Layout:
@@ -36,6 +37,9 @@ sudo apt-install i3lock
 	- https://askubuntu.com/questions/14077/how-can-i-change-the-default-audio-device-from-command-line
 - network manager
 - calendar
+
+Bugs:
+- playerctl stop/play affects youtube instead of spotify
 
 ## Shortcuts
 
