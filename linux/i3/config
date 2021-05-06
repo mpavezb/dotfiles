@@ -9,15 +9,8 @@
 # set windows key as modifier
 set $mod Mod4
 
-# start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
 # kill focused window
 bindsym $mod+Shift+q kill
-
-# dmenu (program launcher)
-# bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -25,15 +18,26 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
 
 # ==============================================================================
 # Look and Feel
 # ==============================================================================
 font pango:Cousine, FontAwesome 10
 hide_edge_borders both
+
+set $bg-color 	         #2f343f
+set $inactive-bg-color   #2f343f
+set $text-color          #f3f4f5
+set $inactive-text-color #676E7D
+set $urgent-bg-color     #E53935
+
+# window colors
+#                       border              background         text                 indicator
+client.focused          $bg-color           $bg-color          $text-color          #00ff00
+client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
+client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
+
 
 
 # ==============================================================================
@@ -157,6 +161,16 @@ exec_always i3-msg 'rename workspace 1 to $ws1'
 exec_always i3-msg 'rename workspace 2 to $ws2'
 exec_always i3-msg 'rename workspace 3 to $ws3'
 
+# TODO
+# # workspace default monitors
+# workspace $workspace1 output DVI-I-2
+# workspace $workspace2 output DVI-I-2
+# workspace $workspace3 output DVI-I-2
+# workspace $workspace4 output DVI-I-2
+# workspace $workspace5 output DVI-I-2
+# workspace $workspace6 output DVI-I-2
+# workspace $workspace9 output DVI-I-2
+# workspace $workspace10 output DVI-I-2
 
 # ==============================================================================
 # Services
@@ -174,19 +188,36 @@ exec --no-startup-id nm-applet
 
 # Media Keys.
 set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +10%   && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   -10%   && $refresh_i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   +5%    && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@   -5%    && $refresh_i3status
 bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@   toggle && $refresh_i3status
 bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 bindsym XF86AudioPlay        exec --no-startup-id playerctl play-pause
-bindsym XF86AudioPause       exec --no-startup-id playerctl pause
+bindsym XF86AudioPause       exec --no-startup-id playerctl play-pause
 bindsym XF86AudioNext        exec --no-startup-id playerctl next
 bindsym XF86AudioPrev        exec --no-startup-id playerctl previous
 
+bindsym Print       exec Screenshot
+bindsym Shift+Print exec Screenshot
+
 # Bar
 bar {
-  status_command i3status
+  # status_command i3status
+  status_command i3blocks -c /home/mpavezb/.dotfiles/linux/i3/i3blocks.conf
+  colors {
+    background $bg-color
+    separator  #757575
+    #                  border             background         text
+    focused_workspace  $bg-color          $bg-color          $text-color
+    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
+    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+  }
+  position top
 }
+
+# # No i3 bar!. We use the polybar instead.
+# #bar { }
+# exec_always --no-startup-id $HOME/.config/polybar/launch.bash
 
 # wallpaper
 exec_always --no-startup-id feh --bg-scale ~/.ubuntu/Pictures/background/wallpaper_001.png
@@ -194,6 +225,22 @@ exec_always --no-startup-id feh --bg-scale ~/.ubuntu/Pictures/background/wallpap
 # keyboard layout
 # # bindsym $mod+space+3 exec setxkbmap de
 exec_always "setxkbmap -option 'grp:win_space_toggle' -layout us,es"
+
+
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# dmenu (program launcher)
+# bindsym $mod+d exec dmenu_run
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# bindsym $mod+d exec rofi -show drun -lines 3 -eh 2 -width 100 -padding 800 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+bindsym $mod+d exec rofi -show drun  #-bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd"
+
+# window composer: transparency and transicion effects
+exec --no-startup-id compton -f
+
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # ==============================================================================
 # Applications
@@ -207,12 +254,14 @@ for_window [class="Spotify"] move container to workspace number $ws9
 exec --no-startup-id spotify
 exec --no-startup-id firefox
 
+# keybindings
+bindsym $mod+Shift+s exec spotify
+bindsym $mod+Shift+f exec firefox
+
+
+# floating
+# for_window [class="Pavucontrol"] floating enable
+# for_window [class="Skype"] floating enable
+
 # TODO:
 # exec_always emacs
-
-
-# # No i3 bar!. We use the polybar instead.
-# #bar { }
-
-# # polybar
-# exec_always --no-startup-id $HOME/.config/polybar/launch.bash

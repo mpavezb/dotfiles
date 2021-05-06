@@ -4,6 +4,7 @@
 
 - i3: https://i3wm.org/docs/
 - Playerctl : https://github.com/altdesktop/playerctl
+- rofi: https://github.com/davatorium/rofi
 - Images:
   - https://unsplash.com/
   - http://simpledesktops.com/
@@ -16,6 +17,9 @@ sudo apt install i3lock
 sudo apt install playerctl  # media player control
 sudo apt install feh        # background
 sudo apt install arandr     # display configuration
+sudo apt install rofi       # dmenu replacement
+sudo apt install compton    # allow transparent windows
+sudo apt install i3blocks   # status bar
 ```
 
 ## Configuration
@@ -62,7 +66,7 @@ Important:
 - Move workspace to screen.
 - Background
 - Gnome extensions like features: Check.
-- i3lock
+- Better lock screen: www.reddit.com%2Fr%2Funixporn%2Fcomments%2F3358vu%2Fi3lock_unixpornworthy_lock_screen
 - sound device chooser
 - sound configuration:
 	- https://askubuntu.com/questions/14077/how-can-i-change-the-default-audio-device-from-command-line
