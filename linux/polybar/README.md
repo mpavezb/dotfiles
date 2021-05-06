@@ -105,6 +105,7 @@ sudo make install
 mkdir -p ~/.config/polybar/
 cd       ~/.config/polybar/
 ln -sf   ~/.dotfiles/linux/polybar/polybar.cfg config
+ln -sf   ~/.dotfiles/linux/polybar/launch.bash launch.bash
 ```
 
 

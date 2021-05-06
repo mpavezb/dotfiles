@@ -200,32 +200,18 @@ bindsym XF86AudioPrev        exec --no-startup-id playerctl previous
 bindsym Print       exec Screenshot
 bindsym Shift+Print exec Screenshot
 
-# Bar
-bar {
-  # status_command i3status
-  status_command i3blocks -c /home/mpavezb/.dotfiles/linux/i3/i3blocks.conf
-  colors {
-    background $bg-color
-    separator  #757575
-    #                  border             background         text
-    focused_workspace  $bg-color          $bg-color          $text-color
-    inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-    urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-  }
-  position top
-}
-
-# # No i3 bar!. We use the polybar instead.
-# #bar { }
-# exec_always --no-startup-id $HOME/.config/polybar/launch.bash
+# Status Bar
+# bar { }
+exec_always --no-startup-id $HOME/.config/polybar/launch.bash
 
 # wallpaper
 exec_always --no-startup-id feh --bg-scale ~/.ubuntu/Pictures/background/wallpaper_001.png
 
-# keyboard layout
-# # bindsym $mod+space+3 exec setxkbmap de
+# keyboard layout toggle
 exec_always "setxkbmap -option 'grp:win_space_toggle' -layout us,es"
 
+# window composer: transparency and transition effects
+exec --no-startup-id compton -f
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
@@ -234,9 +220,6 @@ bindsym $mod+Return exec i3-sensible-terminal
 # bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec rofi -show drun
-
-# window composer: transparency and transicion effects
-exec --no-startup-id compton -f
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
@@ -256,7 +239,6 @@ exec --no-startup-id firefox
 # keybindings
 bindsym $mod+Shift+s exec spotify
 bindsym $mod+Shift+f exec firefox
-
 
 # floating
 # for_window [class="Pavucontrol"] floating enable
