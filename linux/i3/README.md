@@ -27,6 +27,20 @@ cd       ~/.config/i3/
 ln -sf ~/.dotfiles/linux/i3/config
 ```
 
+### Displays
+
+Use `arandr` (GUI tool for `xrandr`) to generate a valid `xrandr` configuration.
+Save the configuration to a file and copy the generated command into the i3 config file as: `exec_always xrandr ...`.
+
+### Bind application to workspace
+
+1. Open desired application.
+2. Open terminal and run `xprop`.
+3. Click desired application.
+4. Copy the value of the `WM_CLASS` key.
+5. Put in config: `assign [class="..."] $ws1`
+
+
 ## TODO
 
 Important:

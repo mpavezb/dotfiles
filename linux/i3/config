@@ -194,6 +194,13 @@ bar {
 
 
 # bindsym $mod+Shift+x exec i3lock
+assign [class="Firefox"] $ws1
+assign [class="Gnome-terminal"] $ws2
+for_window [class="Spotify"] move container to workspace number $ws9
+
+exec --no-startup-id spotify
+exec --no-startup-id firefox
+exec --no-startup-id gnome-terminal
 
 # # No i3 bar!. We use the polybar instead.
 # #bar { }
