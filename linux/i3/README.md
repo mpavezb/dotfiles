@@ -25,10 +25,15 @@ sudo apt install i3blocks   # status bar
 ## Configuration
 
 ```bash
+# i3 config
 mkdir -p ~/.config/i3/
 cd       ~/.config/i3/
-
 ln -sf ~/.dotfiles/linux/i3/config
+
+# rofi config
+mkdir -p ~/.config/rofi/
+cd       ~/.config/rofi/
+ln -sf ~/.dotfiles/linux/i3/rofi.cfg config.rasi
 ```
 
 ### Displays
