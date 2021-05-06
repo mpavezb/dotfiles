@@ -40,6 +40,10 @@ Save the configuration to a file and copy the generated command into the i3 conf
 4. Copy the value of the `WM_CLASS` key.
 5. Put in config: `assign [class="..."] $ws1`
 
+### Fonts
+
+- https://github.com/FortAwesome/Font-Awesome
+
 
 ## TODO
 
