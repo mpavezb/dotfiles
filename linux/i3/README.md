@@ -1,11 +1,21 @@
 # i3
 
+## Resources
+
+- i3: https://i3wm.org/docs/
+- Playerctl : https://github.com/altdesktop/playerctl
+- Images:
+  - https://unsplash.com/
+  - http://simpledesktops.com/
+
 ## Install
 
 ```bash
-sudo apt-install i3
-sudo apt-install i3lock
-sudo apt-install playerctl
+sudo apt install i3
+sudo apt install i3lock
+sudo apt install playerctl  # media player control
+sudo apt install feh        # background
+sudo apt install arandr     # display configuration
 ```
 
 ## Configuration
@@ -40,6 +50,8 @@ Important:
 	- https://askubuntu.com/questions/14077/how-can-i-change-the-default-audio-device-from-command-line
 - network manager
 - calendar
+- Other Media keys: https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
+- wallpaper cycle
 
 Bugs:
 - playerctl stop/play affects youtube instead of spotify
