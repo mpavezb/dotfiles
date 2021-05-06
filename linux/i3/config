@@ -202,6 +202,11 @@ exec --no-startup-id spotify
 exec --no-startup-id firefox
 exec --no-startup-id gnome-terminal
 
+# wallpaper
+# TODO:
+# libpng warning: iCCP: known incorrect sRGB profile
+exec_always --no-startup-id feh --bg-scale ~/.ubuntu/Pictures/background/wallpaper_001.png
+
 # # No i3 bar!. We use the polybar instead.
 # #bar { }
 
