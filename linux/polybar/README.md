@@ -151,11 +151,18 @@ ln -sf   ~/.dotfiles/linux/network_manager/networkmanager_dmenu
 
 ## Resources
 
-### Unicode Icons
+## Unicode Icons
 
-- Look for icons here  : https://material.io/tools/icons/?icon=cached&style=baseline
-- Get icon code here   : https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
-- or here              : https://fontawesome.com/cheatsheet
-- Copy it from terminal: `echo -ne "\uf026" | xclip -selection clipboard`
-- Paste into polybar INI module.
-- Recommended Tool: yay -S fontmatrix
+Look for icons here
+- https://material.io/tools/icons/?icon=cached&style=baseline
+- https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
+- https://fontawesome.com/cheatsheet
+- https://dropways.github.io/feathericons/
+
+Look for the icon you need:
+``` bash
+sudo apt install xclip
+xfd -fa "feather"
+echo -ne "\ue9d2" | xclip -selection clipboard
+```
+
