@@ -15,6 +15,32 @@
 ```
 See: https://github.com/jaagr/polybar
 
+## Desired Features
+
+- Date, Time
+- Calendar
+- Weather data
+- Keyboard Layout: en/es
+- Insync status
+- Sound Devices:
+  - Current Input / Output devices
+  - Choose  Input / Output devices
+  - Current Input / Output Volume
+- Network:
+  - Eth, Wifi Icons
+  - Select Network
+  - Turn Off network
+  - Settings
+- Bluetooth
+  - Icon
+  - On/Off
+  - Settings
+- Settings Button
+- Powermenu
+  - Lock
+  - Power Off
+  - Logout
+
 
 ## TO DO
 
