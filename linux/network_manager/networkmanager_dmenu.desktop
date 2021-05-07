@@ -1,0 +1,7 @@
+[Desktop Entry]
+Categories=Settings;Network;
+Name=networkmanager_dmenu
+GenericName=Networkmanager Settings
+Exec=/home/mpavezb/.local/bin/networkmanager_dmenu
+Type=Application
+

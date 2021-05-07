@@ -132,6 +132,20 @@ mkdir -p ~/.config/polybar/
 cd       ~/.config/polybar/
 ln -sf   ~/.dotfiles/linux/polybar/polybar.cfg config
 ln -sf   ~/.dotfiles/linux/polybar/launch.bash launch.bash
+
+
+# networkmanager_dmenu
+mkdir -p ~/.config/networkmanager_dmenu/
+cd       ~/.config/networkmanager_dmenu/
+ln -sf   ~/.dotfiles/linux/network_manager/config.ini
+
+mkdir -p ~/.local/share/applications/
+cd       ~/.local/share/applications/
+ln -sf   ~/.dotfiles/linux/network_manager/networkmanager_dmenu.desktop
+
+mkdir -p ~/.local/bin/
+cd       ~/.local/bin
+ln -sf   ~/.dotfiles/linux/network_manager/networkmanager_dmenu
 ```
 
 
