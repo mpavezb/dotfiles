@@ -17,7 +17,7 @@ See: https://github.com/jaagr/polybar
 
 ## Desired Features
 
-- Date, Time
+- [OK] Date, Time
 - Calendar
 - Weather data
 - Keyboard Layout: en/es
