@@ -22,15 +22,21 @@ connect_callback() {
     fi
 }
 
+sleep_pid=
 toggle_state=0
 toggle_callback() {
     toggle_state=$(((toggle_state + 1) % 2))
+
+    if [ "$sleep_pid" -ne 0 ]; then
+        kill "$sleep_pid" >/dev/null 2>&1
+    fi
 }
 
 trap "connect_callback" USR1
 trap "toggle_callback" USR2
 
 while true; do
+    cnt=$((cnt+1))
     if is_vpn_connected ; then
         if [ $toggle_state -eq 0 ]; then
             COUNTRY=$(nordvpn status | grep Country | tr -d ' ' | cut -d ':' -f2)
@@ -43,5 +49,7 @@ while true; do
         echo -e "$VPN_OFF_ICON VPN Disconnected"
     fi
     sleep 1 &
+    sleep_pid=$!
     wait
+    sleep_pid=
 done
