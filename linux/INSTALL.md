@@ -1,24 +1,8 @@
-# Ubuntu
-
-## Overview
-
-- [Health Check](#health-check)
-- [Setup](#setup)
-- [Applications](#applications)
-- [Troubleshooting](#troubleshooting)
-
-## Health Check
-
-- Network: Wifi/Eth
-- Audio: Speakers/Headset/Mic
-- Other: Brightness, Battery, Touchpad, Mouse, Webcam
-- Dual-Boot: Does this affect other checks?
-
-## Setup
+# Install
 
 Most of the setup must be performed manually. Laptop or desktop specific configurations are indicated when required.
 
-### Required Packages
+## Required Packages
 
 ```bash
 # Record system changes
@@ -33,7 +17,7 @@ sudo apt install vlc ubuntu-restricted-extras imagemagick nautilus-image-convert
 # archive
 sudo apt install rar unrar p7zip-full p7zip-rar
 
-# battery life
+# battery life (laptop)
 # https://linrunner.de/tlp/index.html
 sudo apt install tlp tlp-rdw
 
@@ -45,16 +29,26 @@ sudo apt install gparted synaptic
 
 # Development
 sudo apt install clang-format emacs shellcheck
+
+# i3 and polybar setup
+sudo apt install i3 i3lock  # i3
+sudo apt install playerctl  # media player control using media keys
+sudo apt install feh        # set background
+sudo apt install arandr     # display configuration
+sudo apt install rofi       # dmenu replacement
+sudo apt install compton    # window composer: transparency and transition effects
 ```
 
-### Dotfiles
+Polybar must be compiler from source. Please see the instructions on the [README](polybar/README.md).
+
+## Dotfiles
 
 ```bash
 # Get
 git clone https://github.com/mpavezb/dotfiles .dotfiles
 ```
 
-### Ubuntu Settings
+## Ubuntu Settings
 
 - **Power Settings** 
   - Power Saving > Blank Screen > Never
@@ -77,7 +71,7 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 - **Displays**:
   - Night Light > ON
 
-### Tweaks and Extensions
+## Tweaks and Extensions
 
 **Tweaks**
 - Top Bar > Enable Clock Date / Weekday  
@@ -106,12 +100,12 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 - Enable GPU usage: about:config > layers.acceleration.force-enabled > TRUE
 - Web Rendering: about:config > gfx.webrender.all
 
-### Misc Settings
+## Misc Settings
 
 Hide default folders in home into `.ubuntu/` folder. This requires logging out and then removing the `~/Desktop` folder by hand.
 ```bash
 # XDG user dirs
-bash ~/.dotfiles/linux/ubuntu/xdg/setup.bash
+bash ~/.dotfiles/linux/xdg/setup.bash
 ```
 
 Hide remaining folders in home using the `.hidden` file. More info in [this thread](https://askubuntu.com/a/882622):
@@ -127,58 +121,40 @@ These other setup procedures are also not yet automated:
   - documents
   - HDDs
 
-## Applications
-
-Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to ensure no broken deps.
-
-### User Applications
-
-- Discord: https://discord.com/download
-- Inkdrop: https://my.inkdrop.app/download
-- Skype: https://www.skype.com/en/get-skype/
-- Spotify: https://www.spotify.com/us/download/linux/
-- Sublime Text 3: https://www.sublimetext.com/3
-
-### Tools
-
-- Howdy: https://github.com/boltgolt/howdy (face recognition based login).
-
-TODO:
-- fzf
-- ripgrep: https://github.com/BurntSushi/ripgrep
-- virtualenv
-- blacken
-- bat
-- ...
-
-
-## Troubleshooting
-
-### grub-repair
-
-First, install both Windows and Linux and modify the BIOS to only allow UEFI boots.
-
-Boot from a linux live CD, install boot-repair and use it.
+## i3 and polybar setup
 
 ```bash
-sudo add-apt-repository ppa:yannubuntu/boot-repair
-sudo apt-get update
-sudo apt install  boot-repair
-boot-repair
-```
+# i3 config
+mkdir -p ~/.config/i3/
+cd       ~/.config/i3/
+ln -sf ~/.dotfiles/linux/i3/i3.cfg config
 
-### nvidia
+# rofi config
+mkdir -p ~/.config/rofi/
+cd       ~/.config/rofi/
+ln -sf ~/.dotfiles/linux/rofi/rofi.cfg config.rasi
 
-```bash
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt-get update
-sudo apt install nvidia-driver-440 nvidia-settings
-```
+# Fonts
+mkdir -p ~/.local/share/fonts
+cp -rf ~/.dotfiles/linux/fonts/* ~/.local/share/fonts
+fc-cache -f -v
 
-### Xorg
+# polybar
+mkdir -p ~/.config/polybar/
+cd       ~/.config/polybar/
+ln -sf   ~/.dotfiles/linux/polybar/polybar.cfg config
+ln -sf   ~/.dotfiles/linux/polybar/launch.bash launch.bash
 
-Check for Xorg login errors:
-
-```bash
-cat ~/.local/share/xorg/Xorg.0.log | grep EE
+# networkmanager_dmenu
+mkdir -p ~/.config/networkmanager_dmenu/
+cd       ~/.config/networkmanager_dmenu/
+ln -sf   ~/.dotfiles/linux/network_manager/config.ini
+#
+mkdir -p ~/.local/share/applications/
+cd       ~/.local/share/applications/
+ln -sf   ~/.dotfiles/linux/network_manager/networkmanager_dmenu.desktop
+#
+mkdir -p ~/.local/bin/
+cd       ~/.local/bin
+ln -sf   ~/.dotfiles/linux/network_manager/networkmanager_dmenu
 ```
