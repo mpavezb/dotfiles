@@ -1,6 +1,18 @@
 # Install
 
+## Overview
+
 Most of the setup must be performed manually. Laptop or desktop specific configurations are indicated when required.
+
+Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to ensure no broken deps.
+
+Table of Contents:
+- [Required Packages](#required-packages)
+- [Dotfiles](#dotfiles)
+- [Ubuntu Settings](#ubuntu-settings)
+- [Tweaks and Extensions](#tweaks-and-extensions)
+- [Misc Settings](#misc-settings)
+- [i3 and polybar setup](#i3-and-polybar-setup)
 
 ## Required Packages
 
@@ -96,9 +108,6 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 **DNS**: Set up manual google DNS for every connection.
 - Connection > IPV4 > Automatic (false) > 8.8.8.8,8.8.4.4
 
-**Firefox**:
-- Enable GPU usage: about:config > layers.acceleration.force-enabled > TRUE
-- Web Rendering: about:config > gfx.webrender.all
 
 ## Misc Settings
 

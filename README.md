@@ -3,10 +3,12 @@
 ## Overview
 
 These dotfiles structure is based on the main systems I use on a daily basis:
-- [Bash](bash/README.md)
-- [Emacs](emacs/README.md)
-- [Git](git/README.md)
-- [Linux](linux/README.md)
+- [Linux](linux/README.md): System configuration.
+- [Bash](bash/README.md): Bash config and scripts.
+- [Emacs](emacs/README.md): Emacs config.
+- [Git](git/README.md): Git config and scripts.
+- [Applications](applications/README.md): User applications.
+
 
 ## File System Guidelines
 
@@ -53,5 +55,5 @@ A **well-behaved Unix-style command-line tool** looks like this:
 
 ## Git Repository
 
-- Commit messages should start with the application name. e.g., `[emacs]: Add Foo.`.
+- Commit messages should start with the module name. e.g., `[emacs]: Add Foo.`.
 

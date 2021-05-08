@@ -1,40 +1,43 @@
-# Software Description
+# User Applications
 
-## List of Applications
+Whenever a debian package needs to be manually installed, prefer `sudo apt install ./<package>.deb` instead of `sudo dpkg -i <package>.deb`, to ensure no broken deps.
 
-### Top Applications
+## User Applications
 
 - Firefox
-- Skype
-- Emacs
-- Sublime Text
-- Spotify + Musixmatch
+- Discord: https://discord.com/download
+- Inkdrop: https://my.inkdrop.app/download
+- Skype: https://www.skype.com/en/get-skype/
+- Spotify: https://www.spotify.com/us/download/linux/
+- Sublime Text 3: https://www.sublimetext.com/3
 - Guitar Pro
-- Journey
 
-
-
-### Important Tools
+## Tools
 
 - PDF Viewer
-- MEGA
-- TeXstudio
 - nordvpn
+- Insync
+- TeXstudio
 - Crop Tool
 - VLC
 - Torrent Client
 - System monitor
 - Input Method Selector: EN, ES, DE, NB, JA
-- teamviewer: yay -S teamviewer
-- Workspace Matrix
-- Fzf fuzzy finder
+- fzf
 
+## Settings
 
-## Sublime Text
+### Firefox
 
+Configurations:
+- Enable GPU usage: about:config > layers.acceleration.force-enabled > TRUE
+- Web Rendering: about:config > gfx.webrender.all
+
+### Sublime Text
+
+Packages:
 - Bracket Highlighter
 - ColorSublime
 - Text Pastry
 - ColorHints
 - EditorConfig
-

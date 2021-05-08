@@ -1,17 +1,35 @@
 # Fonts
 
-## TODO
-- Reduce number of fonts
-- Record font version
-- Link to website
+## Resources:
 
-## Available Fonts
+Look for icons here
+- https://material.io/tools/icons/?icon=cached&style=baseline
+- https://github.com/google/material-design-icons/blob/master/iconfont/codepoints
+- https://fontawesome.com/cheatsheet
+- https://dropways.github.io/feathericons/
 
-Panels:
+
+## Installed Fonts
+
+Font Awesome:
+- https://github.com/FortAwesome/Font-Awesome
+- fontawesome.ttf
+
+Other:
+- all-the-icons.ttf
 - droid_sans.ttf
+- fantasque_sans_mono.ttf
+- feather.ttf
+- file-icons.ttf
 - icomoon_feather.ttf
+- iosevka_nerd_font.ttf
+- material-design-icons.ttf
 - material.ttf
+- material_design_iconic_font.ttf
 - noto_sans.ttf
+- octicons.ttf
+- waffle.bdf
+- weathericons.ttf
 
 Terminus:
 - ter-u12b.otb
@@ -35,28 +53,20 @@ Terminus:
 - ter-u32b.otb
 - ter-u32n.otb
 
-Main:
-- all-the-icons.ttf
-- fantasque_sans_mono.ttf
-- feather.ttf
-- file-icons.ttf
-- fontawesome.ttf
-- iosevka_nerd_font.ttf
-- material_design_iconic_font.ttf
-- material-design-icons.ttf
-- octicons.ttf
-- waffle.bdf
-- weathericons.ttf
+## Verify Fonts
 
-## Install
-
-``` bash
-# Install fonts
-cp -rf ~/.dotfiles/linux/fonts/* ~/.local/share/fonts
-
-# Rebuild font cache
-fc-cache -f -v
-
-# Verify installation
+```bash
 fc-list | grep <font-name>
+```
+
+## Get Unicode Icons
+
+Look for the icon you need:
+``` bash
+# Look available glyphs on a specific font
+xfd -fa "feather"
+
+# When found, copy it to the clipboard
+sudo apt install xclip
+echo -ne "\ue9d2" | xclip -selection clipboard
 ```
