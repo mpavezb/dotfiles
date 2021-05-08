@@ -5,10 +5,10 @@
 ## Github  : @adi1090x
 ## Twitter : @adi1090x
 
-rasidir="~/.dotfiles/linux/polybar/rasi"
+rofidir="~/.dotfiles/linux/rofi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $rasidir/powermenu.rasi"
+rofi_command="rofi -theme $rofidir/powermenu.rasi"
 
 # Options
 shutdown=" Shutdown"
@@ -23,12 +23,12 @@ confirm_exit() {
 		-i\
 		-no-fixed-num-lines\
 		-p "Are You Sure? : "\
-		-theme $rasidir/confirm.rasi
+		-theme $rofidir/confirm.rasi
 }
 
 # Message
 msg() {
-	rofi -theme "$rasidir/message.rasi" -e "Available Options  -  yes / y / no / n"
+	rofi -theme "$rofidir/message.rasi" -e "Available Options  -  yes / y / no / n"
 }
 
 # Variable passed to rofi

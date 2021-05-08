@@ -2,7 +2,7 @@
 
 # Color files
 PFILE="$HOME/.dotfiles/linux/polybar/colors.ini"
-RFILE="$HOME/.dotfiles/linux/polybar/rasi/colors.rasi"
+RFILE="$HOME/.dotfiles/linux/rofi/colors.rasi"
 
 # Change colors
 change_color() {

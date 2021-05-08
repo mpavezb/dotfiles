@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SDIR="$HOME/.dotfiles/linux/polybar/scripts"
-RDIR="$HOME/.dotfiles/linux/polybar/rasi"
+RDIR="$HOME/.dotfiles/linux/rofi"
 
 # Launch Rofi
 MENU="$(rofi -no-config -no-lazy-grab -sep "|" -dmenu -i -p '' \
