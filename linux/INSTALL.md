@@ -130,6 +130,12 @@ These other setup procedures are also not yet automated:
   - documents
   - HDDs
 
+## Monitor Layouts
+
+1. Use `arandr` (GUI tool for `xrandr`) to generate a valid `xrandr` configuration.
+2. Save the configuration to `~/.config/xrandr/layout.sh`.
+3. The script will be executed whenever i3 (re)loads.
+
 ## i3 and polybar setup
 
 ```bash

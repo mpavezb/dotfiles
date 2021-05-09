@@ -33,11 +33,6 @@ Layout:
 
 ## How To
 
-### Configure Displays
-
-Use `arandr` (GUI tool for `xrandr`) to generate a valid `xrandr` configuration.
-Save the configuration to a file and copy the generated command into the i3 config file as: `exec_always xrandr ...`.
-
 ### Bind applications to a workspace
 
 1. Open desired application.
