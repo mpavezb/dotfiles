@@ -11,6 +11,7 @@
 - Limit media key vol+ to 100%
 - Compton config file:
   - e.g: https://github.com/savoca/dotfiles/blob/gray/home/.compton.conf
+- Layout saving https://i3wm.org/docs/layout-saving.html
 
 ## Polybar
 
