@@ -2,7 +2,6 @@
 
 ## i3
 
-- Better lock screen: www.reddit.com%2Fr%2Funixporn%2Fcomments%2F3358vu%2Fi3lock_unixpornworthy_lock_screen
 - Keybindings
   - Binds for function keys
   - Media keys for laptop: https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
@@ -12,6 +11,9 @@
 - Compton config file:
   - e.g: https://github.com/savoca/dotfiles/blob/gray/home/.compton.conf
 - Layout saving https://i3wm.org/docs/layout-saving.html
+- Lock: mute on lock
+- Lock: revert sound on unlock
+- Lock: upgrade to https://github.com/Raymo111/i3lock-color
 
 ## Polybar
 

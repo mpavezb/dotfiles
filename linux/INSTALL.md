@@ -43,12 +43,15 @@ sudo apt install gparted synaptic
 sudo apt install clang-format emacs shellcheck
 
 # i3 and polybar setup
-sudo apt install i3 i3lock  # i3
-sudo apt install playerctl  # media player control using media keys
-sudo apt install feh        # set background
-sudo apt install arandr     # display configuration
-sudo apt install rofi       # dmenu replacement
-sudo apt install compton    # window composer: transparency and transition effects
+sudo apt install i3          # i3
+sudo apt install playerctl   # media player control using media keys
+sudo apt install feh         # set background
+sudo apt install arandr      # display configuration
+sudo apt install rofi        # dmenu replacement
+sudo apt install compton     # window composer: transparency and transition effects
+sudo apt install i3lock      # lockscreen lock
+sudo apt install scrot       # lockscreen screenshot
+sudo apt install imagemagick # lockscreen blur
 ```
 
 Polybar must be compiler from source. Please see the instructions on the [README](polybar/README.md).
