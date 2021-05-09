@@ -20,7 +20,6 @@ Urgent:
   - Choose  Input / Output devices
   - Current Input / Output Volume
   - https://askubuntu.com/questions/14077/how-can-i-change-the-default-audio-device-from-command-line
-- Calendar popup
 
 Important:
 - network module:

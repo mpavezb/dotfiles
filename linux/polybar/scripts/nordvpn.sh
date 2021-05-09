@@ -36,7 +36,6 @@ trap "connect_callback" USR1
 trap "toggle_callback" USR2
 
 while true; do
-    cnt=$((cnt+1))
     if is_vpn_connected ; then
         if [ $toggle_state -eq 0 ]; then
             COUNTRY=$(nordvpn status | grep Country | tr -d ' ' | cut -d ':' -f2)
