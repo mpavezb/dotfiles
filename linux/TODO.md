@@ -4,12 +4,13 @@
 
 - Better lock screen: www.reddit.com%2Fr%2Funixporn%2Fcomments%2F3358vu%2Fi3lock_unixpornworthy_lock_screen
 - Keybindings
-  - Print / Screenshot
   - Binds for function keys
   - Media keys for laptop: https://faq.i3wm.org/question/3747/enabling-multimedia-keys/?answer=3759#post-id-3759
   - Better mappings
 - Rofi theme
 - Limit media key vol+ to 100%
+- Compton config file:
+  - e.g: https://github.com/savoca/dotfiles/blob/gray/home/.compton.conf
 
 ## Polybar
 
