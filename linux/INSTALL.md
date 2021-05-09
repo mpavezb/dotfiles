@@ -173,3 +173,9 @@ mkdir -p ~/.local/bin/
 cd       ~/.local/bin
 ln -sf   ~/.dotfiles/linux/network_manager/networkmanager_dmenu
 ```
+
+## Wallpaper
+
+1. Get images you like. You can use these services: https://unsplash.com/, http://simpledesktops.com/.
+2. Copy them onto `~/.ubuntu/Pictures/wallpaper/`.
+3. i3 uses `feh` program so randomly pick images for every monitor on load.
