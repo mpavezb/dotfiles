@@ -11,8 +11,6 @@
 - Compton config file:
   - e.g: https://github.com/savoca/dotfiles/blob/gray/home/.compton.conf
 - Layout saving https://i3wm.org/docs/layout-saving.html
-- Lock: mute on lock
-- Lock: revert sound on unlock
 - Lock: upgrade to https://github.com/Raymo111/i3lock-color
 
 ## Polybar
