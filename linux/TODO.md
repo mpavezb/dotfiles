@@ -18,7 +18,6 @@
 ## Polybar
 
 Urgent:
-- Bars on multiple screens
 - Sound device chooser:
   - Current Input / Output devices
   - Choose  Input / Output devices

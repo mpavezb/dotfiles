@@ -10,11 +10,8 @@ while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
 # export MONITOR=$(polybar -m|tail -1|sed -e 's/:.*$//g')
 
 # Launch multiple bars
-# echo "---" | tee -a /tmp/polybar-top.log /tmp/polybar-bottom.log
-# polybar top    2>&1 | tee -a /tmp/polybar-top.log    & disown
-# polybar bottom 2>&1 | tee -a /tmp/polybar-bottom.log & disown
-
-echo "---" | tee -a /tmp/polybar.log
-polybar main 2>&1 | tee -a /tmp/polybar.log & disown
+echo "---" | tee -a /tmp/polybar-main.log /tmp/polybar-secondary.log
+polybar main      2>&1 | tee -a /tmp/polybar-main.log      & disown
+polybar secondary 2>&1 | tee -a /tmp/polybar-secondary.log & disown
 
 echo "Bars launched..."
