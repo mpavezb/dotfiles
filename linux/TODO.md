@@ -25,6 +25,7 @@ Urgent:
   - https://askubuntu.com/questions/14077/how-can-i-change-the-default-audio-device-from-command-line
 
 Important:
+- Remove Keyboard layout indicator from ubuntu tray.
 - network module:
   - Are Eth connections displayed properly?
   - Are simultaneous connections displayed?
