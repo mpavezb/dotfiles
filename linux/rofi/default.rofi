@@ -5,7 +5,7 @@ configuration {
     // lines: 15;
     // columns: 1;
     // font: "mono 12";
-    bw: 10;
+    bw: 5;
     // location: 0;
     // padding: 5;
     // yoffset: 0;

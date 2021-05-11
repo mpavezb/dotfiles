@@ -147,11 +147,6 @@ mkdir -p ~/.config/i3/
 cd       ~/.config/i3/
 ln -sf ~/.dotfiles/linux/i3/i3.cfg config
 
-# rofi config
-mkdir -p ~/.config/rofi/
-cd       ~/.config/rofi/
-ln -sf ~/.dotfiles/linux/rofi/rofi.cfg config.rasi
-
 # Fonts
 mkdir -p ~/.local/share/fonts
 cp -rf ~/.dotfiles/linux/fonts/* ~/.local/share/fonts
