@@ -25,7 +25,7 @@ window {
     y-offset:                       0;
 }
 
- prompt {
+prompt {
     enabled:                        true;
     padding:                        0px;
     background-color:               @bga;
