@@ -30,6 +30,7 @@ Important:
   - Is bluetooth working?
 - Removable Drive Menu
 - Laptop related modules: battery, backlight, energy saving?
+- Spotify: Songs are not updated any more? Maybe after lock/unlock.
 
 Other Desired Features:
 - Weather data
