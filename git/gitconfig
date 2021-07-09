@@ -4,10 +4,16 @@
 
 [user]
 	name = Matias Pavez
-	email = matias.pavez.b@gmail.com
+	;email = matias.pavez.b@gmail.com
+	email = 14824728+mpavezb@users.noreply.github.com
+
+	; signingkey = KEY-ID
 
 [credential]
 	helper = cache --timeout=86400
+
+[commit]
+	gpgsign = true
 
 [core]
 	autocrlf = input
