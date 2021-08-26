@@ -107,6 +107,9 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 - Dash to Dock: https://extensions.gnome.org/extension/307/dash-to-dock/
   - Position and Size > Position on screen: bottom.
   - Launchers > Show Trash Can [NO].
+- Pomodoro:
+  - `sudo apt install gnome-shell-pomodoro`
+
 
 **DNS**: Set up manual google DNS for every connection.
 - Connection > IPV4 > Automatic (false) > 8.8.8.8,8.8.4.4
