@@ -18,7 +18,7 @@ Copy the following snippets into the initialization files:
 ## ~/.profile - Append/Replace
 ## -----------------------------------------------
 ## mpavezb dotfiles
-if [ -f ~/.dotfiles/bash/init/profile.sh ]; then
+if [ -f "$HOME/.dotfiles/bash/init/profile.sh" ]; then
     . "$HOME/.dotfiles/bash/init/profile.sh"
 fi
 ## -----------------------------------------------
@@ -27,13 +27,21 @@ fi
 ## -----------------------------------------------
 ## mpavezb dotfiles
 ## Let ~/.profile handle the initialization.
-[[ -f ~/.profile ]] && source ~/.profile
+[[ -f "$HOME/.profile" ]] && source "$HOME/.profile"
 ## -----------------------------------------------
 
-## ~/.bashrc - Append to the end,
+## ~/.bash_logout - Append
 ## -----------------------------------------------
 ## mpavezb dotfiles
-if [ -f ~/.dotfiles/bash/bashrc.bash ]; then
+if [ -f "$HOME/.dotfiles/bash/init/bash_logout.bash" ]; then
+    source "$HOME/.dotfiles/bash/init/bash_logout.bash"
+fi
+## -----------------------------------------------
+
+## ~/.bashrc - Append
+## -----------------------------------------------
+## mpavezb dotfiles
+if [ -f "$HOME/.dotfiles/bash/bashrc.bash" ]; then
     source "$HOME/.dotfiles/bash/bashrc.bash"
 fi
 ## -----------------------------------------------
