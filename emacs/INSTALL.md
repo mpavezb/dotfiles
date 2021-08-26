@@ -30,6 +30,7 @@ git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
 cp ~/.dotfiles/emacs/boot/emacs-profiles.el         ~/.emacs-profiles.el
 
 # Create launchers
+mkdir -p ~/.local/share/applications/
 cp ~/.dotfiles/emacs/boot/emacs-sandbox.desktop     ~/.local/share/applications/
 cp ~/.dotfiles/emacs/boot/emacs-spacemacs.desktop   ~/.local/share/applications/
 cp ~/.dotfiles/emacs/boot/emacs.desktop             ~/.local/share/applications/
