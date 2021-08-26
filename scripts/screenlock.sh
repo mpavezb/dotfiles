@@ -1,10 +1,32 @@
 #!/bin/sh
+# Description:
+#   Locks the screen using i3lock.
+#
+# Usage:
+#   bash screenlock.sh
+#
 
+# Imports
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
+DOTFILES="$(readlink -f ${SCRIPT_DIR}/..)"
+source ${DOTFILES}/bash/tools/assertions.bash
+
+# Settings
 LOCK_IMG=/tmp/i3_lock_image.png
-LOCK_ICON=~/.dotfiles/linux/scripts/lock-icon.png
+LOCK_ICON="${DOTFILES}/scripts/screenlock-icon.png"
 SCALE1="10%"
 SCALE2="1000%"
 
+# Assertions
+assert_env_var_set DOTFILES
+assert_command_exists amixer
+assert_command_exists convert
+assert_command_exists dbus-send
+assert_command_exists i3lock
+assert_command_exists scrot
+assert_file_exists ${LOCK_ICON}
+
+# Tooling
 was_spotify_playing=0
 pause_spotify() {
     status=$(dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.freedesktop.DBus.Properties.Get string:'org.mpris.MediaPlayer2.Player' string:'PlaybackStatus'| grep -E -A 1 "string"| cut -b 26- | cut -d '"' -f 1| grep -E -v ^$)
