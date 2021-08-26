@@ -35,3 +35,8 @@ source "${DOTFILES}/bash/fzf/fzf.bash"
 # Bash aliases
 # ===============================================
 source "${DOTFILES}/bash/init/bash_aliases.bash"
+
+# ===============================================
+# Emacs
+# ===============================================
+source "${DOTFILES}/emacs/setup.bash"

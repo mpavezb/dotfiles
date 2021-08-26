@@ -40,12 +40,13 @@ emacs --with-profile spacemacs
 ## Doom Installation
 
 ```bash
+# Get files
 mkdir -p ~/.emacs_ws/doom/
-cd       ~/.emacs_ws/doom/
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs_ws/doom/distro
+ln -sf ~/.dotfiles/emacs/doom/ ~/.emacs_ws/doom/config
 
-git clone --depth 1 https://github.com/hlissner/doom-emacs distro
-
-export DOOMDIR=/home/mpavezb/.emacs_ws/doom/config
+# Install doom
+export DOOMDIR=~/.emacs_ws/doom/config
 ~/.emacs_ws/doom/distro/bin/doom install
 ```
 
@@ -53,7 +54,5 @@ export DOOMDIR=/home/mpavezb/.emacs_ws/doom/config
 
 ```bash
 mkdir -p ~/.emacs_ws/spacemacs/
-cd       ~/.emacs_ws/spacemacs/
-
-git clone https://github.com/syl20bnr/spacemacs distro
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs_ws/spacemacs/distro
 ```

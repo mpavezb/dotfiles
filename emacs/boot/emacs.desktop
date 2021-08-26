@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=Kernel Emacs
+Name=Doom Emacs
 GenericName=Text Editor
 Comment=The Extensible Text Editor
 Exec=/home/mpavezb/.local/bin/emacs

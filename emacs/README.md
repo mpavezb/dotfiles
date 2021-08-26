@@ -9,16 +9,6 @@
 - [Troubleshooting](doc/troubleshooting.md)
 
 
-## File Structure
-
-```bash
-boot/      # Bootloader
-distro/    # Same as .emacs.d/
-doc/       # Documentation
-install/   # Installation
-test/      # Test suite
-```
-
 ## Resources
 
 Other .dotfiles:

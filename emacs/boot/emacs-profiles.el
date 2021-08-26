@@ -1,5 +1,5 @@
-(("default"  .  ((user-emacs-directory   . "~/.emacs_ws/kernel")
-				 (env . (("KERNELDIR"    . "~/.emacs_ws/kernel/config")))))
+(("default"  .  ((user-emacs-directory   . "~/.emacs_ws/doom/distro")
+				 (env . (("DOOMDIR"    . "~/.emacs_ws/doom/config")))))
 
  ("sandbox"  .  ((user-emacs-directory   . "~/.emacs_ws/sandbox")))
 

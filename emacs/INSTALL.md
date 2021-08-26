@@ -14,7 +14,7 @@ The bootloader allows choosing between different emacs flavours.
 Read the [bootloader](boot/BOOT.md) instructions.
 
 
-## Kernel Distro
+## Kernel Distro [Deprecated]
 
 ### Dependencies
 
