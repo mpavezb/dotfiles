@@ -10,7 +10,7 @@ cd "${DOTFILES}"
 bash "${DOTFILES}/scripts/set_local_gitconfig.bash"
 
 echo "> Update general ~/.gitconfig"
-NEW_CONFIG="${DIR}"/gitconfig
+NEW_CONFIG="${DOTFILES}"/git/gitconfig
 DST_CONFIG=~/.gitconfig
 if [ -f "${DST_CONFIG}" ]; then
     if ! cmp --silent "${DST_CONFIG}" "${NEW_CONFIG}"; then
