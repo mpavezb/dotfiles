@@ -9,10 +9,63 @@ Read the [installation](doc/emacs_source_build.md) instructions.
 
 ## Bootloader
 
-The bootloader allows choosing between different emacs flavours.
+The bootloader (Chemacs 2) allows choosing between different emacs flavours.
 
-Read the [bootloader](boot/BOOT.md) instructions.
+From Chemacs2 README:
+> Chemacs 2 is an Emacs profile switcher, it makes it easy to run multiple Emacs configurations side by side.
+>
+> Think of it as a bootloader for Emacs.
 
+
+### Installing the bootloader
+
+Chemacs2 replaces the `~/.emacs.d` folder.
+
+```bash
+# Bootloader
+git clone https://github.com/plexus/chemacs2.git ~/.emacs.d
+
+
+# Define profiles
+cp ~/.dotfiles/emacs/boot/emacs-profiles.el         ~/.emacs-profiles.el
+
+# Create launchers
+cp ~/.dotfiles/emacs/boot/emacs-sandbox.desktop     ~/.local/share/applications/
+cp ~/.dotfiles/emacs/boot/emacs-spacemacs.desktop   ~/.local/share/applications/
+cp ~/.dotfiles/emacs/boot/emacs.desktop             ~/.local/share/applications/
+cp ~/.dotfiles/emacs/boot/emacs-doom.desktop        ~/.local/share/applications/
+```
+
+### Using bootloader profiles
+
+Each profile can be launched by using the unity launcher or by manually running any of the following:
+
+```bash
+emacs
+emacs --with-profile sandbox
+emacs --with-profile doom
+emacs --with-profile spacemacs
+```
+
+## Doom Installation
+
+```bash
+# Get files
+mkdir -p ~/.emacs_ws/doom/
+git clone --depth 1 https://github.com/hlissner/doom-emacs ~/.emacs_ws/doom/distro
+ln -sf ~/.dotfiles/emacs/doom/ ~/.emacs_ws/doom/config
+
+# Install doom
+export DOOMDIR=~/.emacs_ws/doom/config
+~/.emacs_ws/doom/distro/bin/doom install
+```
+
+## Spacemacs Installation
+
+```bash
+mkdir -p ~/.emacs_ws/spacemacs/
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs_ws/spacemacs/distro
+```
 
 ## Kernel Distro [Deprecated]
 
