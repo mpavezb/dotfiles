@@ -10,7 +10,7 @@
 # $ sudo cp format_branch_files.sh /usr/bin/
 # $ format_branch_files.sh
 #
-# Tools:
+# Dependencies:
 # - C/C++: clang-format
 # - Python: black
 # - Bazel: buildifier tools on all
