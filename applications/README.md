@@ -41,3 +41,4 @@ Packages:
 - Text Pastry
 - ColorHints
 - EditorConfig
+- MoveTab: https://github.com/SublimeText/MoveTab
