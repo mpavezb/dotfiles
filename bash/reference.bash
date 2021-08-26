@@ -1,8 +1,11 @@
 #!/bin/bash
-# bash tricks
+
+# =============================================================================
+# Notification
+# ==============================================================================
 
 # notify when command finishes
-# (defined in .bashrc)
+# (alert is defined in .bashrc)
 echo "hello world"; alert
 
 # =============================================================================
@@ -18,3 +21,6 @@ echo "hello world" 2>&1 | tee file.log
 # pipe multiple commands to one
 { echo "hello"; echo "world"; } | nl
 cat <(echo "hello") <(echo "world") | nl
+
+# all to null
+echo "..." > /dev/null 2>&1
