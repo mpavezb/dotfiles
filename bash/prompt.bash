@@ -23,7 +23,7 @@
 #   - 48;5;x: sets background color x.
 #   - 38;5;x: sets foreground color x.
 #   - m     : end of sequence
-# - See the color codes using colors.bash script.
+# - See the color codes using the script: ~/scripts/show_term_colors.bash.
 # - See also: https://misc.flogisoft.com/bash/tip_colors_and_formatting
 
 # font style
