@@ -1,21 +1,13 @@
 #!/bin/bash
 #
-# bash ~/.dotfiles/git/setup.bash
+# Usage:
+#   export DOTFILES=~/.dotfiles
+#   bash ${DOTFILES}/git/setup.bash
 #
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
-
-echo "========================"
-echo "Setting up git"
-echo "========================"
 
 echo "> Update local gitconfig for dotfiles"
-bash "${DIR}"/config_local.bash
-echo ""
-
-echo "> Add symlink: ~/.local/bin/format_branch_files.sh"
-mkdir -p "${HOME}"/.local/bin/
-ln -sf "${DIR}"/format_branch_files.sh "${HOME}"/.local/bin/
-echo ""
+cd "${DOTFILES}"
+bash "${DOTFILES}/scripts/set_local_gitconfig.bash"
 
 echo "> Update general ~/.gitconfig"
 NEW_CONFIG="${DIR}"/gitconfig
@@ -30,4 +22,3 @@ if [ -f "${DST_CONFIG}" ]; then
 fi
 echo " - Copying template config: ${NEW_CONFIG} into ${DST_CONFIG}"
 cp -f "${NEW_CONFIG}" "${DST_CONFIG}"
-

@@ -2,33 +2,18 @@
 
 ## Setup
 
-The `setup.bash` script provides:
-- Setup local git config for dotfiles repo.
-- Setup general gitconfig in `~/.gitconfig`.
-- Symlinks [format_branch_files.sh](format_branch_files.sh) to `~/.local/bin`.
+The `setup.bash` tasks:
+- Copy gitconfig to `~/.gitconfig`.
+- Set local git user for this repo.
 
 ```bash
-bash ~/.dotfiles/git/setup.bash
+export DOTFILES=~/.dotfiles
+bash ${DOTFILES}/git/setup.bash
 ```
 
 ## Command Line Git Reference
 
-See the [Reference File](reference.bash)
-
-##  Hook: prepare-commit-msg
-
-```bash
-#!/bin/sh
-input=$1
-# if message already has issue number - ignore it
-while IFS= read -r line
-do
-  res="$(echo "$line" |grep "Issue: CB-#")"
-  [ ! -z "$res" ] && exit;
-done < "$input"
-issueName=$(git symbolic-ref -q HEAD | tr '_' ' ' | awk '{print $2}')
-echo " \n\nIssue: CB-#$issueName" >> "$input"
-```
+See the [Reference File](reference.bash).
 
 ## Signing Commits (GPG Keys)
 
@@ -45,4 +30,21 @@ gpg --list-secret-keys --keyid-format=long
 
 # Print GPG key and add to GitHub
 gpg --armor --export ID-HERE
+```
+
+##  Hooks
+
+### prepare-commit-msg: Append issue number based on branch name 
+
+```bash
+#!/bin/sh
+input=$1
+# if message already has issue number - ignore it
+while IFS= read -r line
+do
+  res="$(echo "$line" |grep "Issue: CB-#")"
+  [ ! -z "$res" ] && exit;
+done < "$input"
+issueName=$(git symbolic-ref -q HEAD | tr '_' ' ' | awk '{print $2}')
+echo " \n\nIssue: CB-#$issueName" >> "$input"
 ```
