@@ -52,3 +52,20 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; LSP using clangd instead of ccls
+(setq lsp-clients-clangd-args '("-j=4"
+                                "--background-index"
+                                "--clang-tidy"
+                                "--completion-style=detailed"
+                                "--header-insertion=never"))
+(after! lsp-clangd (set-lsp-priority! 'clangd 2))
+
+(after! lsp
+  (require 'dap-cpptools))
+
+;; window-select config
+(custom-set-faces!
+  '(aw-leading-char-face
+    :foreground "goldenrod" :background "black"
+    :weight bold :height 2.5 :box (:line-width 10 :color "black")))
