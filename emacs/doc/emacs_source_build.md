@@ -1,14 +1,13 @@
 # GccEmacs (emacs28 with native-compilation)
 
-Emacs 28 is not yet released and the `feature/native-comp` branch is still in development, but somehow stable. See the [developers talk](https://www.youtube.com/watch?v=zKHYZOAc_bQ), and the [development page](https://akrl.sdf.org/gccemacs.html).
+Emacs 28 is not yet released, but is somehow stable. It includes the native compilation feature that provides big speed ups. See the [developers talk](https://www.youtube.com/watch?v=zKHYZOAc_bQ) and the [development page](https://akrl.sdf.org/gccemacs.html) for extra information.
 
-The native compilation feature promises big speed ups.
 
 ```bash
 # Download
 git clone https://github.com/emacs-mirror/emacs
 cd emacs
-git checkout feature/native-comp
+git checkout master
 
 # Usual deps
 sudo apt install build-essential
@@ -25,11 +24,13 @@ sudo apt-get install libjansson4 libjansson-dev
 export CC="gcc-10"
 
 # Configure
+# Make sure that ./configure displays: Does Emacs have native lisp compiler? yes
 ./autogen.sh
 ./configure --prefix=$HOME/.local --with-native-compilation
 
+
 # Compile and Test
-make -j<NCORES>
+make -j$(($(nproc) - 2))
 src/emacs -Q
 
 # Install and Clean
@@ -37,7 +38,6 @@ make install
 make clean
 make distclean
 ```
-
 
 ## Use these expressions to test for required features
 
