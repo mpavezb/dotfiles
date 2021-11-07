@@ -61,6 +61,42 @@ export DOOMDIR=~/.emacs_ws/doom/config
 ~/.emacs_ws/doom/distro/bin/doom install
 ```
 
+### Dependencies:
+
+CC:
+- https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/cc
+- clangd > 9
+- clang  > 0
+- cmake-language-server
+
+SH:
+- shellcheck
+- bash-language-server
+- bashdb
+- https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/sh
+
+Markdown:
+- https://github.com/hlissner/doom-emacs/tree/develop/modules/lang/markdown
+- grip:
+  - https://github.com/joeyespo/grip
+  - `pip install grip`
+  - grip-mode
+- markdownlink:
+  - `npm install markdownlint`
+  
+Python:
+- server: `pip install python-language-server[all]`
+- venv: `pip install pipenv`
+- Imports:
+  - `pip install pyflakes`
+  - `pip install isort`
+- Format:
+  - `pip install black`
+- Test Runners:
+  - `pip install pytest`
+  - `pip install nose`
+
+
 ## Spacemacs Installation
 
 ```bash
