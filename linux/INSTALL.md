@@ -128,6 +128,11 @@ Hide remaining folders in home using the `.hidden` file. More info in [this thre
 echo "snap" >> ~/.hidden
 ```
 
+Create "Empty Document" shortcut
+```bash
+touch ~/.ubuntu/Templates/Empty\ Document
+```
+
 These other setup procedures are also not yet automated:
 - **Disable Terminal Bell**: Terminal > Edit > Preference: Uncheck Terminal Bell.
 - **Nautilus Markers**: Add markers to important folders
