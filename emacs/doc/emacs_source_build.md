@@ -1,17 +1,16 @@
 # GccEmacs (emacs28 with native-compilation)
 
-Emacs 28 is not yet released, but is somehow stable. It includes the native compilation feature that provides big speed ups. See the [developers talk](https://www.youtube.com/watch?v=zKHYZOAc_bQ) and the [development page](https://akrl.sdf.org/gccemacs.html) for extra information.
+Emacs 28 is not yet released. It includes the native compilation feature that speeds up emacs a lot. See the [developers talk](https://www.youtube.com/watch?v=zKHYZOAc_bQ), and the [development page](https://akrl.sdf.org/gccemacs.html).
 
 
 ```bash
 # Download
-git clone https://github.com/emacs-mirror/emacs
+git clone -b master --single-branch git://git.sv.gnu.org/emacs.git
 cd emacs
-git checkout master
 
 # Usual deps
 sudo apt install build-essential
-sudo apt build-dep emacs # This requires enabling "source code" on Software & Updates.  
+sudo apt build-dep emacs # This requires enabling "source code" on Software & Updates.
 sudo apt install libacl1-dev libncurses5-dev libxpm-dev libgnutls28-dev texinfo gsfonts-x11 git
 
 # gcc-10
