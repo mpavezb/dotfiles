@@ -95,6 +95,8 @@
 
   (setq org-tags-column -80)
 
+  (setq org-cycle-emulate-tab 'whitestart)
+
   ;; -------------------------------------
   ;; Todo
   ;; -------------------------------------
