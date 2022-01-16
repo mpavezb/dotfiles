@@ -94,10 +94,14 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 - Workspaces > Static Workspaces / Number of Workspaces=9
 
 **Gnome Extensions**: Enable the following extensions
+- Last checked in GNOME Shell 3.36.9. (`gnome-shell --version`). 
 - Extensions: https://extensions.gnome.org/extension/1036/extensions/
 - Desktop Icons (native):
   - Show Home, Hide other.
-- Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
+- Alternate Tab:
+  - Extension is not needed anymore. Read this: https://blogs.gnome.org/fmuellner/2018/10/11/the-future-of-alternatetab-and-why-you-need-not-worry/
+  - Either AlternateTab: https://extensions.gnome.org/extension/15/alternatetab/
+  - Or Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
 - Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
   - Set workspaces to 9.
 - Sound Output Device Chooser: https://extensions.gnome.org/extension/906/sound-output-device-chooser/
