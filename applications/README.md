@@ -14,6 +14,7 @@ Whenever a debian package needs to be manually installed, prefer `sudo apt insta
 
 ## Tools
 
+- Flameshot: https://flameshot.org/ - Screenshots.
 - PDF Viewer
 - nordvpn
 - Insync
