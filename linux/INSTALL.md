@@ -186,6 +186,17 @@ ln -sf   ~/.dotfiles/linux/network_manager/networkmanager_dmenu
 
 ## Wallpaper
 
+Getting Images:
+0. Check saved wallpapers in GDrive.
 1. Get images you like. You can use these services: https://unsplash.com/, http://simpledesktops.com/.
 2. Copy them onto `~/.ubuntu/Pictures/wallpaper/`.
-3. i3 uses `feh` program so randomly pick images for every monitor on load.
+
+### Using shotwell (ubuntu)
+
+1. Import the folder to shotwell.
+2. Select desired images.
+3. File > Set wallpaper slideshow.
+
+### i3 and feh
+
+The i3 settings use the `feh` program to randomly pick images for every monitor on load.
