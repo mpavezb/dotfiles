@@ -137,6 +137,12 @@
 
 
   ;; -------------------------------------
+  ;; Column View
+  ;; -------------------------------------
+  ;; https://orgmode.org/worg/org-tutorials/org-column-view-tutorial.html
+  (setq org-columns-default-format "%60ITEM(Task) %4TODO(Status) %5CLOCKSUM(Clock) %1PRIORITY(P) %16SCHEDULED %16DEADLINE %20TAGS(Tags)")
+
+  ;; -------------------------------------
   ;; Src Snippets
   ;; -------------------------------------
   ;; Tab should do indent in code blocks
