@@ -145,9 +145,13 @@
   ;; Don't auto modify src code indentation.
   (setq org-src-preserve-indentation t)
 
-
   ;; Undone dependencies block switching parent to DONE.
   (setq org-enforce-todo-dependencies t)
+
+  ;; Disable risky evaluation of source blocks.
+  (setq org-babel-default-header-args
+      (cons '(:eval . "no")
+            (assq-delete-all :eval org-babel-default-header-args)))
 
 
   (setq org-log-into-drawer "LOGBOOK")
