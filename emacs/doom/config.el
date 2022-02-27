@@ -108,6 +108,14 @@
   ;; - @: Record note with timestamp.
   ;; - !: Record timestamp on selection.
   ;; - X/Y: Use X on enter, use Y on exit.
+  ;;
+  ;; Keywords
+  ;; - TODO: Task is pending
+  ;; - WIP: Work is in progress.
+  ;; - WAIT: Waiting for someone: Feedback, code review.
+  ;; - HOLD: Waiting for event.
+  ;; - DONE: Completed.
+  ;; - CANC: Cancelled before completion.
   (setq org-todo-keywords
         '((sequence "TODO(t)" "WIP(s@/!)" "|" "DONE(d@/!)")
           (sequence "WAIT(w@/!)" "HOLD(h@/!)" "|" "CANC(c@/!)")))
