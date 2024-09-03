@@ -13,6 +13,10 @@
 - Other: Brightness, Battery, Touchpad, Mouse, Webcam
 - Dual-Boot: Does this affect other checks?
 
+Note: The zenbook audio gets messed up due to the dual boot.
+- Option 1: Shut down Windows completely before starting Ubuntu.
+- Option 2: Disable fast-boot for Windows (not sure if it works). 
+
 ## Setup
 
 See the [installation document](INSTALL.md).
