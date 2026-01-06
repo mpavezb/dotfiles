@@ -26,6 +26,9 @@ sudo apt install curl apt-transport-https htop git
 # media
 sudo apt install vlc ubuntu-restricted-extras imagemagick nautilus-image-converter
 
+# vpn
+# check webpage
+
 # archive
 sudo apt install rar unrar p7zip-full p7zip-rar
 
@@ -54,7 +57,7 @@ sudo apt install scrot       # lockscreen screenshot
 sudo apt install imagemagick # lockscreen blur
 ```
 
-Polybar must be compiler from source. Please see the instructions on the [README](polybar/README.md).
+Polybar must be compiled from source. Please see the instructions on the [README](polybar/README.md).
 
 ## Dotfiles
 
@@ -94,25 +97,33 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 - Workspaces > Static Workspaces / Number of Workspaces=9
 
 **Gnome Extensions**: Enable the following extensions
-- Last checked in GNOME Shell 3.36.9. (`gnome-shell --version`). 
+- Last checked in GNOME Shell 46.0 (2025) (`gnome-shell --version`). 
 - Extensions: https://extensions.gnome.org/extension/1036/extensions/
-- Desktop Icons (native):
-  - Show Home, Hide other.
-- Alternate Tab:
-  - Extension is not needed anymore. Read this: https://blogs.gnome.org/fmuellner/2018/10/11/the-future-of-alternatetab-and-why-you-need-not-worry/
-  - Either AlternateTab: https://extensions.gnome.org/extension/15/alternatetab/
-  - Or Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
+
+
+Install These
 - Workspace Matrix: https://extensions.gnome.org/extension/1485/workspace-matrix/
   - Set workspaces to 9.
-- Sound Output Device Chooser: https://extensions.gnome.org/extension/906/sound-output-device-chooser/
-- Open Weather: https://extensions.gnome.org/extension/750/openweather/
-  - Set City and units.
-- Bluetooth Quick Connect: https://extensions.gnome.org/extension/1401/bluetooth-quick-connect/
+- Weather O'Clock
+  - https://extensions.gnome.org/extension/5470/weather-oclock/
+  - `sudo apt install gnome-weather`
+  - Then select weather location
 - Dash to Dock: https://extensions.gnome.org/extension/307/dash-to-dock/
   - Position and Size > Position on screen: bottom.
   - Launchers > Show Trash Can [NO].
 - Pomodoro:
   - `sudo apt install gnome-shell-pomodoro`
+
+
+Needed but not available anymore (find a replacement)
+- Sound Output Device Chooser
+  - Unmaintained since 2022: https://extensions.gnome.org/extension/906/sound-output-device-chooser/
+
+TODO
+- [Not sure if needed] Alternate Tab:
+  - Extension is not needed anymore. Read this: https://blogs.gnome.org/fmuellner/2018/10/11/the-future-of-alternatetab-and-why-you-need-not-worry/
+  - Either AlternateTab: https://extensions.gnome.org/extension/15/alternatetab/
+  - Or Alt Tab Workspace: https://extensions.gnome.org/extension/310/alt-tab-workspace/
 
 
 **DNS**: Set up manual google DNS for every connection.
@@ -121,7 +132,7 @@ git clone https://github.com/mpavezb/dotfiles .dotfiles
 
 ## Misc Settings
 
-Hide default folders in home into `.ubuntu/` folder. This requires logging out and then removing the `~/Desktop` folder by hand.
+Hide default folders in home into `.ubuntu-default-folders/` folder. This requires logging out and then removing the `~/Desktop` folder by hand.
 ```bash
 # XDG user dirs
 bash ~/.dotfiles/linux/xdg/setup.bash
@@ -134,7 +145,7 @@ echo "snap" >> ~/.hidden
 
 Create "Empty Document" shortcut
 ```bash
-touch ~/.ubuntu/Templates/Empty\ Document
+touch ~/.ubuntu-default-folders/Templates/Empty\ Document
 ```
 
 These other setup procedures are also not yet automated:
@@ -189,7 +200,7 @@ ln -sf   ~/.dotfiles/linux/network_manager/networkmanager_dmenu
 Getting Images:
 0. Check saved wallpapers in GDrive.
 1. Get images you like. You can use these services: https://unsplash.com/, http://simpledesktops.com/.
-2. Copy them onto `~/.ubuntu/Pictures/wallpaper/`.
+2. Copy them onto `~/.ubuntu-default-folders/Pictures/wallpaper/`.
 
 ### Using shotwell (ubuntu)
 

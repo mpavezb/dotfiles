@@ -13,32 +13,52 @@ Dependencies are optional. They are loaded if found.
 
 ## Setup
 
-Copy the following snippets into the initialization files:
+Edit the shell initialization files accordingly.
+
+
+### ~/.profile
+Create new or replace contents
 ```bash
-## ~/.profile - Append/Replace
+subl ~/.profile
+
 ## -----------------------------------------------
 ## mpavezb dotfiles
 if [ -f "$HOME/.dotfiles/bash/init/profile.sh" ]; then
     . "$HOME/.dotfiles/bash/init/profile.sh"
 fi
 ## -----------------------------------------------
+```
 
-## ~/.bash_profile - Append/Replace
+### ~/.bash_profile
+Create new or replace contents
+```bash
+subl ~/.bash_profile
+
 ## -----------------------------------------------
 ## mpavezb dotfiles
 ## Let ~/.profile handle the initialization.
 [[ -f "$HOME/.profile" ]] && source "$HOME/.profile"
 ## -----------------------------------------------
+```
 
-## ~/.bash_logout - Append
+### ~/.bash_logout
+Append
+```bash
+subl ~/.bash_logout
+
 ## -----------------------------------------------
 ## mpavezb dotfiles
 if [ -f "$HOME/.dotfiles/bash/init/bash_logout.bash" ]; then
     source "$HOME/.dotfiles/bash/init/bash_logout.bash"
 fi
 ## -----------------------------------------------
+```
 
-## ~/.bashrc - Append
+### ~/.bashrc
+Append
+```bash
+subl ~/.bashrc
+
 ## -----------------------------------------------
 ## mpavezb dotfiles
 if [ -f "$HOME/.dotfiles/bash/bashrc.bash" ]; then
@@ -56,10 +76,6 @@ This enables the following:
 - FZF
 - BAT
 
-Run the following script to copy remaining rc files.
-```bash
-bash ~/.dotfiles/bash/setup.bash
-```
 
 ## Initialization Files
 

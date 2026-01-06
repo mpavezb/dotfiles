@@ -18,18 +18,18 @@ if [ -d ~/Downloads ]; then
     rmdir ~/Downloads
 fi
 
-echo " - Hide default XDG dirs into ~/.ubuntu/"
-mkdir -p ~/.ubuntu/
-[ -d ~/Documents   ] && mv ~/Documents/ ~/.ubuntu/
-[ -d ~/Music       ] && mv ~/Music/     ~/.ubuntu/
-[ -d ~/Pictures    ] && mv ~/Pictures/  ~/.ubuntu/
-[ -d ~/Public      ] && mv ~/Public/    ~/.ubuntu/
-[ -d ~/Templates   ] && mv ~/Templates/ ~/.ubuntu/
-[ -d ~/Videos      ] && mv ~/Videos/    ~/.ubuntu/
+echo " - Hide default XDG dirs into ~/.ubuntu-default-folders/"
+mkdir -p ~/.ubuntu-default-folders/
+[ -d ~/Documents   ] && mv ~/Documents/ ~/.ubuntu-default-folders/
+[ -d ~/Music       ] && mv ~/Music/     ~/.ubuntu-default-folders/
+[ -d ~/Pictures    ] && mv ~/Pictures/  ~/.ubuntu-default-folders/
+[ -d ~/Public      ] && mv ~/Public/    ~/.ubuntu-default-folders/
+[ -d ~/Templates   ] && mv ~/Templates/ ~/.ubuntu-default-folders/
+[ -d ~/Videos      ] && mv ~/Videos/    ~/.ubuntu-default-folders/
 
 # Create placeholder for desktop
 echo " - Create placeholder dir for Desktop"
-mkdir -p ~/.ubuntu/Desktop
+mkdir -p ~/.ubuntu-default-folders/Desktop
 
 echo " - Updating XDG user dirs"
 cp -f "${DIR}"/user-dirs.dirs ~/.config/user-dirs.dirs
