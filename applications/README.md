@@ -36,10 +36,18 @@ Configurations:
 
 ### Sublime Text
 
-Packages:
+Install (Ctr Shift P) Package Control
+
+Install via Package Control:
 - Bracket Highlighter
 - ColorSublime
 - Text Pastry
 - ColorHints
 - EditorConfig
 - MoveTab: https://github.com/SublimeText/MoveTab
+
+Install Manually
+- Sublime Merge
+	- https://www.sublimemerge.com/download
+	- 
+
