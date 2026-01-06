@@ -11,6 +11,14 @@ export DOTFILES=~/.dotfiles
 bash ${DOTFILES}/git/setup.bash
 ```
 
+Then, update the signingkey in the new gitconfig file:
+```bash
+# List available signing keys
+# And copy the "bbb" part off the "sec aaa/bbb" section 
+gpg --list-secret-keys --keyid-format=long
+subl ~/.gitconfig
+```
+
 ## Command Line Git Reference
 
 See the [Reference File](reference.bash).
